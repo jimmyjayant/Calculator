@@ -1,19 +1,30 @@
 var res = document.getElementById("result");
+var len = res.innerHTML.length;
+var char = res.innerHTML.charAt(len-1);
 
 function clearResult() {
   res.innerHTML = "";
 }
 
 function divide() {
-  res.innerHTML += "/";
+  if(char != "/")
+  {
+    res.innerHTML += "/";
+  }
 }
 
 function mul() {
-  res.innerHTML += "*";
+  if(char != "*")
+  {
+    res.innerHTML += "*";
+  }
 }
 
 function del() {
-  res.innerHTML = res.innerHTML.slice(0,-1);
+  if(res.innerHTML != "")
+  {
+    res.innerHTML = res.innerHTML.slice(0,-1);
+  }
 }
 
 function squareroot() {
@@ -39,7 +50,10 @@ function nine() {
 }
 
 function minus() {
-  res.innerHTML += "-";
+  if(char != "-")
+  {
+    res.innerHTML += "-";
+  }
 }
 
 function four() {
@@ -55,7 +69,10 @@ function six() {
 }
 
 function plus() {
-  res.innerHTML += "+";
+  if(char != "+")
+  {
+    res.innerHTML += "+";
+  }
 }
 
 function one() {
@@ -71,7 +88,10 @@ function three() {
 }
 
 function dot() {
-  res.innerHTML += ".";
+  if(char != ".")
+  {
+    res.innerHTML += ".";
+  }
 }
 
 function zero() {
