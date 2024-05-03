@@ -137,3 +137,13 @@ function display() {
   else
   res.innerHTML = "";
 }
+
+function nav()
+{
+  document.getElementsByClassName("navbar")[0].style.width = "250px";
+}
+
+function closenav()
+{
+  document.getElementsByClassName("navbar")[0].style.width = "0";
+}

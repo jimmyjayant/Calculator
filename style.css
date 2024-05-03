@@ -2,18 +2,76 @@
     box-sizing:border-box;
   }
 
-  html {
-    font-size:62.5%;
+  body {
+    padding:0;
+    margin:0;
+  }
+
+  .headingandlogo {
+    display:flex;
+    flex-wrap:nowrap;
+    position:sticky;
+    top:0;
+    background:#d1ccc0;
+  }
+
+  .calculatorlogo {
+    align-self:center;
+  }
+
+  .calculatorlogo img {
+    width:3rem;
+    height:3rem;
+  }
+
+  .heading {
+    align-self:center;
+    flex:100%;
   }
 
   h1 {
-    font-size:5rem;
     text-align:center;
+    margin:0;
+  }
+
+  .navbar {
+    position:fixed;
+    background:#f1f1f1;
+    width:0;
+    height:100%;
+    z-index:1;
+    overflow-x: hidden;
+    text-align:center;
+    padding-top:3rem;
+    transition:0.5s;
+  }
+
+  .closenav {
+    top:0;
+    right:0;
+    position:absolute;
+    font-size:1.5rem;
+  }
+
+  .closenav:hover {
+    color:red;
+    background:black;
+  }
+
+  .navbar a {
+    display:block;
+    padding:0.5rem;
+    text-align:center;
+    text-decoration:none;
+    color:black;
+  }
+
+  .navbar a:hover {
+    background:#ddd;
   }
 
   .calculator {
-    width:30%;
-    font-size:3rem;
+    font-size:1rem;
     margin:10vh auto;
     border:2px solid grey;
     text-align:center;
