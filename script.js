@@ -2,6 +2,13 @@ var res = document.getElementById("result");
 var len = res.innerHTML.length;
 var char = res.innerHTML.charAt(len-1);
 
+window.addEventListener("resize", function() {
+  if(window.innerWidth > 600)
+  {
+   document.getElementsByClassName("navbar")[0].style.width = "";
+  }
+});
+
 function clearResult() {
   res.innerHTML = "";
 }
@@ -147,3 +154,4 @@ function closenav()
 {
   document.getElementsByClassName("navbar")[0].style.width = "0";
 }
+

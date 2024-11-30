@@ -14,8 +14,13 @@
     </head>
     <body>
       <div class="headingandlogo">
+        <div class="hamburgermenu" onclick="nav()">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
         <div class="calculatorlogo">
-          <img src="calculator.jpg" alt="Calculator Logo" onclick="nav()">
+          <img src="calculator.jpg" alt="Calculator Logo">
         </div>
         <div class="heading">
           <h1>
@@ -25,42 +30,45 @@
       </div>
 
       <div class="navbar">
-      <a href="javascript:void(0)" class="closenav" onclick="closenav()">&times;</a>
-      <a href="index.html">Simple</a>
-      <a href="length.html">Length</a>
+        <a href="#" class="closenav" onclick="closenav()">&times;</a>
+        <a href="index.html">Standard</a>
+        <a href="scientific.html">Scientific</a>
+        <a href="programmer.html">Programmer</a>
+        <a href="length.html">Length</a>
       </div>
-        
-        <div class="calculator">
-            <div id="result"></div>
-            <div class="buttons">
-              <button type="button" class="button" onclick="clearResult()">C</button>
-              <button type="button" class="button" onclick="divide()">/</button>
-              <button type="button" class="button" onclick="mul()">*</button>
-              <button type="button" class="button" onclick="del()">&#8592;</button>
-              <button type="button" class="button" onclick="squareroot()">&radic;</button>
-              <button type="button" class="button" onclick="cbroot()">&#8731;</button>
-              <button type="button" class="button" onclick="reciprocal()">1/x</button>
-              <button type="button" class="button" onclick="sqr()">x<sup>2</sup></button>
-              <button type="button" class="button" onclick="seven()">7</button>
-              <button type="button" class="button" onclick="eight()">8</button>
-              <button type="button" class="button" onclick="nine()">9</button>
-              <button type="button" class="button" onclick="minus()">-</button>
-              <button type="button" class="button" onclick="four()">4</button>
-              <button type="button" class="button" onclick="five()">5</button>
-              <button type="button" class="button" onclick="six()">6</button>
-              <button type="button" class="button" onclick="plus()">+</button>
-              <button type="button" class="button" onclick="one()">1</button>
-              <button type="button" class="button" onclick="two()">2</button>
-              <button type="button" class="button" onclick="three()">3</button>
-              <button type="button" class="button" onclick="dot()">.</button>
-              <button type="button" class="button" onclick="leftbrac()">(</button>
-              <button type="button" class="button" onclick="zero()">0</button>
-              <button type="button" class="button" onclick="rightbrac()">)</button>
-              <button type="button" class="button" onclick="percent()">%</button>
-              <button type="button" class="button" onclick="display()">=</button>
-            </div>
-        </div>
 
-        <script src="script.js"></script>
+      <div class="calculator">
+          <div id="result"></div>
+          <div class="buttons">
+            <button type="button" class="button" onclick="clearResult()">C</button>
+            <button type="button" class="button" onclick="percent()">%</button>
+            <button type="button" class="button" onclick="reciprocal()">1/x</button>
+            <button type="button" class="button" onclick="del()">&#8592;</button>
+            <button type="button" class="button" onclick="squareroot()">&radic;</button>
+            <button type="button" class="button" onclick="cbroot()">&#8731;</button>
+            <button type="button" class="button" onclick="sqr()">x<sup>2</sup></button>
+            <button type="button" class="button" onclick="divide()">/</button>
+            <button type="button" class="button" onclick="x_to_power_y()">x<sup>y</sup></button>
+            <button type="button" class="button" onclick="leftbrac()">(</button>
+            <button type="button" class="button" onclick="rightbrac()">)</button>
+            <button type="button" class="button" onclick="mul()">*</button>
+            <button type="button" class="button" onclick="seven()">7</button>
+            <button type="button" class="button" onclick="eight()">8</button>
+            <button type="button" class="button" onclick="nine()">9</button>
+            <button type="button" class="button" onclick="minus()">-</button>
+            <button type="button" class="button" onclick="four()">4</button>
+            <button type="button" class="button" onclick="five()">5</button>
+            <button type="button" class="button" onclick="six()">6</button>
+            <button type="button" class="button" onclick="plus()">+</button>
+            <button type="button" class="button" onclick="one()">1</button>
+            <button type="button" class="button" onclick="two()">2</button>
+            <button type="button" class="button" onclick="three()">3</button>
+            <button type="button" class="button" onclick="display()">=</button>
+            <button type="button" class="button" onclick="zero()">0</button>
+            <button type="button" class="button" onclick="dot()">.</button>
+          </div>
+      </div>
+
+      <script src="script.js"></script>
     </body>
 </html>
