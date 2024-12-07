@@ -9,6 +9,96 @@ window.addEventListener("resize", function() {
   }
 });
 
+window.addEventListener("keydown", function(event) {
+  switch(event.key)
+  {
+    case "Enter":
+      event.preventDefault();
+      display();
+      break;
+    case "0":
+      event.preventDefault();
+      zero();
+      break;
+    case "1":
+      event.preventDefault();
+      one();
+      break;
+    case "2":
+      event.preventDefault();
+      two();
+      break;
+    case "3":
+      event.preventDefault();
+      three();
+      break;
+    case "4":
+      event.preventDefault();
+      four();
+      break;
+    case "5":
+      event.preventDefault();
+      five();
+      break;
+    case "6":
+      event.preventDefault();
+      six();
+      break;
+    case "7":
+      event.preventDefault();
+      seven();
+      break;
+    case "8":
+      event.preventDefault();
+      eight();
+      break;
+    case "9":
+      event.preventDefault();
+      nine();
+      break;
+    case "Backspace":
+      event.preventDefault();
+      del();
+      break;
+    case "Delete":
+      event.preventDefault();
+      clearResult();
+      break;
+    case "+":
+      event.preventDefault();
+      plus();
+      break;
+    case "-":
+      event.preventDefault();
+      minus();
+      break;
+    case "/":
+      event.preventDefault();
+      divide();
+      break;
+    case "*":
+      event.preventDefault();
+      mul();
+      break;
+    case ".":
+      event.preventDefault();
+      dot();
+      break;
+    case "%":
+      event.preventDefault();
+      percent();
+      break;
+    case "(":
+      event.preventDefault();
+      leftbrac();
+      break;
+    case ")":
+      event.preventDefault();
+      rightbrac();
+      break;
+  }
+});
+
 function clearResult() {
   res.innerHTML = "";
 }
