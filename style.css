@@ -112,7 +112,7 @@ h1 {
   border:1px solid grey;
 }
 
-.button:hover, .button:focus {
+.button:hover {
   background:#111;
   color:white;
 }

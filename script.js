@@ -1,6 +1,6 @@
 var res = document.getElementById("result");
-var len = res.textContent.length;
-var char = res.textContent.charAt(len-1);
+var len = res.innerText.length;
+var char = res.innerText.charAt(len-1);
 
 window.addEventListener("resize", function() {
   if(window.innerWidth > 600)
@@ -220,150 +220,150 @@ window.addEventListener("keydown", function(event) {
 });
 
 function clearResult() {
-  res.textContent = "";
+  res.innerText = "";
 }
 
 function divide() {
   if(char != "/")
     {
-      res.textContent += "/";
+      res.innerText += "/";
     }  
 }
 
 function mul() {
   if(char != "*")
   {
-    res.textContent += "*";
+    res.innerText += "*";
   }
 }
 
 function del() {
-  if(res.textContent != "")
+  if(res.innerText != "")
   {
-    res.textContent = res.textContent.slice(0,-1);
+    res.innerText = res.innerText.slice(0,-1);
   }
 }
 
 function squareroot() {
-  if(res.textContent != "")
+  if(res.innerText != "")
   {
-    res.textContent = Math.sqrt(eval(res.textContent));
+    res.innerText = Math.sqrt(eval(res.innerText));
   }
 }
 
 function cbroot() {
-  if(res.textContent != "")
+  if(res.innerText != "")
   {
-    res.textContent = Math.cbrt(eval(res.textContent));
+    res.innerText = Math.cbrt(eval(res.innerText));
   }
 }
 
 function seven() {
-  res.textContent += "7";
+  res.innerText += "7";
 }
 
 function eight() {
-  res.textContent += "8";
+  res.innerText += "8";
 }
 
 function nine() {
-  res.textContent += "9";
+  res.innerText += "9";
 }
 
 function minus() {
   if(char != "-")
   {
-    res.textContent += "-";
+    res.innerText += "-";
   }
 }
 
 function four() {
-  res.textContent += "4";
+  res.innerText += "4";
 }
 
 function five() {
-  res.textContent += "5";
+  res.innerText += "5";
 }
 
 function six() {
-  res.textContent += "6";
+  res.innerText += "6";
 }
 
 function plus() {
   if(char != "+")
   {
-    res.textContent += "+";
+    res.innerText += "+";
   }
 }
 
 function one() {
-  res.textContent += "1";
+  res.innerText += "1";
 }
 
 function two() {
-  res.textContent += "2";
+  res.innerText += "2";
 }
 
 function three() {
-  res.textContent += "3";
+  res.innerText += "3";
 }
 
 function dot() {
   if(char != ".")
   {
-    res.textContent += ".";
+    res.innerText += ".";
   }
 }
 
 function zero() {
-  res.textContent += "0";
+  res.innerText += "0";
 }
 
 function doublezero() {
-  res.textContent += "00";
+  res.innerText += "00";
 }
 
 function leftbrac() {
-  res.textContent += "(";
+  res.innerText += "(";
 }
 
 function rightbrac() {
-  res.textContent += ")";
+  res.innerText += ")";
 }
 
 function percent() {
-  res.textContent += '%';
+  res.innerText += '%';
 }
 
 function reciprocal() {
-  if(res.textContent == '')
+  if(res.innerText == '')
   {
-    res.textContent = "";
+    res.innerText = "";
   }
   else
   {
-    res.textContent = (1/(res.textContent));
+    res.innerText = (1/(res.innerText));
   }
 }
 
 function sqr() {
-  if(res.textContent != "")
+  if(res.innerText != "")
   {
-    res.textContent = eval(res.textContent);
-    res.textContent = Math.pow((res.textContent), 2);
+    res.innerText = eval(res.innerText);
+    res.innerText = Math.pow((res.innerText), 2);
   }
 }
 
 function display() {
-  res.textContent = (res.textContent).replace("%", "/100");
-  let final = eval(res.textContent);
+  res.innerText = (res.innerText).replace("%", "/100");
+  let final = eval(res.innerText);
   if(final)
   {
-    res.textContent = final;
+    res.innerText = final;
   }
   else
   {
-    res.textContent = "";
+    res.innerText = "";
   }
 }
 
@@ -379,11 +379,11 @@ function closenav()
 
 function x_to_power_y()
 {
-  res.textContent += "^"; // Better code to be discussed
+  res.innerText += "^"; // Better code to be discussed
 }
 
 function reversesign() {
-  if(res.textContent != "")
+  if(res.innerText != "")
   {
     // Code yet to be discussed
   }
