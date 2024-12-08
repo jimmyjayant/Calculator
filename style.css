@@ -164,8 +164,12 @@ h1 {
     background:black;
   }
 
+  .buttons {
+    gap:0;
+  }
+  
   .button {
-    width:22%;
+    width:33%;
     height:3rem;
     font-size:1rem;
   }
