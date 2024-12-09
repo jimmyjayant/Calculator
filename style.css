@@ -16,8 +16,6 @@ body {
   display:flex;
   flex-direction:row;
   flex-wrap:nowrap;
-  position:sticky;
-  top:0;
   background:#d1ccc0;
 }
 

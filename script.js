@@ -69,6 +69,9 @@ window.addEventListener("keydown", function(event) {
       mouseOver(20);
       one();
       setTimeout(() => mouseOut(20), 100);
+      var res = document.getElementById("result");
+var len = res.innerText.length;
+var char = res.innerText.charAt(len-1);
       console.log(len);
       console.log(char);
       break;
@@ -224,6 +227,8 @@ function clearResult() {
 }
 
 function divide() {
+  var len = res.innerText.length;
+  var char = res.innerText.charAt(len-1);
   if(char != "/")
     {
       res.innerText += "/";
@@ -231,6 +236,8 @@ function divide() {
 }
 
 function mul() {
+  var len = res.innerText.length;
+  var char = res.innerText.charAt(len-1);
   if(char != "*")
   {
     res.innerText += "*";
@@ -271,6 +278,8 @@ function nine() {
 }
 
 function minus() {
+  var len = res.innerText.length;
+  var char = res.innerText.charAt(len-1);
   if(char != "-")
   {
     res.innerText += "-";
@@ -290,6 +299,8 @@ function six() {
 }
 
 function plus() {
+  var len = res.innerText.length;
+  var char = res.innerText.charAt(len-1);
   if(char != "+")
   {
     res.innerText += "+";
@@ -309,6 +320,8 @@ function three() {
 }
 
 function dot() {
+  var len = res.innerText.length;
+  var char = res.innerText.charAt(len-1);
   if(char != ".")
   {
     res.innerText += ".";
@@ -379,7 +392,12 @@ function closenav()
 
 function x_to_power_y()
 {
-  res.innerText += "^"; // Better code to be discussed
+  var len = res.innerText.length;
+  var char = res.innerText.charAt(len-1);
+  if(char != "^")
+  {
+    res.innerText += "^"; // Better code to be discussed
+  }
 }
 
 function reversesign() {
