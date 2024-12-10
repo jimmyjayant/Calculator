@@ -102,7 +102,6 @@ h1 {
 }
 
 .button {
-  /*display:inline-block;*/
   font-size:2rem;
   width:24%;
   padding:1rem;
@@ -163,12 +162,124 @@ h1 {
   }
 
   .buttons {
-    gap:0;
+    column-gap:0.3rem;
+    row-gap:1rem;
+    justify-content: space-between;
   }
   
   .button {
-    width:33%;
+    width:30%;
     height:3rem;
     font-size:1rem;
+  }
+
+  .button:last-child {
+    width:100%;
+  }
+
+  .button:nth-of-type(16) {
+    order:25;
+  }
+
+  .button:nth-of-type(17) {
+    order:16;
+  }
+
+  .button:nth-of-type(18) {
+    order:17;
+  }
+
+  .button:nth-of-type(19) {
+    order:18;
+  }
+
+  .button:nth-of-type(20) {
+    order:26;
+  }
+
+  .button:nth-of-type(21) {
+    order:19;
+  }
+
+  .button:nth-of-type(22) {
+    order:20;
+  }
+
+  .button:nth-of-type(23) {
+    order:21;
+  }
+
+  .button:nth-of-type(24) {
+    order:27;
+  }
+
+  .button:nth-of-type(25) {
+    order:22;
+  }
+
+  .button:nth-of-type(26) {
+    order:23;
+  }
+
+  .button:nth-of-type(27) {
+    order:24;
+  }
+
+  .button:nth-of-type(28) {
+    order:28;
+  }
+}
+
+.display {
+  display:flex;
+  width:100%;
+  flex-direction:row;
+  flex-wrap:wrap;
+  overflow:auto;
+}
+
+.display select {
+  border:none;
+  font-size:clamp(1rem, 1vw + 1rem, 2rem);
+}
+
+#firstlengthparameter, #secondlengthparameter {
+  width:50%;
+  height:auto;
+  border:2px solid #333;
+}
+
+#length1, #length2 {
+  width:50%;
+  height:5rem;
+  background:rgba(0,200,0,0.5);
+  border:2px solid grey;
+  overflow:auto;
+  text-align:right;
+}
+
+@media only screen and (max-width:400px) {
+  .display {
+    flex-direction:column;
+  }
+
+  #firstlengthparameter {
+    order:1;
+    width:100%;
+  }
+
+  #secondlengthparameter {
+    order:3;
+    width:100%;
+  }
+
+  #length1 {
+    order:2;
+    width:100%;
+  }
+
+  #length2 {
+    order:4;
+    width:100%;
   }
 }
