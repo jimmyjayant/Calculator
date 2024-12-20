@@ -222,6 +222,134 @@ var char = res.innerText.charAt(len-1);
   }
 });
 
+var button = Array.from(document.getElementsByClassName("button"));
+console.log(button);
+
+button.forEach(
+  (button) => {
+    button.addEventListener("click", (event) => {
+      switch(event.target.innerHTML)
+      {
+        case 'C':
+          clearResult();
+          break;
+        
+        case '%':
+          percent();
+          break;
+
+        case '1/x':
+          reciprocal();
+          break;
+
+        case '\u2190':
+          del();
+          break;
+
+        case '\u221A':
+          squareroot();
+          break;
+
+        case '\u221B':
+          cbroot();
+          break;
+
+        case 'x<sup>2</sup>':
+          sqr();
+          break;
+
+        case '/':
+          divide();
+          break;
+
+        case 'x<sup>y</sup>':
+          x_to_power_y();
+          break;
+
+        case '(':
+          leftbrac();
+          break;
+
+        case ')':
+          rightbrac();
+          break;
+
+        case '*':
+          mul();
+          break;
+
+        case '7':
+          seven();
+          break;
+
+        case '8':
+          eight();
+          break;
+
+        case '9':
+          nine();
+          break;
+
+        case '-':
+          minus();
+          break;
+
+        case '4':
+          four();
+          break;
+
+        case '5':
+          five();
+          break;
+
+        case '6':
+          six();
+          break;
+
+        case '+':
+          plus();
+          break;
+
+        case '1':
+          one();
+          break;
+
+        case '2':
+          two();
+          break;
+
+        case '3':
+          three();
+          break;
+
+        case '+/-':
+          reversesign();
+          break;
+
+        case '00':
+          doublezero();
+          break;
+
+        case '0':
+          zero();
+          break;
+
+        case '.':
+          dot();
+          break;
+
+        case '=':
+          display();
+          break;
+        
+        default:
+          console.log(event.target.innerHTML);
+          break;
+      }
+    })
+  }
+);
+
 function clearResult() {
   res.innerText = "";
 }
@@ -406,3 +534,5 @@ function reversesign() {
     // Code yet to be discussed
   }
 }
+
+

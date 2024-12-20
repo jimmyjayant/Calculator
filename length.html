@@ -41,7 +41,7 @@
 
         <div class="display">
           <div id="firstlengthparameter">
-            <select name="firstlengthparameter">
+            <select id="firstselect" onchange="displaylength1()">
               <option value="millimeters">Millimeters (mm)</option>
               <option value="centimeters">Centimeters (cm)</option>
               <option value="meters">Meters (m)</option>
@@ -55,7 +55,7 @@
             </select>
           </div>
           <div id="secondlengthparameter">
-            <select name="secondlengthparameter">
+            <select id="secondselect" onchange="displaylength2()">
               <option value="millimeters">Millimeters (mm)</option>
               <option value="centimeters">Centimeters (cm)</option>
               <option value="meters">Meters (m)</option>
@@ -89,5 +89,7 @@
           <button type="button" class="button" onclick="display()" title="Equal To. Use the Enter key on keyboard.">=</button>
         </div>
       </div>
+
+      <script src="script.js"></script>
     </body>
 </html>
