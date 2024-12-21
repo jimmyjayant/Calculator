@@ -357,7 +357,7 @@ function clearResult() {
 function divide() {
   var len = res.innerText.length;
   var char = res.innerText.charAt(len-1);
-  if(char != "/")
+  if((char != "/") && (char != "+") && (char != "-") && (char != "*") && (char != "."))
     {
       res.innerText += "/";
     }  
@@ -366,7 +366,7 @@ function divide() {
 function mul() {
   var len = res.innerText.length;
   var char = res.innerText.charAt(len-1);
-  if(char != "*")
+  if((char != "*") && (char != "/") && (char != "+") && (char != "-") && (char != "."))
   {
     res.innerText += "*";
   }
@@ -380,7 +380,11 @@ function del() {
 }
 
 function squareroot() {
-  if(res.innerText != "")
+  if(Number(res.innerHTML) < 0)
+  {
+    res.innerHTML = "Square Root of Negative Number is not possible in this Calculator.";
+  }
+  else if(res.innerText != "")
   {
     res.innerText = Math.sqrt(eval(res.innerText));
   }
@@ -408,7 +412,7 @@ function nine() {
 function minus() {
   var len = res.innerText.length;
   var char = res.innerText.charAt(len-1);
-  if(char != "-")
+  if((char != "-") && (char != "*") && (char != "/") && (char != "+") && (char != "."))
   {
     res.innerText += "-";
   }
@@ -429,7 +433,7 @@ function six() {
 function plus() {
   var len = res.innerText.length;
   var char = res.innerText.charAt(len-1);
-  if(char != "+")
+  if((char != "+") && (char != "-") && (char != "*") && (char != "/") && (char != "."))
   {
     res.innerText += "+";
   }
@@ -450,7 +454,7 @@ function three() {
 function dot() {
   var len = res.innerText.length;
   var char = res.innerText.charAt(len-1);
-  if(char != ".")
+  if((char != ".") && (char != "+") && (char != "-") && (char != "*") && (char != "/") && (char != "%"))
   {
     res.innerText += ".";
   }
@@ -473,13 +477,22 @@ function rightbrac() {
 }
 
 function percent() {
-  res.innerText += '%';
+  var len = res.innerText.length;
+  var char = res.innerText.charAt(len-1);
+  if((char != "%") && (char != "+") && (char != "-") && (char != "/") && (char != "*"))
+  {
+    res.innerText += '%';
+  }
 }
 
 function reciprocal() {
-  if(res.innerText == '')
+  if(res.innerHTML == "")
   {
-    res.innerText = "";
+    res.innerHTML = "";
+  }
+  else if(res.innerHTML == "0")
+  {
+    res.innerHTML = "Division by Zero is not possible!";
   }
   else
   {
