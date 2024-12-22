@@ -1,6 +1,6 @@
 var res = document.getElementById("result");
 var len = res.innerText.length;
-var char = res.innerText.charAt(len-1);
+var lastChar = res.innerText.charAt(len-1);
 
 window.addEventListener("resize", function() {
   if(window.innerWidth > 600)
@@ -53,177 +53,151 @@ window.addEventListener("keydown", function(event) {
       mouseOver(27);
       display();
       setTimeout(() => mouseOut(27), 100);
-      console.log(len);
-      console.log(char);
       break;
+
     case "0":
       event.preventDefault();
       mouseOver(25);
       zero();
       setTimeout(() => mouseOut(25), 100);
-      console.log(len);
-      console.log(char);
       break;
+
     case "1":
       event.preventDefault();
       mouseOver(20);
       one();
       setTimeout(() => mouseOut(20), 100);
-      var res = document.getElementById("result");
-var len = res.innerText.length;
-var char = res.innerText.charAt(len-1);
-      console.log(len);
-      console.log(char);
       break;
+
     case "2":
       event.preventDefault();
       mouseOver(21);
       two();
       setTimeout(() => mouseOut(21), 100);
-      console.log(len);
-      console.log(char);
       break;
+
     case "3":
       event.preventDefault();
       mouseOver(22);
       three();
       setTimeout(() => mouseOut(22), 100);
-      console.log(len);
-      console.log(char);
       break;
+
     case "4":
       event.preventDefault();
       mouseOver(16);
       four();
       setTimeout(() => mouseOut(16), 100);
-      console.log(len);
-      console.log(char);
       break;
+
     case "5":
       event.preventDefault();
       mouseOver(17);
       five();
       setTimeout(() => mouseOut(17), 100);
-      console.log(len);
-      console.log(char);
       break;
+
     case "6":
       event.preventDefault();
       mouseOver(18);
       six();
       setTimeout(() => mouseOut(18), 100);
-      console.log(len);
-      console.log(char);
       break;
+
     case "7":
       event.preventDefault();
       mouseOver(12);
       seven();
       setTimeout(() => mouseOut(12), 100);
-      console.log(len);
-      console.log(char);
       break;
+
     case "8":
       event.preventDefault();
       mouseOver(13);
       eight();
       setTimeout(() => mouseOut(13), 100);
-      console.log(len);
-      console.log(char);
       break;
+
     case "9":
       event.preventDefault();
       mouseOver(14);
       nine();
       setTimeout(() => mouseOut(14), 100);
-      console.log(len);
-      console.log(char);
       break;
+
     case "Backspace":
       event.preventDefault();
       mouseOver(3);
       del();
       setTimeout(() => mouseOut(3), 100);
-      console.log(char);
-      console.log(len);
       break;
+
     case "Delete":
       event.preventDefault();
       mouseOver(0);
       clearResult();
       setTimeout(() => mouseOut(0), 100);
-      console.log(char);
-      console.log(len);
       break;
+
     case "+":
       event.preventDefault();
       mouseOver(19);
       plus();
       setTimeout(() => mouseOut(19), 100);
-      console.log(char);
-      console.log(len);
       break;
+
     case "-":
       event.preventDefault();
       mouseOver(15);
       minus();
       setTimeout(() => mouseOut(15), 100);
-      console.log(char);
-      console.log(len);
       break;
+
     case "/":
       event.preventDefault();
       mouseOver(7);
       divide();
       setTimeout(() => mouseOut(7), 100);
-      console.log(char);
-      console.log(len);
       break;
+
     case "*":
       event.preventDefault();
       mouseOver(11);
       mul();
       setTimeout(() => mouseOut(11), 100);
-      console.log(char);
-      console.log(len);
       break;
+
     case ".":
       event.preventDefault();
       mouseOver(26);
       dot();
       setTimeout(() => mouseOut(26), 100);
-      console.log(char);
-      console.log(len);
       break;
+
     case "%":
       event.preventDefault();
       mouseOver(1);
       percent();
       setTimeout(() => mouseOut(1), 100);
-      console.log(char);
-      console.log(len);
       break;
+
     case "(":
       event.preventDefault();
       mouseOver(9);
       leftbrac();
       setTimeout(() => mouseOut(9), 100);
-      console.log(char);
-      console.log(len);
       break;
+
     case ")":
       event.preventDefault();
       mouseOver(10);
       rightbrac();
       setTimeout(() => mouseOut(10), 100);
-      console.log(char);
-      console.log(len);
       break;
   }
 });
 
 var button = Array.from(document.getElementsByClassName("button"));
-console.log(button);
 
 button.forEach(
   (button) => {
@@ -341,10 +315,6 @@ button.forEach(
         case '=':
           display();
           break;
-        
-        default:
-          console.log(event.target.innerHTML);
-          break;
       }
     })
   }
@@ -356,17 +326,17 @@ function clearResult() {
 
 function divide() {
   var len = res.innerText.length;
-  var char = res.innerText.charAt(len-1);
-  if((char != "/") && (char != "+") && (char != "-") && (char != "*") && (char != "."))
-    {
-      res.innerText += "/";
-    }  
+  var lastChar = res.innerText.charAt(len-1);
+  if((res.innerText != "") && (lastChar != "/") && (lastChar != "+") && (lastChar != "-") && (lastChar != "*") && (lastChar != ".") && (lastChar != "("))
+  {
+    res.innerText += "/";
+  }  
 }
 
 function mul() {
   var len = res.innerText.length;
-  var char = res.innerText.charAt(len-1);
-  if((char != "*") && (char != "/") && (char != "+") && (char != "-") && (char != "."))
+  var lastChar = res.innerText.charAt(len-1);
+  if((res.innerText != "") && (lastChar != "*") && (lastChar != "/") && (lastChar != "+") && (lastChar != "-") && (lastChar != ".") && (lastChar != "("))
   {
     res.innerText += "*";
   }
@@ -380,9 +350,9 @@ function del() {
 }
 
 function squareroot() {
-  if(Number(res.innerHTML) < 0)
+  if(Number(res.innerText) < 0)
   {
-    res.innerHTML = "Square Root of Negative Number is not possible in this Calculator.";
+    res.innerText = "Square Root of Negative Number is not possible in this Calculator.";
   }
   else if(res.innerText != "")
   {
@@ -411,8 +381,8 @@ function nine() {
 
 function minus() {
   var len = res.innerText.length;
-  var char = res.innerText.charAt(len-1);
-  if((char != "-") && (char != "*") && (char != "/") && (char != "+") && (char != "."))
+  var lastChar = res.innerText.charAt(len-1);
+  if((lastChar != "-") && (lastChar != "*") && (lastChar != "/") && (lastChar != "+") && (lastChar != "."))
   {
     res.innerText += "-";
   }
@@ -432,8 +402,8 @@ function six() {
 
 function plus() {
   var len = res.innerText.length;
-  var char = res.innerText.charAt(len-1);
-  if((char != "+") && (char != "-") && (char != "*") && (char != "/") && (char != "."))
+  var lastChar = res.innerText.charAt(len-1);
+  if((lastChar != "+") && (lastChar != "-") && (lastChar != "*") && (lastChar != "/") && (lastChar != "."))
   {
     res.innerText += "+";
   }
@@ -453,8 +423,8 @@ function three() {
 
 function dot() {
   var len = res.innerText.length;
-  var char = res.innerText.charAt(len-1);
-  if((char != ".") && (char != "+") && (char != "-") && (char != "*") && (char != "/") && (char != "%"))
+  var lastChar = res.innerText.charAt(len-1);
+  if((lastChar != ".") && (lastChar != "+") && (lastChar != "-") && (lastChar != "*") && (lastChar != "/") && (lastChar != "%"))
   {
     res.innerText += ".";
   }
@@ -469,17 +439,31 @@ function doublezero() {
 }
 
 function leftbrac() {
-  res.innerText += "(";
+  var len = res.innerText.length;
+  var lastChar = res.innerText.charAt(len-1);
+  {
+    if((lastChar != ".") && (lastChar != ")"))
+    {
+      res.innerText += "(";
+    }
+  }
 }
 
 function rightbrac() {
-  res.innerText += ")";
+  var len = res.innerText.length;
+  var lastChar = res.innerText.charAt(len-1);
+  {
+    if((lastChar != ".") && (lastChar != "+") && (lastChar != "-") && (lastChar != "*") && (lastChar != "/") && (lastChar != "("))
+    {
+      res.innerText += ")";
+    }
+  }
 }
 
 function percent() {
   var len = res.innerText.length;
-  var char = res.innerText.charAt(len-1);
-  if((char != "%") && (char != "+") && (char != "-") && (char != "/") && (char != "*"))
+  var lastChar = res.innerText.charAt(len-1);
+  if((lastChar != "%") && (lastChar != "+") && (lastChar != "-") && (lastChar != "/") && (lastChar != "*") && (lastChar != "."))
   {
     res.innerText += '%';
   }
@@ -509,7 +493,7 @@ function sqr() {
 }
 
 function display() {
-  res.innerText = (res.innerText).replace("%", "/100");
+  res.innerText = (res.innerText).replaceAll("%", "/100");
   let final = eval(res.innerText);
   if(final)
   {
@@ -534,17 +518,107 @@ function closenav()
 function x_to_power_y()
 {
   var len = res.innerText.length;
-  var char = res.innerText.charAt(len-1);
-  if(char != "^")
+  var lastChar = res.innerText.charAt(len-1);
+  if(lastChar != "")
   {
-    res.innerText += "^"; // Better code to be discussed
+    if(lastChar != "^")
+    {
+      res.innerText += "^";
+    }
   }
 }
 
+// This function will check for brackets 
+function checkForBrackets(s)
+{
+  let newStr = res.innerText;
+  // Where s denotes the starting position of slice 
+  newStr = newStr.slice(s, -1);
+  console.log(newStr);
+
+  // Creating an Empty String to check the newStr
+  let Stack = [];
+  let Brackets = 1; // 1 = OK
+
+  for(let i = 0; i < newStr.length; i++)
+  {
+    if(newStr[i] == "(")
+    {
+      Stack.push("(");
+    }
+    else if(newStr[i] == ")")
+    {
+      let poppedElement = Stack.pop();
+      if(poppedElement != "(")
+      {
+        Brackets = 0; // Not OK 
+        break;
+      }
+    }
+  }
+  console.log(Brackets);
+  return Brackets;  
+}
+
 function reversesign() {
+  var len = res.innerText.length;
+  var lastChar = res.innerText.charAt(len-1);
+
   if(res.innerText != "")
   {
-    // Code yet to be discussed
+    // Case for -(x) 
+    if((res.innerText.at(0) == "-") && (res.innerText.at(1) == "(") && (lastChar == ")"))
+    {
+      let Result = checkForBrackets(2);
+      if(Result == 0)
+      {
+        // If the Result is not OK
+        res.innerText = "-(" + res.innerText + ")";
+      }
+      else
+      {
+        // If the Result is OK 
+        res.innerText = res.innerHTML.slice(1);
+      }
+    }
+
+    // Case for +(x)
+    else if((res.innerText.at(0) == "+") && (res.innerText.at(1) == "(") && (lastChar == ")"))
+    {
+      let Result = checkForBrackets(2);
+      if(Result == 0)
+      {
+        // If the Result is not OK
+        res.innerText = "-(" + res.innerText + ")";
+      }
+      else
+      {
+        // If the Result is OK
+        res.innerText = (res.innerText).replace("+", "-");
+      }
+    }
+
+    // Case for (x)
+    else if((res.innerText.at(0) == "(") && (lastChar == ")"))
+      {
+        let Result = checkForBrackets(1);
+        if(Result == 0)
+        {
+          // If the Result is not OK
+          res.innerText = "-(" + res.innerText + ")";
+        }
+        else
+        {
+          // If the Result is OK
+          res.innerText = "-" + res.innerText;
+        }
+      }
+
+    // Case for No overall brackets 
+    else 
+    {
+      res.innerText = "-(" + res.innerText + ")";
+    }
   }
 }
 
