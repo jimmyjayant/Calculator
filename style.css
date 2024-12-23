@@ -114,12 +114,12 @@ h1 {
   color:white;
 }
 
-.button:last-child {
+.button#equal {
   background:rgba(0,0,255,0.7);
   color:white;
 }
 
-.button:last-child:hover {
+.button#equal:hover {
   background:darkblue;
 }
 

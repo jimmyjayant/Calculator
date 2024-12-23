@@ -1,6 +1,21 @@
-var res = document.getElementById("result");
-var len = res.innerText.length;
-var lastChar = res.innerText.charAt(len-1);
+// For index.html webpage 
+if(window.location.pathname.includes("index.html"))
+{
+  var res = document.getElementById("result");
+  var len = res.innerText.length;
+  var lastChar = res.innerText.charAt(len-1);
+}
+
+// For length.html webpage
+if(window.location.pathname.includes("length.html"))
+{
+  var para1 = document.getElementById("length1");
+  var para2 = document.getElementById("length2");
+  var lenofpara1 = para1.innerText.length;
+  var lastCharofpara1 = para1.innerText.charAt(lenofpara1-1);
+  var input = document.getElementById("firstselect");
+  var output = document.getElementById("secondselect");
+}
 
 window.addEventListener("resize", function() {
   if(window.innerWidth > 600)
@@ -321,7 +336,15 @@ button.forEach(
 );
 
 function clearResult() {
-  res.innerText = "";
+  if(window.location.pathname.includes("index.html"))
+  {
+    res.innerText = "";
+  }
+  else if(window.location.pathname.includes("length.html"))
+  {
+    para1.innerText = "";
+    para2.innerText = "";
+  }
 }
 
 function divide() {
@@ -343,9 +366,19 @@ function mul() {
 }
 
 function del() {
-  if(res.innerText != "")
+  if(window.location.pathname.includes("index.html"))
   {
-    res.innerText = res.innerText.slice(0,-1);
+    if(res.innerText != "")
+    {
+      res.innerText = res.innerText.slice(0,-1);
+    }
+  }
+  else if(window.location.pathname.includes("length.html"))
+  {
+    if(para1.innerText != "")
+    {
+      para1.innerText = para1.innerText.slice(0,-1);
+    }
   }
 }
 
@@ -368,15 +401,36 @@ function cbroot() {
 }
 
 function seven() {
-  res.innerText += "7";
+  if(window.location.pathname.includes("index.html"))
+  {
+    res.innerText += "7";
+  }
+  else if(window.location.pathname.includes("length.html"))
+  {
+    para1.innerText += "7";
+  }
 }
 
 function eight() {
-  res.innerText += "8";
+  if(window.location.pathname.includes("index.html"))
+  {
+    res.innerText += "8";
+  }
+  else if(window.location.pathname.includes("length.html"))
+  {
+    para1.innerText += "8";
+  }
 }
 
 function nine() {
-  res.innerText += "9";
+  if(window.location.pathname.includes("index.html"))
+  {
+    res.innerText += "9";
+  }
+  else if(window.location.pathname.includes("length.html"))
+  {
+    para1.innerText += "9";
+  }
 }
 
 function minus() {
@@ -389,15 +443,36 @@ function minus() {
 }
 
 function four() {
-  res.innerText += "4";
+  if(window.location.pathname.includes("index.html"))
+  {
+    res.innerText += "4";
+  }
+  else if(window.location.pathname.includes("length.html"))
+  {
+    para1.innerText += "4";
+  }
 }
 
 function five() {
-  res.innerText += "5";
+  if(window.location.pathname.includes("index.html"))
+  {
+    res.innerText += "5";
+  }
+  else if(window.location.pathname.includes("length.html"))
+  {
+    para1.innerText += "5";
+  }
 }
 
 function six() {
-  res.innerText += "6";
+  if(window.location.pathname.includes("index.html"))
+  {
+    res.innerText += "6";
+  }
+  else if(window.location.pathname.includes("length.html"))
+  {
+    para1.innerText += "6";
+  }
 }
 
 function plus() {
@@ -410,98 +485,229 @@ function plus() {
 }
 
 function one() {
-  res.innerText += "1";
+  if(window.location.pathname.includes("index.html"))
+  {
+    res.innerText += "1";
+  }
+  else if(window.location.pathname.includes("length.html"))
+  {
+    para1.innerText += "1";
+  }
 }
 
 function two() {
-  res.innerText += "2";
+  if(window.location.pathname.includes("index.html"))
+  {
+    res.innerText += "2";
+  }
+  else if(window.location.pathname.includes("length.html"))
+  {
+    para1.innerText += "2";
+  }
 }
 
 function three() {
-  res.innerText += "3";
+  if(window.location.pathname.includes("index.html"))
+  {
+    res.innerText += "3";
+  }
+  else if(window.location.pathname.includes("length.html"))
+  {
+    para1.innerText += "3";
+  }
 }
 
 function dot() {
-  var len = res.innerText.length;
-  var lastChar = res.innerText.charAt(len-1);
-  if((lastChar != ".") && (lastChar != "+") && (lastChar != "-") && (lastChar != "*") && (lastChar != "/") && (lastChar != "%"))
+  if(window.location.pathname.includes("index.html"))
   {
-    res.innerText += ".";
+    var len = res.innerText.length;
+    var lastChar = res.innerText.charAt(len-1);
+    if((lastChar != ".") && (lastChar != "+") && (lastChar != "-") && (lastChar != "*") && (lastChar != "/") && (lastChar != "%"))
+    {
+      res.innerText += ".";
+    }
+  }
+  else if(window.location.pathname.includes("length.html"))
+  {
+    var lenofpara1 = para1.innerText.length;
+    var lastCharofpara1 = para1.innerText.charAt(lenofpara1-1);
+    if((lastCharofpara1 != "."))
+    {
+      if(para1.innerText.includes(".") == true)
+      {
+        alert("There is already a dot in the operand. You cannot have more than one dot in a single operand.");
+      }
+      else
+      {
+        para1.innerText += ".";
+      }
+    }
   }
 }
 
 function zero() {
-  res.innerText += "0";
+  if(window.location.pathname.includes("index.html"))
+  {
+    res.innerText += "0";
+  }
+  else if(window.location.pathname.includes("length.html"))
+  {
+    para1.innerText += "0";
+  }
 }
 
 function doublezero() {
-  res.innerText += "00";
+  if(window.location.pathname.includes("index.html"))
+  {
+    res.innerText += "00";
+  }
+  else if(window.location.pathname.includes("length.html"))
+  {
+    para1.innerText += "00";
+  }
 }
 
 function leftbrac() {
-  var len = res.innerText.length;
-  var lastChar = res.innerText.charAt(len-1);
+  if(window.location.pathname.includes("index.html"))
   {
-    if((lastChar != ".") && (lastChar != ")"))
+    var len = res.innerText.length;
+    var lastChar = res.innerText.charAt(len-1);
+    if(lastChar != ".")
     {
-      res.innerText += "(";
+      if(lastChar == ")")
+      {
+        alert("You cannot use left bracket just after right bracket. Please use an operator in between these two.");
+      }
+      else
+      {
+        res.innerText += "(";
+      }
     }
   }
 }
 
 function rightbrac() {
-  var len = res.innerText.length;
-  var lastChar = res.innerText.charAt(len-1);
+  if(window.location.pathname.includes("index.html"))
   {
-    if((lastChar != ".") && (lastChar != "+") && (lastChar != "-") && (lastChar != "*") && (lastChar != "/") && (lastChar != "("))
+    var len = res.innerText.length;
+    var lastChar = res.innerText.charAt(len-1);
+    if((lastChar != ".") && (lastChar != "+") && (lastChar != "-") && (lastChar != "*") && (lastChar != "/"))
     {
-      res.innerText += ")";
+      if(lastChar == "(")
+      {
+        alert("You cannot use right bracket just after left bracket. Please use an operand in between these two.");
+      }
+      else
+      {
+        res.innerText += ")";
+      }
     }
   }
 }
 
 function percent() {
-  var len = res.innerText.length;
-  var lastChar = res.innerText.charAt(len-1);
-  if((lastChar != "%") && (lastChar != "+") && (lastChar != "-") && (lastChar != "/") && (lastChar != "*") && (lastChar != "."))
+  if(window.location.pathname.includes("index.html"))
   {
-    res.innerText += '%';
+    var len = res.innerText.length;
+    var lastChar = res.innerText.charAt(len-1);
+    if((lastChar != "%") && (lastChar != "+") && (lastChar != "-") && (lastChar != "/") && (lastChar != "*") && (lastChar != ".") && (lastChar != "(") && (lastChar != "^"))
+    {
+      res.innerText += '%';
+    }
   }
 }
 
 function reciprocal() {
-  if(res.innerHTML == "")
+  if(window.location.pathname.includes("index.html"))
   {
-    res.innerHTML = "";
-  }
-  else if(res.innerHTML == "0")
-  {
-    res.innerHTML = "Division by Zero is not possible!";
-  }
-  else
-  {
-    res.innerText = (1/(res.innerText));
+    if(res.innerText == "")
+    {
+      res.innerText = "";
+    }
+    else if(res.innerText == "0")
+    {
+      res.innerText = "Division by Zero is not possible!";
+    }
+    else
+    {
+      res.innerText = (1/(res.innerText));
+    }
   }
 }
 
 function sqr() {
-  if(res.innerText != "")
+  if(window.location.pathname.includes("index.html"))
   {
-    res.innerText = eval(res.innerText);
-    res.innerText = Math.pow((res.innerText), 2);
+    if(res.innerText != "")
+    {
+      res.innerText = eval(res.innerText);
+      res.innerText = Math.pow((res.innerText), 2);
+    }
   }
 }
 
 function display() {
-  res.innerText = (res.innerText).replaceAll("%", "/100");
-  let final = eval(res.innerText);
-  if(final)
+  if(window.location.pathname.includes("index.html"))
   {
-    res.innerText = final;
+    // Replace all the occurrences of '%' with '/100' in the res.innerText 
+    res.innerText = (res.innerText).replaceAll("%", "/100");
+
+    // Code for ^ in res.innerText, Example = 2^2
+
+    let power = res.innerText.indexOf("^");
+    console.log(power);
+    let x = res.innerText.slice(0,power);
+    console.log(x);
+    let y = res.innerText.slice(power + 1);
+    console.log(y);
+
+    x = Number(x);
+    y = eval(y);
+    y = Number(y);
+
+    let powresult = Math.pow(x,y);
+    console.log(powresult);
+    res.innerText = (res.innerText).replace(`${x}^${y}`, `${powresult}`);
+
+
+    // Code for ^ in res.innerText, Example = 2^2^2
+    /*
+    let power = res.innerText.indexOf("^"); // 1
+    console.log(power);
+    let power1 = res.innerText.indexOf("^", power+1);  // 3
+    console.log(power1);
+    let x = res.innerText.slice(0, power); // '2'
+    console.log(x);
+    let y = res.innerText.slice(power+1); // '2^2'
+    console.log(y);
+    let a = res.innerText.slice(power+1, power1);
+    console.log(a);
+    let b = res.innerText.slice(power1+1);
+    console.log(b);
+    x = Number(x);
+    a = Number(a);
+    b = Number(b);
+
+    let powresult = Math.pow(a,b);
+    console.log(powresult);
+    let powresult1 = Math.pow(x,powresult);
+    console.log(powresult1);
+    res.innerText = (res.innerText).replace(`${x}^${a}^${b}`, `${powresult1}`);
+    */
+
+    let final = eval(res.innerText);
+    if(final)
+    {
+      res.innerText = final;
+    }
+    else
+    {
+      res.innerText = "";
+    }
   }
-  else
+  else if(window.location.pathname.includes("length.html"))
   {
-    res.innerText = "";
+    // Code yet to be written 
   }
 }
 
@@ -517,13 +723,16 @@ function closenav()
 
 function x_to_power_y()
 {
-  var len = res.innerText.length;
-  var lastChar = res.innerText.charAt(len-1);
-  if(lastChar != "")
+  if(window.location.pathname.includes("index.html"))
   {
-    if(lastChar != "^")
+    var len = res.innerText.length;
+    var lastChar = res.innerText.charAt(len-1);
+    if(res.innerText != "")
     {
-      res.innerText += "^";
+      if((lastChar != "^") && (lastChar != "+") && (lastChar != "-") && (lastChar != "/") && (lastChar != "*") && (lastChar != "("))
+      {
+        res.innerText += "^";
+      }
     }
   }
 }
@@ -578,7 +787,7 @@ function reversesign() {
       else
       {
         // If the Result is OK 
-        res.innerText = res.innerHTML.slice(1);
+        res.innerText = res.innerText.slice(1);
       }
     }
 
@@ -622,4 +831,462 @@ function reversesign() {
   }
 }
 
+function displaylength1() {
+  switch(input.value)
+  {
+    case "millimeters":
+      switch(output.value)
+      {
+        case "millimeters":
+          para2.innerText = para1.innerText;
+          break;
+
+        case "centimeters":
+          para2.innerText = ((para1.innerText)/10);
+          break;
+
+        case "meters":
+          para2.innerText = ((para1.innerText)/1000);
+          break;
+
+        case "kilometers":
+          para2.innerText = ((para1.innerText)/1000000);
+          break;
+
+        case "inches":
+          para2.innerText = ((para1.innerText)*0.0393700787);
+          break;
+
+        case "feet":
+          para2.innerText = ((para1.innerText)*0.0032808399);
+          break;
+
+        case "yards":
+          para2.innerText = ((para1.innerText)*0.0010936133);
+          break;
+
+        case "miles":
+          para2.innerText = ((para1.innerText)*6.21371192E-7);
+          break;
+
+        case "nautical miles":
+          para2.innerText = ((para1.innerText)*5.39956803E-7);
+          break;
+
+        case "mils":
+          para2.innerText = ((para1.innerText)*39.3700787402);
+          break;
+      }
+      break;
+
+    case "centimeters":
+      switch(output.value)
+      {
+        case "millimeters":
+          para2.innerText = ((para1.innerText)*10);
+          break;
+
+        case "centimeters":
+          para2.innerText = para1.innerText;
+          break;
+
+        case "meters":
+          para2.innerText = ((para1.innerText)/100);
+          break;
+
+        case "kilometers":
+          para2.innerText = ((para1.innerText)/100000);
+          break;
+
+        case "inches":
+          para2.innerText = ((para1.innerText)*0.3937007874);
+          break;
+
+        case "feet":
+          para2.innerText = ((para1.innerText)*0.032808399);
+          break;
+
+        case "yards":
+          para2.innerText = ((para1.innerText)*0.010936133);
+          break;
+
+        case "miles":
+          para2.innerText = ((para1.innerText)*0.0000062137);
+          break;
+
+        case "nautical miles":
+          para2.innerText = ((para1.innerText)*0.0000053996);
+          break;
+
+        case "mils":
+          para2.innerText = ((para1.innerText)*393.7007874016);
+          break;
+      }
+      break;
+
+    case "meters":
+      switch(output.value)
+      {
+        case "millimeters":
+          para2.innerText = ((para1.innerText)*1000);
+          break;
+
+        case "centimeters":
+          para2.innerText = ((para1.innerText)*100);
+          break;
+
+        case "meters":
+          para2.innerText = para1.innerText;
+          break;
+
+        case "kilometers":
+          para2.innerText = ((para1.innerText)*0.001);
+          break;
+
+        case "inches":
+          para2.innerText = ((para1.innerText)*39.3700787402);
+          break;
+
+        case "feet":
+          para2.innerText = ((para1.innerText)*3.280839895);
+          break;
+
+        case "yards":
+          para2.innerText = ((para1.innerText)*1.0936132983);
+          break;
+
+        case "miles":
+          para2.innerText = ((para1.innerText)*0.0006213712);
+          break;
+
+        case "nautical miles":
+          para2.innerText = ((para1.innerText)*0.0005399568);
+          break;
+
+        case "mils":
+          para2.innerText = ((para1.innerText)*39370.078740157);
+          break;
+      }
+      break;
+
+    case "kilometers":
+      switch(output.value)
+      {
+        case "millimeters":
+          para2.innerText = eval((para1.innerText)*1000000);
+          break;
+
+        case "centimeters":
+          para2.innerText = ((para1.innerText)*100000);
+          break;
+
+        case "meters":
+          para2.innerText = ((para1.innerText)*1000);
+          break;
+
+        case "kilometers":
+          para2.innerText = para1.innerText;
+          break;
+
+        case "inches":
+          para2.innerText = ((para1.innerText)*39370.078740157);
+          break;
+
+        case "feet":
+          para2.innerText = ((para1.innerText)*3280.8398950131);
+          break;
+
+        case "yards":
+          para2.innerText = ((para1.innerText)*1093.6132983377);
+          break;
+
+        case "miles":
+          para2.innerText = ((para1.innerText)*0.6213711922);
+          break;
+
+        case "nautical miles":
+          para2.innerText = ((para1.innerText)*0.5399568035);
+          break;
+        
+        case "mils":
+          para2.innerText = ((para1.innerText)*39370078.740157);
+          break;
+      }
+      break;
+
+    case "inches":
+      switch(output.value)
+      {
+        case "millimeters":
+          para2.innerText = ((para1.innerText)*25.4);
+          break;
+
+        case "centimeters":
+          para2.innerText = ((para1.innerText)*2.54);
+          break;
+
+        case "meters":
+          para2.innerText = ((para1.innerText)*0.0254);
+          break;
+
+        case "kilometers":
+          para2.innerText = ((para1.innerText)*0.0000254);
+          break;
+
+        case "inches":
+          para2.innerText = para1.innerText;
+          break;
+
+        case "feet":
+          para2.innerText = ((para1.innerText)*0.0833333333);
+          break;
+
+        case "yards":
+          para2.innerText = ((para1.innerText)*0.0277777778);
+          break;
+
+        case "miles":
+          para2.innerText = ((para1.innerText)*0.0000157828);
+          break;
+
+        case "nautical miles":
+          para2.innerText = ((para1.innerText)*0.0000137149);
+          break;
+
+        case "mils":
+          para2.innerText = ((para1.innerText)*1000);
+          break;
+      }
+      break;
+
+    case "feet":
+      switch(output.value)
+      {
+        case "millimeters":
+          para2.innerText = ((para1.innerText)*304.8);
+          break;
+
+        case "centimeters":
+          para2.innerText = ((para1.innerText)*30.48);
+          break;
+
+        case "meters":
+          para2.innerText = ((para1.innerText)*0.3048);
+          break;
+
+        case "kilometers":
+          para2.innerText = ((para1.innerText)*0.0003048);
+          break;
+
+        case "inches":
+          para2.innerText = ((para1.innerText)*12);
+          break;
+
+        case "feet":
+          para2.innerText = para1.innerText;
+          break;
+
+        case "yards":
+          para2.innerText = ((para1.innerText)*0.3333333333);
+          break;
+
+        case "miles":
+          para2.innerText = ((para1.innerText)*0.0001893939);
+          break;
+
+        case "nautical miles":
+          para2.innerText = ((para1.innerText)*0.0001645788);
+          break;
+
+        case "mils":
+          para2.innerText = ((para1.innerText)*12000);
+          break;
+      }
+      break;
+
+    case "yards":
+      switch(output.value)
+      {
+        case "millimeters":
+          para2.innerText = ((para1.innerText)*914.4);
+          break;
+
+        case "centimeters":
+          para2.innerText = ((para1.innerText)*91.44);
+          break;
+
+        case "meters":
+          para2.innerText = ((para1.innerText)*0.9144);
+          break;
+
+        case "kilometers":
+          para2.innerText = ((para1.innerText)*0.0009144);
+          break;
+
+        case "inches":
+          para2.innerText = ((para1.innerText)*36);
+          break;
+
+        case "feet":
+          para2.innerText = ((para1.innerText)*3);
+          break;
+
+        case "yards":
+          para2.innerText = para1.innerText;
+          break;
+
+        case "miles":
+          para2.innerText = ((para1.innerText)*0.0005681818);
+          break;
+
+        case "nautical miles":
+          para2.innerText = ((para1.innerText)*0.0004937365);
+          break;
+
+        case "mils":
+          para2.innerText = ((para1.innerText)*36000);
+          break;
+      }
+      break;
+
+    case "miles":
+      switch(output.value)
+      {
+        case "millimeters":
+          para2.innerText = ((para1.innerText)*1609344);
+          break;
+
+        case "centimeters":
+          para2.innerText = ((para1.innerText)*160934.4);
+          break;
+
+        case "meters":
+          para2.innerText = ((para1.innerText)*1609.344);
+          break;
+
+        case "kilometers":
+          para2.innerText = ((para1.innerText)*1.609344);
+          break;
+
+        case "inches":
+          para2.innerText = ((para1.innerText)*63360);
+          break;
+
+        case "feet":
+          para2.innerText = ((para1.innerText)*5280);
+          break;
+
+        case "yards":
+          para2.innerText = ((para1.innerText)*1760);
+          break;
+
+        case "miles":
+          para2.innerText = para1.innerText;
+          break;
+
+        case "nautical miles":
+          para2.innerText = ((para1.innerText)*0.8689762419);
+          break;
+
+        case "mils":
+          para2.innerText = ((para1.innerText)*63360000);
+          break;
+      }
+      break;
+
+    case "nautical miles":
+      switch(output.value)
+      {
+        case "millimeters":
+          para2.innerText = ((para1.innerText)*1852000);
+          break;
+
+        case "centimeters":
+          para2.innerText = ((para1.innerText)*185200);
+          break;
+
+        case "meters":
+          para2.innerText = ((para1.innerText)*1852);
+          break;
+
+        case "kilometers":
+          para2.innerText = ((para1.innerText)*1.852);
+          break;
+
+        case "inches":
+          para2.innerText = ((para1.innerText)*72913.385826772);
+          break;
+
+        case "feet":
+          para2.innerText = ((para1.innerText)*6076.1154855643);
+          break;
+
+        case "yards":
+          para2.innerText = ((para1.innerText)*2025.3718285214);
+          break;
+
+        case "miles":
+          para2.innerText = ((para1.innerText)*1.150779448);
+          break;
+
+        case "nautical miles":
+          para2.innerText = para1.innerText;
+          break;
+
+        case "mils":
+          para2.innerText = ((para1.innerText)*72913385.826772);
+          break;
+      }
+      break;
+
+    case "mils":
+      switch(output.value)
+      {
+        case "millimeters":
+          para2.innerText = ((para1.innerText)*0.0254);
+          break;
+
+        case "centimeters":
+          para2.innerText = ((para1.innerText)*0.00254);
+          break;
+
+        case "meters":
+          para2.innerText = ((para1.innerText)*0.0000254);
+          break;
+
+        case "kilometers":
+          para2.innerText = eval((para1.innerText)*(2.54000000E-8));
+          break;
+
+        case "inches":
+          para2.innerText = ((para1.innerText)*0.001);
+          break;
+
+        case "feet":
+          para2.innerText = ((para1.innerText)*0.0000833333);
+          break;
+
+        case "yards":
+          para2.innerText = ((para1.innerText)*0.0000277778);
+          break;
+
+        case "miles":
+          para2.innerText = ((para1.innerText)*1.57828283E-8);
+          break;
+
+        case "nautical miles":
+          para2.innerText = ((para1.innerText)*1.37149028E-8);
+          break;
+
+        case "mils":
+          para2.innerText = para1.innerText;
+          break;
+      }
+      break;
+  }
+}
+
+input.addEventListener("change", displaylength1);
+
+output.addEventListener("change", displaylength1);
 

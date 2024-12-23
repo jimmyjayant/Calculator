@@ -32,8 +32,8 @@
       <div class="navbar">
         <a href="#" class="closenav" onclick="closenav()">&times;</a>
         <a href="index.html">Standard</a>
-        <a href="scientific.html">Scientific</a>
-        <a href="programmer.html">Programmer</a>
+        <a href="scientific.html" style="display:none;">Scientific</a>
+        <a href="programmer.html" style="display:none;">Programmer</a>
         <a href="length.html">Length</a>
       </div>
 
@@ -41,7 +41,7 @@
 
         <div class="display">
           <div id="firstlengthparameter">
-            <select id="firstselect" onchange="displaylength1()">
+            <select id="firstselect">
               <option value="millimeters">Millimeters (mm)</option>
               <option value="centimeters">Centimeters (cm)</option>
               <option value="meters">Meters (m)</option>
@@ -55,7 +55,7 @@
             </select>
           </div>
           <div id="secondlengthparameter">
-            <select id="secondselect" onchange="displaylength2()">
+            <select id="secondselect">
               <option value="millimeters">Millimeters (mm)</option>
               <option value="centimeters">Centimeters (cm)</option>
               <option value="meters">Meters (m)</option>
@@ -73,20 +73,19 @@
         </div>
 
         <div class="buttons">
-          <button type="button" class="button" onclick="seven()" title="Seven. Use the 7 key on keyboard.">7</button>
-          <button type="button" class="button" onclick="eight()" title="Eight. Use the 8 key on keyboard.">8</button>
-          <button type="button" class="button" onclick="nine()" title="Nine. Use the 9 key on keyboard.">9</button>
-          <button type="button" class="button" onclick="del()" title="Delete the Last character. Use the backspace key on keyboard.">&#8592;</button>
-          <button type="button" class="button" onclick="four()" title="Four. Use the 4 key on keyboard.">4</button>
-          <button type="button" class="button" onclick="five()" title="Five. Use the 5 key on keyboard.">5</button>
-          <button type="button" class="button" onclick="six()" title="Six. Use the 6 key on keyboard.">6</button>
-          <button type="button" class="button" onclick="clearResult()" title="Clear the result. Use the delete key on keyboard.">C</button>
-          <button type="button" class="button" onclick="one()" title="One. Use the 1 key on keyboard.">1</button>
-          <button type="button" class="button" onclick="two()" title="Two. Use the 2 key on keyboard.">2</button>
-          <button type="button" class="button" onclick="three()" title="Three. Use the 3 key on keyboard.">3</button>
-          <button type="button" class="button" onclick="zero()" title="Zero. Use the 0 key on keyboard.">0</button>
-          <button type="button" class="button" onclick="dot()" title="Decimal Point. Use the . key on keyboard.">.</button>
-          <button type="button" class="button" onclick="display()" title="Equal To. Use the Enter key on keyboard.">=</button>
+          <button type="button" class="button" title="Seven. Use the 7 key on keyboard.">7</button>
+          <button type="button" class="button" title="Eight. Use the 8 key on keyboard.">8</button>
+          <button type="button" class="button" title="Nine. Use the 9 key on keyboard.">9</button>
+          <button type="button" class="button" title="Delete the Last character. Use the backspace key on keyboard.">&#8592;</button>
+          <button type="button" class="button" title="Four. Use the 4 key on keyboard.">4</button>
+          <button type="button" class="button" title="Five. Use the 5 key on keyboard.">5</button>
+          <button type="button" class="button" title="Six. Use the 6 key on keyboard.">6</button>
+          <button type="button" class="button" title="Clear the result. Use the delete key on keyboard.">C</button>
+          <button type="button" class="button" title="One. Use the 1 key on keyboard.">1</button>
+          <button type="button" class="button" title="Two. Use the 2 key on keyboard.">2</button>
+          <button type="button" class="button" title="Three. Use the 3 key on keyboard.">3</button>
+          <button type="button" class="button" title="Zero. Use the 0 key on keyboard.">0</button>
+          <button type="button" class="button" title="Decimal Point. Use the . key on keyboard.">.</button>
         </div>
       </div>
 
