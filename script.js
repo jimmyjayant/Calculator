@@ -1286,7 +1286,9 @@ function displaylength1() {
   }
 }
 
-input.addEventListener("change", displaylength1);
+if(window.location.pathname.includes("length.html"))
+{
+  input.addEventListener("change", displaylength1);
 
-output.addEventListener("change", displaylength1);
-
+  output.addEventListener("change", displaylength1);
+}
