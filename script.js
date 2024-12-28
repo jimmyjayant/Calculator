@@ -1292,3 +1292,9 @@ if(window.location.pathname.includes("length.html"))
 
   output.addEventListener("change", displaylength1);
 }
+
+var operand = Array.from(document.getElementsByClassName("operand"));
+
+operand.forEach((operand) => {
+  operand.addEventListener("click", displaylength1);
+});
