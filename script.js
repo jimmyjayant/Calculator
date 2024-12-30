@@ -607,7 +607,9 @@ function leftbrac() {
   {
     var len = res.innerText.length;
     var lastChar = res.innerText.charAt(len-1);
-    if(lastChar != ".")
+    if((lastChar != ".") && (lastChar != "0") && (lastChar != "1") && (lastChar != "2") &&
+    (lastChar != "3") && (lastChar != "4") && (lastChar != "5") && (lastChar != "6") && 
+    (lastChar != "7") && (lastChar != "8") && (lastChar != "9"))
     {
       if(lastChar == ")")
       {
@@ -840,6 +842,9 @@ function x_to_power_y()
 }
 
 // This function will check for brackets 
+/*This function will now throw an error or an alert message when there is missing brackets or whether left or right brackets are more or less.
+This Function will only check outer brackets conditions. And will return values to reversesign() function. 
+*/
 function checkForBrackets(s)
 {
   let newStr = res.innerText;
@@ -847,7 +852,7 @@ function checkForBrackets(s)
   newStr = newStr.slice(s, -1);
   console.log(newStr);
 
-  // Creating an Empty String to check the newStr
+  // Creating an Empty Array to check the newStr
   let Stack = [];
   let Brackets = 1; // 1 = OK
 
@@ -867,10 +872,17 @@ function checkForBrackets(s)
       }
     }
   }
+
+  if(Stack.length != 0)
+  {
+    console.log("Brackets in Expression is missing.");
+  }
+  /* This Brackets variable might be misleading because it can be equal to 1 even if brackets are missing. */
   console.log(Brackets);
   return Brackets;  
 }
 
+/* This function will not check whether brackets are missing or not. Or whether right brackets are more or less than left brackets or vice versa. Instead, it will just change the sign from - to + or vice versa. And add an outer bracket if there is none. */
 function reversesign() {
   var len = res.innerText.length;
   var lastChar = res.innerText.charAt(len-1);
