@@ -522,9 +522,44 @@ function dot() {
   {
     var len = res.innerText.length;
     var lastChar = res.innerText.charAt(len-1);
-    if((lastChar != ".") && (lastChar != "+") && (lastChar != "-") && (lastChar != "*") && (lastChar != "/") && (lastChar != "%"))
+    if(res.innerText != "")
     {
-      res.innerText += ".";
+      if((lastChar != ".") && (lastChar != "+") && (lastChar != "-") && (lastChar != "*") && 
+      (lastChar != "/") && (lastChar != "%") && (lastChar != "(") && (lastChar != ")"))
+      {
+        let operand = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.'];
+        let lastOperand = "";
+        let ch = "";
+
+          for(let i = res.innerText.length-1; i > -1; i--)
+          {
+            for(let j = 0; j < operand.length; j++)
+              {
+                ch = res.innerText.charAt(i);
+                if(ch == operand[j])
+                {
+                  lastOperand = ch + lastOperand;
+                  break;
+                }
+              }
+            
+              if(!(lastOperand.includes(ch)))
+              {
+                break;
+              }
+          }
+
+          console.log(lastOperand);
+
+          if(lastOperand.includes("."))
+          {
+            alert("There is already a dot in the last operand.");
+          }
+          else
+          {
+            res.innerText += ".";
+          }
+      }
     }
   }
   else if(window.location.pathname.includes("length.html"))
@@ -649,65 +684,132 @@ function sqr() {
 function display() {
   if(window.location.pathname.includes("index.html"))
   {
-    // Replace all the occurrences of '%' with '/100' in the res.innerText 
-    res.innerText = (res.innerText).replaceAll("%", "/100");
-
-    // Code for ^ in res.innerText, Example = 2^2
-
-    let power = res.innerText.indexOf("^");
-    console.log(power);
-    let x = res.innerText.slice(0,power);
-    console.log(x);
-    let y = res.innerText.slice(power + 1);
-    console.log(y);
-
-    x = Number(x);
-    y = eval(y);
-    y = Number(y);
-
-    let powresult = Math.pow(x,y);
-    console.log(powresult);
-    res.innerText = (res.innerText).replace(`${x}^${y}`, `${powresult}`);
-
-
-    // Code for ^ in res.innerText, Example = 2^2^2
-    /*
-    let power = res.innerText.indexOf("^"); // 1
-    console.log(power);
-    let power1 = res.innerText.indexOf("^", power+1);  // 3
-    console.log(power1);
-    let x = res.innerText.slice(0, power); // '2'
-    console.log(x);
-    let y = res.innerText.slice(power+1); // '2^2'
-    console.log(y);
-    let a = res.innerText.slice(power+1, power1);
-    console.log(a);
-    let b = res.innerText.slice(power1+1);
-    console.log(b);
-    x = Number(x);
-    a = Number(a);
-    b = Number(b);
-
-    let powresult = Math.pow(a,b);
-    console.log(powresult);
-    let powresult1 = Math.pow(x,powresult);
-    console.log(powresult1);
-    res.innerText = (res.innerText).replace(`${x}^${a}^${b}`, `${powresult1}`);
-    */
-
-    let final = eval(res.innerText);
-    if(final)
+    var len = res.innerText.length;
+    var lastChar = res.innerText.charAt(len-1);
+    if(res.innerText != "")
     {
-      res.innerText = final;
+      if((lastChar == '+') || (lastChar == '-') || (lastChar == '*') || (lastChar == '/') || 
+      (lastChar == '('))
+      {
+        res.innerText = "Invalid Expression. The last character cannot be an operator or left bracket.";
+      }
+      else 
+      {
+        let checkStrForBrackets = res.innerText;
+        console.log(checkStrForBrackets);
+        let Stack = [];
+        let BracketisOK = 1; // OK
+        for(let i=0; i<checkStrForBrackets.length; i++)
+        {
+          if(checkStrForBrackets[i] == "(")
+          {
+            Stack.push("(");
+          }
+          else if(checkStrForBrackets[i] == ")")
+          {
+            let popped = Stack.pop();
+            if(popped != "(")
+            {
+              BracketisOK = 0; // Not OK 
+              break;
+            }
+          }
+        }
+
+        console.log(BracketisOK);
+        console.log(Stack.length);
+
+        if((BracketisOK == 0) || (Stack.length != 0))
+        {
+          res.innerText = "Bracket is missing in the Expression.";
+        }
+        else
+        {
+          // Replace all the occurrences of '%' with '/100' in the res.innerText 
+          res.innerText = (res.innerText).replaceAll("%", "/100");
+
+          // Code for ^ in res.innerText, Example = 2^2
+          if(res.innerText.includes("^"))
+            {
+              let matchIterator = res.innerText.matchAll(/\^/g);
+              let matchArray = [...matchIterator];
+      
+              console.log(matchArray);
+      
+              var MatchIndexArray = [];
+      
+              matchArray.forEach((match) => {
+                MatchIndexArray.push(match.index);
+              });
+      
+              console.log(MatchIndexArray);
+
+              for(let i = (MatchIndexArray.length-1); i>-1; i--)
+              {
+                let y = "";
+                let LeftBrackets = 0;
+                let RightBrackets = 0;
+
+
+              }
+
+              /*
+              let power = res.innerText.indexOf("^");
+              console.log(power);
+              let x = res.innerText.slice(0,power);
+              console.log(x);
+              let y = res.innerText.slice(power + 1);
+              console.log(y);
+      
+              x = eval(x);
+              x = Number(x);
+              y = eval(y);
+              y = Number(y);
+      
+              let powresult = Math.pow(x,y);
+              console.log(powresult);
+              res.innerText = (res.innerText).replace(`${x}^${y}`, `${powresult}`);
+              */
+      
+              // Code for ^ in res.innerText, Example = 2^2^2
+              /*
+              let power = res.innerText.indexOf("^"); // 1
+              console.log(power);
+              let power1 = res.innerText.indexOf("^", power+1);  // 3
+              console.log(power1);
+              let x = res.innerText.slice(0, power); // '2'
+              console.log(x);
+              let y = res.innerText.slice(power+1); // '2^2'
+              console.log(y);
+              let a = res.innerText.slice(power+1, power1);
+              console.log(a);
+              let b = res.innerText.slice(power1+1);
+              console.log(b);
+              x = Number(x);
+              a = Number(a);
+              b = Number(b);
+      
+              let powresult = Math.pow(a,b);
+              console.log(powresult);
+              let powresult1 = Math.pow(x,powresult);
+              console.log(powresult1);
+              res.innerText = (res.innerText).replace(`${x}^${a}^${b}`, `${powresult1}`);
+              */
+            }
+  
+          let final = eval(res.innerText);
+          final = Number(final);
+          if(final)
+          {
+            res.innerText = final;
+          }
+          else
+          {
+            res.innerText = "";
+          }
+        }
+      }
     }
-    else
-    {
-      res.innerText = "";
-    }
-  }
-  else if(window.location.pathname.includes("length.html"))
-  {
-    // Code yet to be written 
   }
 }
 
@@ -1291,10 +1393,10 @@ if(window.location.pathname.includes("length.html"))
   input.addEventListener("change", displaylength1);
 
   output.addEventListener("change", displaylength1);
+
+  var operand = Array.from(document.getElementsByClassName("operand"));
+
+  operand.forEach((operand) => {
+    operand.addEventListener("click", displaylength1);
+  });
 }
-
-var operand = Array.from(document.getElementsByClassName("operand"));
-
-operand.forEach((operand) => {
-  operand.addEventListener("click", displaylength1);
-});
