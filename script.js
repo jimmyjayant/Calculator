@@ -1,11 +1,3 @@
-// For index.html webpage 
-if(window.location.pathname.includes("index.html"))
-{
-  var res = document.getElementById("result");
-  var len = res.innerText.length;
-  var lastChar = res.innerText.charAt(len-1);
-}
-
 // For length.html webpage
 if(window.location.pathname.includes("length.html"))
 {
@@ -16,6 +8,16 @@ if(window.location.pathname.includes("length.html"))
   var input = document.getElementById("firstselect");
   var output = document.getElementById("secondselect");
 }
+// For index.html webpage 
+// Since when the website is hosted, the index.html is not shown in url.
+// But the index.html webpage that is the Standard calculator is opened by default.
+else
+{
+  var res = document.getElementById("result");
+  var len = res.innerText.length;
+  var lastChar = res.innerText.charAt(len-1);
+}
+
 
 window.addEventListener("resize", function() {
   if(window.innerWidth > 600)
@@ -336,21 +338,21 @@ button.forEach(
 );
 
 function clearResult() {
-  if(window.location.pathname.includes("index.html"))
-  {
-    res.innerText = "";
-  }
-  else if(window.location.pathname.includes("length.html"))
+  if(window.location.pathname.includes("length.html"))
   {
     para1.innerText = "";
     para2.innerText = "";
+  }
+  else
+  {
+    res.innerText = "";
   }
 }
 
 function divide() {
   var len = res.innerText.length;
   var lastChar = res.innerText.charAt(len-1);
-  if((res.innerText != "") && (lastChar != "/") && (lastChar != "+") && (lastChar != "-") && (lastChar != "*") && (lastChar != ".") && (lastChar != "("))
+  if((res.innerText != "") && (lastChar != "/") && (lastChar != "+") && (lastChar != "-") && (lastChar != "*") && (lastChar != ".") && (lastChar != "(") && (lastChar != "^"))
   {
     res.innerText += "/";
   }  
@@ -359,25 +361,25 @@ function divide() {
 function mul() {
   var len = res.innerText.length;
   var lastChar = res.innerText.charAt(len-1);
-  if((res.innerText != "") && (lastChar != "*") && (lastChar != "/") && (lastChar != "+") && (lastChar != "-") && (lastChar != ".") && (lastChar != "("))
+  if((res.innerText != "") && (lastChar != "*") && (lastChar != "/") && (lastChar != "+") && (lastChar != "-") && (lastChar != ".") && (lastChar != "(") && (lastChar != "^"))
   {
     res.innerText += "*";
   }
 }
 
 function del() {
-  if(window.location.pathname.includes("index.html"))
-  {
-    if(res.innerText != "")
-    {
-      res.innerText = res.innerText.slice(0,-1);
-    }
-  }
-  else if(window.location.pathname.includes("length.html"))
+  if(window.location.pathname.includes("length.html"))
   {
     if(para1.innerText != "")
     {
       para1.innerText = para1.innerText.slice(0,-1);
+    }
+  }
+  else
+  {
+    if(res.innerText != "")
+    {
+      res.innerText = res.innerText.slice(0,-1);
     }
   }
 }
@@ -389,7 +391,9 @@ function squareroot() {
   }
   else if(res.innerText != "")
   {
-    res.innerText = Math.sqrt(eval(res.innerText));
+    let num = eval(res.innerText);
+    num = Number(num);
+    res.innerText = Math.sqrt(num);
   }
 }
 
@@ -401,35 +405,35 @@ function cbroot() {
 }
 
 function seven() {
-  if(window.location.pathname.includes("index.html"))
-  {
-    res.innerText += "7";
-  }
-  else if(window.location.pathname.includes("length.html"))
+  if(window.location.pathname.includes("length.html"))
   {
     para1.innerText += "7";
+  }
+  else
+  {
+    res.innerText += "7";
   }
 }
 
 function eight() {
-  if(window.location.pathname.includes("index.html"))
-  {
-    res.innerText += "8";
-  }
-  else if(window.location.pathname.includes("length.html"))
+  if(window.location.pathname.includes("length.html"))
   {
     para1.innerText += "8";
+  }
+  else
+  {
+    res.innerText += "8";
   }
 }
 
 function nine() {
-  if(window.location.pathname.includes("index.html"))
-  {
-    res.innerText += "9";
-  }
-  else if(window.location.pathname.includes("length.html"))
+  if(window.location.pathname.includes("length.html"))
   {
     para1.innerText += "9";
+  }
+  else
+  {
+    res.innerText += "9";
   }
 }
 
@@ -443,89 +447,106 @@ function minus() {
 }
 
 function four() {
-  if(window.location.pathname.includes("index.html"))
-  {
-    res.innerText += "4";
-  }
-  else if(window.location.pathname.includes("length.html"))
+  if(window.location.pathname.includes("length.html"))
   {
     para1.innerText += "4";
+  }
+  else
+  {
+    res.innerText += "4";
   }
 }
 
 function five() {
-  if(window.location.pathname.includes("index.html"))
-  {
-    res.innerText += "5";
-  }
-  else if(window.location.pathname.includes("length.html"))
+  if(window.location.pathname.includes("length.html"))
   {
     para1.innerText += "5";
+  }
+  else
+  {
+    res.innerText += "5";
   }
 }
 
 function six() {
-  if(window.location.pathname.includes("index.html"))
-  {
-    res.innerText += "6";
-  }
-  else if(window.location.pathname.includes("length.html"))
+  if(window.location.pathname.includes("length.html"))
   {
     para1.innerText += "6";
+  }
+  else
+  {
+    res.innerText += "6";
   }
 }
 
 function plus() {
   var len = res.innerText.length;
   var lastChar = res.innerText.charAt(len-1);
-  if((lastChar != "+") && (lastChar != "-") && (lastChar != "*") && (lastChar != "/") && (lastChar != "."))
+  if((lastChar != "+") && (lastChar != "-") && (lastChar != "*") && (lastChar != "/") && (lastChar != ".")
+   && (lastChar != "^"))
   {
     res.innerText += "+";
   }
 }
 
 function one() {
-  if(window.location.pathname.includes("index.html"))
-  {
-    res.innerText += "1";
-  }
-  else if(window.location.pathname.includes("length.html"))
+  if(window.location.pathname.includes("length.html"))
   {
     para1.innerText += "1";
+  }
+  else
+  {
+    res.innerText += "1";
   }
 }
 
 function two() {
-  if(window.location.pathname.includes("index.html"))
-  {
-    res.innerText += "2";
-  }
-  else if(window.location.pathname.includes("length.html"))
+  if(window.location.pathname.includes("length.html"))
   {
     para1.innerText += "2";
+  }
+  else
+  {
+    res.innerText += "2";
   }
 }
 
 function three() {
-  if(window.location.pathname.includes("index.html"))
-  {
-    res.innerText += "3";
-  }
-  else if(window.location.pathname.includes("length.html"))
+  if(window.location.pathname.includes("length.html"))
   {
     para1.innerText += "3";
+  }
+  else
+  {
+    res.innerText += "3";
   }
 }
 
 function dot() {
-  if(window.location.pathname.includes("index.html"))
+  if(window.location.pathname.includes("length.html"))
+    {
+      var lenofpara1 = para1.innerText.length;
+      var lastCharofpara1 = para1.innerText.charAt(lenofpara1-1);
+      if((lastCharofpara1 != "."))
+      {
+        if(para1.innerText.includes(".") == true)
+        {
+          alert("There is already a dot in the operand. You cannot have more than one dot in a single operand.");
+        }
+        else
+        {
+          para1.innerText += ".";
+        }
+      }
+    }
+  else
   {
     var len = res.innerText.length;
     var lastChar = res.innerText.charAt(len-1);
     if(res.innerText != "")
     {
       if((lastChar != ".") && (lastChar != "+") && (lastChar != "-") && (lastChar != "*") && 
-      (lastChar != "/") && (lastChar != "%") && (lastChar != "(") && (lastChar != ")"))
+      (lastChar != "/") && (lastChar != "%") && (lastChar != "(") && (lastChar != ")") && (lastChar != "^"))
       {
         let operand = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.'];
         let lastOperand = "";
@@ -562,49 +583,31 @@ function dot() {
       }
     }
   }
-  else if(window.location.pathname.includes("length.html"))
-  {
-    var lenofpara1 = para1.innerText.length;
-    var lastCharofpara1 = para1.innerText.charAt(lenofpara1-1);
-    if((lastCharofpara1 != "."))
-    {
-      if(para1.innerText.includes(".") == true)
-      {
-        alert("There is already a dot in the operand. You cannot have more than one dot in a single operand.");
-      }
-      else
-      {
-        para1.innerText += ".";
-      }
-    }
-  }
 }
 
 function zero() {
-  if(window.location.pathname.includes("index.html"))
-  {
-    res.innerText += "0";
-  }
-  else if(window.location.pathname.includes("length.html"))
+  if(window.location.pathname.includes("length.html"))
   {
     para1.innerText += "0";
+  }
+  else
+  {
+    res.innerText += "0";
   }
 }
 
 function doublezero() {
-  if(window.location.pathname.includes("index.html"))
-  {
-    res.innerText += "00";
-  }
-  else if(window.location.pathname.includes("length.html"))
+  if(window.location.pathname.includes("length.html"))
   {
     para1.innerText += "00";
+  }
+  else
+  {
+    res.innerText += "00";
   }
 }
 
 function leftbrac() {
-  if(window.location.pathname.includes("index.html"))
-  {
     var len = res.innerText.length;
     var lastChar = res.innerText.charAt(len-1);
     if((lastChar != ".") && (lastChar != "0") && (lastChar != "1") && (lastChar != "2") &&
@@ -620,15 +623,12 @@ function leftbrac() {
         res.innerText += "(";
       }
     }
-  }
 }
 
 function rightbrac() {
-  if(window.location.pathname.includes("index.html"))
-  {
     var len = res.innerText.length;
     var lastChar = res.innerText.charAt(len-1);
-    if((lastChar != ".") && (lastChar != "+") && (lastChar != "-") && (lastChar != "*") && (lastChar != "/"))
+    if((lastChar != ".") && (lastChar != "+") && (lastChar != "-") && (lastChar != "*") && (lastChar != "/") && (lastChar != "^"))
     {
       if(lastChar == "(")
       {
@@ -639,177 +639,229 @@ function rightbrac() {
         res.innerText += ")";
       }
     }
-  }
 }
 
 function percent() {
-  if(window.location.pathname.includes("index.html"))
-  {
     var len = res.innerText.length;
     var lastChar = res.innerText.charAt(len-1);
     if((lastChar != "%") && (lastChar != "+") && (lastChar != "-") && (lastChar != "/") && (lastChar != "*") && (lastChar != ".") && (lastChar != "(") && (lastChar != "^"))
     {
       res.innerText += '%';
     }
-  }
 }
 
 function reciprocal() {
-  if(window.location.pathname.includes("index.html"))
+  if(res.innerText == "")
   {
-    if(res.innerText == "")
-    {
-      res.innerText = "";
-    }
-    else if(res.innerText == "0")
-    {
-      res.innerText = "Division by Zero is not possible!";
-    }
-    else
-    {
-      res.innerText = (1/(res.innerText));
-    }
+    res.innerText = "";
+  }
+  else if(res.innerText == "0")
+  {
+    res.innerText = "Division by Zero is not possible!";
+  }
+  else
+  {
+    res.innerText = (1/(res.innerText));
   }
 }
 
 function sqr() {
-  if(window.location.pathname.includes("index.html"))
+  if(res.innerText != "")
   {
-    if(res.innerText != "")
-    {
-      res.innerText = eval(res.innerText);
-      res.innerText = Math.pow((res.innerText), 2);
-    }
+    res.innerText = eval(res.innerText);
+    res.innerText = Math.pow((res.innerText), 2);
   }
 }
 
 function display() {
-  if(window.location.pathname.includes("index.html"))
+  var len = res.innerText.length;
+  var lastChar = res.innerText.charAt(len-1);
+  if(res.innerText != "")
   {
-    var len = res.innerText.length;
-    var lastChar = res.innerText.charAt(len-1);
-    if(res.innerText != "")
+    if((lastChar == '+') || (lastChar == '-') || (lastChar == '*') || (lastChar == '/') || 
+    (lastChar == '('))
     {
-      if((lastChar == '+') || (lastChar == '-') || (lastChar == '*') || (lastChar == '/') || 
-      (lastChar == '('))
+    res.innerText = "Invalid Expression. The last character cannot be an operator or left bracket.";
+    }
+    else 
+    {
+      let checkStrForBrackets = res.innerText;
+
+      let Stack = [];
+      let BracketisOK = 1; // OK
+      for(let i=0; i<checkStrForBrackets.length; i++)
       {
-        res.innerText = "Invalid Expression. The last character cannot be an operator or left bracket.";
+        if(checkStrForBrackets[i] == "(")
+        {
+          Stack.push("(");
+        }
+        else if(checkStrForBrackets[i] == ")")
+        {
+          let popped = Stack.pop();
+          if(popped != "(")
+          {
+            BracketisOK = 0; // Not OK 
+            break;
+          }
+        }
       }
-      else 
+
+      if((BracketisOK == 0) || (Stack.length != 0))
       {
-        let checkStrForBrackets = res.innerText;
-        console.log(checkStrForBrackets);
-        let Stack = [];
-        let BracketisOK = 1; // OK
-        for(let i=0; i<checkStrForBrackets.length; i++)
-        {
-          if(checkStrForBrackets[i] == "(")
+        res.innerText = "Bracket is missing in the Expression.";
+      }
+      else
+      {
+        // Replace all the occurrences of '%' with '/100' in the res.innerText 
+        res.innerText = (res.innerText).replaceAll("%", "/100");
+
+        // Code for ^ in res.innerText, Example = 2^2
+        if(res.innerText.includes("^"))
           {
-            Stack.push("(");
-          }
-          else if(checkStrForBrackets[i] == ")")
-          {
-            let popped = Stack.pop();
-            if(popped != "(")
+            let matchIterator = res.innerText.matchAll(/\^/g);
+            let matchArray = [...matchIterator];
+
+            console.log(matchArray);
+
+            var MatchIndexArray = [];
+
+            matchArray.forEach((match) => {
+              MatchIndexArray.push(match.index);
+            });
+
+            console.log(MatchIndexArray);
+
+            for(let i = (MatchIndexArray.length-1); i > -1; i--)
             {
-              BracketisOK = 0; // Not OK 
-              break;
-            }
-          }
-        }
+              let x = "";
+              let y = "";
+              let LeftBrackets = 0;
+              let RightBrackets = 0;
 
-        console.log(BracketisOK);
-        console.log(Stack.length);
-
-        if((BracketisOK == 0) || (Stack.length != 0))
-        {
-          res.innerText = "Bracket is missing in the Expression.";
-        }
-        else
-        {
-          // Replace all the occurrences of '%' with '/100' in the res.innerText 
-          res.innerText = (res.innerText).replaceAll("%", "/100");
-
-          // Code for ^ in res.innerText, Example = 2^2
-          if(res.innerText.includes("^"))
-            {
-              let matchIterator = res.innerText.matchAll(/\^/g);
-              let matchArray = [...matchIterator];
-      
-              console.log(matchArray);
-      
-              var MatchIndexArray = [];
-      
-              matchArray.forEach((match) => {
-                MatchIndexArray.push(match.index);
-              });
-      
-              console.log(MatchIndexArray);
-
-              for(let i = (MatchIndexArray.length-1); i>-1; i--)
+              for(let j = (MatchIndexArray[i]+1), forwardlength = 0; j < len; j++)
               {
-                let y = "";
-                let LeftBrackets = 0;
-                let RightBrackets = 0;
-
-
+                let ch = res.innerText.charAt(j);
+                
+                if((ch == "+") || (ch == "-") || (ch == "/") || (ch == "*") || (ch == "%") || 
+                (ch == "^") || (ch == ")") || (ch == "("))
+                {
+                  if((ch == "-") && (res.innerText.charAt(j-1) == "^"))
+                  {
+                    y += ch;
+                    forwardlength++;
+                  }
+                  else if((ch == "(") && (res.innerText.charAt(j-1) == "^"))
+                  {
+                    y += ch;
+                    forwardlength++;
+                  }
+                  else if((ch == ")") && y.includes("("))
+                    {
+                      y += ch;
+                      forwardlength++;
+                    }
+                  else
+                  {
+                    break;
+                  }
+                } 
+                else
+                {
+                  y += ch;
+                  forwardlength++;
+                }
               }
 
-              /*
-              let power = res.innerText.indexOf("^");
-              console.log(power);
-              let x = res.innerText.slice(0,power);
-              console.log(x);
-              let y = res.innerText.slice(power + 1);
               console.log(y);
-      
+
+              for(let j=(MatchIndexArray[i]-1), backwardlength = 0; j > -1; j--)
+              {
+                let ch = res.innerText.charAt(j);
+                // Simple Operand Case with no right bracket just before caret sign 
+                // There should be an operand just before the caret sign
+                if((ch == "+") || (ch == "-") || (ch == "/") || (ch == "*") || (ch == "%") || 
+                (ch == "^") || (ch == "("))
+                {
+                  break;
+                } 
+                else
+                {
+                  x += ch;
+                  backwardlength++;
+                }
+              }
+
+              console.log(x);
+
+              let originalx = x;
+              let originaly = y;
+
               x = eval(x);
-              x = Number(x);
               y = eval(y);
-              y = Number(y);
-      
-              let powresult = Math.pow(x,y);
-              console.log(powresult);
-              res.innerText = (res.innerText).replace(`${x}^${y}`, `${powresult}`);
-              */
-      
-              // Code for ^ in res.innerText, Example = 2^2^2
-              /*
-              let power = res.innerText.indexOf("^"); // 1
-              console.log(power);
-              let power1 = res.innerText.indexOf("^", power+1);  // 3
-              console.log(power1);
-              let x = res.innerText.slice(0, power); // '2'
-              console.log(x);
-              let y = res.innerText.slice(power+1); // '2^2'
-              console.log(y);
-              let a = res.innerText.slice(power+1, power1);
-              console.log(a);
-              let b = res.innerText.slice(power1+1);
-              console.log(b);
+
               x = Number(x);
-              a = Number(a);
-              b = Number(b);
-      
-              let powresult = Math.pow(a,b);
-              console.log(powresult);
-              let powresult1 = Math.pow(x,powresult);
-              console.log(powresult1);
-              res.innerText = (res.innerText).replace(`${x}^${a}^${b}`, `${powresult1}`);
-              */
+              y = Number(y);
+
+              let z = Math.pow(x,y);
+              console.log(z);
+
+              res.innerText = (res.innerText).replace(`${originalx}^${originaly}`, `${z}`);
             }
-  
-          let final = eval(res.innerText);
-          final = Number(final);
-          if(final)
-          {
-            res.innerText = final;
           }
-          else
-          {
-            res.innerText = "";
-          }
+
+        /*
+        let power = res.innerText.indexOf("^");
+        console.log(power);
+        let x = res.innerText.slice(0,power);
+        console.log(x);
+        let y = res.innerText.slice(power + 1);
+        console.log(y);
+
+        x = eval(x);
+        x = Number(x);
+        y = eval(y);
+        y = Number(y);
+
+        let powresult = Math.pow(x,y);
+        console.log(powresult);
+        res.innerText = (res.innerText).replace(`${x}^${y}`, `${powresult}`);
+        */
+
+        // Code for ^ in res.innerText, Example = 2^2^2
+        /*
+        let power = res.innerText.indexOf("^"); // 1
+        console.log(power);
+        let power1 = res.innerText.indexOf("^", power+1);  // 3
+        console.log(power1);
+        let x = res.innerText.slice(0, power); // '2'
+        console.log(x);
+        let y = res.innerText.slice(power+1); // '2^2'
+        console.log(y);
+        let a = res.innerText.slice(power+1, power1);
+        console.log(a);
+        let b = res.innerText.slice(power1+1);
+        console.log(b);
+        x = Number(x);
+        a = Number(a);
+        b = Number(b);
+
+        let powresult = Math.pow(a,b);
+        console.log(powresult);
+        let powresult1 = Math.pow(x,powresult);
+        console.log(powresult1);
+        res.innerText = (res.innerText).replace(`${x}^${a}^${b}`, `${powresult1}`);
+        */
         }
+
+      let final = eval(res.innerText);
+      final = Number(final);
+      if(final)
+      {
+        res.innerText = final;
+      }
+      else
+      {
+        res.innerText = "";
       }
     }
   }
@@ -827,16 +879,13 @@ function closenav()
 
 function x_to_power_y()
 {
-  if(window.location.pathname.includes("index.html"))
+  var len = res.innerText.length;
+  var lastChar = res.innerText.charAt(len-1);
+  if(res.innerText != "")
   {
-    var len = res.innerText.length;
-    var lastChar = res.innerText.charAt(len-1);
-    if(res.innerText != "")
+    if((lastChar != "^") && (lastChar != "+") && (lastChar != "-") && (lastChar != "/") && (lastChar != "*") && (lastChar != "("))
     {
-      if((lastChar != "^") && (lastChar != "+") && (lastChar != "-") && (lastChar != "/") && (lastChar != "*") && (lastChar != "("))
-      {
-        res.innerText += "^";
-      }
+      res.innerText += "^";
     }
   }
 }
