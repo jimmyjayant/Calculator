@@ -100,8 +100,8 @@ h1 {
 
 .buttons {
   display:grid;
-  grid-template-columns:auto auto auto auto;
-  grid-template-rows:auto auto auto auto auto auto auto;
+  grid-template-columns:repeat(4, 1fr);
+  grid-template-rows:repeat(7, 1fr);
   gap:0.5rem;
   padding:1rem;
   flex-grow:1;
@@ -166,8 +166,8 @@ h1 {
   }
 
   .buttons {
-    grid-template-columns:auto auto auto;
-    grid-template-rows:auto auto auto auto auto auto auto auto auto auto;
+    grid-template-columns:repeat(3, 1fr);
+    grid-template-rows:repeat(10, 1fr);
   }
   
   .button {
@@ -180,55 +180,15 @@ h1 {
   }
 
   .button:nth-of-type(16) {
-    order:25;
-  }
-
-  .button:nth-of-type(17) {
-    order:16;
-  }
-
-  .button:nth-of-type(18) {
-    order:17;
-  }
-
-  .button:nth-of-type(19) {
-    order:18;
+   grid-area:4 / 1 / 5 / 2;
   }
 
   .button:nth-of-type(20) {
-    order:26;
-  }
-
-  .button:nth-of-type(21) {
-    order:19;
-  }
-
-  .button:nth-of-type(22) {
-    order:20;
-  }
-
-  .button:nth-of-type(23) {
-    order:21;
+    grid-area:4 / 2 / 5 / 3;
   }
 
   .button:nth-of-type(24) {
-    order:27;
-  }
-
-  .button:nth-of-type(25) {
-    order:22;
-  }
-
-  .button:nth-of-type(26) {
-    order:23;
-  }
-
-  .button:nth-of-type(27) {
-    order:24;
-  }
-
-  .button:nth-of-type(28) {
-    order:28;
+    grid-area:4 / 3 / 5 / 4;
   }
 }
 
@@ -237,7 +197,6 @@ h1 {
   width:100%;
   flex-direction:row;
   flex-wrap:wrap;
-  overflow:auto;
 }
 
 .display select {
@@ -264,10 +223,14 @@ h1 {
 
 .lengthbuttons {
   display:grid;
-  grid-template-columns:auto auto auto auto;
-  grid-template-rows:auto auto auto auto;
+  grid-template-columns:repeat(4, 1fr);
+  grid-template-rows:repeat(4, 1fr);
   gap:0.5rem;
   padding:1rem;
+}
+
+.lengthbuttons button:last-child {
+  grid-column:2 / 4;
 }
 
 @media only screen and (max-width:400px) {
@@ -298,7 +261,23 @@ h1 {
 
 @media screen and (max-width:600px) {
   .lengthbuttons {
-    grid-template-columns:auto auto auto;
-    grid-template-rows:auto auto auto auto auto;
+    grid-template-columns:repeat(3, 1fr);
+    grid-template-rows:repeat(5, 1fr);
+  }
+
+  .lengthbuttons button:last-child {
+    grid-area:4 / 1 / 5 / 2;
+  }
+
+  .lengthbuttons button:nth-of-type(4) {
+    grid-area:4 / 3 / 5 / 4;
+  }
+
+  .lengthbuttons button:nth-of-type(12) {
+    grid-area:4 / 2 / 5 / 3;
+  }
+
+  .lengthbuttons button:nth-of-type(8) {
+    grid-area:5 / 1 / 6 / 4;
   }
 }

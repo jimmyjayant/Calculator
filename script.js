@@ -716,8 +716,9 @@ function display() {
         res.innerText = (res.innerText).replaceAll("%", "/100");
 
         // Code for ^ in res.innerText, Example = 2^2
-        if(res.innerText.includes("^"))
+        while(res.innerText.includes("^"))
           {
+            /*
             let matchIterator = res.innerText.matchAll(/\^/g);
             let matchArray = [...matchIterator];
 
@@ -730,41 +731,118 @@ function display() {
             });
 
             console.log(MatchIndexArray);
-
-            for(let i = (MatchIndexArray.length-1); i > -1; i--)
-            {
+            */
+            
+            let currentlen = res.innerText.length;
+            let lastIndexOfCaret = res.innerText.lastIndexOf("^");
+            
+            //for(let i = (MatchIndexArray.length-1); i > -1; i--)
+            //{
               let x = "";
               let y = "";
               let LeftBrackets = 0;
               let RightBrackets = 0;
 
-              for(let j = (MatchIndexArray[i]+1), forwardlength = 0; j < len; j++)
+              // Traversing the rest of the res.innerText after ^ sign 
+              for(let j = (lastIndexOfCaret + 1), forwardlength = 0; j < currentlen; j++)
               {
                 let ch = res.innerText.charAt(j);
+                let beforeCh = res.innerText.charAt(j-1);
                 
-                if((ch == "+") || (ch == "-") || (ch == "/") || (ch == "*") || (ch == "%") || 
-                (ch == "^") || (ch == ")") || (ch == "("))
+                if((ch == "+") || (ch == "-") || (ch == "/") || (ch == "*") || (ch == "^") || 
+                (ch == ")") || (ch == "("))
                 {
-                  if((ch == "-") && (res.innerText.charAt(j-1) == "^"))
+                  if(ch == "-")
                   {
-                    y += ch;
-                    forwardlength++;
-                  }
-                  else if((ch == "(") && (res.innerText.charAt(j-1) == "^"))
-                  {
-                    y += ch;
-                    forwardlength++;
-                  }
-                  else if((ch == ")") && y.includes("("))
+                    if(beforeCh == "^")
                     {
                       y += ch;
                       forwardlength++;
                     }
-                  else
+                    else
+                    {
+                      if(LeftBrackets == RightBrackets)
+                      {
+                        break;
+                      }
+                      else
+                      {
+                        y += ch;
+                        forwardlength++;
+                      }
+                    }
+                  }
+                  else if(ch == "(")
+                  {
+                    if(beforeCh == "^")
+                    {
+                      y += ch;
+                      LeftBrackets++;
+                      forwardlength++;
+                    }
+                    else
+                    {
+                      if(LeftBrackets == RightBrackets)
+                      {
+                        break;
+                      }
+                      else
+                      {
+                        y += ch;
+                        LeftBrackets++;
+                        forwardlength++;
+                      }
+                    }
+                  }
+                  else if(ch == ")")
+                    {
+                      if(y.includes("("))
+                      {
+                        if(LeftBrackets == RightBrackets)
+                        {
+                          break;
+                        }
+                        else
+                        {
+                          y += ch;
+                          RightBrackets++;
+                          forwardlength++;
+                        }
+                      }
+                      else
+                      {
+                        break;
+                      }
+                  }
+                  else if(ch == "^")
                   {
                     break;
                   }
-                } 
+                  else if(ch == "/")
+                  {
+                    if(LeftBrackets == RightBrackets)
+                    {
+                      break;
+                    }
+                    else
+                    {
+                      y += ch;
+                      forwardlength++;
+                    }
+                  }
+                  else if((ch == "+") || (ch == "*"))
+                  {
+                    if(LeftBrackets == RightBrackets)
+                    {
+                      break;
+                    }
+                    else
+                    {
+                      y += ch;
+                      forwardlength++;
+                    }
+                  }
+                }
                 else
                 {
                   y += ch;
@@ -774,15 +852,62 @@ function display() {
 
               console.log(y);
 
-              for(let j=(MatchIndexArray[i]-1), backwardlength = 0; j > -1; j--)
+              // Traversing the rest of the res.innerText before ^ sign 
+              for(let j = (lastIndexOfCaret - 1), backwardlength = 0; j > -1; j--)
               {
                 let ch = res.innerText.charAt(j);
-                // Simple Operand Case with no right bracket just before caret sign 
-                // There should be an operand just before the caret sign
-                if((ch == "+") || (ch == "-") || (ch == "/") || (ch == "*") || (ch == "%") || 
-                (ch == "^") || (ch == "("))
+                let afterch = res.innerText.charAt(j+1);
+
+                if((ch == "+") || (ch == "-") || (ch == "/") || (ch == "*") || 
+                (ch == "^") || (ch == "(") || (ch == ")"))
                 {
-                  break;
+                  if((ch == "-") || (ch == "+") || (ch == "/") || (ch == "*"))
+                  {
+                    if(LeftBrackets == RightBrackets)
+                    {
+                      break;
+                    }
+                    else
+                    {
+                      x += ch;
+                      backwardlength++;
+                    }
+                  }
+                  else if(ch == ")")
+                  {
+                    if(afterch == "^")
+                    {
+                      x += ch;
+                      RightBrackets++;
+                      backwardlength++;
+                    }
+                    else
+                    {
+                      if(LeftBrackets == RightBrackets)
+                      break;
+                      else
+                      {
+                        x += ch;
+                        RightBrackets++;
+                        backwardlength++;
+                      }
+                    }
+                  }
+                  else if(ch == "(")
+                  {
+                    if(LeftBrackets == RightBrackets)
+                      break;
+                    else
+                    {
+                      x += ch;
+                      LeftBrackets++;
+                      backwardlength++;
+                    }
+                  }
+                  else if(ch == "^")
+                  {
+                    break;
+                  }
                 } 
                 else
                 {
@@ -802,11 +927,18 @@ function display() {
               x = Number(x);
               y = Number(y);
 
-              let z = Math.pow(x,y);
-              console.log(z);
-
-              res.innerText = (res.innerText).replace(`${originalx}^${originaly}`, `${z}`);
-            }
+              if((x == Infinity) || (y == Infinity))
+              {
+                res.innerText = "Computation Not Possible in this Calculator.";
+              }
+              else
+              {
+                let z = Math.pow(x,y);
+                console.log(z);
+  
+                res.innerText = (res.innerText).replaceAll(`${originalx}^${originaly}`, `${z}`);
+              }              
+            //}
           }
 
         /*
@@ -855,13 +987,13 @@ function display() {
 
       let final = eval(res.innerText);
       final = Number(final);
-      if(final)
+      if(final == Infinity)
       {
-        res.innerText = final;
+        res.innerText = "Computation Not Possible";
       }
       else
       {
-        res.innerText = "";
+        res.innerText = final;
       }
     }
   }
