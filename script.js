@@ -18,7 +18,7 @@ else
   var lastChar = res.innerText.charAt(len-1);
 }
 
-
+// When the window size is greater than 600px, the navigation bar width is set to defaults 
 window.addEventListener("resize", function() {
   if(window.innerWidth > 600)
   {
@@ -62,6 +62,7 @@ function mouseOut(a)
     }
 }
 
+// It will add keyboard key pressing event on all buttons of the calculator 
 window.addEventListener("keydown", function(event) {
   switch(event.key)
   {
@@ -216,6 +217,7 @@ window.addEventListener("keydown", function(event) {
 
 var button = Array.from(document.getElementsByClassName("button"));
 
+// It will add click event listener to all the buttons of the calculator website 
 button.forEach(
   (button) => {
     button.addEventListener("click", (event) => {
@@ -337,6 +339,7 @@ button.forEach(
   }
 );
 
+/* The function is related to the button C that is clear the res.innerText */
 function clearResult() {
   if(window.location.pathname.includes("length.html"))
   {
@@ -349,6 +352,7 @@ function clearResult() {
   }
 }
 
+/* The function is related to the button / that is divide */
 function divide() {
   var len = res.innerText.length;
   var lastChar = res.innerText.charAt(len-1);
@@ -358,6 +362,7 @@ function divide() {
   }  
 }
 
+/* The function is related to the button * that is multiplication */
 function mul() {
   var len = res.innerText.length;
   var lastChar = res.innerText.charAt(len-1);
@@ -367,6 +372,7 @@ function mul() {
   }
 }
 
+/* The function is related to the button &#8592; that is <-- delete last character */
 function del() {
   if(window.location.pathname.includes("length.html"))
   {
@@ -384,6 +390,7 @@ function del() {
   }
 }
 
+/* The function is related to the button &radic; that is square root */
 function squareroot() {
   if(Number(res.innerText) < 0)
   {
@@ -397,6 +404,7 @@ function squareroot() {
   }
 }
 
+/* The function is related to the button &#8731; that is cube root */
 function cbroot() {
   if(res.innerText != "")
   {
@@ -404,6 +412,7 @@ function cbroot() {
   }
 }
 
+/* The function is related to the button 7 */
 function seven() {
   if(window.location.pathname.includes("length.html"))
   {
@@ -415,6 +424,7 @@ function seven() {
   }
 }
 
+/* The function is related to the button 8 */
 function eight() {
   if(window.location.pathname.includes("length.html"))
   {
@@ -426,6 +436,7 @@ function eight() {
   }
 }
 
+/* The function is related to the button 9 */
 function nine() {
   if(window.location.pathname.includes("length.html"))
   {
@@ -437,6 +448,7 @@ function nine() {
   }
 }
 
+/* The function is related to the button - */
 function minus() {
   var len = res.innerText.length;
   var lastChar = res.innerText.charAt(len-1);
@@ -446,6 +458,7 @@ function minus() {
   }
 }
 
+/* The function is related to the button 4 */
 function four() {
   if(window.location.pathname.includes("length.html"))
   {
@@ -457,6 +470,7 @@ function four() {
   }
 }
 
+/* The function is related to the button 5 */
 function five() {
   if(window.location.pathname.includes("length.html"))
   {
@@ -468,6 +482,7 @@ function five() {
   }
 }
 
+/* The function is related to the button 6 */
 function six() {
   if(window.location.pathname.includes("length.html"))
   {
@@ -479,6 +494,7 @@ function six() {
   }
 }
 
+/* The function is related to the button + */
 function plus() {
   var len = res.innerText.length;
   var lastChar = res.innerText.charAt(len-1);
@@ -489,6 +505,7 @@ function plus() {
   }
 }
 
+/* The function is related to the button 1 */
 function one() {
   if(window.location.pathname.includes("length.html"))
   {
@@ -500,6 +517,7 @@ function one() {
   }
 }
 
+/* The function is related to the button 2 */
 function two() {
   if(window.location.pathname.includes("length.html"))
   {
@@ -511,6 +529,7 @@ function two() {
   }
 }
 
+/* The function is related to the button 3 */
 function three() {
   if(window.location.pathname.includes("length.html"))
   {
@@ -522,6 +541,7 @@ function three() {
   }
 }
 
+/* The function is related to the button . */
 function dot() {
   if(window.location.pathname.includes("length.html"))
     {
@@ -552,7 +572,7 @@ function dot() {
         let lastOperand = "";
         let ch = "";
 
-          for(let i = res.innerText.length-1; i > -1; i--)
+          for(let i = len-1; i > -1; i--)
           {
             for(let j = 0; j < operand.length; j++)
               {
@@ -585,6 +605,7 @@ function dot() {
   }
 }
 
+/* The function is related to the button 0 */
 function zero() {
   if(window.location.pathname.includes("length.html"))
   {
@@ -596,6 +617,7 @@ function zero() {
   }
 }
 
+/* The function is related to the button 00 */
 function doublezero() {
   if(window.location.pathname.includes("length.html"))
   {
@@ -607,6 +629,7 @@ function doublezero() {
   }
 }
 
+/* The function is related to the button ( */
 function leftbrac() {
     var len = res.innerText.length;
     var lastChar = res.innerText.charAt(len-1);
@@ -625,6 +648,7 @@ function leftbrac() {
     }
 }
 
+/* The function is related to the button ) */
 function rightbrac() {
     var len = res.innerText.length;
     var lastChar = res.innerText.charAt(len-1);
@@ -641,6 +665,7 @@ function rightbrac() {
     }
 }
 
+/* The function is related to the % button and adds % to the res.innerText */
 function percent() {
     var len = res.innerText.length;
     var lastChar = res.innerText.charAt(len-1);
@@ -650,6 +675,7 @@ function percent() {
     }
 }
 
+/* The function is related to the button 1/x */
 function reciprocal() {
   if(res.innerText == "")
   {
@@ -665,6 +691,7 @@ function reciprocal() {
   }
 }
 
+/* The function is related to the button x<sup>2</sup> */
 function sqr() {
   if(res.innerText != "")
   {
@@ -673,6 +700,7 @@ function sqr() {
   }
 }
 
+/* The function is related to the button = */
 function display() {
   var len = res.innerText.length;
   var lastChar = res.innerText.charAt(len-1);
@@ -717,70 +745,69 @@ function display() {
 
         // Code for ^ in res.innerText, Example = 2^2
         while(res.innerText.includes("^"))
-          {
-            /*
-            let matchIterator = res.innerText.matchAll(/\^/g);
-            let matchArray = [...matchIterator];
-
-            console.log(matchArray);
-
-            var MatchIndexArray = [];
-
-            matchArray.forEach((match) => {
-              MatchIndexArray.push(match.index);
-            });
-
-            console.log(MatchIndexArray);
-            */
-            
+          {           
             let currentlen = res.innerText.length;
             let lastIndexOfCaret = res.innerText.lastIndexOf("^");
             
-            //for(let i = (MatchIndexArray.length-1); i > -1; i--)
-            //{
-              let x = "";
-              let y = "";
-              let LeftBrackets = 0;
-              let RightBrackets = 0;
+            let x = "";
+            let y = "";
+            let LeftBrackets = 0;
+            let RightBrackets = 0;
 
-              // Traversing the rest of the res.innerText after ^ sign 
-              for(let j = (lastIndexOfCaret + 1), forwardlength = 0; j < currentlen; j++)
+            // Traversing the rest of the res.innerText after ^ sign 
+            for(let j = (lastIndexOfCaret + 1), forwardlength = 0; j < currentlen; j++)
+            {
+              let ch = res.innerText.charAt(j);
+              let beforeCh = res.innerText.charAt(j-1);
+              
+              if((ch == "+") || (ch == "-") || (ch == "/") || (ch == "*") || (ch == "^") || 
+              (ch == ")") || (ch == "("))
               {
-                let ch = res.innerText.charAt(j);
-                let beforeCh = res.innerText.charAt(j-1);
-                
-                if((ch == "+") || (ch == "-") || (ch == "/") || (ch == "*") || (ch == "^") || 
-                (ch == ")") || (ch == "("))
+                if(ch == "-")
                 {
-                  if(ch == "-")
+                  if(beforeCh == "^")
                   {
-                    if(beforeCh == "^")
+                    y += ch;
+                    forwardlength++;
+                  }
+                  else
+                  {
+                    if(LeftBrackets == RightBrackets)
+                    {
+                      break;
+                    }
+                    else
                     {
                       y += ch;
                       forwardlength++;
                     }
-                    else
-                    {
-                      if(LeftBrackets == RightBrackets)
-                      {
-                        break;
-                      }
-                      else
-                      {
-                        y += ch;
-                        forwardlength++;
-                      }
-                    }
                   }
-                  else if(ch == "(")
+                }
+                else if(ch == "(")
+                {
+                  if(beforeCh == "^")
                   {
-                    if(beforeCh == "^")
+                    y += ch;
+                    LeftBrackets++;
+                    forwardlength++;
+                  }
+                  else
+                  {
+                    if(LeftBrackets == RightBrackets)
+                    {
+                      break;
+                    }
+                    else
                     {
                       y += ch;
                       LeftBrackets++;
                       forwardlength++;
                     }
-                    else
+                  }
+                }
+                else if(ch == ")")
+                  {
+                    if(y.includes("("))
                     {
                       if(LeftBrackets == RightBrackets)
                       {
@@ -789,200 +816,140 @@ function display() {
                       else
                       {
                         y += ch;
-                        LeftBrackets++;
+                        RightBrackets++;
                         forwardlength++;
                       }
                     }
-                  }
-                  else if(ch == ")")
+                    else
                     {
-                      if(y.includes("("))
-                      {
-                        if(LeftBrackets == RightBrackets)
-                        {
-                          break;
-                        }
-                        else
-                        {
-                          y += ch;
-                          RightBrackets++;
-                          forwardlength++;
-                        }
-                      }
-                      else
-                      {
-                        break;
-                      }
-                  }
-                  else if(ch == "^")
+                      break;
+                    }
+                }
+                else if(ch == "^")
+                {
+                  break;
+                }
+                else if(ch == "/")
+                {
+                  if(LeftBrackets == RightBrackets)
                   {
                     break;
                   }
-                  else if(ch == "/")
+                  else
                   {
-                    if(LeftBrackets == RightBrackets)
-                    {
-                      break;
-                    }
-                    else
-                    {
-                      y += ch;
-                      forwardlength++;
-                    }
-                  }
-                  else if((ch == "+") || (ch == "*"))
-                  {
-                    if(LeftBrackets == RightBrackets)
-                    {
-                      break;
-                    }
-                    else
-                    {
-                      y += ch;
-                      forwardlength++;
-                    }
+                    y += ch;
+                    forwardlength++;
                   }
                 }
-                else
+                else if((ch == "+") || (ch == "*"))
                 {
-                  y += ch;
-                  forwardlength++;
+                  if(LeftBrackets == RightBrackets)
+                  {
+                    break;
+                  }
+                  else
+                  {
+                    y += ch;
+                    forwardlength++;
+                  }
                 }
               }
-
-              console.log(y);
-
-              // Traversing the rest of the res.innerText before ^ sign 
-              for(let j = (lastIndexOfCaret - 1), backwardlength = 0; j > -1; j--)
+              else
               {
-                let ch = res.innerText.charAt(j);
-                let afterch = res.innerText.charAt(j+1);
+                y += ch;
+                forwardlength++;
+              }
+            }
 
-                if((ch == "+") || (ch == "-") || (ch == "/") || (ch == "*") || 
-                (ch == "^") || (ch == "(") || (ch == ")"))
+            console.log(y);
+
+            // Traversing the rest of the res.innerText before ^ sign 
+            for(let j = (lastIndexOfCaret - 1), backwardlength = 0; j > -1; j--)
+            {
+              let ch = res.innerText.charAt(j);
+              let afterch = res.innerText.charAt(j+1);
+
+              if((ch == "+") || (ch == "-") || (ch == "/") || (ch == "*") || 
+              (ch == "^") || (ch == "(") || (ch == ")"))
+              {
+                if((ch == "-") || (ch == "+") || (ch == "/") || (ch == "*"))
                 {
-                  if((ch == "-") || (ch == "+") || (ch == "/") || (ch == "*"))
+                  if(LeftBrackets == RightBrackets)
+                  {
+                    break;
+                  }
+                  else
+                  {
+                    x += ch;
+                    backwardlength++;
+                  }
+                }
+                else if(ch == ")")
+                {
+                  if(afterch == "^")
+                  {
+                    x += ch;
+                    RightBrackets++;
+                    backwardlength++;
+                  }
+                  else
                   {
                     if(LeftBrackets == RightBrackets)
-                    {
-                      break;
-                    }
+                    break;
                     else
-                    {
-                      x += ch;
-                      backwardlength++;
-                    }
-                  }
-                  else if(ch == ")")
-                  {
-                    if(afterch == "^")
                     {
                       x += ch;
                       RightBrackets++;
                       backwardlength++;
                     }
-                    else
-                    {
-                      if(LeftBrackets == RightBrackets)
-                      break;
-                      else
-                      {
-                        x += ch;
-                        RightBrackets++;
-                        backwardlength++;
-                      }
-                    }
                   }
-                  else if(ch == "(")
-                  {
-                    if(LeftBrackets == RightBrackets)
-                      break;
-                    else
-                    {
-                      x += ch;
-                      LeftBrackets++;
-                      backwardlength++;
-                    }
-                  }
-                  else if(ch == "^")
-                  {
-                    break;
-                  }
-                } 
-                else
-                {
-                  x += ch;
-                  backwardlength++;
                 }
-              }
-
-              console.log(x);
-
-              let originalx = x;
-              let originaly = y;
-
-              x = eval(x);
-              y = eval(y);
-
-              x = Number(x);
-              y = Number(y);
-
-              if((x == Infinity) || (y == Infinity))
-              {
-                res.innerText = "Computation Not Possible in this Calculator.";
-              }
+                else if(ch == "(")
+                {
+                  if(LeftBrackets == RightBrackets)
+                    break;
+                  else
+                  {
+                    x += ch;
+                    LeftBrackets++;
+                    backwardlength++;
+                  }
+                }
+                else if(ch == "^")
+                {
+                  break;
+                }
+              } 
               else
               {
-                let z = Math.pow(x,y);
-                console.log(z);
-  
-                res.innerText = (res.innerText).replaceAll(`${originalx}^${originaly}`, `${z}`);
-              }              
-            //}
+                x += ch;
+                backwardlength++;
+              }
+            }
+
+            console.log(x);
+
+            let originalx = x;
+            let originaly = y;
+
+            x = eval(x);
+            y = eval(y);
+
+            x = Number(x);
+            y = Number(y);
+
+            if((x == Infinity) || (y == Infinity))
+            {
+              res.innerText = "Computation Not Possible in this Calculator.";
+            }
+            else
+            {
+              let z = Math.pow(x,y);
+              console.log(z);
+
+              res.innerText = (res.innerText).replaceAll(`${originalx}^${originaly}`, `${z}`);
+            }              
           }
-
-        /*
-        let power = res.innerText.indexOf("^");
-        console.log(power);
-        let x = res.innerText.slice(0,power);
-        console.log(x);
-        let y = res.innerText.slice(power + 1);
-        console.log(y);
-
-        x = eval(x);
-        x = Number(x);
-        y = eval(y);
-        y = Number(y);
-
-        let powresult = Math.pow(x,y);
-        console.log(powresult);
-        res.innerText = (res.innerText).replace(`${x}^${y}`, `${powresult}`);
-        */
-
-        // Code for ^ in res.innerText, Example = 2^2^2
-        /*
-        let power = res.innerText.indexOf("^"); // 1
-        console.log(power);
-        let power1 = res.innerText.indexOf("^", power+1);  // 3
-        console.log(power1);
-        let x = res.innerText.slice(0, power); // '2'
-        console.log(x);
-        let y = res.innerText.slice(power+1); // '2^2'
-        console.log(y);
-        let a = res.innerText.slice(power+1, power1);
-        console.log(a);
-        let b = res.innerText.slice(power1+1);
-        console.log(b);
-        x = Number(x);
-        a = Number(a);
-        b = Number(b);
-
-        let powresult = Math.pow(a,b);
-        console.log(powresult);
-        let powresult1 = Math.pow(x,powresult);
-        console.log(powresult1);
-        res.innerText = (res.innerText).replace(`${x}^${a}^${b}`, `${powresult1}`);
-        */
         }
 
       let final = eval(res.innerText);
@@ -999,16 +966,19 @@ function display() {
   }
 }
 
+/* The function is related to the navigation bar when the screen size is below 600px */
 function nav()
 {
   document.getElementsByClassName("navbar")[0].style.width = "250px";
 }
 
+/* The function is related to the X button when the navbar is vertical below 600px screen size */
 function closenav()
 {
   document.getElementsByClassName("navbar")[0].style.width = "0";
 }
 
+/* The function is related to the button x<sup>y</sup> and adds ^ to the res.innerText */
 function x_to_power_y()
 {
   var len = res.innerText.length;
@@ -1064,6 +1034,7 @@ function checkForBrackets(s)
 }
 
 /* This function will not check whether brackets are missing or not. Or whether right brackets are more or less than left brackets or vice versa. Instead, it will just change the sign from - to + or vice versa. And add an outer bracket if there is none. */
+/* The function is related to the +/- button */
 function reversesign() {
   var len = res.innerText.length;
   var lastChar = res.innerText.charAt(len-1);
@@ -1126,6 +1097,7 @@ function reversesign() {
   }
 }
 
+/* The function is related to the length.html webpage for converting one length into another */
 function displaylength1() {
   switch(input.value)
   {
