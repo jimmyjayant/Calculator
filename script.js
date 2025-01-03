@@ -547,13 +547,17 @@ function dot() {
     {
       var lenofpara1 = para1.innerText.length;
       var lastCharofpara1 = para1.innerText.charAt(lenofpara1-1);
-      if(para1.innerText != "")
+      if(para1.innerText == "")
+      {
+        alert("You cannot start your input length value with a decimal. There must be atleast a number before the decimal.");
+      }
+      else if(para1.innerText != "")
       {
         if((lastCharofpara1 != "."))
         {
           if(para1.innerText.includes(".") == true)
           {
-            alert("There is already a dot in the operand. You cannot have more than one dot in a single operand.");
+            alert("There is already a decimal in the input length value. You cannot have more than one decimal.");
           }
           else
           {
@@ -597,7 +601,7 @@ function dot() {
 
           if(lastOperand.includes("."))
           {
-            alert("There is already a dot in the last operand.");
+            alert("There is already a decimal in the last operand.");
           }
           else
           {
