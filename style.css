@@ -225,6 +225,7 @@ h1 {
 .display select {
   border:none;
   font-size:clamp(1rem, 1vw + 1rem, 2rem);
+  background:none;
 }
 
 #firstlengthparameter, #secondlengthparameter {
