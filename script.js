@@ -547,15 +547,18 @@ function dot() {
     {
       var lenofpara1 = para1.innerText.length;
       var lastCharofpara1 = para1.innerText.charAt(lenofpara1-1);
-      if((lastCharofpara1 != "."))
+      if(para1.innerText != "")
       {
-        if(para1.innerText.includes(".") == true)
+        if((lastCharofpara1 != "."))
         {
-          alert("There is already a dot in the operand. You cannot have more than one dot in a single operand.");
-        }
-        else
-        {
-          para1.innerText += ".";
+          if(para1.innerText.includes(".") == true)
+          {
+            alert("There is already a dot in the operand. You cannot have more than one dot in a single operand.");
+          }
+          else
+          {
+            para1.innerText += ".";
+          }
         }
       }
     }
