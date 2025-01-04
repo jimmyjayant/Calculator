@@ -34,7 +34,7 @@ body {
   display:grid;
   grid-template-rows:auto;
   grid-template-columns:repeat(20, 1fr);
-  gap:0;
+  gap:8px;
   background:#d1ccc0;
   margin:0;
   padding:0;

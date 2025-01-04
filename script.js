@@ -976,7 +976,7 @@ function display() {
 /* The function is related to the navigation bar when the screen size is below 600px */
 function nav()
 {
-  document.getElementsByClassName("navbar")[0].style.width = "250px";
+  document.getElementsByClassName("navbar")[0].style.width = "calc(100vw - 20px)";
 }
 
 /* The function is related to the X button when the navbar is vertical below 600px screen size */
