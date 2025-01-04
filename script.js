@@ -1,21 +1,16 @@
-/* The below code will give styling to the active or current link in the navbar */
-document.addEventListener("DOMContentLoaded", function() {
-  const x = document.getElementsByClassName("navbar")[0];
-  const y = x.getElementsByTagName("a");
+/* The below code will give current or active link in navbar a different styling than others */
+const x = document.getElementsByClassName("navbar")[0];
+const y = x.getElementsByTagName("a");
+const z = Array.from(y);
 
-  const z = Array.from(y);
-
-  z.forEach((link) => {
-    if(window.location.href == link.href)
-    {
-      link.classList.add("activeLink");
-    }
-    else
-    {
-      z[1].classList.add("activeLink");
-    }
-  });
-});
+if(window.location.href.includes("length.html"))
+{
+  z[4].classList.add("activeLink");
+}
+else
+{
+  z[1].classList.add("activeLink");
+}
 
 
 // For length.html webpage
