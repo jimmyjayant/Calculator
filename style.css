@@ -99,6 +99,10 @@ h1 {
   background:#333;
 }
 
+.activeLink {
+  background:#333;
+}
+
 .calculator {
   display:flex;
   flex-direction:column;
