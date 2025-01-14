@@ -131,7 +131,7 @@ h1 {
   grid-template-rows:repeat(7, 1fr);
   gap:0.5rem;
   padding:1rem;
-  flex-grow:1;
+  flex-grow:1; /* Since buttons class div is a flex item of flex container calculator class div*/
 }
 
 .button {
