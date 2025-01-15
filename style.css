@@ -3,7 +3,6 @@
 }
 
 html {
-  font-size:16px; /* Default font size */
   height:100%;
 }
 
@@ -154,17 +153,7 @@ h1 {
   background:darkblue;
 }
 
-@media screen and (max-width:800px) {
-  html {
-    font-size:14px;
-  }
-}
-
 @media screen and (max-width:600px) {
-  html {
-    font-size:12px;
-  }
-
   .hamburgermenu {
     display:block;
   }
@@ -261,6 +250,29 @@ h1 {
   grid-column:2 / 4;
 }
 
+@media screen and (max-width:600px) {
+  .lengthbuttons {
+    grid-template-columns:repeat(3, 1fr);
+    grid-template-rows:repeat(5, 1fr);
+  }
+
+  .lengthbuttons button:last-child {
+    grid-area:4 / 1 / 5 / 2;
+  }
+
+  .lengthbuttons button:nth-of-type(4) {
+    grid-area:4 / 3 / 5 / 4;
+  }
+
+  .lengthbuttons button:nth-of-type(12) {
+    grid-area:4 / 2 / 5 / 3;
+  }
+
+  .lengthbuttons button:nth-of-type(8) {
+    grid-area:5 / 1 / 6 / 4;
+  }
+}
+
 @media only screen and (max-width:400px) {
   .display {
     flex-direction:column;
@@ -284,28 +296,5 @@ h1 {
   #length2 {
     order:4;
     width:100%;
-  }
-}
-
-@media screen and (max-width:600px) {
-  .lengthbuttons {
-    grid-template-columns:repeat(3, 1fr);
-    grid-template-rows:repeat(5, 1fr);
-  }
-
-  .lengthbuttons button:last-child {
-    grid-area:4 / 1 / 5 / 2;
-  }
-
-  .lengthbuttons button:nth-of-type(4) {
-    grid-area:4 / 3 / 5 / 4;
-  }
-
-  .lengthbuttons button:nth-of-type(12) {
-    grid-area:4 / 2 / 5 / 3;
-  }
-
-  .lengthbuttons button:nth-of-type(8) {
-    grid-area:5 / 1 / 6 / 4;
   }
 }
