@@ -624,6 +624,10 @@ function dot() {
           }
       }
     }
+    else
+    {
+      alert("If you want to insert a decimal number below 0. Please press 0 before the dot operand.");
+    }
   }
 }
 
