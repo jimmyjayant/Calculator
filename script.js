@@ -99,11 +99,19 @@ window.addEventListener("keydown", function(event) {
   switch(event.key)
   {
     case "Enter":
-      if(window.location.pathname.includes("index.html"))
+      if(window.location.pathname.includes("length.html"))
+      {
+        //do nothing
+      }
+      else
         mouseOver(27);
       display();
       setTimeout(() => {
-        if(window.location.pathname.includes("index.html"))
+        if(window.location.pathname.includes("length.html"))
+        {
+          //do nothing
+        }
+        else
           mouseOut(27);
       }, 100);
       break;
@@ -255,55 +263,87 @@ window.addEventListener("keydown", function(event) {
       break;
 
     case "Delete":
-      if(window.location.pathname.includes("index.html"))
-        mouseOver(0);
-      else
+      if(window.location.pathname.includes("length.html"))
         mouseOver(7);
+      else
+        mouseOver(0);
       clearResult();
       setTimeout(() => {
-        if(window.location.pathname.includes("index.html"))
-          mouseOut(0);
-        else
+        if(window.location.pathname.includes("length.html"))
           mouseOut(7);
+        else
+          mouseOut(0);
       }, 100);
       break;
 
     case "+":
-      if(window.location.pathname.includes("index.html"))
+      if(window.location.pathname.includes("length.html"))
+      {
+        //do nothing
+      }
+      else
         mouseOver(19);
       plus();
       setTimeout(() => {
-        if(window.location.pathname.includes("index.html"))
+        if(window.location.pathname.includes("length.html"))
+        {
+          //do nothing
+        }
+        else
           mouseOut(19);
       }, 100);
       break;
 
     case "-":
-      if(window.location.pathname.includes("index.html"))
+      if(window.location.pathname.includes("length.html"))
+      {
+        //do nothing
+      }
+      else
         mouseOver(15);
       minus();
       setTimeout(() => {
-        if(window.location.pathname.includes("index.html"))
+        if(window.location.pathname.includes("length.html"))
+        {
+          //do nothing
+        }
+        else
           mouseOut(15);
       }, 100);
       break;
 
     case "/":
-      if(window.location.pathname.includes("index.html"))
+      if(window.location.pathname.includes("length.html"))
+      {
+        //do nothing
+      }
+      else
         mouseOver(7);
       divide();
       setTimeout(() => {
-        if(window.location.pathname.includes("index.html"))
+        if(window.location.pathname.includes("length.html"))
+        {
+          //do nothing
+        }
+        else
           mouseOut(7);
       }, 100);
       break;
 
     case "*":
-      if(window.location.pathname.includes("index.html"))
+      if(window.location.pathname.includes("length.html"))
+      {
+        //do nothing
+      }
+      else
         mouseOver(11);
       mul();
       setTimeout(() => {
-        if(window.location.pathname.includes("index.html"))
+        if(window.location.pathname.includes("length.html"))
+        {
+          //do nothing
+        }
+        else
           mouseOut(11);
       }, 100);
       break;
@@ -323,31 +363,55 @@ window.addEventListener("keydown", function(event) {
       break;
 
     case "%":
-      if(window.location.pathname.includes("index.html"))
+      if(window.location.pathname.includes("length.html"))
+      {
+        //do nothing
+      }
+      else
         mouseOver(1);
       percent();
       setTimeout(() => {
-        if(window.location.pathname.includes("index.html"))
+        if(window.location.pathname.includes("length.html"))
+        {
+          //do nothing
+        }
+        else
           mouseOut(1);
       }, 100);
       break;
 
     case "(":
-      if(window.location.pathname.includes("index.html"))
+      if(window.location.pathname.includes("length.html"))
+      {
+        //do nothing
+      }
+      else
         mouseOver(9);
       leftbrac();
       setTimeout(() => {
-        if(window.location.pathname.includes("index.html"))
+        if(window.location.pathname.includes("length.html"))
+        {
+          //do nothing
+        }
+        else
           mouseOut(9);
       }, 100);
       break;
 
     case ")":
-      if(window.location.pathname.includes("index.html"))
+      if(window.location.pathname.includes("length.html"))
+      {
+        //do nothing
+      }
+      else
         mouseOver(10);
       rightbrac();
       setTimeout(() => {
-        if(window.location.pathname.includes("index.html"))
+        if(window.location.pathname.includes("length.html"))
+        {
+          //do nothing
+        }
+        else
           mouseOut(10);
       }, 100);
       break;
@@ -497,7 +561,6 @@ function clearResult() {
 
 /* The function is related to the button / that is divide */
 function divide() {
-  console.log(len, lastChar);
   if((res.innerText != "") && (lastChar != "/") && (lastChar != "+") && (lastChar != "-") && (lastChar != "*") && (lastChar != ".") && (lastChar != "(") && (lastChar != "^"))
   {
     res.innerText += "/";
@@ -740,7 +803,7 @@ function dot() {
               }
           }
 
-          console.log(lastOperand);
+          //console.log(lastOperand);
 
           if(lastOperand.includes("."))
           {
@@ -1009,7 +1072,7 @@ function display() {
               }
             }
 
-            console.log(y);
+            //console.log(y);
 
             // Traversing the rest of the res.innerText before ^ sign 
             for(let j = (lastIndexOfCaret - 1), backwardlength = 0; j > -1; j--)
@@ -1075,7 +1138,7 @@ function display() {
               }
             }
 
-            console.log(x);
+            //console.log(x);
 
             let originalx = x;
             let originaly = y;
@@ -1093,7 +1156,7 @@ function display() {
             else
             {
               let z = Math.pow(x,y);
-              console.log(z);
+              //console.log(z);
 
               res.innerText = (res.innerText).replaceAll(`${originalx}^${originaly}`, `${z}`);
             }              
@@ -1148,7 +1211,7 @@ function checkForBrackets(s)
   let newStr = res.innerText;
   // Where s denotes the starting position of slice 
   newStr = newStr.slice(s, -1);
-  console.log(newStr);
+  //console.log(newStr);
 
   // Creating an Empty Array to check the newStr
   let Stack = [];
