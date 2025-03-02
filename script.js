@@ -12,7 +12,6 @@ else
   z[1].classList.add("activeLink");
 }
 
-
 // For length.html webpage
 if(window.location.pathname.includes("length.html"))
 {
@@ -31,6 +30,23 @@ else
   var res = document.getElementById("result");
   var len = res.innerText.length;
   var lastChar = res.innerText.charAt(len-1);
+}
+
+function value_of_variables() {
+  // For length.html webpage
+  if(window.location.pathname.includes("length.html"))
+  {
+    lenofpara1 = para1.innerText.length;
+    lastCharofpara1 = para1.innerText.charAt(lenofpara1-1);
+  }
+  // For index.html webpage 
+  // Since when the website is hosted, the index.html is not shown in url.
+  // But the index.html webpage that is the Standard calculator is opened by default.
+  else
+  {
+    len = res.innerText.length;
+    lastChar = res.innerText.charAt(len-1);
+  }
 }
 
 // When the window size is greater than 600px, the navigation bar width is set to defaults 
@@ -79,155 +95,265 @@ function mouseOut(a)
 
 // It will add keyboard key pressing event on all buttons of the calculator 
 window.addEventListener("keydown", function(event) {
+  event.preventDefault();
   switch(event.key)
   {
     case "Enter":
-      event.preventDefault();
-      mouseOver(27);
+      if(window.location.pathname.includes("index.html"))
+        mouseOver(27);
       display();
-      setTimeout(() => mouseOut(27), 100);
+      setTimeout(() => {
+        if(window.location.pathname.includes("index.html"))
+          mouseOut(27);
+      }, 100);
       break;
 
     case "0":
-      event.preventDefault();
-      mouseOver(25);
+      if(window.location.pathname.includes("length.html"))
+        mouseOver(11);
+      else
+        mouseOver(25);
       zero();
-      setTimeout(() => mouseOut(25), 100);
+      setTimeout(() => {
+        if(window.location.pathname.includes("length.html"))
+          mouseOut(11);
+        else
+          mouseOut(25);
+      }, 100);
       break;
 
     case "1":
-      event.preventDefault();
-      mouseOver(20);
+      if(window.location.pathname.includes("length.html"))
+        mouseOver(8);
+      else
+        mouseOver(20);
       one();
-      setTimeout(() => mouseOut(20), 100);
+      setTimeout(() => {
+        if(window.location.pathname.includes("length.html"))
+          mouseOut(8);
+        else
+          mouseOut(20);
+      }, 100);
       break;
 
     case "2":
-      event.preventDefault();
-      mouseOver(21);
+      if(window.location.pathname.includes("length.html"))
+        mouseOver(9);
+      else
+        mouseOver(21);
       two();
-      setTimeout(() => mouseOut(21), 100);
+      setTimeout(() => {
+        if(window.location.pathname.includes("length.html"))
+          mouseOut(9);
+        else
+          mouseOut(21);
+      }, 100);
       break;
 
     case "3":
-      event.preventDefault();
-      mouseOver(22);
+      if(window.location.pathname.includes("length.html"))
+        mouseOver(10);
+      else
+        mouseOver(22);
       three();
-      setTimeout(() => mouseOut(22), 100);
+      setTimeout(() => {
+        if(window.location.pathname.includes("length.html"))
+          mouseOut(10);
+        else
+          mouseOut(22);
+      }, 100);
       break;
 
     case "4":
-      event.preventDefault();
-      mouseOver(16);
+      if(window.location.pathname.includes("length.html"))
+        mouseOver(4);
+      else
+        mouseOver(16);
       four();
-      setTimeout(() => mouseOut(16), 100);
+      setTimeout(() => {
+        if(window.location.pathname.includes("length.html"))
+          mouseOut(4);
+        else
+          mouseOut(16);
+      }, 100);
       break;
 
     case "5":
-      event.preventDefault();
-      mouseOver(17);
+      if(window.location.pathname.includes("length.html"))
+        mouseOver(5);
+      else
+        mouseOver(17);
       five();
-      setTimeout(() => mouseOut(17), 100);
+      setTimeout(() => {
+        if(window.location.pathname.includes("length.html"))
+          mouseOut(5);
+        else
+          mouseOut(17);   
+      }, 100);
       break;
 
     case "6":
-      event.preventDefault();
-      mouseOver(18);
+      if(window.location.pathname.includes("length.html"))
+        mouseOver(6);
+      else
+        mouseOver(18);
       six();
-      setTimeout(() => mouseOut(18), 100);
+      setTimeout(() => {
+        if(window.location.pathname.includes("length.html"))
+          mouseOut(6);
+        else
+          mouseOut(18);
+      }, 100);
       break;
 
     case "7":
-      event.preventDefault();
-      mouseOver(12);
+      if(window.location.pathname.includes("length.html"))
+        mouseOver(0);
+      else
+        mouseOver(12);
       seven();
-      setTimeout(() => mouseOut(12), 100);
+      setTimeout(() => {
+        if(window.location.pathname.includes("length.html"))
+          mouseOut(0);
+        else
+          mouseOut(12);
+      }, 100);
       break;
 
     case "8":
-      event.preventDefault();
-      mouseOver(13);
+      if(window.location.pathname.includes("length.html"))
+        mouseOver(1);
+      else
+        mouseOver(13);
       eight();
-      setTimeout(() => mouseOut(13), 100);
+      setTimeout(() => {
+        if(window.location.pathname.includes("length.html"))
+          mouseOut(1);
+        else
+          mouseOut(13);
+      }, 100);
       break;
 
     case "9":
-      event.preventDefault();
-      mouseOver(14);
+      if(window.location.pathname.includes("length.html"))
+        mouseOver(2);
+      else
+        mouseOver(14);
       nine();
-      setTimeout(() => mouseOut(14), 100);
+      setTimeout(() => {
+        if(window.location.pathname.includes("length.html"))
+          mouseOut(2);
+        else
+          mouseOut(14);
+      }, 100);
       break;
 
     case "Backspace":
-      event.preventDefault();
       mouseOver(3);
       del();
       setTimeout(() => mouseOut(3), 100);
       break;
 
     case "Delete":
-      event.preventDefault();
-      mouseOver(0);
+      if(window.location.pathname.includes("index.html"))
+        mouseOver(0);
+      else
+        mouseOver(7);
       clearResult();
-      setTimeout(() => mouseOut(0), 100);
+      setTimeout(() => {
+        if(window.location.pathname.includes("index.html"))
+          mouseOut(0);
+        else
+          mouseOut(7);
+      }, 100);
       break;
 
     case "+":
-      event.preventDefault();
-      mouseOver(19);
+      if(window.location.pathname.includes("index.html"))
+        mouseOver(19);
       plus();
-      setTimeout(() => mouseOut(19), 100);
+      setTimeout(() => {
+        if(window.location.pathname.includes("index.html"))
+          mouseOut(19);
+      }, 100);
       break;
 
     case "-":
-      event.preventDefault();
-      mouseOver(15);
+      if(window.location.pathname.includes("index.html"))
+        mouseOver(15);
       minus();
-      setTimeout(() => mouseOut(15), 100);
+      setTimeout(() => {
+        if(window.location.pathname.includes("index.html"))
+          mouseOut(15);
+      }, 100);
       break;
 
     case "/":
-      event.preventDefault();
-      mouseOver(7);
+      if(window.location.pathname.includes("index.html"))
+        mouseOver(7);
       divide();
-      setTimeout(() => mouseOut(7), 100);
+      setTimeout(() => {
+        if(window.location.pathname.includes("index.html"))
+          mouseOut(7);
+      }, 100);
       break;
 
     case "*":
-      event.preventDefault();
-      mouseOver(11);
+      if(window.location.pathname.includes("index.html"))
+        mouseOver(11);
       mul();
-      setTimeout(() => mouseOut(11), 100);
+      setTimeout(() => {
+        if(window.location.pathname.includes("index.html"))
+          mouseOut(11);
+      }, 100);
       break;
 
     case ".":
-      event.preventDefault();
-      mouseOver(26);
+      if(window.location.pathname.includes("length.html"))
+        mouseOver(12);
+      else
+        mouseOver(26);
       dot();
-      setTimeout(() => mouseOut(26), 100);
+      setTimeout(() => {
+        if(window.location.pathname.includes("length.html"))
+          mouseOut(12);
+        else
+          mouseOut(26);
+      }, 100);
       break;
 
     case "%":
-      event.preventDefault();
-      mouseOver(1);
+      if(window.location.pathname.includes("index.html"))
+        mouseOver(1);
       percent();
-      setTimeout(() => mouseOut(1), 100);
+      setTimeout(() => {
+        if(window.location.pathname.includes("index.html"))
+          mouseOut(1);
+      }, 100);
       break;
 
     case "(":
-      event.preventDefault();
-      mouseOver(9);
+      if(window.location.pathname.includes("index.html"))
+        mouseOver(9);
       leftbrac();
-      setTimeout(() => mouseOut(9), 100);
+      setTimeout(() => {
+        if(window.location.pathname.includes("index.html"))
+          mouseOut(9);
+      }, 100);
       break;
 
     case ")":
-      event.preventDefault();
-      mouseOver(10);
+      if(window.location.pathname.includes("index.html"))
+        mouseOver(10);
       rightbrac();
-      setTimeout(() => mouseOut(10), 100);
+      setTimeout(() => {
+        if(window.location.pathname.includes("index.html"))
+          mouseOut(10);
+      }, 100);
       break;
   }
+
+  value_of_variables();
 });
 
 var button = Array.from(document.getElementsByClassName("button"));
@@ -350,6 +476,8 @@ button.forEach(
           display();
           break;
       }
+
+      value_of_variables();
     })
   }
 );
@@ -358,8 +486,8 @@ button.forEach(
 function clearResult() {
   if(window.location.pathname.includes("length.html"))
   {
-    para1.innerText = "";
-    para2.innerText = "";
+    para1.innerText = para2.innerText = "";
+    input.value = output.value = "millimeters";
   }
   else
   {
@@ -369,8 +497,7 @@ function clearResult() {
 
 /* The function is related to the button / that is divide */
 function divide() {
-  var len = res.innerText.length;
-  var lastChar = res.innerText.charAt(len-1);
+  console.log(len, lastChar);
   if((res.innerText != "") && (lastChar != "/") && (lastChar != "+") && (lastChar != "-") && (lastChar != "*") && (lastChar != ".") && (lastChar != "(") && (lastChar != "^"))
   {
     res.innerText += "/";
@@ -379,8 +506,6 @@ function divide() {
 
 /* The function is related to the button * that is multiplication */
 function mul() {
-  var len = res.innerText.length;
-  var lastChar = res.innerText.charAt(len-1);
   if((res.innerText != "") && (lastChar != "*") && (lastChar != "/") && (lastChar != "+") && (lastChar != "-") && (lastChar != ".") && (lastChar != "(") && (lastChar != "^"))
   {
     res.innerText += "*";
@@ -394,6 +519,7 @@ function del() {
     if(para1.innerText != "")
     {
       para1.innerText = para1.innerText.slice(0,-1);
+      displaylength1();
     }
   }
   else
@@ -432,6 +558,7 @@ function seven() {
   if(window.location.pathname.includes("length.html"))
   {
     para1.innerText += "7";
+    displaylength1();
   }
   else
   {
@@ -444,6 +571,7 @@ function eight() {
   if(window.location.pathname.includes("length.html"))
   {
     para1.innerText += "8";
+    displaylength1();
   }
   else
   {
@@ -456,6 +584,7 @@ function nine() {
   if(window.location.pathname.includes("length.html"))
   {
     para1.innerText += "9";
+    displaylength1();
   }
   else
   {
@@ -465,8 +594,6 @@ function nine() {
 
 /* The function is related to the button - */
 function minus() {
-  var len = res.innerText.length;
-  var lastChar = res.innerText.charAt(len-1);
   if((lastChar != "-") && (lastChar != "*") && (lastChar != "/") && (lastChar != "+") && (lastChar != "."))
   {
     res.innerText += "-";
@@ -478,6 +605,7 @@ function four() {
   if(window.location.pathname.includes("length.html"))
   {
     para1.innerText += "4";
+    displaylength1();
   }
   else
   {
@@ -490,6 +618,7 @@ function five() {
   if(window.location.pathname.includes("length.html"))
   {
     para1.innerText += "5";
+    displaylength1();
   }
   else
   {
@@ -502,6 +631,7 @@ function six() {
   if(window.location.pathname.includes("length.html"))
   {
     para1.innerText += "6";
+    displaylength1();
   }
   else
   {
@@ -511,8 +641,6 @@ function six() {
 
 /* The function is related to the button + */
 function plus() {
-  var len = res.innerText.length;
-  var lastChar = res.innerText.charAt(len-1);
   if((lastChar != "+") && (lastChar != "-") && (lastChar != "*") && (lastChar != "/") && (lastChar != ".")
    && (lastChar != "^"))
   {
@@ -525,6 +653,7 @@ function one() {
   if(window.location.pathname.includes("length.html"))
   {
     para1.innerText += "1";
+    displaylength1();
   }
   else
   {
@@ -537,6 +666,7 @@ function two() {
   if(window.location.pathname.includes("length.html"))
   {
     para1.innerText += "2";
+    displaylength1();
   }
   else
   {
@@ -549,6 +679,7 @@ function three() {
   if(window.location.pathname.includes("length.html"))
   {
     para1.innerText += "3";
+    displaylength1();
   }
   else
   {
@@ -560,8 +691,6 @@ function three() {
 function dot() {
   if(window.location.pathname.includes("length.html"))
     {
-      var lenofpara1 = para1.innerText.length;
-      var lastCharofpara1 = para1.innerText.charAt(lenofpara1-1);
       if(para1.innerText == "")
       {
         alert("You cannot start your input length value with a decimal. There must be atleast a number before the decimal.");
@@ -577,14 +706,13 @@ function dot() {
           else
           {
             para1.innerText += ".";
+            displaylength1();
           }
         }
       }
     }
   else
   {
-    var len = res.innerText.length;
-    var lastChar = res.innerText.charAt(len-1);
     if(res.innerText != "")
     {
       if((lastChar != ".") && (lastChar != "+") && (lastChar != "-") && (lastChar != "*") && 
@@ -636,6 +764,7 @@ function zero() {
   if(window.location.pathname.includes("length.html"))
   {
     para1.innerText += "0";
+    displaylength1();
   }
   else
   {
@@ -657,48 +786,43 @@ function doublezero() {
 
 /* The function is related to the button ( */
 function leftbrac() {
-    var len = res.innerText.length;
-    var lastChar = res.innerText.charAt(len-1);
-    if((lastChar != ".") && (lastChar != "0") && (lastChar != "1") && (lastChar != "2") &&
-    (lastChar != "3") && (lastChar != "4") && (lastChar != "5") && (lastChar != "6") && 
-    (lastChar != "7") && (lastChar != "8") && (lastChar != "9"))
+  if((lastChar != ".") && (lastChar != "0") && (lastChar != "1") && (lastChar != "2") &&
+  (lastChar != "3") && (lastChar != "4") && (lastChar != "5") && (lastChar != "6") && 
+  (lastChar != "7") && (lastChar != "8") && (lastChar != "9"))
+  {
+    if(lastChar == ")")
     {
-      if(lastChar == ")")
-      {
-        alert("You cannot use left bracket just after right bracket. Please use an operator in between these two.");
-      }
-      else
-      {
-        res.innerText += "(";
-      }
+      alert("You cannot use left bracket just after right bracket. Please use an operator in between these two.");
     }
+    else
+    {
+      res.innerText += "(";
+    }
+  }
 }
 
 /* The function is related to the button ) */
 function rightbrac() {
-    var len = res.innerText.length;
-    var lastChar = res.innerText.charAt(len-1);
-    if((lastChar != ".") && (lastChar != "+") && (lastChar != "-") && (lastChar != "*") && (lastChar != "/") && (lastChar != "^"))
+  if((lastChar != ".") && (lastChar != "+") && (lastChar != "-") && (lastChar != "*") && (lastChar != "/") && (lastChar != "^"))
+  {
+    if(lastChar == "(")
     {
-      if(lastChar == "(")
-      {
-        alert("You cannot use right bracket just after left bracket. Please use an operand in between these two.");
-      }
-      else
-      {
-        res.innerText += ")";
-      }
+      alert("You cannot use right bracket just after left bracket. Please use an operand in between these two.");
     }
+    else
+    {
+      res.innerText += ")";
+    }
+  }
 }
 
 /* The function is related to the % button and adds % to the res.innerText */
 function percent() {
-    var len = res.innerText.length;
-    var lastChar = res.innerText.charAt(len-1);
-    if((lastChar != "%") && (lastChar != "+") && (lastChar != "-") && (lastChar != "/") && (lastChar != "*") && (lastChar != ".") && (lastChar != "(") && (lastChar != "^"))
-    {
-      res.innerText += '%';
-    }
+  if((lastChar != "%") && (lastChar != "+") && (lastChar != "-") && (lastChar != "/") && 
+      (lastChar != "*") && (lastChar != ".") && (lastChar != "(") && (lastChar != "^"))
+  {
+    res.innerText += '%';
+  }
 }
 
 /* The function is related to the button 1/x */
@@ -728,8 +852,6 @@ function sqr() {
 
 /* The function is related to the button = */
 function display() {
-  var len = res.innerText.length;
-  var lastChar = res.innerText.charAt(len-1);
   if(res.innerText != "")
   {
     if((lastChar == '+') || (lastChar == '-') || (lastChar == '*') || (lastChar == '/') || 
@@ -787,7 +909,7 @@ function display() {
               let beforeCh = res.innerText.charAt(j-1);
               
               if((ch == "+") || (ch == "-") || (ch == "/") || (ch == "*") || (ch == "^") || 
-              (ch == ")") || (ch == "("))
+                  (ch == ")") || (ch == "("))
               {
                 if(ch == "-")
                 {
@@ -1007,11 +1129,10 @@ function closenav()
 /* The function is related to the button x<sup>y</sup> and adds ^ to the res.innerText */
 function x_to_power_y()
 {
-  var len = res.innerText.length;
-  var lastChar = res.innerText.charAt(len-1);
   if(res.innerText != "")
   {
-    if((lastChar != "^") && (lastChar != "+") && (lastChar != "-") && (lastChar != "/") && (lastChar != "*") && (lastChar != "("))
+    if((lastChar != "^") && (lastChar != "+") && (lastChar != "-") && 
+        (lastChar != "/") && (lastChar != "*") && (lastChar != "("))
     {
       res.innerText += "^";
     }
@@ -1062,9 +1183,6 @@ function checkForBrackets(s)
 /* This function will not check whether brackets are missing or not. Or whether right brackets are more or less than left brackets or vice versa. Instead, it will just change the sign from - to + or vice versa. And add an outer bracket if there is none. */
 /* The function is related to the +/- button */
 function reversesign() {
-  var len = res.innerText.length;
-  var lastChar = res.innerText.charAt(len-1);
-
   if(res.innerText != "")
   {
     // Case for -(x) 
