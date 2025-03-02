@@ -57,42 +57,6 @@ window.addEventListener("resize", function() {
   }
 });
 
-/* My own code when the respective key is pressed then the respective css hover effect will take place of the key. */
-function mouseOver(a)
-{
-  /* The css hover effect for Enter (=) key is different from others as it is styled differently from others. */
-  if(a == 27)
-  {
-    document.getElementsByClassName("button")[a].style.color = "white";
-    document.getElementsByClassName("button")[a].style.backgroundColor = "darkblue";
-  }
-  else
-  {
-    /* The css styling for the rest of the buttons on the calculator. */
-    document.getElementsByClassName("button")[a].style.color = "white";
-    document.getElementsByClassName("button")[a].style.backgroundColor = "#111";
-  }
-}
-
-/* My own code after the key is pressed and css hover effect take place then after that the respective button is returned to its normal css style state. */
-function mouseOut(a)
-{
-  if(a == 27)
-    {
-      let red = 0;
-      let green = 0;
-      let blue = 255;
-      let alpha = 0.7;
-      let rgbaColor = `rgba(${red}, ${green}, ${blue}, ${alpha})`;
-      document.getElementsByClassName("button")[a].style.backgroundColor = rgbaColor;
-    }
-    else
-    {
-      document.getElementsByClassName("button")[a].style.color = "black";
-      document.getElementsByClassName("button")[a].style.backgroundColor = "#f1f1f1";
-    }
-}
-
 // It will add keyboard key pressing event on all buttons of the calculator 
 window.addEventListener("keydown", function(event) {
   event.preventDefault();
@@ -104,176 +68,219 @@ window.addEventListener("keydown", function(event) {
         //do nothing
       }
       else
-        mouseOver(27);
+      {
+        document.getElementById("equal").classList.toggle("lastbuttonhover");
+        setTimeout(() => {
+          document.getElementById("equal").classList.toggle("lastbuttonhover");
+        },100);
+      }
       display();
-      setTimeout(() => {
-        if(window.location.pathname.includes("length.html"))
-        {
-          //do nothing
-        }
-        else
-          mouseOut(27);
-      }, 100);
       break;
 
     case "0":
       if(window.location.pathname.includes("length.html"))
-        mouseOver(11);
+      {
+        document.getElementsByClassName("button")[11].classList.toggle("buttonhover");
+        setTimeout(() => {
+          document.getElementsByClassName("button")[11].classList.toggle("buttonhover");
+        },100);
+      }
       else
-        mouseOver(25);
+      {
+        document.getElementsByClassName("button")[25].classList.toggle("buttonhover");
+        setTimeout(() => {
+          document.getElementsByClassName("button")[25].classList.toggle("buttonhover");
+        },100);
+      }
       zero();
-      setTimeout(() => {
-        if(window.location.pathname.includes("length.html"))
-          mouseOut(11);
-        else
-          mouseOut(25);
-      }, 100);
       break;
 
     case "1":
       if(window.location.pathname.includes("length.html"))
-        mouseOver(8);
+      {
+        document.getElementsByClassName("button")[8].classList.toggle("buttonhover");
+        setTimeout(() => {
+          document.getElementsByClassName("button")[8].classList.toggle("buttonhover");
+        },100);
+      }
       else
-        mouseOver(20);
+      {
+        document.getElementsByClassName("button")[20].classList.toggle("buttonhover");
+        setTimeout(() => {
+          document.getElementsByClassName("button")[20].classList.toggle("buttonhover");
+        },100);
+      }
       one();
-      setTimeout(() => {
-        if(window.location.pathname.includes("length.html"))
-          mouseOut(8);
-        else
-          mouseOut(20);
-      }, 100);
       break;
 
     case "2":
       if(window.location.pathname.includes("length.html"))
-        mouseOver(9);
+      {
+        document.getElementsByClassName("button")[9].classList.toggle("buttonhover");
+        setTimeout(() => {
+          document.getElementsByClassName("button")[9].classList.toggle("buttonhover");
+        },100);
+      }
       else
-        mouseOver(21);
+      {
+        document.getElementsByClassName("button")[21].classList.toggle("buttonhover");
+        setTimeout(() => {
+          document.getElementsByClassName("button")[21].classList.toggle("buttonhover");
+        },100);
+      }
       two();
-      setTimeout(() => {
-        if(window.location.pathname.includes("length.html"))
-          mouseOut(9);
-        else
-          mouseOut(21);
-      }, 100);
       break;
 
     case "3":
       if(window.location.pathname.includes("length.html"))
-        mouseOver(10);
+      {
+        document.getElementsByClassName("button")[10].classList.toggle("buttonhover");
+        setTimeout(() => {
+          document.getElementsByClassName("button")[10].classList.toggle("buttonhover");
+        },100);
+      }
       else
-        mouseOver(22);
+      {
+        document.getElementsByClassName("button")[22].classList.toggle("buttonhover");
+        setTimeout(() => {
+          document.getElementsByClassName("button")[22].classList.toggle("buttonhover");
+        },100);
+      }
       three();
-      setTimeout(() => {
-        if(window.location.pathname.includes("length.html"))
-          mouseOut(10);
-        else
-          mouseOut(22);
-      }, 100);
       break;
 
     case "4":
       if(window.location.pathname.includes("length.html"))
-        mouseOver(4);
+      {
+        document.getElementsByClassName("button")[4].classList.toggle("buttonhover");
+        setTimeout(() => {
+          document.getElementsByClassName("button")[4].classList.toggle("buttonhover");
+        },100);
+      }
       else
-        mouseOver(16);
+      {
+        document.getElementsByClassName("button")[16].classList.toggle("buttonhover");
+        setTimeout(() => {
+          document.getElementsByClassName("button")[16].classList.toggle("buttonhover");
+        },100);
+      }
       four();
-      setTimeout(() => {
-        if(window.location.pathname.includes("length.html"))
-          mouseOut(4);
-        else
-          mouseOut(16);
-      }, 100);
       break;
 
     case "5":
       if(window.location.pathname.includes("length.html"))
-        mouseOver(5);
+      {
+        document.getElementsByClassName("button")[5].classList.toggle("buttonhover");
+        setTimeout(() => {
+          document.getElementsByClassName("button")[5].classList.toggle("buttonhover");
+        },100);
+      }
       else
-        mouseOver(17);
+      {
+        document.getElementsByClassName("button")[17].classList.toggle("buttonhover");
+        setTimeout(() => {
+          document.getElementsByClassName("button")[17].classList.toggle("buttonhover");
+        },100);
+      }
       five();
-      setTimeout(() => {
-        if(window.location.pathname.includes("length.html"))
-          mouseOut(5);
-        else
-          mouseOut(17);   
-      }, 100);
       break;
 
     case "6":
       if(window.location.pathname.includes("length.html"))
-        mouseOver(6);
+      {
+        document.getElementsByClassName("button")[6].classList.toggle("buttonhover");
+        setTimeout(() => {
+          document.getElementsByClassName("button")[6].classList.toggle("buttonhover");
+        },100);
+      }
       else
-        mouseOver(18);
+      {
+        document.getElementsByClassName("button")[18].classList.toggle("buttonhover");
+        setTimeout(() => {
+          document.getElementsByClassName("button")[18].classList.toggle("buttonhover");
+        },100);
+      }
       six();
-      setTimeout(() => {
-        if(window.location.pathname.includes("length.html"))
-          mouseOut(6);
-        else
-          mouseOut(18);
-      }, 100);
       break;
 
     case "7":
       if(window.location.pathname.includes("length.html"))
-        mouseOver(0);
+      {
+        document.getElementsByClassName("button")[0].classList.toggle("buttonhover");
+        setTimeout(() => {
+          document.getElementsByClassName("button")[0].classList.toggle("buttonhover");
+        },100);
+      }
       else
-        mouseOver(12);
+      {
+        document.getElementsByClassName("button")[12].classList.toggle("buttonhover");
+        setTimeout(() => {
+          document.getElementsByClassName("button")[12].classList.toggle("buttonhover");
+        },100);
+      }
       seven();
-      setTimeout(() => {
-        if(window.location.pathname.includes("length.html"))
-          mouseOut(0);
-        else
-          mouseOut(12);
-      }, 100);
       break;
 
     case "8":
       if(window.location.pathname.includes("length.html"))
-        mouseOver(1);
+      {
+        document.getElementsByClassName("button")[1].classList.toggle("buttonhover");
+        setTimeout(() => {
+          document.getElementsByClassName("button")[1].classList.toggle("buttonhover");
+        },100);
+      }
       else
-        mouseOver(13);
+      {
+        document.getElementsByClassName("button")[13].classList.toggle("buttonhover");
+        setTimeout(() => {
+          document.getElementsByClassName("button")[13].classList.toggle("buttonhover");
+        },100);
+      }
       eight();
-      setTimeout(() => {
-        if(window.location.pathname.includes("length.html"))
-          mouseOut(1);
-        else
-          mouseOut(13);
-      }, 100);
       break;
 
     case "9":
       if(window.location.pathname.includes("length.html"))
-        mouseOver(2);
+      {
+        document.getElementsByClassName("button")[2].classList.toggle("buttonhover");
+        setTimeout(() => {
+          document.getElementsByClassName("button")[2].classList.toggle("buttonhover");
+        },100);
+      }
       else
-        mouseOver(14);
+      {
+        document.getElementsByClassName("button")[14].classList.toggle("buttonhover");
+        setTimeout(() => {
+          document.getElementsByClassName("button")[14].classList.toggle("buttonhover");
+        },100);
+      }
       nine();
-      setTimeout(() => {
-        if(window.location.pathname.includes("length.html"))
-          mouseOut(2);
-        else
-          mouseOut(14);
-      }, 100);
       break;
 
     case "Backspace":
-      mouseOver(3);
+      document.getElementsByClassName("button")[3].classList.toggle("buttonhover");
+      setTimeout(() => {
+        document.getElementsByClassName("button")[3].classList.toggle("buttonhover");
+      },100);
       del();
-      setTimeout(() => mouseOut(3), 100);
       break;
 
     case "Delete":
       if(window.location.pathname.includes("length.html"))
-        mouseOver(7);
+      {
+        document.getElementsByClassName("button")[7].classList.toggle("buttonhover");
+        setTimeout(() => {
+          document.getElementsByClassName("button")[7].classList.toggle("buttonhover");
+        },100);
+      }
       else
-        mouseOver(0);
+      {
+        document.getElementsByClassName("button")[0].classList.toggle("buttonhover");
+        setTimeout(() => {
+          document.getElementsByClassName("button")[0].classList.toggle("buttonhover");
+        },100);
+      }
       clearResult();
-      setTimeout(() => {
-        if(window.location.pathname.includes("length.html"))
-          mouseOut(7);
-        else
-          mouseOut(0);
-      }, 100);
       break;
 
     case "+":
@@ -282,16 +289,11 @@ window.addEventListener("keydown", function(event) {
         //do nothing
       }
       else
-        mouseOver(19);
-      plus();
+      document.getElementsByClassName("button")[19].classList.toggle("buttonhover");
       setTimeout(() => {
-        if(window.location.pathname.includes("length.html"))
-        {
-          //do nothing
-        }
-        else
-          mouseOut(19);
-      }, 100);
+        document.getElementsByClassName("button")[19].classList.toggle("buttonhover");
+      },100);
+      plus();
       break;
 
     case "-":
@@ -300,16 +302,11 @@ window.addEventListener("keydown", function(event) {
         //do nothing
       }
       else
-        mouseOver(15);
-      minus();
+      document.getElementsByClassName("button")[15].classList.toggle("buttonhover");
       setTimeout(() => {
-        if(window.location.pathname.includes("length.html"))
-        {
-          //do nothing
-        }
-        else
-          mouseOut(15);
-      }, 100);
+        document.getElementsByClassName("button")[15].classList.toggle("buttonhover");
+      },100);
+      minus();
       break;
 
     case "/":
@@ -318,16 +315,11 @@ window.addEventListener("keydown", function(event) {
         //do nothing
       }
       else
-        mouseOver(7);
-      divide();
+      document.getElementsByClassName("button")[7].classList.toggle("buttonhover");
       setTimeout(() => {
-        if(window.location.pathname.includes("length.html"))
-        {
-          //do nothing
-        }
-        else
-          mouseOut(7);
-      }, 100);
+        document.getElementsByClassName("button")[7].classList.toggle("buttonhover");
+      },100);
+      divide();
       break;
 
     case "*":
@@ -336,30 +328,29 @@ window.addEventListener("keydown", function(event) {
         //do nothing
       }
       else
-        mouseOver(11);
-      mul();
+      document.getElementsByClassName("button")[11].classList.toggle("buttonhover");
       setTimeout(() => {
-        if(window.location.pathname.includes("length.html"))
-        {
-          //do nothing
-        }
-        else
-          mouseOut(11);
-      }, 100);
+        document.getElementsByClassName("button")[11].classList.toggle("buttonhover");
+      },100);
+      mul();
       break;
 
     case ".":
       if(window.location.pathname.includes("length.html"))
-        mouseOver(12);
+      {
+        document.getElementsByClassName("button")[12].classList.toggle("buttonhover");
+        setTimeout(() => {
+          document.getElementsByClassName("button")[12].classList.toggle("buttonhover");
+        },100);
+      }
       else
-        mouseOver(26);
+      {
+        document.getElementsByClassName("button")[26].classList.toggle("buttonhover");
+        setTimeout(() => {
+          document.getElementsByClassName("button")[26].classList.toggle("buttonhover");
+        },100);
+      }
       dot();
-      setTimeout(() => {
-        if(window.location.pathname.includes("length.html"))
-          mouseOut(12);
-        else
-          mouseOut(26);
-      }, 100);
       break;
 
     case "%":
@@ -368,16 +359,11 @@ window.addEventListener("keydown", function(event) {
         //do nothing
       }
       else
-        mouseOver(1);
-      percent();
+      document.getElementsByClassName("button")[1].classList.toggle("buttonhover");
       setTimeout(() => {
-        if(window.location.pathname.includes("length.html"))
-        {
-          //do nothing
-        }
-        else
-          mouseOut(1);
-      }, 100);
+        document.getElementsByClassName("button")[1].classList.toggle("buttonhover");
+      },100);
+      percent();
       break;
 
     case "(":
@@ -386,16 +372,11 @@ window.addEventListener("keydown", function(event) {
         //do nothing
       }
       else
-        mouseOver(9);
-      leftbrac();
+      document.getElementsByClassName("button")[9].classList.toggle("buttonhover");
       setTimeout(() => {
-        if(window.location.pathname.includes("length.html"))
-        {
-          //do nothing
-        }
-        else
-          mouseOut(9);
-      }, 100);
+        document.getElementsByClassName("button")[9].classList.toggle("buttonhover");
+      },100);
+      leftbrac();
       break;
 
     case ")":
@@ -404,16 +385,11 @@ window.addEventListener("keydown", function(event) {
         //do nothing
       }
       else
-        mouseOver(10);
-      rightbrac();
+      document.getElementsByClassName("button")[10].classList.toggle("buttonhover");
       setTimeout(() => {
-        if(window.location.pathname.includes("length.html"))
-        {
-          //do nothing
-        }
-        else
-          mouseOut(10);
-      }, 100);
+        document.getElementsByClassName("button")[10].classList.toggle("buttonhover");
+      },100);
+      rightbrac();
       break;
   }
 

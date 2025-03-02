@@ -144,12 +144,22 @@ h1 {
   color:white;
 }
 
-.button#equal {
+/* This class is used in js code for keydown eventlistener */
+.buttonhover {
+  background:#111;
+  color:white;
+}
+
+.lastbutton {
   background:rgba(0,0,255,0.7);
   color:white;
 }
 
-.button#equal:hover {
+.lastbuttonhover {
+  background:darkblue;
+}
+
+#equal:hover {
   background:darkblue;
 }
 
