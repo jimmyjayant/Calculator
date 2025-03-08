@@ -583,6 +583,90 @@ window.addEventListener("keydown", function(event) {
       },100);
       rightbrac();
       break;
+
+    case "a":
+      if(window.location.pathname.includes("programmer.html"))
+      {
+        if(document.getElementsByClassName("button")[2].disabled == false)
+        {
+          document.getElementsByClassName("button")[2].classList.toggle("buttonhover");
+          setTimeout(() => {
+            document.getElementsByClassName("button")[2].classList.toggle("buttonhover");
+          },100);
+        } 
+      }
+      hexA();
+      break;
+
+    case "b":
+      if(window.location.pathname.includes("programmer.html"))
+      {
+        if(document.getElementsByClassName("button")[6].disabled == false)
+        {
+          document.getElementsByClassName("button")[6].classList.toggle("buttonhover");
+          setTimeout(() => {
+            document.getElementsByClassName("button")[6].classList.toggle("buttonhover");
+          },100);
+        }
+      }
+      hexB();
+      break;
+
+    case "c":
+      if(window.location.pathname.includes("programmer.html"))
+      {
+        if(document.getElementsByClassName("button")[10].disabled == false)
+        {
+          document.getElementsByClassName("button")[10].classList.toggle("buttonhover");
+          setTimeout(() => {
+            document.getElementsByClassName("button")[10].classList.toggle("buttonhover");
+          },100);
+        }
+      }
+      hexC();
+      break;
+
+    case "d":
+      if(window.location.pathname.includes("programmer.html"))
+      {
+        if(document.getElementsByClassName("button")[14].disabled == false)
+        {
+          document.getElementsByClassName("button")[14].classList.toggle("buttonhover");
+          setTimeout(() => {
+            document.getElementsByClassName("button")[14].classList.toggle("buttonhover");
+          },100);
+        }
+      }
+      hexD();
+      break;
+
+    case "e":
+      if(window.location.pathname.includes("programmer.html"))
+      {
+        if(document.getElementsByClassName("button")[18].disabled == false)
+        {
+          document.getElementsByClassName("button")[18].classList.toggle("buttonhover");
+          setTimeout(() => {
+            document.getElementsByClassName("button")[18].classList.toggle("buttonhover");
+          },100);
+        } 
+      }
+      hexE();
+      break;
+
+    case "f":
+      if(window.location.pathname.includes("programmer.html"))
+      {
+        if(document.getElementsByClassName("button")[22].disabled == false)
+        {
+          document.getElementsByClassName("button")[22].classList.toggle("buttonhover");
+          setTimeout(() => {
+            document.getElementsByClassName("button")[22].classList.toggle("buttonhover");
+          },100);
+        }
+      }
+      hexF();
+      break;
   }
 
   value_of_variables();
@@ -597,6 +681,13 @@ button.forEach(
       switch(event.target.innerHTML)
       {
         case 'C':
+          if(window.location.pathname.includes("programmer.html"))
+            hexC();
+          else
+            clearResult();
+          break;
+
+        case 'CE':
           clearResult();
           break;
         
@@ -707,6 +798,38 @@ button.forEach(
         case '=':
           display();
           break;
+
+        case 'A':
+          hexA();
+          break;
+
+        case 'B':
+          hexB();
+          break;
+/*
+        case 'C':
+          hexC();
+          break;
+*/
+        case 'D':
+          hexD();
+          break;
+
+        case 'E':
+          hexE();
+          break;
+
+        case 'F':
+          hexF();
+          break; 
+
+        case '<<':
+          // function here for left shift operator
+          break;
+
+        case '>>':
+          // function here for right shift operator
+          break;
       }
 
       value_of_variables();
@@ -714,7 +837,7 @@ button.forEach(
   }
 );
 
-/* The function is related to the button C that is clear the res.innerText */
+/* The function is related to the button C or CE that is clear the res.innerText */
 function clearResult() {
   if(window.location.pathname.includes("length.html"))
   {
@@ -723,7 +846,8 @@ function clearResult() {
   }
   else if(window.location.pathname.includes("programmer.html"))
   {
-    // code for programmer.html webpage 
+    finalresult.innerText = hexresult.children[1].innerText = decimalresult.children[1].innerText = "0";
+    octalresult.children[1].innerText = binaryresult.children[1].innerText = "0";
   }
   else
   {
@@ -759,7 +883,17 @@ function del() {
   }
   else if(window.location.pathname.includes("programmer.html"))
     {
-      // code for programmer.html webpage 
+      if(finalresult.innerText != "0")
+      {
+        let lengthoffinalresult = finalresult.innerText.length;
+        
+        if(lengthoffinalresult == 1)
+        {
+          finalresult.innerText = "0";
+        }
+        else
+          finalresult.innerText = finalresult.innerText.slice(0, -1);
+      } 
     }
   else
   {
@@ -801,7 +935,10 @@ function seven() {
   }
   else if(window.location.pathname.includes("programmer.html"))
     {
-      // code for programmer.html webpage 
+      if(finalresult.innerText == "0")
+      finalresult.innerText = "7";
+      else
+      finalresult.innerText += "7";
     }
   else
   {
@@ -818,7 +955,10 @@ function eight() {
   }
   else if(window.location.pathname.includes("programmer.html"))
     {
-      // code for programmer.html webpage 
+      if(finalresult.innerText == "0")
+        finalresult.innerText = "8";
+        else
+        finalresult.innerText += "8";
     }
   else
   {
@@ -835,7 +975,10 @@ function nine() {
   }
   else if(window.location.pathname.includes("programmer.html"))
     {
-      // code for programmer.html webpage 
+      if(finalresult.innerText == "0")
+        finalresult.innerText = "9";
+        else
+        finalresult.innerText += "9";
     }
   else
   {
@@ -867,7 +1010,10 @@ function four() {
   }
   else if(window.location.pathname.includes("programmer.html"))
   {
-    // code here for programmer.html webpage 
+    if(finalresult.innerText == "0")
+      finalresult.innerText = "4";
+      else
+      finalresult.innerText += "4"; 
   }
   else
   {
@@ -884,7 +1030,10 @@ function five() {
   }
   else if(window.location.pathname.includes("programmer.html"))
     {
-      // code here for programmer.html webpage 
+      if(finalresult.innerText == "0")
+        finalresult.innerText = "5";
+        else
+        finalresult.innerText += "5";  
     }
   else
   {
@@ -901,7 +1050,10 @@ function six() {
   }
   else if(window.location.pathname.includes("programmer.html"))
     {
-      // code here for programmer.html webpage 
+      if(finalresult.innerText == "0")
+        finalresult.innerText = "6";
+        else
+        finalresult.innerText += "6"; 
     }
   else
   {
@@ -927,7 +1079,10 @@ function one() {
   }
   else if(window.location.pathname.includes("programmer.html"))
     {
-      // code here for programmer.html webpage 
+      if(finalresult.innerText == "0")
+        finalresult.innerText = "1";
+        else
+        finalresult.innerText += "1"; 
     }
   else
   {
@@ -944,7 +1099,10 @@ function two() {
   }
   else if(window.location.pathname.includes("programmer.html"))
     {
-      // code here for programmer.html webpage 
+      if(finalresult.innerText == "0")
+        finalresult.innerText = "2";
+        else
+        finalresult.innerText += "2";  
     }
   else
   {
@@ -961,7 +1119,10 @@ function three() {
   }
   else if(window.location.pathname.includes("programmer.html"))
     {
-      // code here for programmer.html webpage 
+      if(finalresult.innerText == "0")
+        finalresult.innerText = "3";
+        else
+        finalresult.innerText += "3"; 
     }
   else
   {
@@ -1054,7 +1215,10 @@ function zero() {
   }
   else if(window.location.pathname.includes("programmer.html"))
     {
-      // code here for programmer.html webpage 
+      if(finalresult.innerText == "0")
+        finalresult.innerText = "0";
+      else
+        finalresult.innerText += "0";  
     }
   else
   {
@@ -1159,6 +1323,91 @@ function sqr() {
     res.innerText = eval(res.innerText);
     res.innerText = Math.pow((res.innerText), 2);
   }
+}
+
+/* The function is related to the button A on the programmer.html webpage */
+function hexA() {
+  if(window.location.pathname.includes("programmer.html"))
+  {
+    if(document.getElementsByClassName("button")[2].disabled == false)
+    {
+      if(finalresult.innerText == "0")
+        finalresult.innerText = "A";
+      else
+        finalresult.innerText += "A";
+    }
+  }
+}
+
+/* The function is related to the button B on the programmer.html webpage */
+function hexB() {
+  if(window.location.pathname.includes("programmer.html"))
+    {
+      if(document.getElementsByClassName("button")[6].disabled == false)
+      {
+        if(finalresult.innerText == "0")
+          finalresult.innerText = "B";
+        else
+          finalresult.innerText += "B";
+      }
+      
+    }
+}
+
+/* The function is related to the button C on the programmer.html webpage */
+function hexC() {
+  if(window.location.pathname.includes("programmer.html"))
+    {
+      if(document.getElementsByClassName("button")[10].disabled == false)
+      {
+        if(finalresult.innerText == "0")
+          finalresult.innerText = "C";
+        else
+          finalresult.innerText += "C";
+      }
+    }
+}
+
+/* The function is related to the button D on the programmer.html webpage */
+function hexD() {
+  if(window.location.pathname.includes("programmer.html"))
+    {
+      if(document.getElementsByClassName("button")[14].disabled == false)
+      {
+        if(finalresult.innerText == "0")
+          finalresult.innerText = "D";
+        else
+          finalresult.innerText += "D";
+      }
+    }
+}
+
+/* The function is related to the button E on the programmer.html webpage */
+function hexE() {
+  if(window.location.pathname.includes("programmer.html"))
+    {
+      if(document.getElementsByClassName("button")[18].disabled == false)
+      {
+        if(finalresult.innerText == "0")
+          finalresult.innerText = "E";
+        else
+          finalresult.innerText += "E";
+      }
+    }
+}
+
+/* The function is related to the button F on the programmer.html webpage */
+function hexF() {
+  if(window.location.pathname.includes("programmer.html"))
+    {
+      if(document.getElementsByClassName("button")[22].disabled == false)
+      {
+        if(finalresult.innerText == "0")
+          finalresult.innerText = "F";
+        else
+          finalresult.innerText += "F";
+      }
+    }
 }
 
 /* The function is related to the button = */
@@ -2048,7 +2297,7 @@ function setchoosenvar(obj) {
   }
   else
   {
-    choosenresult = 0;
+    choosenresult = 2;
   }
   console.log(obj.id, choosenresult);
 }
@@ -2078,16 +2327,39 @@ function setDecimalDefault() {
   });
 }
 
-programmerresultdiv.forEach((div) => {
-  div.addEventListener("click", (event) => {
-    if(lastDivBorderStyle)
-    {
-      lastDivBorderStyle.classList.remove("leftborderstyle");
-    }
-    
-    event.target.classList.add("leftborderstyle");
-    
-    if(event.target.innerHTML == "HEX")
+if(window.location.pathname.includes("programmer.html"))
+{
+  programmerresultdiv.forEach((div) => {
+    div.addEventListener("click", (event) => {
+      if(lastDivBorderStyle)
+      {
+        lastDivBorderStyle.classList.remove("leftborderstyle");
+      }
+      
+      event.target.classList.add("leftborderstyle");
+      
+      if(event.target.innerHTML == "HEX")
+        {
+          programmerbutton.forEach((button) => {
+            //console.log(button.innerHTML);
+            switch(button.innerHTML)
+            {
+              case 'A':
+              case 'B':
+              case 'C':
+              case 'D':
+              case 'E':
+              case 'F':
+                button.disabled = false;
+                break;
+        
+              default:
+                button.disabled = false;
+            }
+          });
+      }
+  
+      if(event.target.innerHTML == "DEC")
       {
         programmerbutton.forEach((button) => {
           //console.log(button.innerHTML);
@@ -2099,89 +2371,69 @@ programmerresultdiv.forEach((div) => {
             case 'D':
             case 'E':
             case 'F':
-              button.disabled = false;
+              button.disabled = true;
               break;
       
             default:
               button.disabled = false;
           }
         });
-    }
-
-    if(event.target.innerHTML == "DEC")
-    {
-      programmerbutton.forEach((button) => {
-        //console.log(button.innerHTML);
-        switch(button.innerHTML)
-        {
-          case 'A':
-          case 'B':
-          case 'C':
-          case 'D':
-          case 'E':
-          case 'F':
-            button.disabled = true;
-            break;
-    
-          default:
-            button.disabled = false;
-        }
-      });
-    }
-
-    if(event.target.innerHTML == "OCT")
-    {
-      programmerbutton.forEach((button) => {
-        //console.log(button.innerHTML);
-        switch(button.innerHTML)
-        {
-          case 'A':
-          case 'B':
-          case 'C':
-          case 'D':
-          case 'E':
-          case 'F':
-          case '8':
-          case '9':
-          case '.':
-            button.disabled = true;
-            break;
-    
-          default:
-            button.disabled = false;
-        }
-      });
-    }
-
-    if(event.target.innerHTML == "BIN")
-    {
-      programmerbutton.forEach((button) => {
-        //console.log(button.innerHTML);
-        switch(button.innerHTML)
-        {
-          case 'A':
-          case 'B':
-          case 'C':
-          case 'D':
-          case 'E':
-          case 'F':
-          case '2':
-          case '3':
-          case '4':
-          case '5':
-          case '6':
-          case '7':
-          case '8':
-          case '9':
-            button.disabled = true;
-            break;
-    
-          default:
-            button.disabled = false;
-        }
-      });
-    }
-    lastDivBorderStyle = event.target;
-    
+      }
+  
+      if(event.target.innerHTML == "OCT")
+      {
+        programmerbutton.forEach((button) => {
+          //console.log(button.innerHTML);
+          switch(button.innerHTML)
+          {
+            case 'A':
+            case 'B':
+            case 'C':
+            case 'D':
+            case 'E':
+            case 'F':
+            case '8':
+            case '9':
+            case '.':
+              button.disabled = true;
+              break;
+      
+            default:
+              button.disabled = false;
+          }
+        });
+      }
+  
+      if(event.target.innerHTML == "BIN")
+      {
+        programmerbutton.forEach((button) => {
+          //console.log(button.innerHTML);
+          switch(button.innerHTML)
+          {
+            case 'A':
+            case 'B':
+            case 'C':
+            case 'D':
+            case 'E':
+            case 'F':
+            case '2':
+            case '3':
+            case '4':
+            case '5':
+            case '6':
+            case '7':
+            case '8':
+            case '9':
+              button.disabled = true;
+              break;
+      
+            default:
+              button.disabled = false;
+          }
+        });
+      }
+      lastDivBorderStyle = event.target;
+      
+    });
   });
-});
+}
