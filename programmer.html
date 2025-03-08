@@ -33,8 +33,63 @@
         <a href="#" class="closenav" onclick="closenav()">&times;</a>
         <a href="index.html">Standard</a>
         <a href="scientific.html" style="display:none;">Scientific</a>
-        <a href="programmer.html" style="display:none;">Programmer</a>
+        <a href="programmer.html">Programmer</a>
         <a href="length.html">Length</a>
       </div>
+
+      <div class="calculator">
+        <div id="programmerresult">
+          <div id="finalresult" onclick="setchoosenvar(this)">0</div>
+          <div id="hexresult" onclick="setchoosenvar(this)">
+            <div>HEX</div>
+            <div>0</div>
+          </div>
+          <div id="decimalresult" onclick="setchoosenvar(this)">
+            <div>DEC</div>
+            <div>0</div>
+          </div>
+          <div id="octalresult" onclick="setchoosenvar(this)">
+            <div>OCT</div>
+            <div>0</div>
+          </div>
+          <div id="binaryresult" onclick="setchoosenvar(this)">
+            <div>BIN</div>
+            <div>0</div>
+          </div>
+        </div>
+        <div class="programmerbuttons">
+          <button type="button" class="button" title="Clear the result. Use the delete key on keyboard.">CE</button>
+          <button type="button" class="button" title="Delete the Last character. Use the backspace key on keyboard.">&#8592;</button>
+          <button type="button" class="button" title="For use in Hexadecimal. Use the a key on keyboard.">A</button>
+          <button type="button" class="button" title="Left Shift Operator.">&lt;&lt;</button>
+          <button type="button" class="button" title="Right Shift Operator.">&gt;&gt;</button>
+          <button type="button" class="button" title="Minus. Use the - key on keyboard.">-</button>
+          <button type="button" class="button" title="For use in Hexadecimal. Use the b key on keyboard.">B</button>
+          <button type="button" class="button" title="Left Bracket. Use the Shift + 9 keys combination on keyboard.">(</button>
+          <button type="button" class="button" title="Right Bracket. Use the Shift + 0 keys combination on keyboard.">)</button>
+          <button type="button" class="button" title="Percentage. Use Shift + 5 keys combination on keyboard.">%</button>
+          <button type="button" class="button" title="For use in Hexadecimal. Use the c key on keyboard.">C</button>
+          <button type="button" class="button" title="Seven. Use the 7 key on keyboard.">7</button>
+          <button type="button" class="button" title="Eight. Use the 8 key on keyboard.">8</button>
+          <button type="button" class="button" title="Nine. Use the 9 key on keyboard.">9</button>
+          <button type="button" class="button" title="For use in Hexadecimal. Use the d key on keyboard.">D</button>
+          <button type="button" class="button" title="Four. Use the 4 key on keyboard.">4</button>
+          <button type="button" class="button" title="Five. Use the 5 key on keyboard.">5</button>
+          <button type="button" class="button" title="Six. Use the 6 key on keyboard.">6</button>
+          <button type="button" class="button" title="For use in Hexadecimal. Use the e key on keyboard.">E</button>
+          <button type="button" class="button" title="One. Use the 1 key on keyboard.">1</button>
+          <button type="button" class="button" title="Two. Use the 2 key on keyboard.">2</button>
+          <button type="button" class="button" title="Three. Use the 3 key on keyboard.">3</button>
+          <button type="button" class="button" title="For use in Hexadecimal. Use the f key on keyboard.">F</button>
+          <button type="button" class="button" title="Decimal Point. Use the . key on keyboard.">.</button>
+          <button type="button" class="button" title="Zero. Use the 0 key on keyboard.">0</button>
+          <button type="button" class="button lastbutton" id="equal" title="Equal To. Use the Enter key on keyboard.">=</button>
+        </div>
+      </div>
+
+      <script src="script.js"></script>
+      <noscript>
+        Your web browser does not support JavaScript.
+      </noscript>
     </body>
 </html>

@@ -124,7 +124,7 @@ h1 {
   text-align:right;
 }
 
-.buttons {
+.simplebuttons {
   display:grid;
   grid-template-columns:repeat(4, 1fr);
   grid-template-rows:repeat(7, 1fr);
@@ -139,7 +139,7 @@ h1 {
   border:1px solid grey;
 }
 
-.button:hover {
+.button:not(:disabled):hover {
   background:#111;
   color:white;
 }
@@ -191,7 +191,7 @@ h1 {
     background:black;
   }
 
-  .buttons {
+  .simplebuttons {
     grid-template-columns:repeat(3, 1fr);
     grid-template-rows:repeat(10, 1fr);
   }
@@ -200,23 +200,84 @@ h1 {
     font-size:1rem;
   }
 
-  .button#equal {
+  .simplebuttons .button#equal {
     grid-column-start:1;
     grid-column-end:4;
   }
 
-  .button:nth-of-type(16) {
+  .simplebuttons .button:nth-of-type(16) {
    grid-area:4 / 1 / 5 / 2;
   }
 
-  .button:nth-of-type(20) {
+  .simplebuttons .button:nth-of-type(20) {
     grid-area:4 / 2 / 5 / 3;
   }
 
-  .button:nth-of-type(24) {
+  .simplebuttons .button:nth-of-type(24) {
     grid-area:4 / 3 / 5 / 4;
   }
 }
+
+/* CSS for programmer.html webpage */
+
+.programmerbuttons {
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  grid-template-rows:auto;
+  gap:0.5rem;
+  padding:1rem;
+}
+
+.calculator:has(.programmerbuttons) {
+  height:auto;
+}
+
+.programmerbuttons .button:first-child, .programmerbuttons .button:nth-child(2) {
+  grid-column:span 2;
+}
+
+#programmerresult {
+  padding:0 1rem;
+}
+
+#programmerresult > div:not(:first-child) {
+  display:flex;
+}
+
+#finalresult {
+  text-align:center;
+  overflow-x:auto;
+  overflow-y:hidden;
+}
+
+#programmerresult > div:not(:first-child) :last-child {
+  flex:1;
+  text-align:right;
+  overflow-x:auto;
+  overflow-y:hidden;
+}
+
+#programmerresult > div:not(:first-child) :first-child {
+  cursor:pointer;
+}
+
+#programmerresult > div:not(:first-child):hover {
+  background-color:lightblue;
+}
+
+.leftborderstyle {
+  border-width:0 0 0 5px;
+  border-color:blue;
+  border-style:solid;
+}
+
+@media screen and (max-width:600px) {
+  #programmerresult {
+    font-size:1rem;
+  }
+}
+
+/* CSS for length.html webpage */
 
 .display {
   display:flex;
@@ -226,6 +287,8 @@ h1 {
 }
 
 .display select, ::picker(select) {
+  -webkit-appearance:none;
+  -moz-appearance:none;
   appearance:none;
 }
 

@@ -7,6 +7,14 @@ if(window.location.href.includes("length.html"))
 {
   z[4].classList.add("activeLink");
 }
+else if(window.location.href.includes("programmer.html"))
+{
+  z[3].classList.add("activeLink");
+}
+else if(window.location.href.includes("scientific.html"))
+{
+  z[2].classList.add("activeLink");
+}
 else
 {
   z[1].classList.add("activeLink");
@@ -25,6 +33,21 @@ if(window.location.pathname.includes("length.html"))
 // For index.html webpage 
 // Since when the website is hosted, the index.html is not shown in url.
 // But the index.html webpage that is the Standard calculator is opened by default.
+else if(window.location.pathname.includes("programmer.html"))
+{
+  var programmerresult = document.getElementById("programmerresult");
+  var finalresult = document.getElementById("finalresult");
+  var hexresult = document.getElementById("hexresult");
+  var decimalresult = document.getElementById("decimalresult");
+  var octalresult = document.getElementById("octalresult");
+  var binaryresult = document.getElementById("binaryresult");
+  var choosenresult = 0;
+  var programmerresultdiv = document.querySelectorAll("#programmerresult > div:not(:first-child) > div:first-child");
+  var bodytagprog = document.getElementsByTagName("body")[0];
+  bodytagprog.onload = setDecimalDefault;
+  var programmerbutton = Array.from(document.getElementsByTagName("button"));
+  var lastDivBorderStyle = null;
+}
 else
 {
   var res = document.getElementById("result");
@@ -42,6 +65,10 @@ function value_of_variables() {
   // For index.html webpage 
   // Since when the website is hosted, the index.html is not shown in url.
   // But the index.html webpage that is the Standard calculator is opened by default.
+  else if(window.location.pathname.includes("programmer.html"))
+  {
+    // variable initialization here for programmer.html webpage 
+  }
   else
   {
     len = res.innerText.length;
@@ -67,6 +94,13 @@ window.addEventListener("keydown", function(event) {
       {
         //do nothing
       }
+      else if(window.location.pathname.includes("programmer.html"))
+      {
+        document.getElementById("equal").classList.toggle("lastbuttonhover");
+        setTimeout(() => {
+          document.getElementById("equal").classList.toggle("lastbuttonhover");
+        },100);
+      }
       else
       {
         document.getElementById("equal").classList.toggle("lastbuttonhover");
@@ -83,6 +117,13 @@ window.addEventListener("keydown", function(event) {
         document.getElementsByClassName("button")[11].classList.toggle("buttonhover");
         setTimeout(() => {
           document.getElementsByClassName("button")[11].classList.toggle("buttonhover");
+        },100);
+      }
+      else if(window.location.pathname.includes("programmer.html"))
+      {
+        document.getElementsByClassName("button")[24].classList.toggle("buttonhover");
+        setTimeout(() => {
+          document.getElementsByClassName("button")[24].classList.toggle("buttonhover");
         },100);
       }
       else
@@ -103,6 +144,13 @@ window.addEventListener("keydown", function(event) {
           document.getElementsByClassName("button")[8].classList.toggle("buttonhover");
         },100);
       }
+      else if(window.location.pathname.includes("programmer.html"))
+      {
+        document.getElementsByClassName("button")[19].classList.toggle("buttonhover");
+        setTimeout(() => {
+          document.getElementsByClassName("button")[19].classList.toggle("buttonhover");
+        },100);
+      }
       else
       {
         document.getElementsByClassName("button")[20].classList.toggle("buttonhover");
@@ -121,6 +169,13 @@ window.addEventListener("keydown", function(event) {
           document.getElementsByClassName("button")[9].classList.toggle("buttonhover");
         },100);
       }
+      else if(window.location.pathname.includes("programmer.html"))
+        {
+          document.getElementsByClassName("button")[20].classList.toggle("buttonhover");
+        setTimeout(() => {
+          document.getElementsByClassName("button")[20].classList.toggle("buttonhover");
+        },100);
+        }
       else
       {
         document.getElementsByClassName("button")[21].classList.toggle("buttonhover");
@@ -139,6 +194,13 @@ window.addEventListener("keydown", function(event) {
           document.getElementsByClassName("button")[10].classList.toggle("buttonhover");
         },100);
       }
+      else if(window.location.pathname.includes("programmer.html"))
+        {
+          document.getElementsByClassName("button")[21].classList.toggle("buttonhover");
+        setTimeout(() => {
+          document.getElementsByClassName("button")[21].classList.toggle("buttonhover");
+        },100);
+        }
       else
       {
         document.getElementsByClassName("button")[22].classList.toggle("buttonhover");
@@ -157,6 +219,13 @@ window.addEventListener("keydown", function(event) {
           document.getElementsByClassName("button")[4].classList.toggle("buttonhover");
         },100);
       }
+      else if(window.location.pathname.includes("programmer.html"))
+        {
+          document.getElementsByClassName("button")[15].classList.toggle("buttonhover");
+          setTimeout(() => {
+            document.getElementsByClassName("button")[15].classList.toggle("buttonhover");
+          },100);
+        }
       else
       {
         document.getElementsByClassName("button")[16].classList.toggle("buttonhover");
@@ -175,6 +244,13 @@ window.addEventListener("keydown", function(event) {
           document.getElementsByClassName("button")[5].classList.toggle("buttonhover");
         },100);
       }
+      else if(window.location.pathname.includes("programmer.html"))
+        {
+          document.getElementsByClassName("button")[16].classList.toggle("buttonhover");
+          setTimeout(() => {
+            document.getElementsByClassName("button")[16].classList.toggle("buttonhover");
+          },100);
+        }
       else
       {
         document.getElementsByClassName("button")[17].classList.toggle("buttonhover");
@@ -193,6 +269,13 @@ window.addEventListener("keydown", function(event) {
           document.getElementsByClassName("button")[6].classList.toggle("buttonhover");
         },100);
       }
+      else if(window.location.pathname.includes("programmer.html"))
+        {
+          document.getElementsByClassName("button")[17].classList.toggle("buttonhover");
+          setTimeout(() => {
+            document.getElementsByClassName("button")[17].classList.toggle("buttonhover");
+          },100);
+        }
       else
       {
         document.getElementsByClassName("button")[18].classList.toggle("buttonhover");
@@ -211,6 +294,13 @@ window.addEventListener("keydown", function(event) {
           document.getElementsByClassName("button")[0].classList.toggle("buttonhover");
         },100);
       }
+      else if(window.location.pathname.includes("programmer.html"))
+        {
+          document.getElementsByClassName("button")[11].classList.toggle("buttonhover");
+          setTimeout(() => {
+            document.getElementsByClassName("button")[11].classList.toggle("buttonhover");
+          },100);
+        }
       else
       {
         document.getElementsByClassName("button")[12].classList.toggle("buttonhover");
@@ -229,6 +319,13 @@ window.addEventListener("keydown", function(event) {
           document.getElementsByClassName("button")[1].classList.toggle("buttonhover");
         },100);
       }
+      else if(window.location.pathname.includes("programmer.html"))
+        {
+          document.getElementsByClassName("button")[12].classList.toggle("buttonhover");
+          setTimeout(() => {
+            document.getElementsByClassName("button")[12].classList.toggle("buttonhover");
+          },100);
+        }
       else
       {
         document.getElementsByClassName("button")[13].classList.toggle("buttonhover");
@@ -247,6 +344,13 @@ window.addEventListener("keydown", function(event) {
           document.getElementsByClassName("button")[2].classList.toggle("buttonhover");
         },100);
       }
+      else if(window.location.pathname.includes("programmer.html"))
+        {
+          document.getElementsByClassName("button")[13].classList.toggle("buttonhover");
+          setTimeout(() => {
+            document.getElementsByClassName("button")[13].classList.toggle("buttonhover");
+          },100);
+        }
       else
       {
         document.getElementsByClassName("button")[14].classList.toggle("buttonhover");
@@ -258,10 +362,20 @@ window.addEventListener("keydown", function(event) {
       break;
 
     case "Backspace":
-      document.getElementsByClassName("button")[3].classList.toggle("buttonhover");
+      if(window.location.pathname.includes("programmer.html"))
+      {
+        document.getElementsByClassName("button")[1].classList.toggle("buttonhover");
       setTimeout(() => {
-        document.getElementsByClassName("button")[3].classList.toggle("buttonhover");
+        document.getElementsByClassName("button")[1].classList.toggle("buttonhover");
       },100);
+      }
+      else
+      {
+        document.getElementsByClassName("button")[3].classList.toggle("buttonhover");
+        setTimeout(() => {
+          document.getElementsByClassName("button")[3].classList.toggle("buttonhover");
+        },100);
+      }
       del();
       break;
 
@@ -273,6 +387,13 @@ window.addEventListener("keydown", function(event) {
           document.getElementsByClassName("button")[7].classList.toggle("buttonhover");
         },100);
       }
+      else if(window.location.pathname.includes("programmer.html"))
+        {
+          document.getElementsByClassName("button")[0].classList.toggle("buttonhover");
+          setTimeout(() => {
+            document.getElementsByClassName("button")[0].classList.toggle("buttonhover");
+          },100);
+        }
       else
       {
         document.getElementsByClassName("button")[0].classList.toggle("buttonhover");
@@ -288,6 +409,10 @@ window.addEventListener("keydown", function(event) {
       {
         //do nothing
       }
+      else if(window.location.pathname.includes("programmer.html"))
+        {
+          // code here for programmer.html webpage 
+        }
       else
       document.getElementsByClassName("button")[19].classList.toggle("buttonhover");
       setTimeout(() => {
@@ -301,6 +426,13 @@ window.addEventListener("keydown", function(event) {
       {
         //do nothing
       }
+      else if(window.location.pathname.includes("programmer.html"))
+        {
+          document.getElementsByClassName("button")[5].classList.toggle("buttonhover");
+          setTimeout(() => {
+            document.getElementsByClassName("button")[5].classList.toggle("buttonhover");
+          },100);
+        }
       else
       document.getElementsByClassName("button")[15].classList.toggle("buttonhover");
       setTimeout(() => {
@@ -314,6 +446,10 @@ window.addEventListener("keydown", function(event) {
       {
         //do nothing
       }
+      else if(window.location.pathname.includes("programmer.html"))
+        {
+          // code here for programmer.html webpage 
+        }
       else
       document.getElementsByClassName("button")[7].classList.toggle("buttonhover");
       setTimeout(() => {
@@ -327,6 +463,10 @@ window.addEventListener("keydown", function(event) {
       {
         //do nothing
       }
+      else if(window.location.pathname.includes("programmer.html"))
+        {
+          // code here for programmer.html webpage 
+        }
       else
       document.getElementsByClassName("button")[11].classList.toggle("buttonhover");
       setTimeout(() => {
@@ -343,6 +483,13 @@ window.addEventListener("keydown", function(event) {
           document.getElementsByClassName("button")[12].classList.toggle("buttonhover");
         },100);
       }
+      else if(window.location.pathname.includes("programmer.html"))
+        {
+          document.getElementsByClassName("button")[23].classList.toggle("buttonhover");
+          setTimeout(() => {
+            document.getElementsByClassName("button")[23].classList.toggle("buttonhover");
+          },100);
+        }
       else
       {
         document.getElementsByClassName("button")[26].classList.toggle("buttonhover");
@@ -358,6 +505,13 @@ window.addEventListener("keydown", function(event) {
       {
         //do nothing
       }
+      else if(window.location.pathname.includes("programmer.html"))
+        {
+          document.getElementsByClassName("button")[9].classList.toggle("buttonhover");
+          setTimeout(() => {
+            document.getElementsByClassName("button")[9].classList.toggle("buttonhover");
+          },100);
+        }
       else
       document.getElementsByClassName("button")[1].classList.toggle("buttonhover");
       setTimeout(() => {
@@ -371,6 +525,13 @@ window.addEventListener("keydown", function(event) {
       {
         //do nothing
       }
+      else if(window.location.pathname.includes("programmer.html"))
+        {
+          document.getElementsByClassName("button")[7].classList.toggle("buttonhover");
+          setTimeout(() => {
+            document.getElementsByClassName("button")[7].classList.toggle("buttonhover");
+          },100);
+        }
       else
       document.getElementsByClassName("button")[9].classList.toggle("buttonhover");
       setTimeout(() => {
@@ -384,6 +545,13 @@ window.addEventListener("keydown", function(event) {
       {
         //do nothing
       }
+      else if(window.location.pathname.includes("programmer.html"))
+        {
+          document.getElementsByClassName("button")[8].classList.toggle("buttonhover");
+          setTimeout(() => {
+            document.getElementsByClassName("button")[8].classList.toggle("buttonhover");
+          },100);
+        }
       else
       document.getElementsByClassName("button")[10].classList.toggle("buttonhover");
       setTimeout(() => {
@@ -529,6 +697,10 @@ function clearResult() {
     para1.innerText = para2.innerText = "";
     input.value = output.value = "millimeters";
   }
+  else if(window.location.pathname.includes("programmer.html"))
+  {
+    // code for programmer.html webpage 
+  }
   else
   {
     res.innerText = "";
@@ -561,6 +733,10 @@ function del() {
       displaylength1();
     }
   }
+  else if(window.location.pathname.includes("programmer.html"))
+    {
+      // code for programmer.html webpage 
+    }
   else
   {
     if(res.innerText != "")
@@ -599,6 +775,10 @@ function seven() {
     para1.innerText += "7";
     displaylength1();
   }
+  else if(window.location.pathname.includes("programmer.html"))
+    {
+      // code for programmer.html webpage 
+    }
   else
   {
     res.innerText += "7";
@@ -612,6 +792,10 @@ function eight() {
     para1.innerText += "8";
     displaylength1();
   }
+  else if(window.location.pathname.includes("programmer.html"))
+    {
+      // code for programmer.html webpage 
+    }
   else
   {
     res.innerText += "8";
@@ -625,6 +809,10 @@ function nine() {
     para1.innerText += "9";
     displaylength1();
   }
+  else if(window.location.pathname.includes("programmer.html"))
+    {
+      // code for programmer.html webpage 
+    }
   else
   {
     res.innerText += "9";
@@ -633,9 +821,16 @@ function nine() {
 
 /* The function is related to the button - */
 function minus() {
-  if((lastChar != "-") && (lastChar != "*") && (lastChar != "/") && (lastChar != "+") && (lastChar != "."))
+  if(window.location.pathname.includes("programmer.html"))
+    {
+      // code for programmer.html webpage 
+    }
+  else
   {
-    res.innerText += "-";
+    if((lastChar != "-") && (lastChar != "*") && (lastChar != "/") && (lastChar != "+") && (lastChar != "."))
+      {
+        res.innerText += "-";
+      }
   }
 }
 
@@ -645,6 +840,10 @@ function four() {
   {
     para1.innerText += "4";
     displaylength1();
+  }
+  else if(window.location.pathname.includes("programmer.html"))
+  {
+    // code here for programmer.html webpage 
   }
   else
   {
@@ -659,6 +858,10 @@ function five() {
     para1.innerText += "5";
     displaylength1();
   }
+  else if(window.location.pathname.includes("programmer.html"))
+    {
+      // code here for programmer.html webpage 
+    }
   else
   {
     res.innerText += "5";
@@ -672,6 +875,10 @@ function six() {
     para1.innerText += "6";
     displaylength1();
   }
+  else if(window.location.pathname.includes("programmer.html"))
+    {
+      // code here for programmer.html webpage 
+    }
   else
   {
     res.innerText += "6";
@@ -694,6 +901,10 @@ function one() {
     para1.innerText += "1";
     displaylength1();
   }
+  else if(window.location.pathname.includes("programmer.html"))
+    {
+      // code here for programmer.html webpage 
+    }
   else
   {
     res.innerText += "1";
@@ -707,6 +918,10 @@ function two() {
     para1.innerText += "2";
     displaylength1();
   }
+  else if(window.location.pathname.includes("programmer.html"))
+    {
+      // code here for programmer.html webpage 
+    }
   else
   {
     res.innerText += "2";
@@ -720,6 +935,10 @@ function three() {
     para1.innerText += "3";
     displaylength1();
   }
+  else if(window.location.pathname.includes("programmer.html"))
+    {
+      // code here for programmer.html webpage 
+    }
   else
   {
     res.innerText += "3";
@@ -749,6 +968,10 @@ function dot() {
           }
         }
       }
+    }
+  else if(window.location.pathname.includes("programmer.html"))
+    {
+      // code here for programmer.html webpage 
     }
   else
   {
@@ -805,6 +1028,10 @@ function zero() {
     para1.innerText += "0";
     displaylength1();
   }
+  else if(window.location.pathname.includes("programmer.html"))
+    {
+      // code here for programmer.html webpage 
+    }
   else
   {
     res.innerText += "0";
@@ -825,42 +1052,63 @@ function doublezero() {
 
 /* The function is related to the button ( */
 function leftbrac() {
-  if((lastChar != ".") && (lastChar != "0") && (lastChar != "1") && (lastChar != "2") &&
-  (lastChar != "3") && (lastChar != "4") && (lastChar != "5") && (lastChar != "6") && 
-  (lastChar != "7") && (lastChar != "8") && (lastChar != "9"))
+  if(window.location.pathname.includes("programmer.html"))
   {
-    if(lastChar == ")")
+    // code here for programmer.html webpage 
+  }
+  else
+  {
+    if((lastChar != ".") && (lastChar != "0") && (lastChar != "1") && (lastChar != "2") &&
+    (lastChar != "3") && (lastChar != "4") && (lastChar != "5") && (lastChar != "6") && 
+    (lastChar != "7") && (lastChar != "8") && (lastChar != "9"))
     {
-      alert("You cannot use left bracket just after right bracket. Please use an operator in between these two.");
-    }
-    else
-    {
-      res.innerText += "(";
+      if(lastChar == ")")
+      {
+        alert("You cannot use left bracket just after right bracket. Please use an operator in between these two.");
+      }
+      else
+      {
+        res.innerText += "(";
+      }
     }
   }
 }
 
 /* The function is related to the button ) */
 function rightbrac() {
-  if((lastChar != ".") && (lastChar != "+") && (lastChar != "-") && (lastChar != "*") && (lastChar != "/") && (lastChar != "^"))
+  if(window.location.pathname.includes("programmer.html"))
   {
-    if(lastChar == "(")
-    {
-      alert("You cannot use right bracket just after left bracket. Please use an operand in between these two.");
-    }
-    else
-    {
-      res.innerText += ")";
-    }
+    // code here for programmer.html webpage 
   }
+  else
+  {
+    if((lastChar != ".") && (lastChar != "+") && (lastChar != "-") && (lastChar != "*") && (lastChar != "/") && (lastChar != "^"))
+    {
+      if(lastChar == "(")
+      {
+        alert("You cannot use right bracket just after left bracket. Please use an operand in between these two.");
+      }
+      else
+      {
+        res.innerText += ")";
+      }
+    }
+  } 
 }
 
 /* The function is related to the % button and adds % to the res.innerText */
 function percent() {
-  if((lastChar != "%") && (lastChar != "+") && (lastChar != "-") && (lastChar != "/") && 
-      (lastChar != "*") && (lastChar != ".") && (lastChar != "(") && (lastChar != "^"))
+  if(window.location.pathname.includes("programmer.html"))
   {
-    res.innerText += '%';
+    // code here for programmer.html webpage 
+  }
+  else
+  {
+    if((lastChar != "%") && (lastChar != "+") && (lastChar != "-") && (lastChar != "/") && 
+    (lastChar != "*") && (lastChar != ".") && (lastChar != "(") && (lastChar != "^"))
+    {
+      res.innerText += '%';
+    }
   }
 }
 
@@ -891,110 +1139,138 @@ function sqr() {
 
 /* The function is related to the button = */
 function display() {
-  if(res.innerText != "")
+  if(window.location.pathname.includes("programmer.html"))
   {
-    if((lastChar == '+') || (lastChar == '-') || (lastChar == '*') || (lastChar == '/') || 
-    (lastChar == '('))
-    {
-    res.innerText = "Invalid Expression. The last character cannot be an operator or left bracket.";
-    }
-    else 
-    {
-      let checkStrForBrackets = res.innerText;
-
-      let Stack = [];
-      let BracketisOK = 1; // OK
-      for(let i=0; i<checkStrForBrackets.length; i++)
+    // code here for programmer.html webpage 
+  }
+  else
+  {
+    if(res.innerText != "")
       {
-        if(checkStrForBrackets[i] == "(")
+        if((lastChar == '+') || (lastChar == '-') || (lastChar == '*') || (lastChar == '/') || 
+        (lastChar == '('))
         {
-          Stack.push("(");
+        res.innerText = "Invalid Expression. The last character cannot be an operator or left bracket.";
         }
-        else if(checkStrForBrackets[i] == ")")
+        else 
         {
-          let popped = Stack.pop();
-          if(popped != "(")
+          let checkStrForBrackets = res.innerText;
+    
+          let Stack = [];
+          let BracketisOK = 1; // OK
+          for(let i=0; i<checkStrForBrackets.length; i++)
           {
-            BracketisOK = 0; // Not OK 
-            break;
-          }
-        }
-      }
-
-      if((BracketisOK == 0) || (Stack.length != 0))
-      {
-        res.innerText = "Bracket is missing in the Expression.";
-      }
-      else
-      {
-        // Replace all the occurrences of '%' with '/100' in the res.innerText 
-        res.innerText = (res.innerText).replaceAll("%", "/100");
-
-        // Code for ^ in res.innerText, Example = 2^2
-        while(res.innerText.includes("^"))
-          {           
-            let currentlen = res.innerText.length;
-            let lastIndexOfCaret = res.innerText.lastIndexOf("^");
-            
-            let x = "";
-            let y = "";
-            let LeftBrackets = 0;
-            let RightBrackets = 0;
-
-            // Traversing the rest of the res.innerText after ^ sign 
-            for(let j = (lastIndexOfCaret + 1), forwardlength = 0; j < currentlen; j++)
+            if(checkStrForBrackets[i] == "(")
             {
-              let ch = res.innerText.charAt(j);
-              let beforeCh = res.innerText.charAt(j-1);
-              
-              if((ch == "+") || (ch == "-") || (ch == "/") || (ch == "*") || (ch == "^") || 
-                  (ch == ")") || (ch == "("))
+              Stack.push("(");
+            }
+            else if(checkStrForBrackets[i] == ")")
+            {
+              let popped = Stack.pop();
+              if(popped != "(")
               {
-                if(ch == "-")
+                BracketisOK = 0; // Not OK 
+                break;
+              }
+            }
+          }
+    
+          if((BracketisOK == 0) || (Stack.length != 0))
+          {
+            res.innerText = "Bracket is missing in the Expression.";
+          }
+          else
+          {
+            // Replace all the occurrences of '%' with '/100' in the res.innerText 
+            res.innerText = (res.innerText).replaceAll("%", "/100");
+    
+            // Code for ^ in res.innerText, Example = 2^2
+            while(res.innerText.includes("^"))
+              {           
+                let currentlen = res.innerText.length;
+                let lastIndexOfCaret = res.innerText.lastIndexOf("^");
+                
+                let x = "";
+                let y = "";
+                let LeftBrackets = 0;
+                let RightBrackets = 0;
+    
+                // Traversing the rest of the res.innerText after ^ sign 
+                for(let j = (lastIndexOfCaret + 1), forwardlength = 0; j < currentlen; j++)
                 {
-                  if(beforeCh == "^")
+                  let ch = res.innerText.charAt(j);
+                  let beforeCh = res.innerText.charAt(j-1);
+                  
+                  if((ch == "+") || (ch == "-") || (ch == "/") || (ch == "*") || (ch == "^") || 
+                      (ch == ")") || (ch == "("))
                   {
-                    y += ch;
-                    forwardlength++;
-                  }
-                  else
-                  {
-                    if(LeftBrackets == RightBrackets)
+                    if(ch == "-")
+                    {
+                      if(beforeCh == "^")
+                      {
+                        y += ch;
+                        forwardlength++;
+                      }
+                      else
+                      {
+                        if(LeftBrackets == RightBrackets)
+                        {
+                          break;
+                        }
+                        else
+                        {
+                          y += ch;
+                          forwardlength++;
+                        }
+                      }
+                    }
+                    else if(ch == "(")
+                    {
+                      if(beforeCh == "^")
+                      {
+                        y += ch;
+                        LeftBrackets++;
+                        forwardlength++;
+                      }
+                      else
+                      {
+                        if(LeftBrackets == RightBrackets)
+                        {
+                          break;
+                        }
+                        else
+                        {
+                          y += ch;
+                          LeftBrackets++;
+                          forwardlength++;
+                        }
+                      }
+                    }
+                    else if(ch == ")")
+                      {
+                        if(y.includes("("))
+                        {
+                          if(LeftBrackets == RightBrackets)
+                          {
+                            break;
+                          }
+                          else
+                          {
+                            y += ch;
+                            RightBrackets++;
+                            forwardlength++;
+                          }
+                        }
+                        else
+                        {
+                          break;
+                        }
+                    }
+                    else if(ch == "^")
                     {
                       break;
                     }
-                    else
-                    {
-                      y += ch;
-                      forwardlength++;
-                    }
-                  }
-                }
-                else if(ch == "(")
-                {
-                  if(beforeCh == "^")
-                  {
-                    y += ch;
-                    LeftBrackets++;
-                    forwardlength++;
-                  }
-                  else
-                  {
-                    if(LeftBrackets == RightBrackets)
-                    {
-                      break;
-                    }
-                    else
-                    {
-                      y += ch;
-                      LeftBrackets++;
-                      forwardlength++;
-                    }
-                  }
-                }
-                else if(ch == ")")
-                  {
-                    if(y.includes("("))
+                    else if(ch == "/")
                     {
                       if(LeftBrackets == RightBrackets)
                       {
@@ -1003,154 +1279,134 @@ function display() {
                       else
                       {
                         y += ch;
-                        RightBrackets++;
                         forwardlength++;
                       }
                     }
-                    else
+                    else if((ch == "+") || (ch == "*"))
+                    {
+                      if(LeftBrackets == RightBrackets)
+                      {
+                        break;
+                      }
+                      else
+                      {
+                        y += ch;
+                        forwardlength++;
+                      }
+                    }
+                  }
+                  else
+                  {
+                    y += ch;
+                    forwardlength++;
+                  }
+                }
+    
+                //console.log(y);
+    
+                // Traversing the rest of the res.innerText before ^ sign 
+                for(let j = (lastIndexOfCaret - 1), backwardlength = 0; j > -1; j--)
+                {
+                  let ch = res.innerText.charAt(j);
+                  let afterch = res.innerText.charAt(j+1);
+    
+                  if((ch == "+") || (ch == "-") || (ch == "/") || (ch == "*") || 
+                  (ch == "^") || (ch == "(") || (ch == ")"))
+                  {
+                    if((ch == "-") || (ch == "+") || (ch == "/") || (ch == "*"))
+                    {
+                      if(LeftBrackets == RightBrackets)
+                      {
+                        break;
+                      }
+                      else
+                      {
+                        x += ch;
+                        backwardlength++;
+                      }
+                    }
+                    else if(ch == ")")
+                    {
+                      if(afterch == "^")
+                      {
+                        x += ch;
+                        RightBrackets++;
+                        backwardlength++;
+                      }
+                      else
+                      {
+                        if(LeftBrackets == RightBrackets)
+                        break;
+                        else
+                        {
+                          x += ch;
+                          RightBrackets++;
+                          backwardlength++;
+                        }
+                      }
+                    }
+                    else if(ch == "(")
+                    {
+                      if(LeftBrackets == RightBrackets)
+                        break;
+                      else
+                      {
+                        x += ch;
+                        LeftBrackets++;
+                        backwardlength++;
+                      }
+                    }
+                    else if(ch == "^")
                     {
                       break;
                     }
-                }
-                else if(ch == "^")
-                {
-                  break;
-                }
-                else if(ch == "/")
-                {
-                  if(LeftBrackets == RightBrackets)
-                  {
-                    break;
-                  }
-                  else
-                  {
-                    y += ch;
-                    forwardlength++;
-                  }
-                }
-                else if((ch == "+") || (ch == "*"))
-                {
-                  if(LeftBrackets == RightBrackets)
-                  {
-                    break;
-                  }
-                  else
-                  {
-                    y += ch;
-                    forwardlength++;
-                  }
-                }
-              }
-              else
-              {
-                y += ch;
-                forwardlength++;
-              }
-            }
-
-            //console.log(y);
-
-            // Traversing the rest of the res.innerText before ^ sign 
-            for(let j = (lastIndexOfCaret - 1), backwardlength = 0; j > -1; j--)
-            {
-              let ch = res.innerText.charAt(j);
-              let afterch = res.innerText.charAt(j+1);
-
-              if((ch == "+") || (ch == "-") || (ch == "/") || (ch == "*") || 
-              (ch == "^") || (ch == "(") || (ch == ")"))
-              {
-                if((ch == "-") || (ch == "+") || (ch == "/") || (ch == "*"))
-                {
-                  if(LeftBrackets == RightBrackets)
-                  {
-                    break;
-                  }
+                  } 
                   else
                   {
                     x += ch;
                     backwardlength++;
                   }
                 }
-                else if(ch == ")")
+    
+                //console.log(x);
+    
+                let originalx = x;
+                let originaly = y;
+    
+                x = eval(x);
+                y = eval(y);
+    
+                x = Number(x);
+                y = Number(y);
+    
+                if((x == Infinity) || (y == Infinity))
                 {
-                  if(afterch == "^")
-                  {
-                    x += ch;
-                    RightBrackets++;
-                    backwardlength++;
-                  }
-                  else
-                  {
-                    if(LeftBrackets == RightBrackets)
-                    break;
-                    else
-                    {
-                      x += ch;
-                      RightBrackets++;
-                      backwardlength++;
-                    }
-                  }
+                  res.innerText = "Computation Not Possible in this Calculator.";
                 }
-                else if(ch == "(")
+                else
                 {
-                  if(LeftBrackets == RightBrackets)
-                    break;
-                  else
-                  {
-                    x += ch;
-                    LeftBrackets++;
-                    backwardlength++;
-                  }
-                }
-                else if(ch == "^")
-                {
-                  break;
-                }
-              } 
-              else
-              {
-                x += ch;
-                backwardlength++;
+                  let z = Math.pow(x,y);
+                  //console.log(z);
+    
+                  res.innerText = (res.innerText).replaceAll(`${originalx}^${originaly}`, `${z}`);
+                }              
               }
             }
-
-            //console.log(x);
-
-            let originalx = x;
-            let originaly = y;
-
-            x = eval(x);
-            y = eval(y);
-
-            x = Number(x);
-            y = Number(y);
-
-            if((x == Infinity) || (y == Infinity))
-            {
-              res.innerText = "Computation Not Possible in this Calculator.";
-            }
-            else
-            {
-              let z = Math.pow(x,y);
-              //console.log(z);
-
-              res.innerText = (res.innerText).replaceAll(`${originalx}^${originaly}`, `${z}`);
-            }              
+    
+          let final = eval(res.innerText);
+          final = Number(final);
+          if(final == Infinity)
+          {
+            res.innerText = "Computation Not Possible";
+          }
+          else
+          {
+            res.innerText = final;
           }
         }
-
-      let final = eval(res.innerText);
-      final = Number(final);
-      if(final == Infinity)
-      {
-        res.innerText = "Computation Not Possible";
       }
-      else
-      {
-        res.innerText = final;
-      }
-    }
   }
+  
 }
 
 /* The function is related to the navigation bar when the screen size is below 600px */
@@ -1748,3 +2004,160 @@ if(window.location.pathname.includes("length.html"))
     operand.addEventListener("click", displaylength1);
   });
 }
+
+function setchoosenvar(obj) {
+  if(obj.id == "hexresult")
+  {
+    choosenresult = 1;
+  }
+  else if(obj.id == "decimalresult")
+  {
+    choosenresult = 2;
+  }
+  else if(obj.id == "octalresult")
+  {
+    choosenresult = 3;
+  }
+  else if(obj.id == "binaryresult")
+  {
+    choosenresult = 4;
+  }
+  else
+  {
+    choosenresult = 0;
+  }
+  console.log(obj.id, choosenresult);
+}
+
+/* Set the css style of left border of id decimalresult div in programmer.html webpage when the webpage loads */
+function setDecimalDefault() {
+  decimalresult.classList.add("leftborderstyle");
+  choosenresult = 2;
+  lastDivBorderStyle = decimalresult;
+
+  programmerbutton.forEach((button) => {
+    //console.log(button.innerHTML);
+    switch(button.innerHTML)
+    {
+      case 'A':
+      case 'B':
+      case 'C':
+      case 'D':
+      case 'E':
+      case 'F':
+        button.disabled = true;
+        break;
+
+      default:
+        button.disabled = false;
+    }
+  });
+}
+
+programmerresultdiv.forEach((div) => {
+  div.addEventListener("click", (event) => {
+    if(lastDivBorderStyle)
+    {
+      lastDivBorderStyle.classList.remove("leftborderstyle");
+    }
+    
+    event.target.classList.add("leftborderstyle");
+    
+    if(event.target.innerHTML == "HEX")
+      {
+        programmerbutton.forEach((button) => {
+          //console.log(button.innerHTML);
+          switch(button.innerHTML)
+          {
+            case 'A':
+            case 'B':
+            case 'C':
+            case 'D':
+            case 'E':
+            case 'F':
+              button.disabled = false;
+              break;
+      
+            default:
+              button.disabled = false;
+          }
+        });
+    }
+
+    if(event.target.innerHTML == "DEC")
+    {
+      programmerbutton.forEach((button) => {
+        //console.log(button.innerHTML);
+        switch(button.innerHTML)
+        {
+          case 'A':
+          case 'B':
+          case 'C':
+          case 'D':
+          case 'E':
+          case 'F':
+            button.disabled = true;
+            break;
+    
+          default:
+            button.disabled = false;
+        }
+      });
+    }
+
+    if(event.target.innerHTML == "OCT")
+    {
+      programmerbutton.forEach((button) => {
+        //console.log(button.innerHTML);
+        switch(button.innerHTML)
+        {
+          case 'A':
+          case 'B':
+          case 'C':
+          case 'D':
+          case 'E':
+          case 'F':
+          case '8':
+          case '9':
+          case '.':
+            button.disabled = true;
+            break;
+    
+          default:
+            button.disabled = false;
+        }
+      });
+    }
+
+    if(event.target.innerHTML == "BIN")
+    {
+      programmerbutton.forEach((button) => {
+        //console.log(button.innerHTML);
+        switch(button.innerHTML)
+        {
+          case 'A':
+          case 'B':
+          case 'C':
+          case 'D':
+          case 'E':
+          case 'F':
+          case '2':
+          case '3':
+          case '4':
+          case '5':
+          case '6':
+          case '7':
+          case '8':
+          case '9':
+            button.disabled = true;
+            break;
+    
+          default:
+            button.disabled = false;
+        }
+      });
+    }
+    lastDivBorderStyle = event.target;
+    
+  });
+});
