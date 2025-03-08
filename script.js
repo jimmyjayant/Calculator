@@ -171,10 +171,13 @@ window.addEventListener("keydown", function(event) {
       }
       else if(window.location.pathname.includes("programmer.html"))
         {
-          document.getElementsByClassName("button")[20].classList.toggle("buttonhover");
-        setTimeout(() => {
-          document.getElementsByClassName("button")[20].classList.toggle("buttonhover");
-        },100);
+          if(document.getElementsByClassName("button")[20].disabled == false)
+          {
+            document.getElementsByClassName("button")[20].classList.toggle("buttonhover");
+            setTimeout(() => {
+              document.getElementsByClassName("button")[20].classList.toggle("buttonhover");
+            },100);
+          } 
         }
       else
       {
@@ -196,10 +199,13 @@ window.addEventListener("keydown", function(event) {
       }
       else if(window.location.pathname.includes("programmer.html"))
         {
-          document.getElementsByClassName("button")[21].classList.toggle("buttonhover");
-        setTimeout(() => {
-          document.getElementsByClassName("button")[21].classList.toggle("buttonhover");
-        },100);
+          if(document.getElementsByClassName("button")[21].disabled == false)
+          {
+            document.getElementsByClassName("button")[21].classList.toggle("buttonhover");
+            setTimeout(() => {
+              document.getElementsByClassName("button")[21].classList.toggle("buttonhover");
+            },100);
+          }
         }
       else
       {
@@ -221,10 +227,13 @@ window.addEventListener("keydown", function(event) {
       }
       else if(window.location.pathname.includes("programmer.html"))
         {
-          document.getElementsByClassName("button")[15].classList.toggle("buttonhover");
-          setTimeout(() => {
+          if(document.getElementsByClassName("button")[15].disabled == false)
+          {
             document.getElementsByClassName("button")[15].classList.toggle("buttonhover");
-          },100);
+            setTimeout(() => {
+              document.getElementsByClassName("button")[15].classList.toggle("buttonhover");
+            },100);
+          } 
         }
       else
       {
@@ -246,10 +255,13 @@ window.addEventListener("keydown", function(event) {
       }
       else if(window.location.pathname.includes("programmer.html"))
         {
-          document.getElementsByClassName("button")[16].classList.toggle("buttonhover");
-          setTimeout(() => {
+          if(document.getElementsByClassName("button")[16].disabled == false)
+          {
             document.getElementsByClassName("button")[16].classList.toggle("buttonhover");
-          },100);
+            setTimeout(() => {
+              document.getElementsByClassName("button")[16].classList.toggle("buttonhover");
+            },100);
+          }
         }
       else
       {
@@ -271,10 +283,13 @@ window.addEventListener("keydown", function(event) {
       }
       else if(window.location.pathname.includes("programmer.html"))
         {
-          document.getElementsByClassName("button")[17].classList.toggle("buttonhover");
-          setTimeout(() => {
+          if(document.getElementsByClassName("button")[17].disabled == false)
+          {
             document.getElementsByClassName("button")[17].classList.toggle("buttonhover");
-          },100);
+            setTimeout(() => {
+              document.getElementsByClassName("button")[17].classList.toggle("buttonhover");
+            },100);
+          }
         }
       else
       {
@@ -296,10 +311,13 @@ window.addEventListener("keydown", function(event) {
       }
       else if(window.location.pathname.includes("programmer.html"))
         {
-          document.getElementsByClassName("button")[11].classList.toggle("buttonhover");
-          setTimeout(() => {
+          if(document.getElementsByClassName("button")[11].disabled == false)
+          {
             document.getElementsByClassName("button")[11].classList.toggle("buttonhover");
-          },100);
+            setTimeout(() => {
+              document.getElementsByClassName("button")[11].classList.toggle("buttonhover");
+            },100);
+          }
         }
       else
       {
@@ -321,10 +339,13 @@ window.addEventListener("keydown", function(event) {
       }
       else if(window.location.pathname.includes("programmer.html"))
         {
-          document.getElementsByClassName("button")[12].classList.toggle("buttonhover");
-          setTimeout(() => {
+          if(document.getElementsByClassName("button")[12].disabled == false)
+          {
             document.getElementsByClassName("button")[12].classList.toggle("buttonhover");
-          },100);
+            setTimeout(() => {
+              document.getElementsByClassName("button")[12].classList.toggle("buttonhover");
+            },100);
+          }
         }
       else
       {
@@ -346,10 +367,13 @@ window.addEventListener("keydown", function(event) {
       }
       else if(window.location.pathname.includes("programmer.html"))
         {
-          document.getElementsByClassName("button")[13].classList.toggle("buttonhover");
-          setTimeout(() => {
+          if(document.getElementsByClassName("button")[13].disabled == false)
+          {
             document.getElementsByClassName("button")[13].classList.toggle("buttonhover");
-          },100);
+            setTimeout(() => {
+              document.getElementsByClassName("button")[13].classList.toggle("buttonhover");
+            },100);
+          }
         }
       else
       {
