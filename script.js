@@ -84,6 +84,27 @@ window.addEventListener("resize", function() {
   }
 });
 
+/* This function will be used to toggle buttonhover css class applied on buttons */
+function csshovereffect(id) {
+  if(id == "equal")
+  {
+    document.getElementById(id).classList.toggle("lastbuttonhover");
+    setTimeout(() => {
+      document.getElementById(id).classList.toggle("lastbuttonhover");
+    },100);
+  }
+  else
+  {
+    if(document.getElementsByClassName("button")[id].disabled == false)
+    {
+      document.getElementsByClassName("button")[id].classList.toggle("buttonhover");
+      setTimeout(() => {
+        document.getElementsByClassName("button")[id].classList.toggle("buttonhover");
+      },100);
+    }
+  }
+}
+
 // It will add keyboard key pressing event on all buttons of the calculator 
 window.addEventListener("keydown", function(event) {
   event.preventDefault();
@@ -96,17 +117,11 @@ window.addEventListener("keydown", function(event) {
       }
       else if(window.location.pathname.includes("programmer.html"))
       {
-        document.getElementById("equal").classList.toggle("lastbuttonhover");
-        setTimeout(() => {
-          document.getElementById("equal").classList.toggle("lastbuttonhover");
-        },100);
+        csshovereffect("equal");
       }
       else
       {
-        document.getElementById("equal").classList.toggle("lastbuttonhover");
-        setTimeout(() => {
-          document.getElementById("equal").classList.toggle("lastbuttonhover");
-        },100);
+        csshovereffect("equal");
       }
       display();
       break;
@@ -114,24 +129,15 @@ window.addEventListener("keydown", function(event) {
     case "0":
       if(window.location.pathname.includes("length.html"))
       {
-        document.getElementsByClassName("button")[11].classList.toggle("buttonhover");
-        setTimeout(() => {
-          document.getElementsByClassName("button")[11].classList.toggle("buttonhover");
-        },100);
+        csshovereffect(11);
       }
       else if(window.location.pathname.includes("programmer.html"))
       {
-        document.getElementsByClassName("button")[24].classList.toggle("buttonhover");
-        setTimeout(() => {
-          document.getElementsByClassName("button")[24].classList.toggle("buttonhover");
-        },100);
+        csshovereffect(24);
       }
       else
       {
-        document.getElementsByClassName("button")[25].classList.toggle("buttonhover");
-        setTimeout(() => {
-          document.getElementsByClassName("button")[25].classList.toggle("buttonhover");
-        },100);
+        csshovereffect(25);
       }
       zero();
       break;
@@ -139,24 +145,15 @@ window.addEventListener("keydown", function(event) {
     case "1":
       if(window.location.pathname.includes("length.html"))
       {
-        document.getElementsByClassName("button")[8].classList.toggle("buttonhover");
-        setTimeout(() => {
-          document.getElementsByClassName("button")[8].classList.toggle("buttonhover");
-        },100);
+        csshovereffect(8);
       }
       else if(window.location.pathname.includes("programmer.html"))
       {
-        document.getElementsByClassName("button")[19].classList.toggle("buttonhover");
-        setTimeout(() => {
-          document.getElementsByClassName("button")[19].classList.toggle("buttonhover");
-        },100);
+        csshovereffect(19);
       }
       else
       {
-        document.getElementsByClassName("button")[20].classList.toggle("buttonhover");
-        setTimeout(() => {
-          document.getElementsByClassName("button")[20].classList.toggle("buttonhover");
-        },100);
+        csshovereffect(20);
       }
       one();
       break;
@@ -164,27 +161,15 @@ window.addEventListener("keydown", function(event) {
     case "2":
       if(window.location.pathname.includes("length.html"))
       {
-        document.getElementsByClassName("button")[9].classList.toggle("buttonhover");
-        setTimeout(() => {
-          document.getElementsByClassName("button")[9].classList.toggle("buttonhover");
-        },100);
+        csshovereffect(9);
       }
       else if(window.location.pathname.includes("programmer.html"))
-        {
-          if(document.getElementsByClassName("button")[20].disabled == false)
-          {
-            document.getElementsByClassName("button")[20].classList.toggle("buttonhover");
-            setTimeout(() => {
-              document.getElementsByClassName("button")[20].classList.toggle("buttonhover");
-            },100);
-          } 
-        }
+      { 
+        csshovereffect(20);
+      }
       else
       {
-        document.getElementsByClassName("button")[21].classList.toggle("buttonhover");
-        setTimeout(() => {
-          document.getElementsByClassName("button")[21].classList.toggle("buttonhover");
-        },100);
+        csshovereffect(21);
       }
       two();
       break;
@@ -192,27 +177,15 @@ window.addEventListener("keydown", function(event) {
     case "3":
       if(window.location.pathname.includes("length.html"))
       {
-        document.getElementsByClassName("button")[10].classList.toggle("buttonhover");
-        setTimeout(() => {
-          document.getElementsByClassName("button")[10].classList.toggle("buttonhover");
-        },100);
+        csshovereffect(10);
       }
       else if(window.location.pathname.includes("programmer.html"))
-        {
-          if(document.getElementsByClassName("button")[21].disabled == false)
-          {
-            document.getElementsByClassName("button")[21].classList.toggle("buttonhover");
-            setTimeout(() => {
-              document.getElementsByClassName("button")[21].classList.toggle("buttonhover");
-            },100);
-          }
-        }
+      { 
+        csshovereffect(21);
+      }
       else
       {
-        document.getElementsByClassName("button")[22].classList.toggle("buttonhover");
-        setTimeout(() => {
-          document.getElementsByClassName("button")[22].classList.toggle("buttonhover");
-        },100);
+        csshovereffect(22);
       }
       three();
       break;
@@ -220,27 +193,15 @@ window.addEventListener("keydown", function(event) {
     case "4":
       if(window.location.pathname.includes("length.html"))
       {
-        document.getElementsByClassName("button")[4].classList.toggle("buttonhover");
-        setTimeout(() => {
-          document.getElementsByClassName("button")[4].classList.toggle("buttonhover");
-        },100);
+        csshovereffect(4);
       }
       else if(window.location.pathname.includes("programmer.html"))
-        {
-          if(document.getElementsByClassName("button")[15].disabled == false)
-          {
-            document.getElementsByClassName("button")[15].classList.toggle("buttonhover");
-            setTimeout(() => {
-              document.getElementsByClassName("button")[15].classList.toggle("buttonhover");
-            },100);
-          } 
-        }
+      {
+        csshovereffect(15);
+      }
       else
       {
-        document.getElementsByClassName("button")[16].classList.toggle("buttonhover");
-        setTimeout(() => {
-          document.getElementsByClassName("button")[16].classList.toggle("buttonhover");
-        },100);
+        csshovereffect(16);
       }
       four();
       break;
@@ -248,27 +209,15 @@ window.addEventListener("keydown", function(event) {
     case "5":
       if(window.location.pathname.includes("length.html"))
       {
-        document.getElementsByClassName("button")[5].classList.toggle("buttonhover");
-        setTimeout(() => {
-          document.getElementsByClassName("button")[5].classList.toggle("buttonhover");
-        },100);
+        csshovereffect(5);
       }
       else if(window.location.pathname.includes("programmer.html"))
-        {
-          if(document.getElementsByClassName("button")[16].disabled == false)
-          {
-            document.getElementsByClassName("button")[16].classList.toggle("buttonhover");
-            setTimeout(() => {
-              document.getElementsByClassName("button")[16].classList.toggle("buttonhover");
-            },100);
-          }
-        }
+      {
+        csshovereffect(16);
+      }
       else
       {
-        document.getElementsByClassName("button")[17].classList.toggle("buttonhover");
-        setTimeout(() => {
-          document.getElementsByClassName("button")[17].classList.toggle("buttonhover");
-        },100);
+        csshovereffect(17);
       }
       five();
       break;
@@ -276,27 +225,15 @@ window.addEventListener("keydown", function(event) {
     case "6":
       if(window.location.pathname.includes("length.html"))
       {
-        document.getElementsByClassName("button")[6].classList.toggle("buttonhover");
-        setTimeout(() => {
-          document.getElementsByClassName("button")[6].classList.toggle("buttonhover");
-        },100);
+        csshovereffect(6);
       }
       else if(window.location.pathname.includes("programmer.html"))
-        {
-          if(document.getElementsByClassName("button")[17].disabled == false)
-          {
-            document.getElementsByClassName("button")[17].classList.toggle("buttonhover");
-            setTimeout(() => {
-              document.getElementsByClassName("button")[17].classList.toggle("buttonhover");
-            },100);
-          }
-        }
+      {
+        csshovereffect(17);
+      }
       else
       {
-        document.getElementsByClassName("button")[18].classList.toggle("buttonhover");
-        setTimeout(() => {
-          document.getElementsByClassName("button")[18].classList.toggle("buttonhover");
-        },100);
+        csshovereffect(18);
       }
       six();
       break;
@@ -304,27 +241,15 @@ window.addEventListener("keydown", function(event) {
     case "7":
       if(window.location.pathname.includes("length.html"))
       {
-        document.getElementsByClassName("button")[0].classList.toggle("buttonhover");
-        setTimeout(() => {
-          document.getElementsByClassName("button")[0].classList.toggle("buttonhover");
-        },100);
+        csshovereffect(0);
       }
       else if(window.location.pathname.includes("programmer.html"))
-        {
-          if(document.getElementsByClassName("button")[11].disabled == false)
-          {
-            document.getElementsByClassName("button")[11].classList.toggle("buttonhover");
-            setTimeout(() => {
-              document.getElementsByClassName("button")[11].classList.toggle("buttonhover");
-            },100);
-          }
-        }
+      {
+        csshovereffect(11);
+      }
       else
       {
-        document.getElementsByClassName("button")[12].classList.toggle("buttonhover");
-        setTimeout(() => {
-          document.getElementsByClassName("button")[12].classList.toggle("buttonhover");
-        },100);
+        csshovereffect(12);
       }
       seven();
       break;
@@ -332,27 +257,15 @@ window.addEventListener("keydown", function(event) {
     case "8":
       if(window.location.pathname.includes("length.html"))
       {
-        document.getElementsByClassName("button")[1].classList.toggle("buttonhover");
-        setTimeout(() => {
-          document.getElementsByClassName("button")[1].classList.toggle("buttonhover");
-        },100);
+        csshovereffect(1);
       }
       else if(window.location.pathname.includes("programmer.html"))
-        {
-          if(document.getElementsByClassName("button")[12].disabled == false)
-          {
-            document.getElementsByClassName("button")[12].classList.toggle("buttonhover");
-            setTimeout(() => {
-              document.getElementsByClassName("button")[12].classList.toggle("buttonhover");
-            },100);
-          }
-        }
+      {
+        csshovereffect(12);
+      }
       else
       {
-        document.getElementsByClassName("button")[13].classList.toggle("buttonhover");
-        setTimeout(() => {
-          document.getElementsByClassName("button")[13].classList.toggle("buttonhover");
-        },100);
+        csshovereffect(13);
       }
       eight();
       break;
@@ -360,27 +273,15 @@ window.addEventListener("keydown", function(event) {
     case "9":
       if(window.location.pathname.includes("length.html"))
       {
-        document.getElementsByClassName("button")[2].classList.toggle("buttonhover");
-        setTimeout(() => {
-          document.getElementsByClassName("button")[2].classList.toggle("buttonhover");
-        },100);
+        csshovereffect(2);
       }
       else if(window.location.pathname.includes("programmer.html"))
-        {
-          if(document.getElementsByClassName("button")[13].disabled == false)
-          {
-            document.getElementsByClassName("button")[13].classList.toggle("buttonhover");
-            setTimeout(() => {
-              document.getElementsByClassName("button")[13].classList.toggle("buttonhover");
-            },100);
-          }
-        }
+      {
+        csshovereffect(13);
+      }
       else
       {
-        document.getElementsByClassName("button")[14].classList.toggle("buttonhover");
-        setTimeout(() => {
-          document.getElementsByClassName("button")[14].classList.toggle("buttonhover");
-        },100);
+        csshovereffect(14);
       }
       nine();
       break;
@@ -388,17 +289,11 @@ window.addEventListener("keydown", function(event) {
     case "Backspace":
       if(window.location.pathname.includes("programmer.html"))
       {
-        document.getElementsByClassName("button")[1].classList.toggle("buttonhover");
-      setTimeout(() => {
-        document.getElementsByClassName("button")[1].classList.toggle("buttonhover");
-      },100);
+        csshovereffect(1);
       }
       else
       {
-        document.getElementsByClassName("button")[3].classList.toggle("buttonhover");
-        setTimeout(() => {
-          document.getElementsByClassName("button")[3].classList.toggle("buttonhover");
-        },100);
+        csshovereffect(3);
       }
       del();
       break;
@@ -406,24 +301,15 @@ window.addEventListener("keydown", function(event) {
     case "Delete":
       if(window.location.pathname.includes("length.html"))
       {
-        document.getElementsByClassName("button")[7].classList.toggle("buttonhover");
-        setTimeout(() => {
-          document.getElementsByClassName("button")[7].classList.toggle("buttonhover");
-        },100);
+        csshovereffect(7);
       }
       else if(window.location.pathname.includes("programmer.html"))
-        {
-          document.getElementsByClassName("button")[0].classList.toggle("buttonhover");
-          setTimeout(() => {
-            document.getElementsByClassName("button")[0].classList.toggle("buttonhover");
-          },100);
-        }
+      {
+        csshovereffect(0);
+      }
       else
       {
-        document.getElementsByClassName("button")[0].classList.toggle("buttonhover");
-        setTimeout(() => {
-          document.getElementsByClassName("button")[0].classList.toggle("buttonhover");
-        },100);
+        csshovereffect(0);
       }
       clearResult();
       break;
@@ -434,14 +320,13 @@ window.addEventListener("keydown", function(event) {
         //do nothing
       }
       else if(window.location.pathname.includes("programmer.html"))
-        {
-          // code here for programmer.html webpage 
-        }
+      {
+        // code here for programmer.html webpage 
+      }
       else
-      document.getElementsByClassName("button")[19].classList.toggle("buttonhover");
-      setTimeout(() => {
-        document.getElementsByClassName("button")[19].classList.toggle("buttonhover");
-      },100);
+      {
+        csshovereffect(19);
+      }      
       plus();
       break;
 
@@ -451,17 +336,13 @@ window.addEventListener("keydown", function(event) {
         //do nothing
       }
       else if(window.location.pathname.includes("programmer.html"))
-        {
-          document.getElementsByClassName("button")[5].classList.toggle("buttonhover");
-          setTimeout(() => {
-            document.getElementsByClassName("button")[5].classList.toggle("buttonhover");
-          },100);
-        }
+      {
+        csshovereffect(5);
+      }
       else
-      document.getElementsByClassName("button")[15].classList.toggle("buttonhover");
-      setTimeout(() => {
-        document.getElementsByClassName("button")[15].classList.toggle("buttonhover");
-      },100);
+      {
+        csshovereffect(15);
+      }      
       minus();
       break;
 
@@ -471,14 +352,13 @@ window.addEventListener("keydown", function(event) {
         //do nothing
       }
       else if(window.location.pathname.includes("programmer.html"))
-        {
-          // code here for programmer.html webpage 
-        }
+      {
+        // code here for programmer.html webpage 
+      }
       else
-      document.getElementsByClassName("button")[7].classList.toggle("buttonhover");
-      setTimeout(() => {
-        document.getElementsByClassName("button")[7].classList.toggle("buttonhover");
-      },100);
+      {
+        csshovereffect(7);
+      }
       divide();
       break;
 
@@ -488,38 +368,28 @@ window.addEventListener("keydown", function(event) {
         //do nothing
       }
       else if(window.location.pathname.includes("programmer.html"))
-        {
-          // code here for programmer.html webpage 
-        }
+      {
+        // code here for programmer.html webpage 
+      }
       else
-      document.getElementsByClassName("button")[11].classList.toggle("buttonhover");
-      setTimeout(() => {
-        document.getElementsByClassName("button")[11].classList.toggle("buttonhover");
-      },100);
+      {
+        csshovereffect(11);
+      }
       mul();
       break;
 
     case ".":
       if(window.location.pathname.includes("length.html"))
       {
-        document.getElementsByClassName("button")[12].classList.toggle("buttonhover");
-        setTimeout(() => {
-          document.getElementsByClassName("button")[12].classList.toggle("buttonhover");
-        },100);
+        csshovereffect(12);
       }
       else if(window.location.pathname.includes("programmer.html"))
-        {
-          document.getElementsByClassName("button")[23].classList.toggle("buttonhover");
-          setTimeout(() => {
-            document.getElementsByClassName("button")[23].classList.toggle("buttonhover");
-          },100);
-        }
+      {
+        csshovereffect(23);
+      }
       else
       {
-        document.getElementsByClassName("button")[26].classList.toggle("buttonhover");
-        setTimeout(() => {
-          document.getElementsByClassName("button")[26].classList.toggle("buttonhover");
-        },100);
+        csshovereffect(26);
       }
       dot();
       break;
@@ -530,17 +400,11 @@ window.addEventListener("keydown", function(event) {
         //do nothing
       }
       else if(window.location.pathname.includes("programmer.html"))
-        {
-          document.getElementsByClassName("button")[9].classList.toggle("buttonhover");
-          setTimeout(() => {
-            document.getElementsByClassName("button")[9].classList.toggle("buttonhover");
-          },100);
-        }
+      {
+        csshovereffect(9);
+      }
       else
-      document.getElementsByClassName("button")[1].classList.toggle("buttonhover");
-      setTimeout(() => {
-        document.getElementsByClassName("button")[1].classList.toggle("buttonhover");
-      },100);
+      csshovereffect(1);
       percent();
       break;
 
@@ -550,17 +414,11 @@ window.addEventListener("keydown", function(event) {
         //do nothing
       }
       else if(window.location.pathname.includes("programmer.html"))
-        {
-          document.getElementsByClassName("button")[7].classList.toggle("buttonhover");
-          setTimeout(() => {
-            document.getElementsByClassName("button")[7].classList.toggle("buttonhover");
-          },100);
-        }
+      {
+        csshovereffect(7);
+      }
       else
-      document.getElementsByClassName("button")[9].classList.toggle("buttonhover");
-      setTimeout(() => {
-        document.getElementsByClassName("button")[9].classList.toggle("buttonhover");
-      },100);
+      csshovereffect(9);
       leftbrac();
       break;
 
@@ -570,30 +428,18 @@ window.addEventListener("keydown", function(event) {
         //do nothing
       }
       else if(window.location.pathname.includes("programmer.html"))
-        {
-          document.getElementsByClassName("button")[8].classList.toggle("buttonhover");
-          setTimeout(() => {
-            document.getElementsByClassName("button")[8].classList.toggle("buttonhover");
-          },100);
-        }
+      {
+        csshovereffect(8);
+      }
       else
-      document.getElementsByClassName("button")[10].classList.toggle("buttonhover");
-      setTimeout(() => {
-        document.getElementsByClassName("button")[10].classList.toggle("buttonhover");
-      },100);
+      csshovereffect(10);
       rightbrac();
       break;
 
     case "a":
       if(window.location.pathname.includes("programmer.html"))
       {
-        if(document.getElementsByClassName("button")[2].disabled == false)
-        {
-          document.getElementsByClassName("button")[2].classList.toggle("buttonhover");
-          setTimeout(() => {
-            document.getElementsByClassName("button")[2].classList.toggle("buttonhover");
-          },100);
-        } 
+        csshovereffect(2);
       }
       hexA();
       break;
@@ -601,13 +447,7 @@ window.addEventListener("keydown", function(event) {
     case "b":
       if(window.location.pathname.includes("programmer.html"))
       {
-        if(document.getElementsByClassName("button")[6].disabled == false)
-        {
-          document.getElementsByClassName("button")[6].classList.toggle("buttonhover");
-          setTimeout(() => {
-            document.getElementsByClassName("button")[6].classList.toggle("buttonhover");
-          },100);
-        }
+        csshovereffect(6);
       }
       hexB();
       break;
@@ -615,13 +455,7 @@ window.addEventListener("keydown", function(event) {
     case "c":
       if(window.location.pathname.includes("programmer.html"))
       {
-        if(document.getElementsByClassName("button")[10].disabled == false)
-        {
-          document.getElementsByClassName("button")[10].classList.toggle("buttonhover");
-          setTimeout(() => {
-            document.getElementsByClassName("button")[10].classList.toggle("buttonhover");
-          },100);
-        }
+        csshovereffect(10);
       }
       hexC();
       break;
@@ -629,13 +463,7 @@ window.addEventListener("keydown", function(event) {
     case "d":
       if(window.location.pathname.includes("programmer.html"))
       {
-        if(document.getElementsByClassName("button")[14].disabled == false)
-        {
-          document.getElementsByClassName("button")[14].classList.toggle("buttonhover");
-          setTimeout(() => {
-            document.getElementsByClassName("button")[14].classList.toggle("buttonhover");
-          },100);
-        }
+        csshovereffect(14);
       }
       hexD();
       break;
@@ -643,13 +471,7 @@ window.addEventListener("keydown", function(event) {
     case "e":
       if(window.location.pathname.includes("programmer.html"))
       {
-        if(document.getElementsByClassName("button")[18].disabled == false)
-        {
-          document.getElementsByClassName("button")[18].classList.toggle("buttonhover");
-          setTimeout(() => {
-            document.getElementsByClassName("button")[18].classList.toggle("buttonhover");
-          },100);
-        } 
+        csshovereffect(18);
       }
       hexE();
       break;
@@ -657,13 +479,7 @@ window.addEventListener("keydown", function(event) {
     case "f":
       if(window.location.pathname.includes("programmer.html"))
       {
-        if(document.getElementsByClassName("button")[22].disabled == false)
-        {
-          document.getElementsByClassName("button")[22].classList.toggle("buttonhover");
-          setTimeout(() => {
-            document.getElementsByClassName("button")[22].classList.toggle("buttonhover");
-          },100);
-        }
+        csshovereffect(22);
       }
       hexF();
       break;
@@ -806,11 +622,7 @@ button.forEach(
         case 'B':
           hexB();
           break;
-/*
-        case 'C':
-          hexC();
-          break;
-*/
+
         case 'D':
           hexD();
           break;
