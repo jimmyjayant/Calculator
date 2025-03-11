@@ -20,6 +20,8 @@ else
   z[1].classList.add("activeLink");
 }
 
+var isDisabledButton = 0;
+
 // For length.html webpage
 if(window.location.pathname.includes("length.html"))
 {
@@ -37,6 +39,7 @@ else if(window.location.pathname.includes("programmer.html"))
 {
   var programmerresult = document.getElementById("programmerresult");
   var finalresult = document.getElementById("finalresult");
+  var lastCharoffinalresult = finalresult.innerText.at(-1);
   var hexresult = document.getElementById("hexresult");
   var decimalresult = document.getElementById("decimalresult");
   var octalresult = document.getElementById("octalresult");
@@ -86,6 +89,7 @@ window.addEventListener("resize", function() {
 
 /* This function will be used to toggle buttonhover css class applied on buttons */
 function csshovereffect(id) {
+  isDisabledButton = 0;
   if(id == "equal")
   {
     document.getElementById(id).classList.toggle("lastbuttonhover");
@@ -102,6 +106,11 @@ function csshovereffect(id) {
         document.getElementsByClassName("button")[id].classList.toggle("buttonhover");
       },100);
     }
+    else
+    {
+      isDisabledButton = 1;
+    }
+
   }
 }
 
@@ -171,6 +180,7 @@ window.addEventListener("keydown", function(event) {
       {
         csshovereffect(21);
       }
+      if(isDisabledButton == 0)
       two();
       break;
 
@@ -187,6 +197,7 @@ window.addEventListener("keydown", function(event) {
       {
         csshovereffect(22);
       }
+      if(isDisabledButton == 0)
       three();
       break;
 
@@ -203,6 +214,7 @@ window.addEventListener("keydown", function(event) {
       {
         csshovereffect(16);
       }
+      if(isDisabledButton == 0)
       four();
       break;
 
@@ -219,6 +231,7 @@ window.addEventListener("keydown", function(event) {
       {
         csshovereffect(17);
       }
+      if(isDisabledButton == 0)
       five();
       break;
 
@@ -235,6 +248,7 @@ window.addEventListener("keydown", function(event) {
       {
         csshovereffect(18);
       }
+      if(isDisabledButton == 0)
       six();
       break;
 
@@ -251,6 +265,7 @@ window.addEventListener("keydown", function(event) {
       {
         csshovereffect(12);
       }
+      if(isDisabledButton == 0)
       seven();
       break;
 
@@ -267,6 +282,7 @@ window.addEventListener("keydown", function(event) {
       {
         csshovereffect(13);
       }
+      if(isDisabledButton == 0)
       eight();
       break;
 
@@ -283,6 +299,7 @@ window.addEventListener("keydown", function(event) {
       {
         csshovereffect(14);
       }
+      if(isDisabledButton == 0)
       nine();
       break;
 
@@ -391,6 +408,7 @@ window.addEventListener("keydown", function(event) {
       {
         csshovereffect(26);
       }
+      if(isDisabledButton == 0)
       dot();
       break;
 
@@ -441,6 +459,7 @@ window.addEventListener("keydown", function(event) {
       {
         csshovereffect(2);
       }
+      if(isDisabledButton == 0)
       hexA();
       break;
 
@@ -449,6 +468,7 @@ window.addEventListener("keydown", function(event) {
       {
         csshovereffect(6);
       }
+      if(isDisabledButton == 0)
       hexB();
       break;
 
@@ -457,6 +477,7 @@ window.addEventListener("keydown", function(event) {
       {
         csshovereffect(10);
       }
+      if(isDisabledButton == 0)
       hexC();
       break;
 
@@ -465,6 +486,7 @@ window.addEventListener("keydown", function(event) {
       {
         csshovereffect(14);
       }
+      if(isDisabledButton == 0)
       hexD();
       break;
 
@@ -473,6 +495,7 @@ window.addEventListener("keydown", function(event) {
       {
         csshovereffect(18);
       }
+      if(isDisabledButton == 0)
       hexE();
       break;
 
@@ -481,6 +504,7 @@ window.addEventListener("keydown", function(event) {
       {
         csshovereffect(22);
       }
+      if(isDisabledButton == 0)
       hexF();
       break;
   }
@@ -968,7 +992,24 @@ function dot() {
     }
   else if(window.location.pathname.includes("programmer.html"))
     {
-      // code here for programmer.html webpage 
+      if(finalresult.innerText == "")
+      {
+        alert("You cannot start with a decimal point. There must be atleast a number before the decimal.");
+      }
+      else if(finalresult.innerText != "")
+      {
+        if(lastCharoffinalresult != ".")
+        {
+          if(finalresult.innerText.includes(".") == true)
+          {
+            alert("There is already a decimal point in the value. You cannot have more than one decimal.");
+          }
+          else
+          {
+            finalresult.innerText += ".";
+          }
+        }
+      }
     }
   else
   {
