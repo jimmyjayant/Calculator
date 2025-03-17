@@ -773,21 +773,41 @@ function clearResult() {
 
 /* The function is related to the button / that is divide */
 function divide() {
-  if((res.innerText != "") && (lastChar != "/") && (lastChar != "+") && 
-  (lastChar != "-") && (lastChar != "*") && 
-  (lastChar != ".") && (lastChar != "(") && (lastChar != "^"))
+  if(window.location.pathname.includes("programmer.html"))
   {
-    res.innerText += "/";
+    if(finalresult.innerText.at(-1) != "/")
+    {
+      finalresult.innerText += "/";
+    }
+  }
+  else
+  {
+    if((res.innerText != "") && (lastChar != "/") && (lastChar != "+") && 
+    (lastChar != "-") && (lastChar != "*") && 
+    (lastChar != ".") && (lastChar != "(") && (lastChar != "^"))
+    {
+      res.innerText += "/";
+    } 
   }  
 }
 
 /* The function is related to the button * that is multiplication */
 function mul() {
-  if((res.innerText != "") && (lastChar != "*") && (lastChar != "/") && 
-  (lastChar != "+") && (lastChar != "-") && (lastChar != ".") && 
-  (lastChar != "(") && (lastChar != "^"))
+  if(window.location.pathname.includes("programmer.html"))
   {
-    res.innerText += "*";
+    if(finalresult.innerText.at(-1) != "*")
+    {
+      finalresult.innerText += "*";
+    }
+  }
+  else
+  {
+    if((res.innerText != "") && (lastChar != "*") && (lastChar != "/") && 
+    (lastChar != "+") && (lastChar != "-") && (lastChar != ".") && 
+    (lastChar != "(") && (lastChar != "^"))
+    {
+      res.innerText += "*";
+    }
   }
 }
 
@@ -910,7 +930,10 @@ function nine() {
 function minus() {
   if(window.location.pathname.includes("programmer.html"))
     {
-      // code for programmer.html webpage 
+      if(finalresult.innerText.at(-1) != "-")
+      {
+        finalresult.innerText += "-";
+      }
     }
   else
   {
@@ -983,10 +1006,20 @@ function six() {
 
 /* The function is related to the button + */
 function plus() {
-  if((lastChar != "+") && (lastChar != "-") && (lastChar != "*") && 
-  (lastChar != "/") && (lastChar != ".")&& (lastChar != "^"))
+  if(window.location.pathname.includes("programmer.html"))
   {
-    res.innerText += "+";
+    if(finalresult.innerText.at(-1) != "+")
+    {
+      finalresult.innerText += "+";
+    }
+  }
+  else
+  {
+    if((lastChar != "+") && (lastChar != "-") && (lastChar != "*") && 
+    (lastChar != "/") && (lastChar != ".")&& (lastChar != "^"))
+    {
+      res.innerText += "+";
+    }
   }
 }
 
