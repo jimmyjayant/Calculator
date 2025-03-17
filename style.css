@@ -13,19 +13,19 @@ body {
 }
 
 /* Styling the scrollbar of the website */
-::-webkit-scrollbar {
+body::-webkit-scrollbar {
   width:5px;
 }
 
-::-webkit-scrollbar-track {
+body::-webkit-scrollbar-track {
   background:#f1f1f1;
 }
 
-::-webkit-scrollbar-thumb {
+body::-webkit-scrollbar-thumb {
   background:#888;
 }
 
-::-webkit-scrollbar-thumb:hover {
+body::-webkit-scrollbar-thumb:hover {
   background:#111;
 }
 
@@ -309,7 +309,8 @@ h1 {
   height:5rem;
   background:rgba(0,200,0,0.5);
   border:2px solid grey;
-  overflow:hidden;
+  overflow-y:hidden;
+  overflow-x:auto;
   text-align:right;
   vertical-align:middle;
   line-height:4rem;
