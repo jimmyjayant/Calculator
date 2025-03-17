@@ -32,11 +32,11 @@ if(window.location.pathname.includes("length.html"))
   var input = document.getElementById("firstselect");
   var output = document.getElementById("secondselect");
 }
-// For index.html webpage 
-// Since when the website is hosted, the index.html is not shown in url.
-// But the index.html webpage that is the Standard calculator is opened by default.
 else if(window.location.pathname.includes("programmer.html"))
 {
+  // For index.html webpage 
+  // Since when the website is hosted, the index.html is not shown in url.
+  // But the index.html webpage that is the Standard calculator is opened by default.
   var programmerresult = document.getElementById("programmerresult");
   var finalresult = document.getElementById("finalresult");
   var lastCharoffinalresult = finalresult.innerText.at(-1);
@@ -46,16 +46,52 @@ else if(window.location.pathname.includes("programmer.html"))
   var binaryresult = document.getElementById("binaryresult");
   var choosenresult = 0;
   var programmerresultdiv = document.querySelectorAll("#programmerresult > div:not(:first-child) > div:first-child");
-  var bodytagprog = document.getElementsByTagName("body")[0];
-  bodytagprog.onload = setDecimalDefault;
   var programmerbutton = Array.from(document.getElementsByTagName("button"));
+  var bodytagprog = document.getElementsByTagName("body")[0];
   var lastDivBorderStyle = null;
+  bodytagprog.onload = setDecimalDefault();
 }
 else
 {
   var res = document.getElementById("result");
   var len = res.innerText.length;
   var lastChar = res.innerText.charAt(len-1);
+}
+
+function displayotherformats() {
+  if(window.location.pathname.includes("programmer.html"))
+  {
+    switch(choosenresult)
+    {
+      case 1:
+        hexresult.children[1].innerText = finalresult.innerText.toUpperCase();
+        decimalresult.children[1].innerText = Number('0x' + finalresult.innerText).toString(10);
+        octalresult.children[1].innerText = Number('0x' + finalresult.innerText).toString(8);
+        binaryresult.children[1].innerText = Number('0x' + finalresult.innerText).toString(2);
+        break;
+
+      case 2:
+        hexresult.children[1].innerText = Number(finalresult.innerText).toString(16).toUpperCase();
+        decimalresult.children[1].innerText = finalresult.innerText;
+        octalresult.children[1].innerText = Number(finalresult.innerText).toString(8);
+        binaryresult.children[1].innerText = Number(finalresult.innerText).toString(2);
+        break;
+
+      case 3:
+        hexresult.children[1].innerText = Number(finalresult.innerText).toString(16).toUpperCase();
+        decimalresult.children[1].innerText = Number(finalresult.innerText).toString(10);
+        octalresult.children[1].innerText = finalresult.innerText;
+        binaryresult.children[1].innerText = Number(finalresult.innerText).toString(2);
+        break;
+
+      case 4:
+        hexresult.children[1].innerText = Number(finalresult.innerText).toString(16).toUpperCase();
+        decimalresult.children[1].innerText = Number(finalresult.innerText).toString(10);
+        octalresult.children[1].innerText = Number(finalresult.innerText).toString(8);
+        binaryresult.children[1].innerText = finalresult.innerText;
+        break;
+    }    
+  }
 }
 
 function value_of_variables() {
@@ -65,11 +101,11 @@ function value_of_variables() {
     lenofpara1 = para1.innerText.length;
     lastCharofpara1 = para1.innerText.charAt(lenofpara1-1);
   }
-  // For index.html webpage 
-  // Since when the website is hosted, the index.html is not shown in url.
-  // But the index.html webpage that is the Standard calculator is opened by default.
   else if(window.location.pathname.includes("programmer.html"))
   {
+    // For index.html webpage 
+    // Since when the website is hosted, the index.html is not shown in url.
+    // But the index.html webpage that is the Standard calculator is opened by default.
     // variable initialization here for programmer.html webpage 
   }
   else
@@ -110,7 +146,6 @@ function csshovereffect(id) {
     {
       isDisabledButton = 1;
     }
-
   }
 }
 
@@ -120,11 +155,7 @@ window.addEventListener("keydown", function(event) {
   switch(event.key)
   {
     case "Enter":
-      if(window.location.pathname.includes("length.html"))
-      {
-        //do nothing
-      }
-      else if(window.location.pathname.includes("programmer.html"))
+      if(window.location.pathname.includes("programmer.html"))
       {
         csshovereffect("equal");
       }
@@ -132,6 +163,7 @@ window.addEventListener("keydown", function(event) {
       {
         csshovereffect("equal");
       }
+
       display();
       break;
 
@@ -148,7 +180,11 @@ window.addEventListener("keydown", function(event) {
       {
         csshovereffect(25);
       }
-      zero();
+
+      if(isDisabledButton == 0)
+      {
+        zero();
+      }
       break;
 
     case "1":
@@ -164,7 +200,11 @@ window.addEventListener("keydown", function(event) {
       {
         csshovereffect(20);
       }
-      one();
+
+      if(isDisabledButton == 0)
+      {
+        one();
+      }
       break;
 
     case "2":
@@ -180,8 +220,11 @@ window.addEventListener("keydown", function(event) {
       {
         csshovereffect(21);
       }
+
       if(isDisabledButton == 0)
-      two();
+      {
+        two();
+      }
       break;
 
     case "3":
@@ -197,8 +240,11 @@ window.addEventListener("keydown", function(event) {
       {
         csshovereffect(22);
       }
+
       if(isDisabledButton == 0)
-      three();
+      {
+        three();
+      }
       break;
 
     case "4":
@@ -214,8 +260,11 @@ window.addEventListener("keydown", function(event) {
       {
         csshovereffect(16);
       }
+
       if(isDisabledButton == 0)
-      four();
+      {
+        four();
+      }
       break;
 
     case "5":
@@ -231,8 +280,11 @@ window.addEventListener("keydown", function(event) {
       {
         csshovereffect(17);
       }
+
       if(isDisabledButton == 0)
-      five();
+      {
+        five();
+      }
       break;
 
     case "6":
@@ -248,8 +300,11 @@ window.addEventListener("keydown", function(event) {
       {
         csshovereffect(18);
       }
+
       if(isDisabledButton == 0)
-      six();
+      {
+        six();
+      }
       break;
 
     case "7":
@@ -265,8 +320,11 @@ window.addEventListener("keydown", function(event) {
       {
         csshovereffect(12);
       }
+
       if(isDisabledButton == 0)
-      seven();
+      {
+        seven();
+      }
       break;
 
     case "8":
@@ -282,8 +340,11 @@ window.addEventListener("keydown", function(event) {
       {
         csshovereffect(13);
       }
+
       if(isDisabledButton == 0)
-      eight();
+      {
+        eight();
+      }
       break;
 
     case "9":
@@ -299,8 +360,11 @@ window.addEventListener("keydown", function(event) {
       {
         csshovereffect(14);
       }
+
       if(isDisabledButton == 0)
-      nine();
+      {
+        nine();
+      }
       break;
 
     case "Backspace":
@@ -312,6 +376,7 @@ window.addEventListener("keydown", function(event) {
       {
         csshovereffect(3);
       }
+
       del();
       break;
 
@@ -328,47 +393,38 @@ window.addEventListener("keydown", function(event) {
       {
         csshovereffect(0);
       }
+
       clearResult();
       break;
 
     case "+":
-      if(window.location.pathname.includes("length.html"))
-      {
-        //do nothing
-      }
-      else if(window.location.pathname.includes("programmer.html"))
+      if(window.location.pathname.includes("programmer.html"))
       {
         // code here for programmer.html webpage 
       }
       else
       {
         csshovereffect(19);
-      }      
+      }
+
       plus();
       break;
 
     case "-":
-      if(window.location.pathname.includes("length.html"))
-      {
-        //do nothing
-      }
-      else if(window.location.pathname.includes("programmer.html"))
+      if(window.location.pathname.includes("programmer.html"))
       {
         csshovereffect(5);
       }
       else
       {
         csshovereffect(15);
-      }      
+      }
+
       minus();
       break;
 
     case "/":
-      if(window.location.pathname.includes("length.html"))
-      {
-        //do nothing
-      }
-      else if(window.location.pathname.includes("programmer.html"))
+      if(window.location.pathname.includes("programmer.html"))
       {
         // code here for programmer.html webpage 
       }
@@ -376,15 +432,12 @@ window.addEventListener("keydown", function(event) {
       {
         csshovereffect(7);
       }
+
       divide();
       break;
 
     case "*":
-      if(window.location.pathname.includes("length.html"))
-      {
-        //do nothing
-      }
-      else if(window.location.pathname.includes("programmer.html"))
+      if(window.location.pathname.includes("programmer.html"))
       {
         // code here for programmer.html webpage 
       }
@@ -392,6 +445,7 @@ window.addEventListener("keydown", function(event) {
       {
         csshovereffect(11);
       }
+
       mul();
       break;
 
@@ -408,49 +462,49 @@ window.addEventListener("keydown", function(event) {
       {
         csshovereffect(26);
       }
+
       if(isDisabledButton == 0)
-      dot();
+      {
+        dot();
+      }
       break;
 
     case "%":
-      if(window.location.pathname.includes("length.html"))
-      {
-        //do nothing
-      }
-      else if(window.location.pathname.includes("programmer.html"))
+      if(window.location.pathname.includes("programmer.html"))
       {
         csshovereffect(9);
       }
       else
-      csshovereffect(1);
+      {
+        csshovereffect(1);
+      }
+      
       percent();
       break;
 
     case "(":
-      if(window.location.pathname.includes("length.html"))
-      {
-        //do nothing
-      }
-      else if(window.location.pathname.includes("programmer.html"))
+      if(window.location.pathname.includes("programmer.html"))
       {
         csshovereffect(7);
       }
       else
-      csshovereffect(9);
+      {
+        csshovereffect(9);
+      }
+      
       leftbrac();
       break;
 
     case ")":
-      if(window.location.pathname.includes("length.html"))
-      {
-        //do nothing
-      }
-      else if(window.location.pathname.includes("programmer.html"))
+      if(window.location.pathname.includes("programmer.html"))
       {
         csshovereffect(8);
       }
       else
-      csshovereffect(10);
+      {
+        csshovereffect(10);
+      }
+      
       rightbrac();
       break;
 
@@ -459,8 +513,11 @@ window.addEventListener("keydown", function(event) {
       {
         csshovereffect(2);
       }
+
       if(isDisabledButton == 0)
-      hexA();
+      {
+        hexA();
+      }
       break;
 
     case "b":
@@ -468,8 +525,11 @@ window.addEventListener("keydown", function(event) {
       {
         csshovereffect(6);
       }
+
       if(isDisabledButton == 0)
-      hexB();
+      {
+        hexB();
+      }
       break;
 
     case "c":
@@ -477,8 +537,11 @@ window.addEventListener("keydown", function(event) {
       {
         csshovereffect(10);
       }
+
       if(isDisabledButton == 0)
-      hexC();
+      {
+        hexC();
+      }
       break;
 
     case "d":
@@ -486,8 +549,11 @@ window.addEventListener("keydown", function(event) {
       {
         csshovereffect(14);
       }
+
       if(isDisabledButton == 0)
-      hexD();
+      {
+        hexD();
+      }
       break;
 
     case "e":
@@ -495,8 +561,11 @@ window.addEventListener("keydown", function(event) {
       {
         csshovereffect(18);
       }
+
       if(isDisabledButton == 0)
-      hexE();
+      {
+        hexE();
+      }
       break;
 
     case "f":
@@ -504,10 +573,15 @@ window.addEventListener("keydown", function(event) {
       {
         csshovereffect(22);
       }
+
       if(isDisabledButton == 0)
-      hexF();
+      {
+        hexF();
+      }
       break;
   }
+  
+  displayotherformats();
 
   value_of_variables();
 });
@@ -522,9 +596,13 @@ button.forEach(
       {
         case 'C':
           if(window.location.pathname.includes("programmer.html"))
+          {
             hexC();
+          }
           else
+          {
             clearResult();
+          }
           break;
 
         case 'CE':
@@ -659,15 +737,17 @@ button.forEach(
           hexF();
           break; 
 
-        case '<<':
-          // function here for left shift operator
+        case '&lt;&lt;':
+          leftshift();
           break;
 
-        case '>>':
-          // function here for right shift operator
+        case '&gt;&gt;':
+          rightshift();
           break;
       }
 
+      displayotherformats();
+      
       value_of_variables();
     })
   }
@@ -693,7 +773,9 @@ function clearResult() {
 
 /* The function is related to the button / that is divide */
 function divide() {
-  if((res.innerText != "") && (lastChar != "/") && (lastChar != "+") && (lastChar != "-") && (lastChar != "*") && (lastChar != ".") && (lastChar != "(") && (lastChar != "^"))
+  if((res.innerText != "") && (lastChar != "/") && (lastChar != "+") && 
+  (lastChar != "-") && (lastChar != "*") && 
+  (lastChar != ".") && (lastChar != "(") && (lastChar != "^"))
   {
     res.innerText += "/";
   }  
@@ -701,7 +783,9 @@ function divide() {
 
 /* The function is related to the button * that is multiplication */
 function mul() {
-  if((res.innerText != "") && (lastChar != "*") && (lastChar != "/") && (lastChar != "+") && (lastChar != "-") && (lastChar != ".") && (lastChar != "(") && (lastChar != "^"))
+  if((res.innerText != "") && (lastChar != "*") && (lastChar != "/") && 
+  (lastChar != "+") && (lastChar != "-") && (lastChar != ".") && 
+  (lastChar != "(") && (lastChar != "^"))
   {
     res.innerText += "*";
   }
@@ -899,8 +983,8 @@ function six() {
 
 /* The function is related to the button + */
 function plus() {
-  if((lastChar != "+") && (lastChar != "-") && (lastChar != "*") && (lastChar != "/") && (lastChar != ".")
-   && (lastChar != "^"))
+  if((lastChar != "+") && (lastChar != "-") && (lastChar != "*") && 
+  (lastChar != "/") && (lastChar != ".")&& (lastChar != "^"))
   {
     res.innerText += "+";
   }
@@ -1195,79 +1279,96 @@ function hexA() {
 /* The function is related to the button B on the programmer.html webpage */
 function hexB() {
   if(window.location.pathname.includes("programmer.html"))
+  {
+    if(document.getElementsByClassName("button")[6].disabled == false)
     {
-      if(document.getElementsByClassName("button")[6].disabled == false)
-      {
-        if(finalresult.innerText == "0")
-          finalresult.innerText = "B";
-        else
-          finalresult.innerText += "B";
-      }
-      
+      if(finalresult.innerText == "0")
+        finalresult.innerText = "B";
+      else
+        finalresult.innerText += "B";
     }
+    
+  }
 }
 
 /* The function is related to the button C on the programmer.html webpage */
 function hexC() {
   if(window.location.pathname.includes("programmer.html"))
+  {
+    if(document.getElementsByClassName("button")[10].disabled == false)
     {
-      if(document.getElementsByClassName("button")[10].disabled == false)
-      {
-        if(finalresult.innerText == "0")
-          finalresult.innerText = "C";
-        else
-          finalresult.innerText += "C";
-      }
+      if(finalresult.innerText == "0")
+        finalresult.innerText = "C";
+      else
+        finalresult.innerText += "C";
     }
+  }
 }
 
 /* The function is related to the button D on the programmer.html webpage */
 function hexD() {
   if(window.location.pathname.includes("programmer.html"))
+  {
+    if(document.getElementsByClassName("button")[14].disabled == false)
     {
-      if(document.getElementsByClassName("button")[14].disabled == false)
-      {
-        if(finalresult.innerText == "0")
-          finalresult.innerText = "D";
-        else
-          finalresult.innerText += "D";
-      }
+      if(finalresult.innerText == "0")
+        finalresult.innerText = "D";
+      else
+        finalresult.innerText += "D";
     }
+  }
 }
 
 /* The function is related to the button E on the programmer.html webpage */
 function hexE() {
   if(window.location.pathname.includes("programmer.html"))
+  {
+    if(document.getElementsByClassName("button")[18].disabled == false)
     {
-      if(document.getElementsByClassName("button")[18].disabled == false)
-      {
-        if(finalresult.innerText == "0")
-          finalresult.innerText = "E";
-        else
-          finalresult.innerText += "E";
-      }
+      if(finalresult.innerText == "0")
+        finalresult.innerText = "E";
+      else
+        finalresult.innerText += "E";
     }
+  }
 }
 
 /* The function is related to the button F on the programmer.html webpage */
 function hexF() {
   if(window.location.pathname.includes("programmer.html"))
+  {
+    if(document.getElementsByClassName("button")[22].disabled == false)
     {
-      if(document.getElementsByClassName("button")[22].disabled == false)
-      {
-        if(finalresult.innerText == "0")
-          finalresult.innerText = "F";
-        else
-          finalresult.innerText += "F";
-      }
+      if(finalresult.innerText == "0")
+        finalresult.innerText = "F";
+      else
+        finalresult.innerText += "F";
     }
+  }
+}
+
+/* The function is related to the button << on the programmer.html webpage */
+function leftshift() {
+  if(window.location.pathname.includes("programmer.html"))
+  { 
+    finalresult.innerText += "<<";
+  }
+}
+
+/* The function is related to the button >> on the programmer.html webpage */
+function rightshift() {
+  if(window.location.pathname.includes("programmer.html"))
+  {
+    finalresult.innerText += ">>";
+  }
 }
 
 /* The function is related to the button = */
 function display() {
   if(window.location.pathname.includes("programmer.html"))
   {
-    // code here for programmer.html webpage 
+    finalresult.innerText = eval(finalresult.innerText);
+    displayotherformats();
   }
   else
   {
@@ -1532,7 +1633,6 @@ function display() {
         }
       }
   }
-  
 }
 
 /* The function is related to the navigation bar when the screen size is below 600px */
@@ -2135,18 +2235,22 @@ function setchoosenvar(obj) {
   if(obj.id == "hexresult")
   {
     choosenresult = 1;
+    finalresult.innerText = hexresult.children[1].innerText;
   }
   else if(obj.id == "decimalresult")
   {
     choosenresult = 2;
+    finalresult.innerText = decimalresult.children[1].innerText;
   }
   else if(obj.id == "octalresult")
   {
     choosenresult = 3;
+    finalresult.innerText = octalresult.children[1].innerText;
   }
   else if(obj.id == "binaryresult")
   {
     choosenresult = 4;
+    finalresult.innerText = binaryresult.children[1].innerText;
   }
   else
   {
