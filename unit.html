@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="Calculator, HTML, CSS, JavaScript">
+        <meta name="author" content="Jimmy Jayant">
+        <meta name="description" content="Online Calculator for converting lengths between different units easily">
+        <link rel="icon" href="calculator.jpg">
+        <link rel="stylesheet" href="style.css">
+        <title>
+            Unit Converter - Calculator 
+        </title>
+    </head>
+    <body>
+      <div class="headingandlogo">
+        <div class="hamburgermenu" onclick="nav()">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="calculatorlogo">
+          <img src="calculator.jpg" alt="Calculator Logo">
+        </div>
+        <div class="heading">
+          <h1>
+            Calculator 
+          </h1>
+        </div>
+      </div>
+
+      <div class="navbar">
+        <a href="#" class="closenav" onclick="closenav()">&times;</a>
+        <a href="index.html">Standard</a>
+        <a href="scientific.html" style="display:none;">Scientific</a>
+        <a href="programmer.html">Programmer</a>
+        <a href="unit.html">Unit</a>
+      </div>
+
+      <div class="calculator">
+
+        <div class="display">
+          <div class="chooseunit">
+            <a href="#">Area</a>
+            <a href="#">Length</a>
+            <a href="#">Temperature</a>
+            <a href="#">Volume</a>
+            <a href="#">Mass</a>
+            <a href="#">Data</a>
+            <a href="#">Speed</a>
+            <a href="#">Time</a>
+          </div>
+          <div id="firstunitparameter">
+            <select id="firstareaselect">
+              <option value="acres">Acres (ac)</option>
+              <option value="ares">Ares (a)</option>
+              <option value="hectares">Hectares (ha)</option>
+              <option value="square centimeters">Square Centimeters (cm&sup2;)</option>
+              <option value="square feet">Square Feet (ft&sup2;)</option>
+              <option value="square inches">Square Inches (in&sup2;)</option>
+              <option value="square meters">Square Meters (m&sup2;)</option>
+            </select>
+
+            <select id="firstlengthselect">
+              <option value="millimeters">Millimeters (mm)</option>
+              <option value="centimeters">Centimeters (cm)</option>
+              <option value="meters">Meters (m)</option>
+              <option value="kilometers">Kilometers (km)</option>
+              <option value="inches">Inches (in)</option>
+              <option value="feet">Feet (ft)</option>
+              <option value="yards">Yards (yd)</option>
+              <option value="miles">Miles (mi)</option>
+              <option value="nautical miles">Nautical Miles (NM)</option>
+              <option value="mils">Mils (mil)</option>
+            </select>
+
+            <select id="firsttemperatureselect">
+              <option value="celsius">Celsius (&#8451;)</option>
+              <option value="fahrenheit">Fahrenheit (&#x2109;)</option>
+              <option value="kelvin">Kelvin (K)</option>
+            </select>
+
+            <select id="firstvolumeselect">
+              <option value="uk gallons">UK Gallons (gal)</option>
+              <option value="us gallons">US Gallons (gal)</option>
+              <option value="liters">Liters (l)</option>
+              <option value="milliliters">Milliliters (ml)</option>
+              <option value="cubic centimeters">Cubic Centimeters (cc) (cm&sup3;)</option>
+              <option value="cubic meters">Cubic Meters (m&sup3;)</option>
+              <option value="cubic inches">Cubic Inches (in&sup3;)</option>
+              <option value="cubic feet">Cubic Feet (ft&sup3;)</option>
+            </select>
+
+            <select id="firstmassselect">
+              <option value="tons">Tons (t)</option>
+              <option value="uk tons">UK Tons (t)</option>
+              <option value="us tons">US Tons (t)</option>
+              <option value="pounds">Pounds (lb)</option>
+              <option value="ounces">Ounces (oz)</option>
+              <option value="kilograms">Kilograms (kg)</option>
+              <option value="grams">Grams (g)</option>
+            </select>
+
+            <select id="firstdataselect">
+              <option value="bits">Bits (bit)</option>
+              <option value="bytes">Bytes (B)</option>
+              <option value="kilobytes">Kilobytes (KB)</option>
+              <option value="kibibytes">Kibibytes (KiB)</option>
+              <option value="megabytes">Megabytes (MB)</option>
+              <option value="mebibytes">Mebibytes (MiB)</option>
+              <option value="gigabytes">Gigabytes (GB)</option>
+              <option value="gibibytes">Gibibytes (GiB)</option>
+              <option value="terabytes">Terabytes (TB)</option>
+              <option value="tebibytes">Tebibytes (TiB)</option>
+            </select>
+
+            <select id="firstspeedselect">
+              <option value="meters per second">Meters Per Second (m/s)</option>
+              <option value="meters per hour">Meters Per Hour (m/h)</option>
+              <option value="kilometers per second">Kilometers Per Second (km/s)</option>
+              <option value="kilometers per hour">Kilometers Per Hour (km/hr)</option>
+              <option value="inches per second">Inches Per Second (in/s)</option>
+              <option value="inches per hour">Inches Per Hour (in/hr)</option>
+              <option value="feet per second">Feet Per Second (ft/s)</option>
+              <option value="feet per hour">Feet Per Hour (ft/hr)</option>
+              <option value="miles per second">Miles Per Second (mi/s)</option>
+              <option value="miles per hour">Miles Per Hour (mi/hr)</option>
+              <option value="knots">Knots (kn)</option>
+            </select>
+
+            <select id="firsttimeselect">
+              <option value="milliseconds">Milliseconds (ms)</option>
+              <option value="seconds">Seconds (s)</option>
+              <option value="minutes">Minutes (min)</option>
+              <option value="hours">Hours (hr)</option>
+              <option value="days">Days (d)</option>
+              <option value="weeks">Week (wk)</option>
+            </select>            
+          </div>
+
+          <div id="secondunitparameter">
+            <select id="secondareaselect">
+              <option value="acres">Acres (ac)</option>
+              <option value="ares">Ares (a)</option>
+              <option value="hectares">Hectares (ha)</option>
+              <option value="square centimeters">Square Centimeters (cm&sup2;)</option>
+              <option value="square feet">Square Feet (ft&sup2;)</option>
+              <option value="square inches">Square Inches (in&sup2;)</option>
+              <option value="square meters">Square Meters (m&sup2;)</option>
+            </select>
+
+            <select id="secondlengthselect">
+              <option value="millimeters">Millimeters (mm)</option>
+              <option value="centimeters">Centimeters (cm)</option>
+              <option value="meters">Meters (m)</option>
+              <option value="kilometers">Kilometers (km)</option>
+              <option value="inches">Inches (in)</option>
+              <option value="feet">Feet (ft)</option>
+              <option value="yards">Yards (yd)</option>
+              <option value="miles">Miles (mi)</option>
+              <option value="nautical miles">Nautical Miles (NM)</option>
+              <option value="mils">Mils (mil)</option>
+            </select>
+
+            <select id="secondtemperatureselect">
+              <option value="celsius">Celsius (&#8451;)</option>
+              <option value="fahrenheit">Fahrenheit (&#x2109;)</option>
+              <option value="kelvin">Kelvin (K)</option>
+            </select>
+
+            <select id="secondvolumeselect">
+              <option value="uk gallons">UK Gallons (gal)</option>
+              <option value="us gallons">US Gallons (gal)</option>
+              <option value="liters">Liters (l)</option>
+              <option value="milliliters">Milliliters (ml)</option>
+              <option value="cubic centimeters">Cubic Centimeters (cc) (cm&sup3;)</option>
+              <option value="cubic meters">Cubic Meters (m&sup3;)</option>
+              <option value="cubic inches">Cubic Inches (in&sup3;)</option>
+              <option value="cubic feet">Cubic Feet (ft&sup3;)</option>
+            </select>
+
+            <select id="secondmassselect">
+              <option value="tons">Tons (t)</option>
+              <option value="uk tons">UK Tons (t)</option>
+              <option value="us tons">US Tons (t)</option>
+              <option value="pounds">Pounds (lb)</option>
+              <option value="ounces">Ounces (oz)</option>
+              <option value="kilograms">Kilograms (kg)</option>
+              <option value="grams">Grams (g)</option>
+            </select>
+
+            <select id="seconddataselect">
+              <option value="bits">Bits (bit)</option>
+              <option value="bytes">Bytes (B)</option>
+              <option value="kilobytes">Kilobytes (KB)</option>
+              <option value="kibibytes">Kibibytes (KiB)</option>
+              <option value="megabytes">Megabytes (MB)</option>
+              <option value="mebibytes">Mebibytes (MiB)</option>
+              <option value="gigabytes">Gigabytes (GB)</option>
+              <option value="gibibytes">Gibibytes (GiB)</option>
+              <option value="terabytes">Terabytes (TB)</option>
+              <option value="tebibytes">Tebibytes (TiB)</option>
+            </select>
+
+            <select id="secondspeedselect">
+              <option value="meters per second">Meters Per Second (m/s)</option>
+              <option value="meters per hour">Meters Per Hour (m/h)</option>
+              <option value="kilometers per second">Kilometers Per Second (km/s)</option>
+              <option value="kilometers per hour">Kilometers Per Hour (km/hr)</option>
+              <option value="inches per second">Inches Per Second (in/s)</option>
+              <option value="inches per hour">Inches Per Hour (in/hr)</option>
+              <option value="feet per second">Feet Per Second (ft/s)</option>
+              <option value="feet per hour">Feet Per Hour (ft/hr)</option>
+              <option value="miles per second">Miles Per Second (mi/s)</option>
+              <option value="miles per hour">Miles Per Hour (mi/hr)</option>
+              <option value="knots">Knots (kn)</option>
+            </select>
+
+            <select id="secondtimeselect">
+              <option value="milliseconds">Milliseconds (ms)</option>
+              <option value="seconds">Seconds (s)</option>
+              <option value="minutes">Minutes (min)</option>
+              <option value="hours">Hours (hr)</option>
+              <option value="days">Days (d)</option>
+              <option value="weeks">Week (wk)</option>
+            </select>
+            
+          </div>
+          <div id="unit1"></div>
+          <div id="unit2"></div>
+        </div>
+
+        <div class="unitbuttons">
+          <button type="button" class="button operand" title="Seven. Use the 7 key on keyboard.">7</button>
+          <button type="button" class="button operand" title="Eight. Use the 8 key on keyboard.">8</button>
+          <button type="button" class="button operand" title="Nine. Use the 9 key on keyboard.">9</button>
+          <button type="button" class="button" title="Delete the Last character. Use the backspace key on keyboard.">&#8592;</button>
+          <button type="button" class="button operand" title="Four. Use the 4 key on keyboard.">4</button>
+          <button type="button" class="button operand" title="Five. Use the 5 key on keyboard.">5</button>
+          <button type="button" class="button operand" title="Six. Use the 6 key on keyboard.">6</button>
+          <button type="button" class="button" title="Clear the result. Use the delete key on keyboard.">C</button>
+          <button type="button" class="button operand" title="One. Use the 1 key on keyboard.">1</button>
+          <button type="button" class="button operand" title="Two. Use the 2 key on keyboard.">2</button>
+          <button type="button" class="button operand" title="Three. Use the 3 key on keyboard.">3</button>
+          <button type="button" class="button operand" title="Zero. Use the 0 key on keyboard.">0</button>
+          <button type="button" class="button operand" title="Decimal Point. Use the . key on keyboard.">.</button>
+        </div>
+      </div>
+
+      <script src="script.js"></script>
+      <noscript>
+        Your web browser does not support JavaScript.
+      </noscript>
+    </body>
+</html>

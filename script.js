@@ -3,7 +3,7 @@ const x = document.getElementsByClassName("navbar")[0];
 const y = x.getElementsByTagName("a");
 const z = Array.from(y);
 
-if(window.location.href.includes("length.html"))
+if(window.location.href.includes("unit.html"))
 {
   z[4].classList.add("activeLink");
 }
@@ -22,15 +22,36 @@ else
 
 var isDisabledButton = 0;
 
-// For length.html webpage
-if(window.location.pathname.includes("length.html"))
+// For unit.html webpage
+if(window.location.pathname.includes("unit.html"))
 {
-  var para1 = document.getElementById("length1");
-  var para2 = document.getElementById("length2");
+  var para1 = document.getElementById("unit1");
+  var para2 = document.getElementById("unit2");
   var lenofpara1 = para1.innerText.length;
   var lastCharofpara1 = para1.innerText.charAt(lenofpara1-1);
-  var input = document.getElementById("firstselect");
-  var output = document.getElementById("secondselect");
+  var chooseunitdiv = document.getElementsByClassName("chooseunit")[0];
+  var unitchoosed = Array.from(chooseunitdiv.querySelectorAll("a"));
+  var firstselect = Array.from(document.querySelectorAll("#firstunitparameter select"));
+  var secondselect = Array.from(document.querySelectorAll("#secondunitparameter select"));
+  var input = firstselect[0];
+  var output = secondselect[0];
+  /*
+  var firstareaselect = document.getElementById("firstareaselect");
+  var secondareaselect = document.getElementById("secondareaselect");
+  var firstlengthselect = document.getElementById("firstlengthselect");
+  var secondlengthselect = document.getElementById("secondlengthselect");
+  var firsttemperatureselect = document.getElementById("firsttemperatureselect");
+  var secondtemperatureselect = document.getElementById("secondtemperatureselect");
+  var firstvolumeselect = document.getElementById("firstvolumeselect");
+  var secondvolumeselect = document.getElementById("secondvolumeselect");
+  var firstmassselect = document.getElementById("firstmassselect");
+  var secondmassselect = document.getElementById("secondmassselect");
+  var firstdataselect = document.getElementById("firstdataselect");
+  var seconddataselect = document.getElementById("seconddataselect");
+  var firstspeedselect = document.getElementById("firstspeedselect");
+  var secondspeedselect = document.getElementById("secondspeedselect");
+  var firsttimeselect = document.getElementById("firsttimeselect");
+  var secondtimeselect = document.getElementById("secondtimeselect");*/
 }
 else if(window.location.pathname.includes("programmer.html"))
 {
@@ -95,8 +116,8 @@ function displayotherformats() {
 }
 
 function value_of_variables() {
-  // For length.html webpage
-  if(window.location.pathname.includes("length.html"))
+  // For unit.html webpage
+  if(window.location.pathname.includes("unit.html"))
   {
     lenofpara1 = para1.innerText.length;
     lastCharofpara1 = para1.innerText.charAt(lenofpara1-1);
@@ -168,7 +189,7 @@ window.addEventListener("keydown", function(event) {
       break;
 
     case "0":
-      if(window.location.pathname.includes("length.html"))
+      if(window.location.pathname.includes("unit.html"))
       {
         csshovereffect(11);
       }
@@ -188,7 +209,7 @@ window.addEventListener("keydown", function(event) {
       break;
 
     case "1":
-      if(window.location.pathname.includes("length.html"))
+      if(window.location.pathname.includes("unit.html"))
       {
         csshovereffect(8);
       }
@@ -208,7 +229,7 @@ window.addEventListener("keydown", function(event) {
       break;
 
     case "2":
-      if(window.location.pathname.includes("length.html"))
+      if(window.location.pathname.includes("unit.html"))
       {
         csshovereffect(9);
       }
@@ -228,7 +249,7 @@ window.addEventListener("keydown", function(event) {
       break;
 
     case "3":
-      if(window.location.pathname.includes("length.html"))
+      if(window.location.pathname.includes("unit.html"))
       {
         csshovereffect(10);
       }
@@ -248,7 +269,7 @@ window.addEventListener("keydown", function(event) {
       break;
 
     case "4":
-      if(window.location.pathname.includes("length.html"))
+      if(window.location.pathname.includes("unit.html"))
       {
         csshovereffect(4);
       }
@@ -268,7 +289,7 @@ window.addEventListener("keydown", function(event) {
       break;
 
     case "5":
-      if(window.location.pathname.includes("length.html"))
+      if(window.location.pathname.includes("unit.html"))
       {
         csshovereffect(5);
       }
@@ -288,7 +309,7 @@ window.addEventListener("keydown", function(event) {
       break;
 
     case "6":
-      if(window.location.pathname.includes("length.html"))
+      if(window.location.pathname.includes("unit.html"))
       {
         csshovereffect(6);
       }
@@ -308,7 +329,7 @@ window.addEventListener("keydown", function(event) {
       break;
 
     case "7":
-      if(window.location.pathname.includes("length.html"))
+      if(window.location.pathname.includes("unit.html"))
       {
         csshovereffect(0);
       }
@@ -328,7 +349,7 @@ window.addEventListener("keydown", function(event) {
       break;
 
     case "8":
-      if(window.location.pathname.includes("length.html"))
+      if(window.location.pathname.includes("unit.html"))
       {
         csshovereffect(1);
       }
@@ -348,7 +369,7 @@ window.addEventListener("keydown", function(event) {
       break;
 
     case "9":
-      if(window.location.pathname.includes("length.html"))
+      if(window.location.pathname.includes("unit.html"))
       {
         csshovereffect(2);
       }
@@ -381,7 +402,7 @@ window.addEventListener("keydown", function(event) {
       break;
 
     case "Delete":
-      if(window.location.pathname.includes("length.html"))
+      if(window.location.pathname.includes("unit.html"))
       {
         csshovereffect(7);
       }
@@ -450,7 +471,7 @@ window.addEventListener("keydown", function(event) {
       break;
 
     case ".":
-      if(window.location.pathname.includes("length.html"))
+      if(window.location.pathname.includes("unit.html"))
       {
         csshovereffect(12);
       }
@@ -753,12 +774,83 @@ button.forEach(
   }
 );
 
+unitchoosed.forEach((a) => {
+  a.addEventListener("click", () => {
+    firstselect.forEach((select) => {
+      select.style.display = "none";
+    });
+
+    secondselect.forEach((select) => {
+      select.style.display = "none";
+    });
+
+    switch(a.innerHTML)
+    {
+      case 'Area':
+        firstselect[0].style.display = "block";
+        secondselect[0].style.display = "block";
+        input = firstselect[0];
+        output = secondselect[0];
+        break;
+
+      case 'Length':
+        firstselect[1].style.display = "block";
+        secondselect[1].style.display = "block";
+        input = firstselect[1];
+        output = secondselect[1];
+        break;
+
+      case 'Temperature':
+        firstselect[2].style.display = "block";
+        secondselect[2].style.display = "block";
+        input = firstselect[2];
+        output = secondselect[2];
+        break;
+
+      case 'Volume':
+        firstselect[3].style.display = "block";
+        secondselect[3].style.display = "block";
+        input = firstselect[3];
+        output = secondselect[3];
+        break;
+
+      case 'Mass':
+        firstselect[4].style.display = "block";
+        secondselect[4].style.display = "block";
+        input = firstselect[4];
+        output = secondselect[4];
+        break;
+
+      case 'Data':
+        firstselect[5].style.display = "block";
+        secondselect[5].style.display = "block";
+        input = firstselect[5];
+        output = secondselect[5];
+        break;
+
+      case 'Speed':
+        firstselect[6].style.display = "block";
+        secondselect[6].style.display = "block";
+        input = firstselect[6];
+        output = secondselect[6];
+        break;
+
+      case 'Time':
+        firstselect[7].style.display = "block";
+        secondselect[7].style.display = "block";
+        input = firstselect[7];
+        output = secondselect[7];
+        break;  
+    }
+  })
+});
+
 /* The function is related to the button C or CE that is clear the res.innerText */
 function clearResult() {
-  if(window.location.pathname.includes("length.html"))
+  if(window.location.pathname.includes("unit.html"))
   {
     para1.innerText = para2.innerText = "";
-    input.value = output.value = "millimeters";
+    //input.value = output.value = "millimeters";
   }
   else if(window.location.pathname.includes("programmer.html"))
   {
@@ -813,12 +905,12 @@ function mul() {
 
 /* The function is related to the button &#8592; that is <-- delete last character */
 function del() {
-  if(window.location.pathname.includes("length.html"))
+  if(window.location.pathname.includes("unit.html"))
   {
     if(para1.innerText != "")
     {
       para1.innerText = para1.innerText.slice(0,-1);
-      displaylength1();
+      displayunit();
     }
   }
   else if(window.location.pathname.includes("programmer.html"))
@@ -868,10 +960,10 @@ function cbroot() {
 
 /* The function is related to the button 7 */
 function seven() {
-  if(window.location.pathname.includes("length.html"))
+  if(window.location.pathname.includes("unit.html"))
   {
     para1.innerText += "7";
-    displaylength1();
+    displayunit();
   }
   else if(window.location.pathname.includes("programmer.html"))
     {
@@ -888,10 +980,10 @@ function seven() {
 
 /* The function is related to the button 8 */
 function eight() {
-  if(window.location.pathname.includes("length.html"))
+  if(window.location.pathname.includes("unit.html"))
   {
     para1.innerText += "8";
-    displaylength1();
+    displayunit();
   }
   else if(window.location.pathname.includes("programmer.html"))
     {
@@ -908,10 +1000,10 @@ function eight() {
 
 /* The function is related to the button 9 */
 function nine() {
-  if(window.location.pathname.includes("length.html"))
+  if(window.location.pathname.includes("unit.html"))
   {
     para1.innerText += "9";
-    displaylength1();
+    displayunit();
   }
   else if(window.location.pathname.includes("programmer.html"))
     {
@@ -946,10 +1038,10 @@ function minus() {
 
 /* The function is related to the button 4 */
 function four() {
-  if(window.location.pathname.includes("length.html"))
+  if(window.location.pathname.includes("unit.html"))
   {
     para1.innerText += "4";
-    displaylength1();
+    displayunit();
   }
   else if(window.location.pathname.includes("programmer.html"))
   {
@@ -966,10 +1058,10 @@ function four() {
 
 /* The function is related to the button 5 */
 function five() {
-  if(window.location.pathname.includes("length.html"))
+  if(window.location.pathname.includes("unit.html"))
   {
     para1.innerText += "5";
-    displaylength1();
+    displayunit();
   }
   else if(window.location.pathname.includes("programmer.html"))
     {
@@ -986,10 +1078,10 @@ function five() {
 
 /* The function is related to the button 6 */
 function six() {
-  if(window.location.pathname.includes("length.html"))
+  if(window.location.pathname.includes("unit.html"))
   {
     para1.innerText += "6";
-    displaylength1();
+    displayunit();
   }
   else if(window.location.pathname.includes("programmer.html"))
     {
@@ -1025,10 +1117,10 @@ function plus() {
 
 /* The function is related to the button 1 */
 function one() {
-  if(window.location.pathname.includes("length.html"))
+  if(window.location.pathname.includes("unit.html"))
   {
     para1.innerText += "1";
-    displaylength1();
+    displayunit();
   }
   else if(window.location.pathname.includes("programmer.html"))
     {
@@ -1045,10 +1137,10 @@ function one() {
 
 /* The function is related to the button 2 */
 function two() {
-  if(window.location.pathname.includes("length.html"))
+  if(window.location.pathname.includes("unit.html"))
   {
     para1.innerText += "2";
-    displaylength1();
+    displayunit();
   }
   else if(window.location.pathname.includes("programmer.html"))
     {
@@ -1065,10 +1157,10 @@ function two() {
 
 /* The function is related to the button 3 */
 function three() {
-  if(window.location.pathname.includes("length.html"))
+  if(window.location.pathname.includes("unit.html"))
   {
     para1.innerText += "3";
-    displaylength1();
+    displayunit();
   }
   else if(window.location.pathname.includes("programmer.html"))
     {
@@ -1085,7 +1177,7 @@ function three() {
 
 /* The function is related to the button . */
 function dot() {
-  if(window.location.pathname.includes("length.html"))
+  if(window.location.pathname.includes("unit.html"))
     {
       if(para1.innerText == "")
       {
@@ -1102,7 +1194,7 @@ function dot() {
           else
           {
             para1.innerText += ".";
-            displaylength1();
+            displayunit();
           }
         }
       }
@@ -1178,10 +1270,10 @@ function dot() {
 
 /* The function is related to the button 0 */
 function zero() {
-  if(window.location.pathname.includes("length.html"))
+  if(window.location.pathname.includes("unit.html"))
   {
     para1.innerText += "0";
-    displaylength1();
+    displayunit();
   }
   else if(window.location.pathname.includes("programmer.html"))
     {
@@ -1198,7 +1290,7 @@ function zero() {
 
 /* The function is related to the button 00 */
 function doublezero() {
-  if(window.location.pathname.includes("length.html"))
+  if(window.location.pathname.includes("unit.html"))
   {
     para1.innerText += "00";
   }
@@ -1795,472 +1887,2175 @@ function reversesign() {
   }
 }
 
-/* The function is related to the length.html webpage for converting one length into another */
-function displaylength1() {
-  switch(input.value)
+/* The function is related to the unit.html webpage for converting one length into another */
+function displayunit() {
+  console.log(input, output);
+  switch(input.id)
   {
-    case "millimeters":
-      switch(output.value)
+    case "firstareaselect":
+      switch(input.value)
       {
-        case "millimeters":
-          para2.innerText = para1.innerText;
+        case "acres":
+          switch(output.value)
+          {
+            case "acres":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "ares":
+              para2.innerText = (para1.innerText)*(40.468564224);
+              break;
+
+            case "hectares":
+              para2.innerText = (para1.innerText)*(0.4046856422);
+              break;
+
+            case "square centimeters":
+              para2.innerText = (para1.innerText)*(40468564.224);
+              break;
+
+            case "square feet":
+              para2.innerText = (para1.innerText)*(43560);
+              break;
+
+            case "square inches":
+              para2.innerText = (para1.innerText)*(6272640);
+              break;
+
+            case "square meters":
+              para2.innerText = (para1.innerText)*(4046.8564224);
+              break;
+          }
           break;
 
-        case "centimeters":
-          para2.innerText = ((para1.innerText)/10);
+        case "ares":
+          switch(output.value)
+          {
+            case "acres":
+              para2.innerText = (para1.innerText)*(0.0247105381);
+              break;
+
+            case "ares":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "hectares":
+              para2.innerText = (para1.innerText)*(0.01);
+              break;
+
+            case "square centimeters":
+              para2.innerText = (para1.innerText)*(1000000);
+              break;
+
+            case "square feet":
+              para2.innerText = (para1.innerText)*(1076.391041671);
+              break;
+
+            case "square inches":
+              para2.innerText = (para1.innerText)*(155000.31000062);
+              break;
+
+            case "square meters":
+              para2.innerText = (para1.innerText)*(100);
+              break;
+          }
           break;
 
-        case "meters":
-          para2.innerText = ((para1.innerText)/1000);
+        case "hectares":
+          switch(output.value)
+          {
+            case "acres":
+              para2.innerText = (para1.innerText)*(2.4710538147);
+              break;
+
+            case "ares":
+              para2.innerText = (para1.innerText)*(100);
+              break;
+
+            case "hectares":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "square centimeters":
+              para2.innerText = (para1.innerText)*(100000000);
+              break;
+
+            case "square feet":
+              para2.innerText = (para1.innerText)*(107639.1041671);
+              break;
+
+            case "square inches":
+              para2.innerText = (para1.innerText)*(15500031.000062);
+              break;
+
+            case "square meters":
+              para2.innerText = (para1.innerText)*(10000);
+              break;            
+          }
           break;
 
-        case "kilometers":
-          para2.innerText = ((para1.innerText)/1000000);
+        case "square centimeters":
+          switch(output.value)
+          {
+            case "acres":
+              para2.innerText = (para1.innerText)*(2.47105381E-8);
+              break;
+
+            case "ares":
+              para2.innerText = (para1.innerText)*(0.000001);
+              break;
+
+            case "hectares":
+              para2.innerText = (para1.innerText)*(1.00000000E-8);
+              break;
+
+            case "square centimeters":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "square feet":
+              para2.innerText = (para1.innerText)*(0.001076391);
+              break;
+
+            case "square inches":
+              para2.innerText = (para1.innerText)*(0.15500031);
+              break;
+
+            case "square meters":
+              para2.innerText = (para1.innerText)*(0.0001);
+              break;
+          }
           break;
 
-        case "inches":
-          para2.innerText = ((para1.innerText)*0.0393700787);
+        case "square feet":
+          switch(output.value)
+          {
+            case "acres":
+              para2.innerText = (para1.innerText)*(0.0000229568);
+              break;
+
+            case "ares":
+              para2.innerText = (para1.innerText)*(0.0009290304);
+              break;
+
+            case "hectares":
+              para2.innerText = (para1.innerText)*(0.0000092903);
+              break;
+
+            case "square centimeters":
+              para2.innerText = (para1.innerText)*(929.0304);
+              break;
+
+            case "square feet":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "square inches":
+              para2.innerText = (para1.innerText)*(144);
+              break;
+
+            case "square meters":
+              para2.innerText = (para1.innerText)*(0.09290304);
+              break;
+          }
           break;
 
-        case "feet":
-          para2.innerText = ((para1.innerText)*0.0032808399);
+        case "square inches":
+          switch(output.value)
+          {
+            case "acres":
+              para2.innerText = (para1.innerText)*(1.59422508E-7);
+              break;
+
+            case "ares":
+              para2.innerText = (para1.innerText)*(0.0000064516);
+              break;
+
+            case "hectares":
+              para2.innerText = (para1.innerText)*(6.45160000E-8);
+              break;
+
+            case "square centimeters":
+              para2.innerText = (para1.innerText)*(6.4516);
+              break;
+
+            case "square feet":
+              para2.innerText = (para1.innerText)*(0.0069444444);
+              break;
+
+            case "square inches":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "square meters":
+              para2.innerText = (para1.innerText)*(0.00064516);
+              break;
+          }
           break;
 
-        case "yards":
-          para2.innerText = ((para1.innerText)*0.0010936133);
-          break;
+        case "square meters":
+          switch(output.value)
+          {
+            case "acres":
+              para2.innerText = (para1.innerText)*(0.0002471054);
+              break;
 
-        case "miles":
-          para2.innerText = ((para1.innerText)*6.21371192E-7);
-          break;
+            case "ares":
+              para2.innerText = (para1.innerText)*(0.01);
+              break;
 
-        case "nautical miles":
-          para2.innerText = ((para1.innerText)*5.39956803E-7);
-          break;
+            case "hectares":
+              para2.innerText = (para1.innerText)*(0.0001);
+              break;
 
-        case "mils":
-          para2.innerText = ((para1.innerText)*39.3700787402);
+            case "square centimeters":
+              para2.innerText = (para1.innerText)*(10000);
+              break;
+
+            case "square feet":
+              para2.innerText = (para1.innerText)*(10.7639104167);
+              break;
+
+            case "square inches":
+              para2.innerText = (para1.innerText)*(1550.0031000062);
+              break;
+
+            case "square meters":
+              para2.innerText = para1.innerText;
+              break;
+          }
           break;
       }
       break;
 
-    case "centimeters":
-      switch(output.value)
+    case "firstlengthselect":
+      switch(input.value)
       {
         case "millimeters":
-          para2.innerText = ((para1.innerText)*10);
+          switch(output.value)
+          {
+            case "millimeters":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "centimeters":
+              para2.innerText = ((para1.innerText)/10);
+              break;
+
+            case "meters":
+              para2.innerText = ((para1.innerText)/1000);
+              break;
+
+            case "kilometers":
+              para2.innerText = ((para1.innerText)/1000000);
+              break;
+
+            case "inches":
+              para2.innerText = ((para1.innerText)*0.0393700787);
+              break;
+
+            case "feet":
+              para2.innerText = ((para1.innerText)*0.0032808399);
+              break;
+
+            case "yards":
+              para2.innerText = ((para1.innerText)*0.0010936133);
+              break;
+
+            case "miles":
+              para2.innerText = ((para1.innerText)*6.21371192E-7);
+              break;
+
+            case "nautical miles":
+              para2.innerText = ((para1.innerText)*5.39956803E-7);
+              break;
+
+            case "mils":
+              para2.innerText = ((para1.innerText)*39.3700787402);
+              break;
+          }
           break;
 
         case "centimeters":
-          para2.innerText = para1.innerText;
+          switch(output.value)
+          {
+            case "millimeters":
+              para2.innerText = ((para1.innerText)*10);
+              break;
+
+            case "centimeters":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "meters":
+              para2.innerText = ((para1.innerText)/100);
+              break;
+
+            case "kilometers":
+              para2.innerText = ((para1.innerText)/100000);
+              break;
+
+            case "inches":
+              para2.innerText = ((para1.innerText)*0.3937007874);
+              break;
+
+            case "feet":
+              para2.innerText = ((para1.innerText)*0.032808399);
+              break;
+
+            case "yards":
+              para2.innerText = ((para1.innerText)*0.010936133);
+              break;
+
+            case "miles":
+              para2.innerText = ((para1.innerText)*0.0000062137);
+              break;
+
+            case "nautical miles":
+              para2.innerText = ((para1.innerText)*0.0000053996);
+              break;
+
+            case "mils":
+              para2.innerText = ((para1.innerText)*393.7007874016);
+              break;
+          }
           break;
 
         case "meters":
-          para2.innerText = ((para1.innerText)/100);
+          switch(output.value)
+          {
+            case "millimeters":
+              para2.innerText = ((para1.innerText)*1000);
+              break;
+
+            case "centimeters":
+              para2.innerText = ((para1.innerText)*100);
+              break;
+
+            case "meters":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "kilometers":
+              para2.innerText = ((para1.innerText)*0.001);
+              break;
+
+            case "inches":
+              para2.innerText = ((para1.innerText)*39.3700787402);
+              break;
+
+            case "feet":
+              para2.innerText = ((para1.innerText)*3.280839895);
+              break;
+
+            case "yards":
+              para2.innerText = ((para1.innerText)*1.0936132983);
+              break;
+
+            case "miles":
+              para2.innerText = ((para1.innerText)*0.0006213712);
+              break;
+
+            case "nautical miles":
+              para2.innerText = ((para1.innerText)*0.0005399568);
+              break;
+
+            case "mils":
+              para2.innerText = ((para1.innerText)*39370.078740157);
+              break;
+          }
           break;
 
         case "kilometers":
-          para2.innerText = ((para1.innerText)/100000);
+          switch(output.value)
+          {
+            case "millimeters":
+              para2.innerText = eval((para1.innerText)*1000000);
+              break;
+
+            case "centimeters":
+              para2.innerText = ((para1.innerText)*100000);
+              break;
+
+            case "meters":
+              para2.innerText = ((para1.innerText)*1000);
+              break;
+
+            case "kilometers":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "inches":
+              para2.innerText = ((para1.innerText)*39370.078740157);
+              break;
+
+            case "feet":
+              para2.innerText = ((para1.innerText)*3280.8398950131);
+              break;
+
+            case "yards":
+              para2.innerText = ((para1.innerText)*1093.6132983377);
+              break;
+
+            case "miles":
+              para2.innerText = ((para1.innerText)*0.6213711922);
+              break;
+
+            case "nautical miles":
+              para2.innerText = ((para1.innerText)*0.5399568035);
+              break;
+            
+            case "mils":
+              para2.innerText = ((para1.innerText)*39370078.740157);
+              break;
+          }
           break;
 
         case "inches":
-          para2.innerText = ((para1.innerText)*0.3937007874);
+          switch(output.value)
+          {
+            case "millimeters":
+              para2.innerText = ((para1.innerText)*25.4);
+              break;
+
+            case "centimeters":
+              para2.innerText = ((para1.innerText)*2.54);
+              break;
+
+            case "meters":
+              para2.innerText = ((para1.innerText)*0.0254);
+              break;
+
+            case "kilometers":
+              para2.innerText = ((para1.innerText)*0.0000254);
+              break;
+
+            case "inches":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "feet":
+              para2.innerText = ((para1.innerText)*0.0833333333);
+              break;
+
+            case "yards":
+              para2.innerText = ((para1.innerText)*0.0277777778);
+              break;
+
+            case "miles":
+              para2.innerText = ((para1.innerText)*0.0000157828);
+              break;
+
+            case "nautical miles":
+              para2.innerText = ((para1.innerText)*0.0000137149);
+              break;
+
+            case "mils":
+              para2.innerText = ((para1.innerText)*1000);
+              break;
+          }
           break;
 
         case "feet":
-          para2.innerText = ((para1.innerText)*0.032808399);
+          switch(output.value)
+          {
+            case "millimeters":
+              para2.innerText = ((para1.innerText)*304.8);
+              break;
+
+            case "centimeters":
+              para2.innerText = ((para1.innerText)*30.48);
+              break;
+
+            case "meters":
+              para2.innerText = ((para1.innerText)*0.3048);
+              break;
+
+            case "kilometers":
+              para2.innerText = ((para1.innerText)*0.0003048);
+              break;
+
+            case "inches":
+              para2.innerText = ((para1.innerText)*12);
+              break;
+
+            case "feet":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "yards":
+              para2.innerText = ((para1.innerText)*0.3333333333);
+              break;
+
+            case "miles":
+              para2.innerText = ((para1.innerText)*0.0001893939);
+              break;
+
+            case "nautical miles":
+              para2.innerText = ((para1.innerText)*0.0001645788);
+              break;
+
+            case "mils":
+              para2.innerText = ((para1.innerText)*12000);
+              break;
+          }
           break;
 
         case "yards":
-          para2.innerText = ((para1.innerText)*0.010936133);
+          switch(output.value)
+          {
+            case "millimeters":
+              para2.innerText = ((para1.innerText)*914.4);
+              break;
+
+            case "centimeters":
+              para2.innerText = ((para1.innerText)*91.44);
+              break;
+
+            case "meters":
+              para2.innerText = ((para1.innerText)*0.9144);
+              break;
+
+            case "kilometers":
+              para2.innerText = ((para1.innerText)*0.0009144);
+              break;
+
+            case "inches":
+              para2.innerText = ((para1.innerText)*36);
+              break;
+
+            case "feet":
+              para2.innerText = ((para1.innerText)*3);
+              break;
+
+            case "yards":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "miles":
+              para2.innerText = ((para1.innerText)*0.0005681818);
+              break;
+
+            case "nautical miles":
+              para2.innerText = ((para1.innerText)*0.0004937365);
+              break;
+
+            case "mils":
+              para2.innerText = ((para1.innerText)*36000);
+              break;
+          }
           break;
 
         case "miles":
-          para2.innerText = ((para1.innerText)*0.0000062137);
+          switch(output.value)
+          {
+            case "millimeters":
+              para2.innerText = ((para1.innerText)*1609344);
+              break;
+
+            case "centimeters":
+              para2.innerText = ((para1.innerText)*160934.4);
+              break;
+
+            case "meters":
+              para2.innerText = ((para1.innerText)*1609.344);
+              break;
+
+            case "kilometers":
+              para2.innerText = ((para1.innerText)*1.609344);
+              break;
+
+            case "inches":
+              para2.innerText = ((para1.innerText)*63360);
+              break;
+
+            case "feet":
+              para2.innerText = ((para1.innerText)*5280);
+              break;
+
+            case "yards":
+              para2.innerText = ((para1.innerText)*1760);
+              break;
+
+            case "miles":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "nautical miles":
+              para2.innerText = ((para1.innerText)*0.8689762419);
+              break;
+
+            case "mils":
+              para2.innerText = ((para1.innerText)*63360000);
+              break;
+          }
           break;
 
         case "nautical miles":
-          para2.innerText = ((para1.innerText)*0.0000053996);
+          switch(output.value)
+          {
+            case "millimeters":
+              para2.innerText = ((para1.innerText)*1852000);
+              break;
+
+            case "centimeters":
+              para2.innerText = ((para1.innerText)*185200);
+              break;
+
+            case "meters":
+              para2.innerText = ((para1.innerText)*1852);
+              break;
+
+            case "kilometers":
+              para2.innerText = ((para1.innerText)*1.852);
+              break;
+
+            case "inches":
+              para2.innerText = ((para1.innerText)*72913.385826772);
+              break;
+
+            case "feet":
+              para2.innerText = ((para1.innerText)*6076.1154855643);
+              break;
+
+            case "yards":
+              para2.innerText = ((para1.innerText)*2025.3718285214);
+              break;
+
+            case "miles":
+              para2.innerText = ((para1.innerText)*1.150779448);
+              break;
+
+            case "nautical miles":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "mils":
+              para2.innerText = ((para1.innerText)*72913385.826772);
+              break;
+          }
           break;
 
         case "mils":
-          para2.innerText = ((para1.innerText)*393.7007874016);
+          switch(output.value)
+          {
+            case "millimeters":
+              para2.innerText = ((para1.innerText)*0.0254);
+              break;
+
+            case "centimeters":
+              para2.innerText = ((para1.innerText)*0.00254);
+              break;
+
+            case "meters":
+              para2.innerText = ((para1.innerText)*0.0000254);
+              break;
+
+            case "kilometers":
+              para2.innerText = eval((para1.innerText)*(2.54000000E-8));
+              break;
+
+            case "inches":
+              para2.innerText = ((para1.innerText)*0.001);
+              break;
+
+            case "feet":
+              para2.innerText = ((para1.innerText)*0.0000833333);
+              break;
+
+            case "yards":
+              para2.innerText = ((para1.innerText)*0.0000277778);
+              break;
+
+            case "miles":
+              para2.innerText = ((para1.innerText)*1.57828283E-8);
+              break;
+
+            case "nautical miles":
+              para2.innerText = ((para1.innerText)*1.37149028E-8);
+              break;
+
+            case "mils":
+              para2.innerText = para1.innerText;
+              break;
+          }
           break;
       }
       break;
 
-    case "meters":
-      switch(output.value)
+    case "firsttemperatureselect":
+      switch(input.value)
       {
-        case "millimeters":
-          para2.innerText = ((para1.innerText)*1000);
+        case "celsius":
+          switch(output.value)
+          {
+            case "celsius":
+              para2.innerText = para1.innerText;
+              break;
+            
+            case "fahrenheit":
+              para2.innerText = (para1.innerText)*(33.8);
+              break;
+
+            case "kelvin":
+              para2.innerText = (para1.innerText)*(274.15);
+              break;
+          }
           break;
 
-        case "centimeters":
-          para2.innerText = ((para1.innerText)*100);
+        case "fahrenheit":
+          switch(output.value)
+          {
+            case "celsius":
+              para2.innerText = (para1.innerText)*(-17.2222222222);
+              break;
+
+            case "fahrenheit":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "kelvin":
+              para2.innerText = (para1.innerText)*(255.9277777778);
+              break;
+          }
           break;
 
-        case "meters":
-          para2.innerText = para1.innerText;
+        case "kelvin":
+          switch(output.value)
+          {
+            case "celsius":
+              para2.innerText = (para1.innerText)*(-272.15);
+              break;
+
+            case "fahrenheit":
+              para2.innerText = (para1.innerText)*(-457.87);
+              break;
+
+            case "kelvin":
+              para2.innerText = para1.innerText;
+              break;
+          }
+          break;
+      }
+      break;
+    
+    case "firstvolumeselect":
+      switch(input.value)
+      {
+        case "uk gallons":
+          switch(output.value)
+          {
+            case "uk gallons":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "us gallons":
+              para2.innerText = (para1.innerText)*(1.2009499255);
+              break;
+
+            case "liters":
+              para2.innerText = (para1.innerText)*(4.54609);
+              break;
+
+            case "milliliters":
+              para2.innerText = (para1.innerText)*(4546.09);
+              break;
+
+            case "cubic centimeters":
+              para2.innerText = (para1.innerText)*(4546.09);
+              break;
+
+            case "cubic meters":
+              para2.innerText = (para1.innerText)*(0.00454609);
+              break;
+
+            case "cubic inches":
+              para2.innerText = (para1.innerText)*(277.4194327916);
+              break;
+
+            case "cubic feet":
+              para2.innerText = (para1.innerText)*(0.1605436532);
+              break;
+          }
           break;
 
-        case "kilometers":
-          para2.innerText = ((para1.innerText)*0.001);
+        case "us gallons":
+          switch(output.value)
+          {
+            case "uk gallons":
+              para2.innerText = (para1.innerText)*(0.8326741846);
+              break;
+
+            case "us gallons":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "liters":
+              para2.innerText = (para1.innerText)*(3.785411784);
+              break;
+
+            case "milliliters":
+              para2.innerText = (para1.innerText)*(3785.411784);
+              break;
+
+            case "cubic centimeters":
+              para2.innerText = (para1.innerText)*(3785.411784);
+              break;
+
+            case "cubic meters":
+              para2.innerText = (para1.innerText)*(0.0037854118);
+              break;
+
+            case "cubic inches":
+              para2.innerText = (para1.innerText)*(231);
+              break;
+
+            case "cubic feet":
+              para2.innerText = (para1.innerText)*(0.1336805556);
+              break;
+          }
           break;
 
-        case "inches":
-          para2.innerText = ((para1.innerText)*39.3700787402);
+        case "liters":
+          switch(output.value)
+          {
+            case "uk gallons":
+              para2.innerText = (para1.innerText)*(0.2199692483);
+              break;
+
+            case "us gallons":
+              para2.innerText = (para1.innerText)*(0.2641720524);
+              break;
+
+            case "liters":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "milliliters":
+              para2.innerText = (para1.innerText)*(1000);
+              break;
+
+            case "cubic centimeters":
+              para2.innerText = (para1.innerText)*(1000);
+              break;
+
+            case "cubic meters":
+              para2.innerText = (para1.innerText)*(0.001);
+              break;
+
+            case "cubic inches":
+              para2.innerText = (para1.innerText)*(61.0237440947);
+              break;
+
+            case "cubic feet":
+              para2.innerText = (para1.innerText)*(0.0353146667);
+              break;
+          }
           break;
 
-        case "feet":
-          para2.innerText = ((para1.innerText)*3.280839895);
+        case "milliliters":
+        case "cubic centimeters":
+          switch(output.value)
+          {
+            case "uk gallons":
+              para2.innerText = (para1.innerText)*(0.0002199692);
+              break;
+
+            case "us gallons":
+              para2.innerText = (para1.innerText)*(0.0002641721);
+              break;
+
+            case "liters":
+              para2.innerText = (para1.innerText)*(0.001);
+              break;
+
+            case "milliliters":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "cubic centimeters":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "cubic meters":
+              para2.innerText = (para1.innerText)*(0.000001);
+              break;
+
+            case "cubic inches":
+              para2.innerText = (para1.innerText)*(0.0610237441);
+              break;
+
+            case "cubic feet":
+              para2.innerText = (para1.innerText)*(0.0000353147);
+              break;
+          }
           break;
 
-        case "yards":
-          para2.innerText = ((para1.innerText)*1.0936132983);
+        case "cubic meters":
+          switch(output.value)
+          {
+            case "uk gallons":
+              para2.innerText = (para1.innerText)*(219.9692482991);
+              break;
+
+            case "us gallons":
+              para2.innerText = (para1.innerText)*(264.1720523581);
+              break;
+
+            case "liters":
+              para2.innerText = (para1.innerText)*(1000);
+              break;
+
+            case "milliliters":
+              para2.innerText = (para1.innerText)*(1000000);
+              break;
+
+            case "cubic centimeters":
+              para2.innerText = (para1.innerText)*(1000000);
+              break;
+
+            case "cubic meters":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "cubic inches":
+              para2.innerText = (para1.innerText)*(61023.744094732);
+              break;
+
+            case "cubic feet":
+              para2.innerText = (para1.innerText)*(35.3146667215);
+              break;
+          }
           break;
 
-        case "miles":
-          para2.innerText = ((para1.innerText)*0.0006213712);
+        case "cubic inches":
+          switch(output.value)
+          {
+            case "uk gallons":
+              para2.innerText = (para1.innerText)*(0.0036046501);
+              break;
+
+            case "us gallons":
+              para2.innerText = (para1.innerText)*(0.0043290043);
+              break;
+
+            case "liters":
+              para2.innerText = (para1.innerText)*(0.016387064);
+              break;
+
+            case "milliliters":
+            case "cubic centimeters":
+              para2.innerText = (para1.innerText)*(16.387064);
+              break;
+
+            case "cubic meters":
+              para2.innerText = (para1.innerText)*(0.0000163871);
+              break;
+
+            case "cubic inches":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "cubic feet":
+              para2.innerText = (para1.innerText)*(0.0005787037);
+              break;
+          }
           break;
 
-        case "nautical miles":
-          para2.innerText = ((para1.innerText)*0.0005399568);
-          break;
+          case "cubic feet":
+          switch(output.value)
+          {
+            case "uk gallons":
+              para2.innerText = (para1.innerText)*(6.228835459);
+              break;
 
-        case "mils":
-          para2.innerText = ((para1.innerText)*39370.078740157);
+            case "us gallons":
+              para2.innerText = (para1.innerText)*(7.4805194805);
+              break;
+
+            case "liters":
+              para2.innerText = (para1.innerText)*(28.316846592);
+              break;
+
+            case "milliliters":
+            case "cubic centimeters":
+              para2.innerText = (para1.innerText)*(28316.846592);
+              break;
+
+            case "cubic meters":
+              para2.innerText = (para1.innerText)*(0.0283168466);
+              break;
+
+            case "cubic inches":
+              para2.innerText = (para1.innerText)*(1728);
+              break;
+
+            case "cubic feet":
+              para2.innerText = para1.innerText;
+              break;
+          }
           break;
       }
       break;
 
-    case "kilometers":
-      switch(output.value)
+    case "firstmassselect":
+      switch(input.value)
       {
-        case "millimeters":
-          para2.innerText = eval((para1.innerText)*1000000);
+        case "tons":
+          switch(output.value)
+          {
+            case "tons":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "uk tons":
+              para2.innerText = (para1.innerText)*(0.9842065276);
+              break;
+
+            case "us tons":
+              para2.innerText = (para1.innerText)*(1.1023113109);
+              break;
+
+            case "pounds":
+              para2.innerText = (para1.innerText)*(2204.6226218488);
+              break;
+
+            case "ounces":
+              para2.innerText = (para1.innerText)*(35273.96194958);
+              break;
+
+            case "kilograms":
+              para2.innerText = (para1.innerText)*(1000);
+              break;
+
+            case "grams":
+              para2.innerText = (para1.innerText)*(1000000);
+              break;
+          }
           break;
 
-        case "centimeters":
-          para2.innerText = ((para1.innerText)*100000);
+        case "uk tons":
+          switch(output.value)
+          {
+            case "tons":
+              para2.innerText = (para1.innerText)*(1.0160469088);
+              break;
+
+            case "uk tons":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "us tons":
+              para2.innerText = (para1.innerText)*(1.12);
+              break;
+
+            case "pounds":
+              para2.innerText = (para1.innerText)*(2240);
+              break;
+
+            case "ounces":
+              para2.innerText = (para1.innerText)*(35840);
+              break;
+
+            case "kilograms":
+              para2.innerText = (para1.innerText)*(1016.0469088);
+              break;
+
+            case "grams":
+              para2.innerText = (para1.innerText)*(1016046.9088);
+              break;
+          }
           break;
 
-        case "meters":
-          para2.innerText = ((para1.innerText)*1000);
+        case "us tons":
+          switch(output.value)
+          {
+            case "tons":
+              para2.innerText = (para1.innerText)*(0.90718474);
+              break;
+
+            case "uk tons":
+              para2.innerText = (para1.innerText)*(0.8928571429);
+              break;
+
+            case "us tons":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "pounds":
+              para2.innerText = (para1.innerText)*(2000);
+              break;
+
+            case "ounces":
+              para2.innerText = (para1.innerText)*(32000);
+              break;
+
+            case "kilograms":
+              para2.innerText = (para1.innerText)*(907.18474);
+              break;
+
+            case "grams":
+              para2.innerText = (para1.innerText)*(907184.74);
+              break;
+          }
           break;
 
-        case "kilometers":
-          para2.innerText = para1.innerText;
+        case "pounds":
+          switch(output.value)
+          {
+            case "tons":
+              para2.innerText = (para1.innerText)*(0.0004535924);
+              break;
+
+            case "uk tons":
+              para2.innerText = (para1.innerText)*(0.0004464286);
+              break;
+
+            case "us tons":
+              para2.innerText = (para1.innerText)*(0.0005);
+              break;
+
+            case "pounds":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "ounces":
+              para2.innerText = (para1.innerText)*(16);
+              break;
+
+            case "kilograms":
+              para2.innerText = (para1.innerText)*(0.45359237);
+              break;
+
+            case "grams":
+              para2.innerText = (para1.innerText)*(453.59237);
+              break;
+          }
           break;
 
-        case "inches":
-          para2.innerText = ((para1.innerText)*39370.078740157);
+        case "ounces":
+          switch(output.value)
+          {
+            case "tons":
+              para2.innerText = (para1.innerText)*(0.0000283495);
+              break;
+
+            case "uk tons":
+              para2.innerText = (para1.innerText)*(0.0000279018);
+              break;
+
+            case "us tons":
+              para2.innerText = (para1.innerText)*(0.00003125);
+              break;
+
+            case "pounds":
+              para2.innerText = (para1.innerText)*(0.0625);
+              break;
+
+            case "ounces":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "kilograms":
+              para2.innerText = (para1.innerText)*(0.0283495231);
+              break;
+
+            case "grams":
+              para2.innerText = (para1.innerText)*(28.349523125);
+              break;
+          }
           break;
 
-        case "feet":
-          para2.innerText = ((para1.innerText)*3280.8398950131);
+        case "kilograms":
+          switch(output.value)
+          {
+            case "tons":
+              para2.innerText = (para1.innerText)*(0.001);
+              break;
+
+            case "uk tons":
+              para2.innerText = (para1.innerText)*(0.0009842065);
+              break;
+
+            case "us tons":
+              para2.innerText = (para1.innerText)*(0.0011023113);
+              break;
+
+            case "pounds":
+              para2.innerText = (para1.innerText)*(2.2046226218);
+              break;
+
+            case "ounces":
+              para2.innerText = (para1.innerText)*(35.2739619496);
+              break;
+
+            case "kilograms":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "grams":
+              para2.innerText = (para1.innerText)*(1000);
+              break;
+          }
           break;
 
-        case "yards":
-          para2.innerText = ((para1.innerText)*1093.6132983377);
-          break;
+        case "grams":
+          switch(output.value)
+          {
+            case "tons":
+              para2.innerText = (para1.innerText)*(0.000001);
+              break;
 
-        case "miles":
-          para2.innerText = ((para1.innerText)*0.6213711922);
-          break;
+            case "uk tons":
+              para2.innerText = (para1.innerText)*(9.84206528E-7);
+              break;
 
-        case "nautical miles":
-          para2.innerText = ((para1.innerText)*0.5399568035);
-          break;
-        
-        case "mils":
-          para2.innerText = ((para1.innerText)*39370078.740157);
+            case "us tons":
+              para2.innerText = (para1.innerText)*(0.0000011023);
+              break;
+
+            case "pounds":
+              para2.innerText = (para1.innerText)*(0.0022046226);
+              break;
+
+            case "ounces":
+              para2.innerText = (para1.innerText)*(0.0352739619);
+              break;
+
+            case "kilograms":
+              para2.innerText = (para1.innerText)*(0.001);
+              break;
+
+            case "grams":
+              para2.innerText = para1.innerText;
+              break;
+          }
           break;
       }
       break;
 
-    case "inches":
-      switch(output.value)
+    case "firstdataselect":
+      switch(input.value)
       {
-        case "millimeters":
-          para2.innerText = ((para1.innerText)*25.4);
+        case "bits":
+          switch(output.value)
+          {
+            case "bits":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "bytes":
+              para2.innerText = (para1.innerText)*(0.125);
+              break;
+
+            case "kilobytes":
+              para2.innerText = (para1.innerText)*(0.000125);
+              break;
+
+            case "kibibytes":
+              para2.innerText = (para1.innerText)*(0.0001220703);
+              break;
+
+            case "megabytes":
+              para2.innerText = (para1.innerText)*(1.25000000E-7);
+              break;
+
+            case "mebibytes":
+              para2.innerText = (para1.innerText)*(1.19209290E-7);
+              break;
+
+            case "gigabytes":
+              para2.innerText = (para1.innerText)*(1.25000000E-10);
+              break;
+
+            case "gibibytes":
+              para2.innerText = (para1.innerText)*(1.16415322E-10);
+              break;
+
+            case "terabytes":
+              para2.innerText = (para1.innerText)*(1.25000000E-13);
+              break;
+
+            case "tebibytes":
+              para2.innerText = (para1.innerText)*(1.13686838E-13);
+              break;
+          }
           break;
 
-        case "centimeters":
-          para2.innerText = ((para1.innerText)*2.54);
+        case "bytes":
+          switch(output.value)
+          {
+            case "bits":
+              para2.innerText = (para1.innerText)*(8);
+              break;
+
+            case "bytes":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "kilobytes":
+              para2.innerText = (para1.innerText)*(0.001);
+              break;
+
+            case "kibibytes":
+              para2.innerText = (para1.innerText)*(0.0009765625);
+              break;
+
+            case "megabytes":
+              para2.innerText = (para1.innerText)*(0.000001);
+              break;
+
+            case "mebibytes":
+              para2.innerText = (para1.innerText)*(9.53674316E-7);
+              break;
+
+            case "gigabytes":
+              para2.innerText = (para1.innerText)*(1.00000000E-9);
+              break;
+
+            case "gibibytes":
+              para2.innerText = (para1.innerText)*(9.31322575E-10);
+              break;
+
+            case "terabytes":
+              para2.innerText = (para1.innerText)*(1.00000000E-12);
+              break;
+
+            case "tebibytes":
+              para2.innerText = (para1.innerText)*(9.09494702E-13);
+              break;
+          }
           break;
 
-        case "meters":
-          para2.innerText = ((para1.innerText)*0.0254);
+        case "kilobytes":
+          switch(output.value)
+          {
+            case "bits":
+              para2.innerText = (para1.innerText)*(8000);
+              break;
+
+            case "bytes":
+              para2.innerText = (para1.innerText)*(1000);
+              break;
+
+            case "kilobytes":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "kibibytes":
+              para2.innerText = (para1.innerText)*(0.9765625);
+              break;
+
+            case "megabytes":
+              para2.innerText = (para1.innerText)*(0.001);
+              break;
+
+            case "mebibytes":
+              para2.innerText = (para1.innerText)*(0.0009536743);
+              break;
+
+            case "gigabytes":
+              para2.innerText = (para1.innerText)*(0.000001);
+              break;
+
+            case "gibibytes":
+              para2.innerText = (para1.innerText)*(9.31322575E-7);
+              break;
+
+            case "terabytes":
+              para2.innerText = (para1.innerText)*(1.00000000E-9);
+              break;
+
+            case "tebibytes":
+              para2.innerText = (para1.innerText)*(9.09494702E-10);
+              break;
+          }
           break;
 
-        case "kilometers":
-          para2.innerText = ((para1.innerText)*0.0000254);
+        case "kibibytes":
+          switch(output.value)
+          {
+            case "bits":
+              para2.innerText = (para1.innerText)*(8192);
+              break;
+
+            case "bytes":
+              para2.innerText = (para1.innerText)*(1024);
+              break;
+
+            case "kilobytes":
+              para2.innerText = (para1.innerText)*(1.024);
+              break;
+
+            case "kibibytes":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "megabytes":
+              para2.innerText = (para1.innerText)*(0.001024);
+              break;
+
+            case "mebibytes":
+              para2.innerText = (para1.innerText)*(0.0009765625);
+              break;
+
+            case "gigabytes":
+              para2.innerText = (para1.innerText)*(0.000001024);
+              break;
+
+            case "gibibytes":
+              para2.innerText = (para1.innerText)*(9.53674316E-7);
+              break;
+
+            case "terabytes":
+              para2.innerText = (para1.innerText)*(1.02400000E-9);
+              break;
+
+            case "tebibytes":
+              para2.innerText = (para1.innerText)*(9.31322575E-10);
+              break;
+          }
           break;
 
-        case "inches":
-          para2.innerText = para1.innerText;
+        case "megabytes":
+          switch(output.value)
+          {
+            case "bits":
+              para2.innerText = (para1.innerText)*(8000000);
+              break;
+
+            case "bytes":
+              para2.innerText = (para1.innerText)*(1000000);
+              break;
+
+            case "kilobytes":
+              para2.innerText = (para1.innerText)*(1000);
+              break;
+
+            case "kibibytes":
+              para2.innerText = (para1.innerText)*(976.5625);
+              break;
+
+            case "megabytes":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "mebibytes":
+              para2.innerText = (para1.innerText)*(0.9536743164);
+              break;
+
+            case "gigabytes":
+              para2.innerText = (para1.innerText)*(0.001);
+              break;
+
+            case "gibibytes":
+              para2.innerText = (para1.innerText)*(0.0009313226);
+              break;
+
+            case "terabytes":
+              para2.innerText = (para1.innerText)*(0.000001);
+              break;
+
+            case "tebibytes":
+              para2.innerText = (para1.innerText)*(9.09494702E-7);
+              break;
+          }
           break;
 
-        case "feet":
-          para2.innerText = ((para1.innerText)*0.0833333333);
+        case "mebibytes":
+          switch(output.value)
+          {
+            case "bits":
+              para2.innerText = (para1.innerText)*(8388608);
+              break;
+
+            case "bytes":
+              para2.innerText = (para1.innerText)*(1048576);
+              break;
+
+            case "kilobytes":
+              para2.innerText = (para1.innerText)*(1048.576);
+              break;
+
+            case "kibibytes":
+              para2.innerText = (para1.innerText)*(1024);
+              break;
+
+            case "megabytes":
+              para2.innerText = (para1.innerText)*(1.048576);
+              break;
+
+            case "mebibytes":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "gigabytes":
+              para2.innerText = (para1.innerText)*(0.001048576);
+              break;
+
+            case "gibibytes":
+              para2.innerText = (para1.innerText)*(0.0009765625);
+              break;
+
+            case "terabytes":
+              para2.innerText = (para1.innerText)*(0.0000010486);
+              break;
+
+            case "tebibytes":
+              para2.innerText = (para1.innerText)*(9.53674316E-7);
+              break;
+          }
           break;
 
-        case "yards":
-          para2.innerText = ((para1.innerText)*0.0277777778);
+        case "gigabytes":
+          switch(output.value)
+          {
+            case "bits":
+              para2.innerText = (para1.innerText)*(8000000000);
+              break;
+
+            case "bytes":
+              para2.innerText = (para1.innerText)*(1000000000);
+              break;
+
+            case "kilobytes":
+              para2.innerText = (para1.innerText)*(1000000);
+              break;
+
+            case "kibibytes":
+              para2.innerText = (para1.innerText)*(976562.5);
+              break;
+
+            case "megabytes":
+              para2.innerText = (para1.innerText)*(1000);
+              break;
+
+            case "mebibytes":
+              para2.innerText = (para1.innerText)*(953.6743164063);
+              break;
+
+            case "gigabytes":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "gibibytes":
+              para2.innerText = (para1.innerText)*(0.9313225746);
+              break;
+
+            case "terabytes":
+              para2.innerText = (para1.innerText)*(0.001);
+              break;
+
+            case "tebibytes":
+              para2.innerText = (para1.innerText)*(0.0009094947);
+              break;
+          }
           break;
 
-        case "miles":
-          para2.innerText = ((para1.innerText)*0.0000157828);
+        case "gibibytes":
+          switch(output.value)
+          {
+            case "bits":
+              para2.innerText = (para1.innerText)*(8589934592);
+              break;
+
+            case "bytes":
+              para2.innerText = (para1.innerText)*(1073741824);
+              break;
+
+            case "kilobytes":
+              para2.innerText = (para1.innerText)*(1073741.824);
+              break;
+
+            case "kibibytes":
+              para2.innerText = (para1.innerText)*(1048576);
+              break;
+
+            case "megabytes":
+              para2.innerText = (para1.innerText)*(1073.741824);
+              break;
+
+            case "mebibytes":
+              para2.innerText = (para1.innerText)*(1024);
+              break;
+
+            case "gigabytes":
+              para2.innerText = (para1.innerText)*(1.073741824);
+              break;
+
+            case "gibibytes":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "terabytes":
+              para2.innerText = (para1.innerText)*(0.0010737418);
+              break;
+
+            case "tebibytes":
+              para2.innerText = (para1.innerText)*(0.0009765625);
+              break;
+          }
           break;
 
-        case "nautical miles":
-          para2.innerText = ((para1.innerText)*0.0000137149);
+        case "terabytes":
+          switch(output.value)
+          {
+            case "bits":
+              para2.innerText = (para1.innerText)*(8000000000000);
+              break;
+
+            case "bytes":
+              para2.innerText = (para1.innerText)*(1000000000000);
+              break;
+
+            case "kilobytes":
+              para2.innerText = (para1.innerText)*(1000000000);
+              break;
+
+            case "kibibytes":
+              para2.innerText = (para1.innerText)*(976562500);
+              break;
+
+            case "megabytes":
+              para2.innerText = (para1.innerText)*(1000000);
+              break;
+
+            case "mebibytes":
+              para2.innerText = (para1.innerText)*(953674.31640625);
+              break;
+
+            case "gigabytes":
+              para2.innerText = (para1.innerText)*(1000);
+              break;
+
+            case "gibibytes":
+              para2.innerText = (para1.innerText)*(931.3225746155);
+              break;
+
+            case "terabytes":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "tebibytes":
+              para2.innerText = (para1.innerText)*(0.9094947018);
+              break;
+          }
           break;
 
-        case "mils":
-          para2.innerText = ((para1.innerText)*1000);
+        case "tebibytes":
+          switch(output.value)
+          {
+            case "bits":
+              para2.innerText = (para1.innerText)*(8796093022208);
+              break;
+
+            case "bytes":
+              para2.innerText = (para1.innerText)*(1099511627776);
+              break;
+
+            case "kilobytes":
+              para2.innerText = (para1.innerText)*(1099511627.776);
+              break;
+
+            case "kibibytes":
+              para2.innerText = (para1.innerText)*(1073741824);
+              break;
+
+            case "megabytes":
+              para2.innerText = (para1.innerText)*(1099511.627776);
+              break;
+
+            case "mebibytes":
+              para2.innerText = (para1.innerText)*(1048576);
+              break;
+
+            case "gigabytes":
+              para2.innerText = (para1.innerText)*(1099.511627776);
+              break;
+
+            case "gibibytes":
+              para2.innerText = (para1.innerText)*(1024);
+              break;
+
+            case "terabytes":
+              para2.innerText = (para1.innerText)*(1.0995116278);
+              break;
+
+            case "tebibytes":
+              para2.innerText = para1.innerText;
+              break;
+          }
           break;
       }
       break;
 
-    case "feet":
-      switch(output.value)
+    case "firstspeedselect":
+      switch(input.value)
       {
-        case "millimeters":
-          para2.innerText = ((para1.innerText)*304.8);
+        case "meters per second":
+          switch(output.value)
+          {
+            case "meters per second":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "meters per hour":
+              para2.innerText = (para1.innerText)*(3600);
+              break;
+
+            case "kilometers per second":
+              para2.innerText = (para1.innerText)*(0.001);
+              break;
+
+            case "kilometers per hour":
+              para2.innerText = (para1.innerText)*(3.6);
+              break;
+
+            case "inches per second":
+              para2.innerText = (para1.innerText)*(39.3700787402);
+              break;
+
+            case "inches per hour":
+              para2.innerText = (para1.innerText)*(141732.28346457);
+              break;
+
+            case "feet per second":
+              para2.innerText = (para1.innerText)*(3.280839895);
+              break;
+
+            case "feet per hour":
+              para2.innerText = (para1.innerText)*(11811.023622047);
+              break;
+
+            case "miles per second":
+              para2.innerText = (para1.innerText)*(0.0006213712);
+              break;
+
+            case "miles per hour":
+              para2.innerText = (para1.innerText)*(2.2369362921);
+              break;
+
+            case "knots":
+              para2.innerText = (para1.innerText)*(1.9438444924);
+              break;
+          }
           break;
 
-        case "centimeters":
-          para2.innerText = ((para1.innerText)*30.48);
+        case "meters per hour":
+          switch(output.value)
+          {
+            case "meters per second":
+              para2.innerText = (para1.innerText)*(0.0002777778);
+              break;
+
+            case "meters per hour":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "kilometers per second":
+              para2.innerText = (para1.innerText)*(2.77777778E-7);
+              break;
+
+            case "kilometers per hour":
+              para2.innerText = (para1.innerText)*(0.001);
+              break;
+
+            case "inches per second":
+              para2.innerText = (para1.innerText)*(0.010936133);
+              break;
+
+            case "inches per hour":
+              para2.innerText = (para1.innerText)*(39.3700787402);
+              break;
+
+            case "feet per second":
+              para2.innerText = (para1.innerText)*(0.0009113444);
+              break;
+
+            case "feet per hour":
+              para2.innerText = (para1.innerText)*(3.280839895);
+              break;
+
+            case "miles per second":
+              para2.innerText = (para1.innerText)*(1.72603109E-7);
+              break;
+
+            case "miles per hour":
+              para2.innerText = (para1.innerText)*(0.0006213712);
+              break;
+
+            case "knots":
+              para2.innerText = (para1.innerText)*(0.0005399568);
+              break;
+          }
           break;
 
-        case "meters":
-          para2.innerText = ((para1.innerText)*0.3048);
+        case "kilometers per second":
+          switch(output.value)
+          {
+            case "meters per second":
+              para2.innerText = (para1.innerText)*(1000);
+              break;
+
+            case "meters per hour":
+              para2.innerText = (para1.innerText)*(3600000);
+              break;
+
+            case "kilometers per second":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "kilometers per hour":
+              para2.innerText = (para1.innerText)*(3600);
+              break;
+
+            case "inches per second":
+              para2.innerText = (para1.innerText)*(39370.078740157);
+              break;
+
+            case "inches per hour":
+              para2.innerText = (para1.innerText)*(141732283.46457);
+              break;
+
+            case "feet per second":
+              para2.innerText = (para1.innerText)*(3280.8398950131);
+              break;
+
+            case "feet per hour":
+              para2.innerText = (para1.innerText)*(11811023.622047);
+              break;
+
+            case "miles per second":
+              para2.innerText = (para1.innerText)*(0.6213711922);
+              break;
+
+            case "miles per hour":
+              para2.innerText = (para1.innerText)*(2236.9362920544);
+              break;
+
+            case "knots":
+              para2.innerText = (para1.innerText)*(1943.8444924406);
+              break;
+          }
           break;
 
-        case "kilometers":
-          para2.innerText = ((para1.innerText)*0.0003048);
+        case "kilometers per hour":
+          switch(output.value)
+          {
+            case "meters per second":
+              para2.innerText = (para1.innerText)*(0.2777777778);
+              break;
+
+            case "meters per hour":
+              para2.innerText = (para1.innerText)*(1000);
+              break;
+
+            case "kilometers per second":
+              para2.innerText = (para1.innerText)*(0.0002777778);
+              break;
+
+            case "kilometers per hour":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "inches per second":
+              para2.innerText = (para1.innerText)*(10.9361329834);
+              break;
+
+            case "inches per hour":
+              para2.innerText = (para1.innerText)*(39370.078740157);
+              break;
+
+            case "feet per second":
+              para2.innerText = (para1.innerText)*(0.9113444153);
+              break;
+
+            case "feet per hour":
+              para2.innerText = (para1.innerText)*(3280.8398950131);
+              break;
+
+            case "miles per second":
+              para2.innerText = (para1.innerText)*(0.0001726031);
+              break;
+
+            case "miles per hour":
+              para2.innerText = (para1.innerText)*(0.6213711922);
+              break;
+
+            case "knots":
+              para2.innerText = (para1.innerText)*(0.5399568035);
+              break;
+          }
           break;
 
-        case "inches":
-          para2.innerText = ((para1.innerText)*12);
+        case "inches per second":
+          switch(output.value)
+          {
+            case "meters per second":
+              para2.innerText = (para1.innerText)*(0.0254);
+              break;
+
+            case "meters per hour":
+              para2.innerText = (para1.innerText)*(91.44);
+              break;
+
+            case "kilometers per second":
+              para2.innerText = (para1.innerText)*(0.0000254);
+              break;
+
+            case "kilometers per hour":
+              para2.innerText = (para1.innerText)*(0.09144);
+              break;
+
+            case "inches per second":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "inches per hour":
+              para2.innerText = (para1.innerText)*(3600);
+              break;
+
+            case "feet per second":
+              para2.innerText = (para1.innerText)*(0.0833333333);
+              break;
+
+            case "feet per hour":
+              para2.innerText = (para1.innerText)*(300);
+              break;
+
+            case "miles per second":
+              para2.innerText = (para1.innerText)*(0.0000157828);
+              break;
+
+            case "miles per hour":
+              para2.innerText = (para1.innerText)*(0.0568181818);
+              break;
+
+            case "knots":
+              para2.innerText = (para1.innerText)*(0.0493736501);
+              break;
+          }
           break;
 
-        case "feet":
-          para2.innerText = para1.innerText;
+        case "inches per hour":
+          switch(output.value)
+          {
+            case "meters per second":
+              para2.innerText = (para1.innerText)*(0.0000070556);
+              break;
+
+            case "meters per hour":
+              para2.innerText = (para1.innerText)*(0.0254);
+              break;
+
+            case "kilometers per second":
+              para2.innerText = (para1.innerText)*(7.05555556E-9);
+              break;
+
+            case "kilometers per hour":
+              para2.innerText = (para1.innerText)*(0.0000254);
+              break;
+
+            case "inches per second":
+              para2.innerText = (para1.innerText)*(0.0002777778);
+              break;
+
+            case "inches per hour":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "feet per second":
+              para2.innerText = (para1.innerText)*(0.0000231481);
+              break;
+
+            case "feet per hour":
+              para2.innerText = (para1.innerText)*(0.0833333333);
+              break;
+
+            case "miles per second":
+              para2.innerText = (para1.innerText)*(4.38411897E-9);
+              break;
+
+            case "miles per hour":
+              para2.innerText = (para1.innerText)*(0.0000157828);
+              break;
+
+            case "knots":
+              para2.innerText = (para1.innerText)*(0.0000137149);
+              break;
+          }
           break;
 
-        case "yards":
-          para2.innerText = ((para1.innerText)*0.3333333333);
+        case "feet per second":
+          switch(output.value)
+          {
+            case "meters per second":
+              para2.innerText = (para1.innerText)*(0.3048);
+              break;
+
+            case "meters per hour":
+              para2.innerText = (para1.innerText)*(1097.28);
+              break;
+
+            case "kilometers per second":
+              para2.innerText = (para1.innerText)*(0.0003048);
+              break;
+
+            case "kilometers per hour":
+              para2.innerText = (para1.innerText)*(1.09728);
+              break;
+
+            case "inches per second":
+              para2.innerText = (para1.innerText)*(12);
+              break;
+
+            case "inches per hour":
+              para2.innerText = (para1.innerText)*(43200);
+              break;
+
+            case "feet per second":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "feet per hour":
+              para2.innerText = (para1.innerText)*(3600);
+              break;
+
+            case "miles per second":
+              para2.innerText = (para1.innerText)*(0.0001893939);
+              break;
+
+            case "miles per hour":
+              para2.innerText = (para1.innerText)*(0.6818181818);
+              break;
+
+            case "knots":
+              para2.innerText = (para1.innerText)*(0.5924838013);
+              break;
+          }
           break;
 
-        case "miles":
-          para2.innerText = ((para1.innerText)*0.0001893939);
+        case "feet per hour":
+          switch(output.value)
+          {
+            case "meters per second":
+              para2.innerText = (para1.innerText)*(0.0000846667);
+              break;
+
+            case "meters per hour":
+              para2.innerText = (para1.innerText)*(0.3048);
+              break;
+
+            case "kilometers per second":
+              para2.innerText = (para1.innerText)*(8.46666667E-8);
+              break;
+
+            case "kilometers per hour":
+              para2.innerText = (para1.innerText)*(0.0003048);
+              break;
+
+            case "inches per second":
+              para2.innerText = (para1.innerText)*(0.0033333333);
+              break;
+
+            case "inches per hour":
+              para2.innerText = (para1.innerText)*(12);
+              break;
+
+            case "feet per second":
+              para2.innerText = (para1.innerText)*(0.0002777778);
+              break;
+
+            case "feet per hour":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "miles per second":
+              para2.innerText = (para1.innerText)*(5.26094276E-8);
+              break;
+
+            case "miles per hour":
+              para2.innerText = (para1.innerText)*(0.0001893939);
+              break;
+
+            case "knots":
+              para2.innerText = (para1.innerText)*(0.0001645788);
+              break;
+          }
           break;
 
-        case "nautical miles":
-          para2.innerText = ((para1.innerText)*0.0001645788);
-          break;
+        case "miles per second":
+          switch(output.value)
+          {
+            case "meters per second":
+              para2.innerText = (para1.innerText)*(0.0000846667);
+              break;
 
-        case "mils":
-          para2.innerText = ((para1.innerText)*12000);
+            case "meters per hour":
+              para2.innerText = (para1.innerText)*(0.3048);
+              break;
+
+            case "kilometers per second":
+              para2.innerText = (para1.innerText)*(8.46666667E-8);
+              break;
+
+            case "kilometers per hour":
+              para2.innerText = (para1.innerText)*(0.0003048);
+              break;
+
+            case "inches per second":
+              para2.innerText = (para1.innerText)*(0.0033333333);
+              break;
+
+            case "inches per hour":
+              para2.innerText = (para1.innerText)*(12);
+              break;
+
+            case "feet per second":
+              para2.innerText = (para1.innerText)*(0.0002777778);
+              break;
+
+            case "feet per hour":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "miles per second":
+              para2.innerText = (para1.innerText)*(5.26094276E-8);
+              break;
+
+            case "miles per hour":
+              para2.innerText = (para1.innerText)*(0.0001893939);
+              break;
+
+            case "knots":
+              para2.innerText = (para1.innerText)*(0.0001645788);
+              break;
+          }
           break;
       }
       break;
 
-    case "yards":
-      switch(output.value)
+    case "firsttimeselect":
+      switch(input.value)
       {
-        case "millimeters":
-          para2.innerText = ((para1.innerText)*914.4);
-          break;
-
-        case "centimeters":
-          para2.innerText = ((para1.innerText)*91.44);
-          break;
-
-        case "meters":
-          para2.innerText = ((para1.innerText)*0.9144);
-          break;
-
-        case "kilometers":
-          para2.innerText = ((para1.innerText)*0.0009144);
-          break;
-
-        case "inches":
-          para2.innerText = ((para1.innerText)*36);
-          break;
-
-        case "feet":
-          para2.innerText = ((para1.innerText)*3);
-          break;
-
-        case "yards":
-          para2.innerText = para1.innerText;
-          break;
-
-        case "miles":
-          para2.innerText = ((para1.innerText)*0.0005681818);
-          break;
-
-        case "nautical miles":
-          para2.innerText = ((para1.innerText)*0.0004937365);
-          break;
-
-        case "mils":
-          para2.innerText = ((para1.innerText)*36000);
-          break;
-      }
-      break;
-
-    case "miles":
-      switch(output.value)
-      {
-        case "millimeters":
-          para2.innerText = ((para1.innerText)*1609344);
-          break;
-
-        case "centimeters":
-          para2.innerText = ((para1.innerText)*160934.4);
-          break;
-
-        case "meters":
-          para2.innerText = ((para1.innerText)*1609.344);
-          break;
-
-        case "kilometers":
-          para2.innerText = ((para1.innerText)*1.609344);
-          break;
-
-        case "inches":
-          para2.innerText = ((para1.innerText)*63360);
-          break;
-
-        case "feet":
-          para2.innerText = ((para1.innerText)*5280);
-          break;
-
-        case "yards":
-          para2.innerText = ((para1.innerText)*1760);
-          break;
-
-        case "miles":
-          para2.innerText = para1.innerText;
-          break;
-
-        case "nautical miles":
-          para2.innerText = ((para1.innerText)*0.8689762419);
-          break;
-
-        case "mils":
-          para2.innerText = ((para1.innerText)*63360000);
-          break;
-      }
-      break;
-
-    case "nautical miles":
-      switch(output.value)
-      {
-        case "millimeters":
-          para2.innerText = ((para1.innerText)*1852000);
-          break;
-
-        case "centimeters":
-          para2.innerText = ((para1.innerText)*185200);
-          break;
-
-        case "meters":
-          para2.innerText = ((para1.innerText)*1852);
-          break;
-
-        case "kilometers":
-          para2.innerText = ((para1.innerText)*1.852);
-          break;
-
-        case "inches":
-          para2.innerText = ((para1.innerText)*72913.385826772);
-          break;
-
-        case "feet":
-          para2.innerText = ((para1.innerText)*6076.1154855643);
-          break;
-
-        case "yards":
-          para2.innerText = ((para1.innerText)*2025.3718285214);
-          break;
-
-        case "miles":
-          para2.innerText = ((para1.innerText)*1.150779448);
-          break;
-
-        case "nautical miles":
-          para2.innerText = para1.innerText;
-          break;
-
-        case "mils":
-          para2.innerText = ((para1.innerText)*72913385.826772);
-          break;
-      }
-      break;
-
-    case "mils":
-      switch(output.value)
-      {
-        case "millimeters":
-          para2.innerText = ((para1.innerText)*0.0254);
-          break;
-
-        case "centimeters":
-          para2.innerText = ((para1.innerText)*0.00254);
-          break;
-
-        case "meters":
-          para2.innerText = ((para1.innerText)*0.0000254);
-          break;
-
-        case "kilometers":
-          para2.innerText = eval((para1.innerText)*(2.54000000E-8));
-          break;
-
-        case "inches":
-          para2.innerText = ((para1.innerText)*0.001);
-          break;
-
-        case "feet":
-          para2.innerText = ((para1.innerText)*0.0000833333);
-          break;
-
-        case "yards":
-          para2.innerText = ((para1.innerText)*0.0000277778);
-          break;
-
-        case "miles":
-          para2.innerText = ((para1.innerText)*1.57828283E-8);
-          break;
-
-        case "nautical miles":
-          para2.innerText = ((para1.innerText)*1.37149028E-8);
-          break;
-
-        case "mils":
-          para2.innerText = para1.innerText;
-          break;
+        //code here
       }
       break;
   }
+  
+  
 }
 
-if(window.location.pathname.includes("length.html"))
+if(window.location.pathname.includes("unit.html"))
 {
-  input.addEventListener("change", displaylength1);
+  input.addEventListener("change", displayunit);
 
-  output.addEventListener("change", displaylength1);
+  output.addEventListener("change", displayunit);
 
   var operand = Array.from(document.getElementsByClassName("operand"));
 
   operand.forEach((operand) => {
-    operand.addEventListener("click", displaylength1);
+    operand.addEventListener("click", displayunit);
   });
 }
 

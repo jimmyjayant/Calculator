@@ -277,7 +277,7 @@ h1 {
   }
 }
 
-/* CSS for length.html webpage */
+/* CSS for unit.html webpage */
 
 .display {
   display:flex;
@@ -286,9 +286,35 @@ h1 {
   flex-wrap:wrap;
 }
 
+.chooseunit {
+  display:flex;
+  flex-direction:row;
+  flex-wrap:nowrap;
+  width:100%;
+  margin:0;
+  padding:0;
+  background-color:#555;
+  overflow-x:auto;
+}
+
+.chooseunit::-webkit-scrollbar {
+  display:none;
+}
+
+.chooseunit a {
+  text-decoration:none;
+  padding:0.5rem 1rem;
+  margin:0;
+  color:white;
+  font-size:1rem;
+}
+
+.chooseunit a:hover {
+  background-color:#111;
+}
+
 .display select {
   width:100%;
-  height:100%;
   border:none;
   font-size:clamp(1rem, 1vw + 1rem, 2rem);
   background:none;
@@ -298,13 +324,17 @@ h1 {
   text-align:center;
 }
 
-#firstlengthparameter, #secondlengthparameter {
+#firstunitparameter, #secondunitparameter {
   width:50%;
   height:auto;
   border:2px solid #333;
 }
 
-#length1, #length2 {
+.display select:not(:first-child) {
+  display:none;
+}
+
+#unit1, #unit2 {
   width:50%;
   height:5rem;
   background:rgba(0,200,0,0.5);
@@ -316,7 +346,7 @@ h1 {
   line-height:4rem;
 }
 
-.lengthbuttons {
+.unitbuttons {
   display:grid;
   grid-template-columns:repeat(4, 1fr);
   grid-template-rows:repeat(4, 1fr);
@@ -324,29 +354,29 @@ h1 {
   padding:1rem;
 }
 
-.lengthbuttons button:last-child {
+.unitbuttons button:last-child {
   grid-column:2 / 4;
 }
 
 @media screen and (max-width:600px) {
-  .lengthbuttons {
+  .unitbuttons {
     grid-template-columns:repeat(3, 1fr);
     grid-template-rows:repeat(5, 1fr);
   }
 
-  .lengthbuttons button:last-child {
+  .unitbuttons button:last-child {
     grid-area:4 / 1 / 5 / 2;
   }
 
-  .lengthbuttons button:nth-of-type(4) {
+  .unitbuttons button:nth-of-type(4) {
     grid-area:4 / 3 / 5 / 4;
   }
 
-  .lengthbuttons button:nth-of-type(12) {
+  .unitbuttons button:nth-of-type(12) {
     grid-area:4 / 2 / 5 / 3;
   }
 
-  .lengthbuttons button:nth-of-type(8) {
+  .unitbuttons button:nth-of-type(8) {
     grid-area:5 / 1 / 6 / 4;
   }
 }
@@ -356,22 +386,22 @@ h1 {
     flex-direction:column;
   }
 
-  #firstlengthparameter {
+  #firstunitparameter {
     order:1;
     width:100%;
   }
 
-  #secondlengthparameter {
+  #secondunitparameter {
     order:3;
     width:100%;
   }
 
-  #length1 {
+  #unit1 {
     order:2;
     width:100%;
   }
 
-  #length2 {
+  #unit2 {
     order:4;
     width:100%;
   }
