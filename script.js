@@ -3,22 +3,19 @@ const x = document.getElementsByClassName("navbar")[0];
 const y = x.getElementsByTagName("a");
 const z = Array.from(y);
 
-if(window.location.href.includes("unit.html"))
-{
-  z[4].classList.add("activeLink");
-}
-else if(window.location.href.includes("programmer.html"))
-{
-  z[3].classList.add("activeLink");
-}
-else if(window.location.href.includes("scientific.html"))
-{
-  z[2].classList.add("activeLink");
-}
-else
-{
-  z[1].classList.add("activeLink");
-}
+z.forEach((link) => {
+  let linkhrefmatched = 0;
+  if(window.location.href.includes(`${link.href}`))
+  {
+    link.classList.add("activeLink");
+    linkhrefmatched = 1;
+  }
+
+  if(linkhrefmatched == 0)
+  {
+    z[0].classList.add("activeLink");
+  }
+});
 
 var isDisabledButton = 0;
 
@@ -31,6 +28,7 @@ if(window.location.pathname.includes("unit.html"))
   var lastCharofpara1 = para1.innerText.charAt(lenofpara1-1);
   var chooseunitdiv = document.getElementsByClassName("chooseunit")[0];
   var unitchoosed = Array.from(chooseunitdiv.querySelectorAll("a"));
+  unitchoosed[0].classList.add("activeLink");
   var firstselect = Array.from(document.querySelectorAll("#firstunitparameter select"));
   var secondselect = Array.from(document.querySelectorAll("#secondunitparameter select"));
   var input = firstselect[0];
@@ -44,91 +42,97 @@ if(window.location.pathname.includes("unit.html"))
 
   unitchoosed.forEach((a) => {
     a.addEventListener("click", () => {
-      firstselect.forEach((select) => {
-        select.style.display = "none";
-      });
+    unitchoosed.forEach((a) => {
+      a.classList.remove("activeLink");
+    });
 
-      secondselect.forEach((select) => {
-        select.style.display = "none";
-      });
+    firstselect.forEach((select) => {
+      select.style.display = "none";
+    });
 
-      para1.innerText = para2.innerText = "";
+    secondselect.forEach((select) => {
+      select.style.display = "none";
+    });
 
-      switch(a.innerHTML)
-      {
-        case 'Area':
-          firstselect[0].style.display = "block";
-          secondselect[0].style.display = "block";
-          firstselect[0].selectedIndex = 0;
-          secondselect[0].selectedIndex = 0;
-          input = firstselect[0];
-          output = secondselect[0];
-          break;
+    para1.innerText = para2.innerText = "";
 
-        case 'Length':
-          firstselect[1].style.display = "block";
-          secondselect[1].style.display = "block";
-          firstselect[1].selectedIndex = 0;
-          secondselect[1].selectedIndex = 0;
-          input = firstselect[1];
-          output = secondselect[1];
-          break;
+    switch(a.innerHTML)
+    {
+      case 'Area':
+        firstselect[0].style.display = "block";
+        secondselect[0].style.display = "block";
+        firstselect[0].selectedIndex = 0;
+        secondselect[0].selectedIndex = 0;
+        input = firstselect[0];
+        output = secondselect[0];
+        break;
 
-        case 'Temperature':
-          firstselect[2].style.display = "block";
-          secondselect[2].style.display = "block";
-          firstselect[2].selectedIndex = 0;
-          secondselect[2].selectedIndex = 0;
-          input = firstselect[2];
-          output = secondselect[2];
-          break;
+      case 'Length':
+        firstselect[1].style.display = "block";
+        secondselect[1].style.display = "block";
+        firstselect[1].selectedIndex = 0;
+        secondselect[1].selectedIndex = 0;
+        input = firstselect[1];
+        output = secondselect[1];
+        break;
 
-        case 'Volume':
-          firstselect[3].style.display = "block";
-          secondselect[3].style.display = "block";
-          firstselect[3].selectedIndex = 0;
-          secondselect[3].selectedIndex = 0;
-          input = firstselect[3];
-          output = secondselect[3];
-          break;
+      case 'Temperature':
+        firstselect[2].style.display = "block";
+        secondselect[2].style.display = "block";
+        firstselect[2].selectedIndex = 0;
+        secondselect[2].selectedIndex = 0;
+        input = firstselect[2];
+        output = secondselect[2];
+        break;
 
-        case 'Mass':
-          firstselect[4].style.display = "block";
-          secondselect[4].style.display = "block";
-          firstselect[4].selectedIndex = 0;
-          secondselect[4].selectedIndex = 0;
-          input = firstselect[4];
-          output = secondselect[4];
-          break;
+      case 'Volume':
+        firstselect[3].style.display = "block";
+        secondselect[3].style.display = "block";
+        firstselect[3].selectedIndex = 0;
+        secondselect[3].selectedIndex = 0;
+        input = firstselect[3];
+        output = secondselect[3];
+        break;
 
-        case 'Data':
-          firstselect[5].style.display = "block";
-          secondselect[5].style.display = "block";
-          firstselect[5].selectedIndex = 0;
-          secondselect[5].selectedIndex = 0;
-          input = firstselect[5];
-          output = secondselect[5];
-          break;
+      case 'Mass':
+        firstselect[4].style.display = "block";
+        secondselect[4].style.display = "block";
+        firstselect[4].selectedIndex = 0;
+        secondselect[4].selectedIndex = 0;
+        input = firstselect[4];
+        output = secondselect[4];
+        break;
 
-        case 'Speed':
-          firstselect[6].style.display = "block";
-          secondselect[6].style.display = "block";
-          firstselect[6].selectedIndex = 0;
-          secondselect[6].selectedIndex = 0;
-          input = firstselect[6];
-          output = secondselect[6];
-          break;
+      case 'Data':
+        firstselect[5].style.display = "block";
+        secondselect[5].style.display = "block";
+        firstselect[5].selectedIndex = 0;
+        secondselect[5].selectedIndex = 0;
+        input = firstselect[5];
+        output = secondselect[5];
+        break;
 
-        case 'Time':
-          firstselect[7].style.display = "block";
-          secondselect[7].style.display = "block";
-          firstselect[7].selectedIndex = 0;
-          secondselect[7].selectedIndex = 0;
-          input = firstselect[7];
-          output = secondselect[7];
-          break;  
-      }
-    })
+      case 'Speed':
+        firstselect[6].style.display = "block";
+        secondselect[6].style.display = "block";
+        firstselect[6].selectedIndex = 0;
+        secondselect[6].selectedIndex = 0;
+        input = firstselect[6];
+        output = secondselect[6];
+        break;
+
+      case 'Time':
+        firstselect[7].style.display = "block";
+        secondselect[7].style.display = "block";
+        firstselect[7].selectedIndex = 0;
+        secondselect[7].selectedIndex = 0;
+        input = firstselect[7];
+        output = secondselect[7];
+        break;  
+    }
+
+    a.classList.add("activeLink");
+    });
   });
 }
 else if(window.location.pathname.includes("programmer.html"))
@@ -965,7 +969,7 @@ function clearResult() {
   if(window.location.pathname.includes("unit.html"))
   {
     para1.innerText = para2.innerText = "";
-    //input.value = output.value = "millimeters";
+    input.selectedIndex = output.selectedIndex = 0;
   }
   else if(window.location.pathname.includes("programmer.html"))
   {
