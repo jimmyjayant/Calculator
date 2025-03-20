@@ -2,18 +2,12 @@
 const x = document.getElementsByClassName("navbar")[0];
 const y = x.getElementsByTagName("a");
 const z = Array.from(y);
+z[0].classList.add("activeLink");
 
 z.forEach((link) => {
-  let linkhrefmatched = 0;
   if(window.location.href.includes(`${link.href}`))
   {
     link.classList.add("activeLink");
-    linkhrefmatched = 1;
-  }
-
-  if(linkhrefmatched == 0)
-  {
-    z[0].classList.add("activeLink");
   }
 });
 
