@@ -2,14 +2,20 @@
 const x = document.getElementsByClassName("navbar")[0];
 const y = x.getElementsByTagName("a");
 const z = Array.from(y);
-z[0].classList.add("activeLink");
+var linkhrefmatched = 0;
 
 z.forEach((link) => {
   if(window.location.href.includes(`${link.href}`))
   {
     link.classList.add("activeLink");
+    linkhrefmatched = 1;
   }
 });
+
+if(linkhrefmatched == 0)
+{
+  z[1].classList.add("activeLink");
+}
 
 var isDisabledButton = 0;
 
