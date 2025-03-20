@@ -59,6 +59,8 @@ if(window.location.pathname.includes("unit.html"))
         case 'Area':
           firstselect[0].style.display = "block";
           secondselect[0].style.display = "block";
+          firstselect[0].selectedIndex = 0;
+          secondselect[0].selectedIndex = 0;
           input = firstselect[0];
           output = secondselect[0];
           break;
@@ -66,6 +68,8 @@ if(window.location.pathname.includes("unit.html"))
         case 'Length':
           firstselect[1].style.display = "block";
           secondselect[1].style.display = "block";
+          firstselect[1].selectedIndex = 0;
+          secondselect[1].selectedIndex = 0;
           input = firstselect[1];
           output = secondselect[1];
           break;
@@ -73,6 +77,8 @@ if(window.location.pathname.includes("unit.html"))
         case 'Temperature':
           firstselect[2].style.display = "block";
           secondselect[2].style.display = "block";
+          firstselect[2].selectedIndex = 0;
+          secondselect[2].selectedIndex = 0;
           input = firstselect[2];
           output = secondselect[2];
           break;
@@ -80,6 +86,8 @@ if(window.location.pathname.includes("unit.html"))
         case 'Volume':
           firstselect[3].style.display = "block";
           secondselect[3].style.display = "block";
+          firstselect[3].selectedIndex = 0;
+          secondselect[3].selectedIndex = 0;
           input = firstselect[3];
           output = secondselect[3];
           break;
@@ -87,6 +95,8 @@ if(window.location.pathname.includes("unit.html"))
         case 'Mass':
           firstselect[4].style.display = "block";
           secondselect[4].style.display = "block";
+          firstselect[4].selectedIndex = 0;
+          secondselect[4].selectedIndex = 0;
           input = firstselect[4];
           output = secondselect[4];
           break;
@@ -94,6 +104,8 @@ if(window.location.pathname.includes("unit.html"))
         case 'Data':
           firstselect[5].style.display = "block";
           secondselect[5].style.display = "block";
+          firstselect[5].selectedIndex = 0;
+          secondselect[5].selectedIndex = 0;
           input = firstselect[5];
           output = secondselect[5];
           break;
@@ -101,6 +113,8 @@ if(window.location.pathname.includes("unit.html"))
         case 'Speed':
           firstselect[6].style.display = "block";
           secondselect[6].style.display = "block";
+          firstselect[6].selectedIndex = 0;
+          secondselect[6].selectedIndex = 0;
           input = firstselect[6];
           output = secondselect[6];
           break;
@@ -108,6 +122,8 @@ if(window.location.pathname.includes("unit.html"))
         case 'Time':
           firstselect[7].style.display = "block";
           secondselect[7].style.display = "block";
+          firstselect[7].selectedIndex = 0;
+          secondselect[7].selectedIndex = 0;
           input = firstselect[7];
           output = secondselect[7];
           break;  
