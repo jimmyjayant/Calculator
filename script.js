@@ -35,23 +35,85 @@ if(window.location.pathname.includes("unit.html"))
   var secondselect = Array.from(document.querySelectorAll("#secondunitparameter select"));
   var input = firstselect[0];
   var output = secondselect[0];
-  /*
-  var firstareaselect = document.getElementById("firstareaselect");
-  var secondareaselect = document.getElementById("secondareaselect");
-  var firstlengthselect = document.getElementById("firstlengthselect");
-  var secondlengthselect = document.getElementById("secondlengthselect");
-  var firsttemperatureselect = document.getElementById("firsttemperatureselect");
-  var secondtemperatureselect = document.getElementById("secondtemperatureselect");
-  var firstvolumeselect = document.getElementById("firstvolumeselect");
-  var secondvolumeselect = document.getElementById("secondvolumeselect");
-  var firstmassselect = document.getElementById("firstmassselect");
-  var secondmassselect = document.getElementById("secondmassselect");
-  var firstdataselect = document.getElementById("firstdataselect");
-  var seconddataselect = document.getElementById("seconddataselect");
-  var firstspeedselect = document.getElementById("firstspeedselect");
-  var secondspeedselect = document.getElementById("secondspeedselect");
-  var firsttimeselect = document.getElementById("firsttimeselect");
-  var secondtimeselect = document.getElementById("secondtimeselect");*/
+  input.addEventListener("change", displayunit);
+  output.addEventListener("change", displayunit);
+  var operand = Array.from(document.getElementsByClassName("operand"));
+  operand.forEach((operand) => {
+    operand.addEventListener("click", displayunit);
+  });
+
+  unitchoosed.forEach((a) => {
+    a.addEventListener("click", () => {
+      firstselect.forEach((select) => {
+        select.style.display = "none";
+      });
+
+      secondselect.forEach((select) => {
+        select.style.display = "none";
+      });
+
+      para1.innerText = para2.innerText = "";
+
+      switch(a.innerHTML)
+      {
+        case 'Area':
+          firstselect[0].style.display = "block";
+          secondselect[0].style.display = "block";
+          input = firstselect[0];
+          output = secondselect[0];
+          break;
+
+        case 'Length':
+          firstselect[1].style.display = "block";
+          secondselect[1].style.display = "block";
+          input = firstselect[1];
+          output = secondselect[1];
+          break;
+
+        case 'Temperature':
+          firstselect[2].style.display = "block";
+          secondselect[2].style.display = "block";
+          input = firstselect[2];
+          output = secondselect[2];
+          break;
+
+        case 'Volume':
+          firstselect[3].style.display = "block";
+          secondselect[3].style.display = "block";
+          input = firstselect[3];
+          output = secondselect[3];
+          break;
+
+        case 'Mass':
+          firstselect[4].style.display = "block";
+          secondselect[4].style.display = "block";
+          input = firstselect[4];
+          output = secondselect[4];
+          break;
+
+        case 'Data':
+          firstselect[5].style.display = "block";
+          secondselect[5].style.display = "block";
+          input = firstselect[5];
+          output = secondselect[5];
+          break;
+
+        case 'Speed':
+          firstselect[6].style.display = "block";
+          secondselect[6].style.display = "block";
+          input = firstselect[6];
+          output = secondselect[6];
+          break;
+
+        case 'Time':
+          firstselect[7].style.display = "block";
+          secondselect[7].style.display = "block";
+          input = firstselect[7];
+          output = secondselect[7];
+          break;  
+      }
+    })
+  });
 }
 else if(window.location.pathname.includes("programmer.html"))
 {
@@ -71,6 +133,114 @@ else if(window.location.pathname.includes("programmer.html"))
   var bodytagprog = document.getElementsByTagName("body")[0];
   var lastDivBorderStyle = null;
   bodytagprog.onload = setDecimalDefault();
+
+  programmerresultdiv.forEach((div) => {
+    div.addEventListener("click", (event) => {
+      if(lastDivBorderStyle)
+      {
+        lastDivBorderStyle.classList.remove("leftborderstyle");
+      }
+      
+      event.target.classList.add("leftborderstyle");
+      
+      if(event.target.innerHTML == "HEX")
+        {
+          programmerbutton.forEach((button) => {
+            //console.log(button.innerHTML);
+            switch(button.innerHTML)
+            {
+              case 'A':
+              case 'B':
+              case 'C':
+              case 'D':
+              case 'E':
+              case 'F':
+                button.disabled = false;
+                break;
+        
+              default:
+                button.disabled = false;
+            }
+          });
+      }
+  
+      if(event.target.innerHTML == "DEC")
+      {
+        programmerbutton.forEach((button) => {
+          //console.log(button.innerHTML);
+          switch(button.innerHTML)
+          {
+            case 'A':
+            case 'B':
+            case 'C':
+            case 'D':
+            case 'E':
+            case 'F':
+              button.disabled = true;
+              break;
+      
+            default:
+              button.disabled = false;
+          }
+        });
+      }
+  
+      if(event.target.innerHTML == "OCT")
+      {
+        programmerbutton.forEach((button) => {
+          //console.log(button.innerHTML);
+          switch(button.innerHTML)
+          {
+            case 'A':
+            case 'B':
+            case 'C':
+            case 'D':
+            case 'E':
+            case 'F':
+            case '8':
+            case '9':
+            case '.':
+              button.disabled = true;
+              break;
+      
+            default:
+              button.disabled = false;
+          }
+        });
+      }
+  
+      if(event.target.innerHTML == "BIN")
+      {
+        programmerbutton.forEach((button) => {
+          //console.log(button.innerHTML);
+          switch(button.innerHTML)
+          {
+            case 'A':
+            case 'B':
+            case 'C':
+            case 'D':
+            case 'E':
+            case 'F':
+            case '2':
+            case '3':
+            case '4':
+            case '5':
+            case '6':
+            case '7':
+            case '8':
+            case '9':
+              button.disabled = true;
+              break;
+      
+            default:
+              button.disabled = false;
+          }
+        });
+      }
+      lastDivBorderStyle = event.target;
+      
+    });
+  });
 }
 else
 {
@@ -773,77 +943,6 @@ button.forEach(
     })
   }
 );
-
-unitchoosed.forEach((a) => {
-  a.addEventListener("click", () => {
-    firstselect.forEach((select) => {
-      select.style.display = "none";
-    });
-
-    secondselect.forEach((select) => {
-      select.style.display = "none";
-    });
-
-    switch(a.innerHTML)
-    {
-      case 'Area':
-        firstselect[0].style.display = "block";
-        secondselect[0].style.display = "block";
-        input = firstselect[0];
-        output = secondselect[0];
-        break;
-
-      case 'Length':
-        firstselect[1].style.display = "block";
-        secondselect[1].style.display = "block";
-        input = firstselect[1];
-        output = secondselect[1];
-        break;
-
-      case 'Temperature':
-        firstselect[2].style.display = "block";
-        secondselect[2].style.display = "block";
-        input = firstselect[2];
-        output = secondselect[2];
-        break;
-
-      case 'Volume':
-        firstselect[3].style.display = "block";
-        secondselect[3].style.display = "block";
-        input = firstselect[3];
-        output = secondselect[3];
-        break;
-
-      case 'Mass':
-        firstselect[4].style.display = "block";
-        secondselect[4].style.display = "block";
-        input = firstselect[4];
-        output = secondselect[4];
-        break;
-
-      case 'Data':
-        firstselect[5].style.display = "block";
-        secondselect[5].style.display = "block";
-        input = firstselect[5];
-        output = secondselect[5];
-        break;
-
-      case 'Speed':
-        firstselect[6].style.display = "block";
-        secondselect[6].style.display = "block";
-        input = firstselect[6];
-        output = secondselect[6];
-        break;
-
-      case 'Time':
-        firstselect[7].style.display = "block";
-        secondselect[7].style.display = "block";
-        input = firstselect[7];
-        output = secondselect[7];
-        break;  
-    }
-  })
-});
 
 /* The function is related to the button C or CE that is clear the res.innerText */
 function clearResult() {
@@ -1889,7 +1988,6 @@ function reversesign() {
 
 /* The function is related to the unit.html webpage for converting one length into another */
 function displayunit() {
-  console.log(input, output);
   switch(input.id)
   {
     case "firstareaselect":
@@ -3988,47 +4086,145 @@ function displayunit() {
           switch(output.value)
           {
             case "meters per second":
-              para2.innerText = (para1.innerText)*(0.0000846667);
+              para2.innerText = (para1.innerText)*(1609.344);
               break;
 
             case "meters per hour":
-              para2.innerText = (para1.innerText)*(0.3048);
+              para2.innerText = (para1.innerText)*(5793638.4);
               break;
 
             case "kilometers per second":
-              para2.innerText = (para1.innerText)*(8.46666667E-8);
+              para2.innerText = (para1.innerText)*(1.609344);
               break;
 
             case "kilometers per hour":
-              para2.innerText = (para1.innerText)*(0.0003048);
+              para2.innerText = (para1.innerText)*(5793.6384);
               break;
 
             case "inches per second":
-              para2.innerText = (para1.innerText)*(0.0033333333);
+              para2.innerText = (para1.innerText)*(63360);
               break;
 
             case "inches per hour":
-              para2.innerText = (para1.innerText)*(12);
+              para2.innerText = (para1.innerText)*(228096000);
               break;
 
             case "feet per second":
-              para2.innerText = (para1.innerText)*(0.0002777778);
+              para2.innerText = (para1.innerText)*(5280);
               break;
 
             case "feet per hour":
-              para2.innerText = para1.innerText;
+              para2.innerText = (para1.innerText)*(19008000);
               break;
 
             case "miles per second":
-              para2.innerText = (para1.innerText)*(5.26094276E-8);
+              para2.innerText = para1.innerText;
               break;
 
             case "miles per hour":
-              para2.innerText = (para1.innerText)*(0.0001893939);
+              para2.innerText = (para1.innerText)*(3600);
               break;
 
             case "knots":
-              para2.innerText = (para1.innerText)*(0.0001645788);
+              para2.innerText = (para1.innerText)*(3128.3144708423);
+              break;
+          }
+          break;
+
+        case "miles per hour":
+          switch(output.value)
+          {
+            case "meters per second":
+              para2.innerText = (para1.innerText)*(0.44704);
+              break;
+
+            case "meters per hour":
+              para2.innerText = (para1.innerText)*(1609.344);
+              break;
+
+            case "kilometers per second":
+              para2.innerText = (para1.innerText)*(0.00044704);
+              break;
+
+            case "kilometers per hour":
+              para2.innerText = (para1.innerText)*(1.609344);
+              break;
+
+            case "inches per second":
+              para2.innerText = (para1.innerText)*(17.6);
+              break;
+
+            case "inches per hour":
+              para2.innerText = (para1.innerText)*(63360);
+              break;
+
+            case "feet per second":
+              para2.innerText = (para1.innerText)*(1.4666666667);
+              break;
+
+            case "feet per hour":
+              para2.innerText = (para1.innerText)*(5280);
+              break;
+
+            case "miles per second":
+              para2.innerText = (para1.innerText)*(0.0002777778);
+              break;
+
+            case "miles per hour":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "knots":
+              para2.innerText = (para1.innerText)*(0.8689762419);
+              break;
+          }
+          break;
+
+        case "knots":
+          switch(output.value)
+          {
+            case "meters per second":
+              para2.innerText = (para1.innerText)*(0.5144444444);
+              break;
+
+            case "meters per hour":
+              para2.innerText = (para1.innerText)*(1852);
+              break;
+
+            case "kilometers per second":
+              para2.innerText = (para1.innerText)*(0.0005144444);
+              break;
+
+            case "kilometers per hour":
+              para2.innerText = (para1.innerText)*(1.852);
+              break;
+
+            case "inches per second":
+              para2.innerText = (para1.innerText)*(20.2537182852);
+              break;
+
+            case "inches per hour":
+              para2.innerText = (para1.innerText)*(72913.385826772);
+              break;
+
+            case "feet per second":
+              para2.innerText = (para1.innerText)*(1.6878098571);
+              break;
+
+            case "feet per hour":
+              para2.innerText = (para1.innerText)*(6076.1154855643);
+              break;
+
+            case "miles per second":
+              para2.innerText = (para1.innerText)*(0.000319661);
+              break;
+
+            case "miles per hour":
+              para2.innerText = (para1.innerText)*(1.150779448);
+              break;
+
+            case "knots":
+              para2.innerText = para1.innerText;
               break;
           }
           break;
@@ -4038,25 +4234,182 @@ function displayunit() {
     case "firsttimeselect":
       switch(input.value)
       {
-        //code here
+        case "milliseconds":
+          switch(output.value)
+          {
+            case "milliseconds":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "seconds":
+              para2.innerText = (para1.innerText)*(0.001);
+              break;
+
+            case "minutes":
+              para2.innerText = (para1.innerText)*(0.0000166667);
+              break;
+
+            case "hours":
+              para2.innerText = (para1.innerText)*(2.77777778E-7);
+              break;
+
+            case "days":
+              para2.innerText = (para1.innerText)*(1.15740741E-8);
+              break;
+
+            case "weeks":
+              para2.innerText = (para1.innerText)*(1.65343915E-9);
+              break;
+          }
+          break;
+
+        case "seconds":
+          switch(output.value)
+          {
+            case "milliseconds":
+              para2.innerText = (para1.innerText)*(1000);
+              break;
+
+            case "seconds":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "minutes":
+              para2.innerText = (para1.innerText)*(0.0166666667);
+              break;
+
+            case "hours":
+              para2.innerText = (para1.innerText)*(0.0002777778);
+              break;
+
+            case "days":
+              para2.innerText = (para1.innerText)*(0.0000115741);
+              break;
+
+            case "weeks":
+              para2.innerText = (para1.innerText)*(0.0000016534);
+              break;
+          }
+          break;
+
+        case "minutes":
+          switch(output.value)
+          {
+            case "milliseconds":
+              para2.innerText = (para1.innerText)*(60000);
+              break;
+
+            case "seconds":
+              para2.innerText = (para1.innerText)*(60);
+              break;
+
+            case "minutes":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "hours":
+              para2.innerText = (para1.innerText)*(0.0166666667);
+              break;
+
+            case "days":
+              para2.innerText = (para1.innerText)*(0.0006944444);
+              break;
+
+            case "weeks":
+              para2.innerText = (para1.innerText)*(0.0000992063);
+              break;
+          }
+          break;
+
+        case "hours":
+          switch(output.value)
+          {
+            case "milliseconds":
+              para2.innerText = (para1.innerText)*(3600000);
+              break;
+
+            case "seconds":
+              para2.innerText = (para1.innerText)*(3600);
+              break;
+
+            case "minutes":
+              para2.innerText = (para1.innerText)*(60);
+              break;
+
+            case "hours":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "days":
+              para2.innerText = (para1.innerText)*(0.0416666667);
+              break;
+
+            case "weeks":
+              para2.innerText = (para1.innerText)*(0.005952381);
+              break;
+          }
+          break;
+
+        case "days":
+          switch(output.value)
+          {
+            case "milliseconds":
+              para2.innerText = (para1.innerText)*(86400000);
+              break;
+
+            case "seconds":
+              para2.innerText = (para1.innerText)*(86400);
+              break;
+
+            case "minutes":
+              para2.innerText = (para1.innerText)*(1440);
+              break;
+
+            case "hours":
+              para2.innerText = (para1.innerText)*(24);
+              break;
+
+            case "days":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "weeks":
+              para2.innerText = (para1.innerText)*(0.1428571429);
+              break;
+          }
+          break;
+
+        case "weeks":
+          switch(output.value)
+          {
+            case "milliseconds":
+              para2.innerText = (para1.innerText)*(604800000);
+              break;
+
+            case "seconds":
+              para2.innerText = (para1.innerText)*(604800);
+              break;
+
+            case "minutes":
+              para2.innerText = (para1.innerText)*(10080);
+              break;
+
+            case "hours":
+              para2.innerText = (para1.innerText)*(168);
+              break;
+
+            case "days":
+              para2.innerText = (para1.innerText)*(7);
+              break;
+
+            case "weeks":
+              para2.innerText = para1.innerText;
+              break;
+          }
+          break;
       }
       break;
   }
-  
-  
-}
-
-if(window.location.pathname.includes("unit.html"))
-{
-  input.addEventListener("change", displayunit);
-
-  output.addEventListener("change", displayunit);
-
-  var operand = Array.from(document.getElementsByClassName("operand"));
-
-  operand.forEach((operand) => {
-    operand.addEventListener("click", displayunit);
-  });
 }
 
 function setchoosenvar(obj) {
@@ -4109,116 +4462,5 @@ function setDecimalDefault() {
       default:
         button.disabled = false;
     }
-  });
-}
-
-if(window.location.pathname.includes("programmer.html"))
-{
-  programmerresultdiv.forEach((div) => {
-    div.addEventListener("click", (event) => {
-      if(lastDivBorderStyle)
-      {
-        lastDivBorderStyle.classList.remove("leftborderstyle");
-      }
-      
-      event.target.classList.add("leftborderstyle");
-      
-      if(event.target.innerHTML == "HEX")
-        {
-          programmerbutton.forEach((button) => {
-            //console.log(button.innerHTML);
-            switch(button.innerHTML)
-            {
-              case 'A':
-              case 'B':
-              case 'C':
-              case 'D':
-              case 'E':
-              case 'F':
-                button.disabled = false;
-                break;
-        
-              default:
-                button.disabled = false;
-            }
-          });
-      }
-  
-      if(event.target.innerHTML == "DEC")
-      {
-        programmerbutton.forEach((button) => {
-          //console.log(button.innerHTML);
-          switch(button.innerHTML)
-          {
-            case 'A':
-            case 'B':
-            case 'C':
-            case 'D':
-            case 'E':
-            case 'F':
-              button.disabled = true;
-              break;
-      
-            default:
-              button.disabled = false;
-          }
-        });
-      }
-  
-      if(event.target.innerHTML == "OCT")
-      {
-        programmerbutton.forEach((button) => {
-          //console.log(button.innerHTML);
-          switch(button.innerHTML)
-          {
-            case 'A':
-            case 'B':
-            case 'C':
-            case 'D':
-            case 'E':
-            case 'F':
-            case '8':
-            case '9':
-            case '.':
-              button.disabled = true;
-              break;
-      
-            default:
-              button.disabled = false;
-          }
-        });
-      }
-  
-      if(event.target.innerHTML == "BIN")
-      {
-        programmerbutton.forEach((button) => {
-          //console.log(button.innerHTML);
-          switch(button.innerHTML)
-          {
-            case 'A':
-            case 'B':
-            case 'C':
-            case 'D':
-            case 'E':
-            case 'F':
-            case '2':
-            case '3':
-            case '4':
-            case '5':
-            case '6':
-            case '7':
-            case '8':
-            case '9':
-              button.disabled = true;
-              break;
-      
-            default:
-              button.disabled = false;
-          }
-        });
-      }
-      lastDivBorderStyle = event.target;
-      
-    });
   });
 }
