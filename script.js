@@ -132,6 +132,8 @@ if(window.location.pathname.includes("unit.html"))
     }
 
     a.classList.add("activeLink");
+    input.addEventListener("change", displayunit);
+    output.addEventListener("change", displayunit);
     });
   });
 }
