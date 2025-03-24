@@ -4486,3 +4486,15 @@ function setDecimalDefault() {
     }
   });
 }
+
+/* The function scrollleft() is for unit.html webpage */
+function scroll_to_left()
+{
+  chooseunitdiv.scrollLeft -= 10;
+}
+
+/* The function scrollright() is for unit.html webpage */
+function scroll_to_right()
+{
+  chooseunitdiv.scrollLeft += 10;
+}

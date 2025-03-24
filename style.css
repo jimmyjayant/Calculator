@@ -290,6 +290,7 @@ h1 {
   display:flex;
   flex-direction:row;
   flex-wrap:nowrap;
+  position:relative;
   width:100%;
   margin:0;
   padding:0;
@@ -311,6 +312,29 @@ h1 {
 
 .chooseunit a:hover {
   background-color:#111;
+}
+
+.chooseunit button {
+  position:fixed;
+  display:none;
+  font-size:1.5rem;
+  padding:0.1rem 1rem;
+  z-index:10;
+  background-color:rgba(0,0,0,0.5);
+  font-weight:bold;
+  color:white;
+}
+
+.chooseunit button:hover {
+  background-color:rgba(0,0,0,1.0);
+}
+  
+.chooseunit button:first-child {
+  left:0;
+}
+
+.chooseunit button:last-child {
+  right:0;
 }
 
 .display select {
@@ -359,6 +383,14 @@ h1 {
 }
 
 @media screen and (max-width:600px) {
+  .chooseunit {
+    padding:0 2.5rem;
+  }
+
+  .chooseunit button {
+    display:block;
+  }
+    
   .unitbuttons {
     grid-template-columns:repeat(3, 1fr);
     grid-template-rows:repeat(5, 1fr);
