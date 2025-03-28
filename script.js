@@ -329,13 +329,14 @@ function value_of_variables() {
 }
 
 // When the window size is greater than 600px, the navigation bar width is set to defaults 
+/*
 window.addEventListener("resize", function() {
   if(window.innerWidth > 600)
   {
    document.getElementsByClassName("navbar")[0].style.width = "";
   }
 });
-
+*/
 /* This function will be used to toggle buttonhover css class applied on buttons */
 function csshovereffect(id) {
   isDisabledButton = 0;
@@ -1881,18 +1882,18 @@ function display() {
   }
 }
 
-/* The function is related to the navigation bar when the screen size is below 600px */
+/* The function is related to the navigation bar when the screen size is below 600px 
 function nav()
 {
   document.getElementsByClassName("navbar")[0].style.width = "calc(100vw - 20px)";
 }
 
-/* The function is related to the X button when the navbar is vertical below 600px screen size */
+/* The function is related to the X button when the navbar is vertical below 600px screen size 
 function closenav()
 {
   document.getElementsByClassName("navbar")[0].style.width = "0";
 }
-
+*/
 /* The function is related to the button x<sup>y</sup> and adds ^ to the res.innerText */
 function x_to_power_y()
 {
