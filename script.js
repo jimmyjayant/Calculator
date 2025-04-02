@@ -128,7 +128,16 @@ if(window.location.pathname.includes("unit.html"))
         secondselect[7].selectedIndex = 0;
         input = firstselect[7];
         output = secondselect[7];
-        break;  
+        break;
+
+      case 'Angle':
+        firstselect[8].style.display = "block";
+        secondselect[8].style.display = "block";
+        firstselect[8].selectedIndex = 0;
+        secondselect[8].selectedIndex = 0;
+        input = firstselect[8];
+        output = secondselect[8];
+        break;
     }
 
     a.classList.add("activeLink");
@@ -1882,18 +1891,6 @@ function display() {
   }
 }
 
-/* The function is related to the navigation bar when the screen size is below 600px 
-function nav()
-{
-  document.getElementsByClassName("navbar")[0].style.width = "calc(100vw - 20px)";
-}
-
-/* The function is related to the X button when the navbar is vertical below 600px screen size 
-function closenav()
-{
-  document.getElementsByClassName("navbar")[0].style.width = "0";
-}
-*/
 /* The function is related to the button x<sup>y</sup> and adds ^ to the res.innerText */
 function x_to_power_y()
 {
@@ -4426,6 +4423,986 @@ function displayunit() {
               break;
 
             case "weeks":
+              para2.innerText = para1.innerText;
+              break;
+          }
+          break;
+      }
+      break;
+
+    case "firstangleselect":
+      switch(input.value)
+      {
+        case "degree":
+          switch(output.value)
+          {
+            case "degree":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "radian":
+              para2.innerText = ((para1.innerText)/(57.3));
+              break;
+
+            case "gradian":
+              para2.innerText = ((para1.innerText)*(200/180));
+              break;
+
+            case "minute":
+              para2.innerText = ((para1.innerText)*(60));
+              break;
+
+            case "second":
+              para2.innerText = ((para1.innerText)*(3600));
+              break;
+
+            case "gon":
+              para2.innerText = (para1.innerText)*(1.111);
+              break;
+
+            case "sign":
+              para2.innerText = ((para1.innerText)/(30));
+              break;
+
+            case "mil":
+              para2.innerText = (para1.innerText)*(17.78);
+              break;
+
+            case "revolution":
+              para2.innerText = ((para1.innerText)/(360));
+              break;
+
+            case "circle":
+              para2.innerText = ((para1.innerText)/(360));
+              break;
+
+            case "turn":
+              para2.innerText = (para1.innerText)*(0.00277778);
+              break;
+
+            case "quadrant":
+              para2.innerText = ((para1.innerText)/(90));
+              break;
+
+            case "right angle":
+              para2.innerText = ((para1.innerText)/(90));
+              break;
+
+            case "sextant":
+              para2.innerText = ((para1.innerText)/(60));
+              break;
+
+            case "octant":
+              para2.innerText = ((para1.innerText)/(45));
+              break;
+          }
+          break;
+
+        case "radian":
+          switch(output.value)
+          {
+            case "degree":
+              para2.innerText = (para1.innerText)*(57.3);
+              break;
+
+            case "radian":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "gradian":
+              para2.innerText = ((para1.innerText)*(63.662));
+              break;
+
+            case "minute":
+              para2.innerText = ((para1.innerText)*(3438));
+              break;
+
+            case "second":
+              para2.innerText = ((para1.innerText)*(206300));
+              break;
+
+            case "gon":
+              para2.innerText = (para1.innerText)*(63.66);
+              break;
+
+            case "sign":
+              para2.innerText = (para1.innerText)*(1.91);
+              break;
+
+            case "mil":
+              para2.innerText = (para1.innerText)*(1019);
+              break;
+
+            case "revolution":
+              para2.innerText = ((para1.innerText)/(6.283));
+              break;
+
+            case "circle":
+              para2.innerText = ((para1.innerText)/(2));
+              break;
+
+            case "turn":
+              para2.innerText = (para1.innerText)*(0.159155);
+              break;
+
+            case "quadrant":
+              para2.innerText = ((para1.innerText)/(1.571));
+              break;
+
+            case "right angle":
+              para2.innerText = ((para1.innerText)*(0.6366197724));
+              break;
+
+            case "sextant":
+              para2.innerText = ((para1.innerText)/(1.047));
+              break;
+
+            case "octant":
+              para2.innerText = ((para1.innerText)*(1.273));
+              break;
+          }
+          break;
+
+        case "gradian":
+          switch(output.value)
+          {
+            case "degree":
+              para2.innerText = (para1.innerText)*(0.9);
+              break;
+
+            case "radian":
+              para2.innerText = (para1.innerText) * (0.015708);
+              break;
+
+            case "gradian":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "minute":
+              para2.innerText = (para1.innerText)*(54);
+              break;
+
+            case "second":
+              para2.innerText = (para1.innerText)*(3240);
+              break;
+
+            case "gon":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "sign":
+              para2.innerText = (para1.innerText)*(0.03);
+              break;
+
+            case "mil":
+              para2.innerText = (para1.innerText)*(16);
+              break;
+
+            case "revolution":
+              para2.innerText = (para1.innerText)*(0.0025);
+              break;
+
+            case "circle":
+              para2.innerText = (para1.innerText)*(0.0025);
+              break;
+
+            case "turn":
+              para2.innerText = (para1.innerText)*(0.0025);
+              break;
+
+            case "quadrant":
+              para2.innerText = (para1.innerText)*(0.01);
+              break;
+
+            case "right angle":
+              para2.innerText = (para1.innerText)*(0.01);
+              break;
+
+            case "sextant":
+              para2.innerText = (para1.innerText)*(0.015);
+              break;
+
+            case "octant":
+              para2.innerText = (para1.innerText)*(0.02);
+              break;
+          }
+          break;
+    
+        case "minute":
+          switch(output.value)
+          {
+            case "degree":
+              para2.innerText = ((para1.innerText)/(60));
+              break;
+
+            case "radian":
+              para2.innerText = ((para1.innerText)/(3438));
+              break;
+
+            case "gradian":
+              para2.innerText = (para1.innerText)*(0.0185185);
+              break;
+
+            case "minute":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "second":
+              para2.innerText = (para1.innerText)*(60);
+              break;
+
+            case "gon":
+              para2.innerText = (para1.innerText)/(54);
+              break;
+
+            case "sign":
+              para2.innerText = (para1.innerText)/(1800);
+              break;
+
+            case "mil":
+              para2.innerText = (para1.innerText)*(0.2962962963);
+              break;
+
+            case "revolution":
+              para2.innerText = (para1.innerText)/(21600);
+              break;
+
+            case "circle":
+              para2.innerText = (para1.innerText)*(0.0000462963);
+              break;
+
+            case "turn":
+              para2.innerText = (para1.innerText)*(0.0000462963);
+              break;
+
+            case "quadrant":
+              para2.innerText = (para1.innerText)*(0.0001851852);
+              break;
+
+            case "right angle":
+              para2.innerText = (para1.innerText)*(0.0001851852);
+              break;
+
+            case "sextant":
+              para2.innerText = (para1.innerText)*(0.0002777778);
+              break;
+
+            case "octant":
+              para2.innerText = (para1.innerText)/(2700);
+              break;
+          }
+          break;
+
+        case "second":
+          switch(output.value)
+          {
+            case "degree":
+              para2.innerText = ((para1.innerText)/(3600));
+              break;
+
+            case "radian":
+              para2.innerText = ((para1.innerText)/(206300));
+              break;
+
+            case "gradian":
+              para2.innerText = (para1.innerText)*(0.000308642);
+              break;
+
+            case "minute":
+              para2.innerText = (para1.innerText)/(60);
+              break;
+
+            case "second":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "gon":
+              para2.innerText = (para1.innerText)/(3240);
+              break;
+
+            case "sign":
+              para2.innerText = (para1.innerText)/(108000);
+              break;
+
+            case "mil":
+              para2.innerText = (para1.innerText)*(0.0049382716);
+              break;
+
+            case "revolution":
+              para2.innerText = (para1.innerText)/(1296000);
+              break;
+
+            case "circle":
+              para2.innerText = (para1.innerText)*(7.716049382E-7);
+              break;
+
+            case "turn":
+              para2.innerText = (para1.innerText)*(7.716049382E-7);
+              break;
+
+            case "quadrant":
+              para2.innerText = (para1.innerText)/(324000);
+              break;
+
+            case "right angle":
+              para2.innerText = (para1.innerText)*(0.0000030864);
+              break;
+
+            case "sextant":
+              para2.innerText = (para1.innerText)/(216000);
+              break;
+
+            case "octant":
+              para2.innerText = (para1.innerText)/(162000);
+              break;
+          }
+          break;
+
+        case "gon":
+          switch(output.value)
+          {
+            case "degree":
+              para2.innerText = ((para1.innerText)/(1.111));
+              break;
+
+            case "radian":
+              para2.innerText = ((para1.innerText)/(63.66));
+              break;
+
+            case "gradian":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "minute":
+              para2.innerText = (para1.innerText)*(54);
+              break;
+
+            case "second":
+              para2.innerText = (para1.innerText)*(3240);
+              break;
+
+            case "gon":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "sign":
+              para2.innerText = (para1.innerText)*(0.03);
+              break;
+
+            case "mil":
+              para2.innerText = (para1.innerText)*(16);
+              break;
+
+            case "revolution":
+              para2.innerText = (para1.innerText)*(0.0025);
+              break;
+
+            case "circle":
+              para2.innerText = (para1.innerText)*(0.0025);
+              break;
+
+            case "turn":
+              para2.innerText = (para1.innerText)*(0.0025);
+              break;
+
+            case "quadrant":
+              para2.innerText = (para1.innerText)*(0.01);
+              break;
+
+            case "right angle":
+              para2.innerText = (para1.innerText)*(0.01);
+              break;
+
+            case "sextant":
+              para2.innerText = (para1.innerText)*(0.015);
+              break;
+
+            case "octant":
+              para2.innerText = (para1.innerText)/(50);
+              break;
+          }
+          break;
+
+        case "sign":
+          switch(output.value)
+          {
+            case "degree":
+              para2.innerText = (para1.innerText)*(30);
+              break;
+
+            case "radian":
+              para2.innerText = ((para1.innerText)/(1.91));
+              break;
+
+            case "gradian":
+              para2.innerText = (para1.innerText)*(33.333333333);
+              break;
+
+            case "minute":
+              para2.innerText = (para1.innerText)*(1800);
+              break;
+
+            case "second":
+              para2.innerText = (para1.innerText)*(108000);
+              break;
+
+            case "gon":
+              para2.innerText = (para1.innerText)*(33.333333333);
+              break;
+
+            case "sign":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "mil":
+              para2.innerText = (para1.innerText)*(533.33333333);
+              break;
+
+            case "revolution":
+              para2.innerText = (para1.innerText)*(0.08333333333);
+              break;
+
+            case "circle":
+              para2.innerText = (para1.innerText)*(0.08333333333);
+              break;
+
+            case "turn":
+              para2.innerText = (para1.innerText)*(0.08333333333);
+              break;
+
+            case "quadrant":
+              para2.innerText = (para1.innerText)*(0.333333333);
+              break;
+
+            case "right angle":
+              para2.innerText = (para1.innerText)*(0.333333333);
+              break;
+
+            case "sextant":
+              para2.innerText = (para1.innerText)*(0.5);
+              break;
+
+            case "octant":
+              para2.innerText = (para1.innerText)/(1.5);
+              break;
+          }
+          break;
+
+        case "mil":
+          switch(output.value)
+          {
+            case "degree":
+              para2.innerText = (para1.innerText)/(17.78);
+              break;
+
+            case "radian":
+              para2.innerText = ((para1.innerText)/(1019));
+              break;
+
+            case "gradian":
+              para2.innerText = (para1.innerText)*(0.0625);
+              break;
+
+            case "minute":
+              para2.innerText = (para1.innerText)*(3.375);
+              break;
+
+            case "second":
+              para2.innerText = (para1.innerText)*(202.5);
+              break;
+
+            case "gon":
+              para2.innerText = (para1.innerText)/(16);
+              break;
+
+            case "sign":
+              para2.innerText = (para1.innerText)/(533.3);
+              break;
+
+            case "mil":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "revolution":
+              para2.innerText = (para1.innerText)/(6400);
+              break;
+
+            case "circle":
+              para2.innerText = (para1.innerText)*(0.00015625);
+              break;
+
+            case "turn":
+              para2.innerText = (para1.innerText)*(0.00015625);
+              break;
+
+            case "quadrant":
+              para2.innerText = (para1.innerText)/(1600);
+              break;
+
+            case "right angle":
+              para2.innerText = (para1.innerText)*(0.000625);
+              break;
+
+            case "sextant":
+              para2.innerText = (para1.innerText)/(1067);
+              break;
+
+            case "octant":
+              para2.innerText = (para1.innerText)/(800);
+              break;
+          }
+          break;
+
+        case "revolution":
+          switch(output.value)
+          {
+            case "degree":
+              para2.innerText = (para1.innerText)*(360);
+              break;
+
+            case "radian":
+              para2.innerText = (para1.innerText)*(6.283);
+              break;
+
+            case "gradian":
+              para2.innerText = (para1.innerText)*(400);
+              break;
+
+            case "minute":
+              para2.innerText = (para1.innerText)*(21600);
+              break;
+
+            case "second":
+              para2.innerText = (para1.innerText)*(1296000);
+              break;
+
+            case "gon":
+              para2.innerText = (para1.innerText)*(400);
+              break;
+
+            case "sign":
+              para2.innerText = (para1.innerText)*(12);
+              break;
+
+            case "mil":
+              para2.innerText = (para1.innerText)*(6400);
+              break;
+
+            case "revolution":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "circle":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "turn":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "quadrant":
+              para2.innerText = (para1.innerText)*(4);
+              break;
+
+            case "right angle":
+              para2.innerText = (para1.innerText)*(4);
+              break;
+
+            case "sextant":
+              para2.innerText = (para1.innerText)*(6);
+              break;
+
+            case "octant":
+              para2.innerText = (para1.innerText)*(8);
+              break;
+          }
+          break;
+
+        case "circle":
+          switch(output.value)
+          {
+            case "degree":
+              para2.innerText = (para1.innerText)*(360);
+              break;
+
+            case "radian":
+              para2.innerText = (para1.innerText)*(6.283);
+              break;
+
+            case "gradian":
+              para2.innerText = (para1.innerText)*(400);
+              break;
+
+            case "minute":
+              para2.innerText = (para1.innerText)*(21600);
+              break;
+
+            case "second":
+              para2.innerText = (para1.innerText)*(1296000);
+              break;
+
+            case "gon":
+              para2.innerText = (para1.innerText)*(400);
+              break;
+
+            case "sign":
+              para2.innerText = (para1.innerText)*(12);
+              break;
+
+            case "mil":
+              para2.innerText = (para1.innerText)*(6400);
+              break;
+
+            case "revolution":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "circle":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "turn":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "quadrant":
+              para2.innerText = (para1.innerText)*(4);
+              break;
+
+            case "right angle":
+              para2.innerText = (para1.innerText)*(4);
+              break;
+
+            case "sextant":
+              para2.innerText = (para1.innerText)*(6);
+              break;
+
+            case "octant":
+              para2.innerText = (para1.innerText)/(8);
+              break;
+          }
+          break;
+
+        case "turn":
+          switch(output.value)
+          {
+            case "degree":
+              para2.innerText = (para1.innerText)*(360);
+              break;
+
+            case "radian":
+              para2.innerText = (para1.innerText)*(6.283);
+              break;
+
+            case "gradian":
+              para2.innerText = (para1.innerText)*(400);
+              break;
+
+            case "minute":
+              para2.innerText = (para1.innerText)*(21600);
+              break;
+
+            case "second":
+              para2.innerText = (para1.innerText)*(1296000);
+              break;
+
+            case "gon":
+              para2.innerText = (para1.innerText)*(400);
+              break;
+
+            case "sign":
+              para2.innerText = (para1.innerText)*(12);
+              break;
+
+            case "mil":
+              para2.innerText = (para1.innerText)*(6400);
+              break;
+
+            case "revolution":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "circle":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "turn":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "quadrant":
+              para2.innerText = (para1.innerText)*(4);
+              break;
+
+            case "right angle":
+              para2.innerText = (para1.innerText)*(4);
+              break;
+
+            case "sextant":
+              para2.innerText = (para1.innerText)*(6);
+              break;
+
+            case "octant":
+              para2.innerText = (para1.innerText)/(8);
+              break;
+          }
+          break;
+
+        case "quadrant":
+          switch(output.value)
+          {
+            case "degree":
+              para2.innerText = (para1.innerText)*(90);
+              break;
+
+            case "radian":
+              para2.innerText = (para1.innerText)*(1.571);
+              break;
+
+            case "gradian":
+              para2.innerText = (para1.innerText)*(100);
+              break;
+
+            case "minute":
+              para2.innerText = (para1.innerText)*(5400);
+              break;
+
+            case "second":
+              para2.innerText = (para1.innerText)*(324000);
+              break;
+
+            case "gon":
+              para2.innerText = (para1.innerText)*(100);
+              break;
+
+            case "sign":
+              para2.innerText = (para1.innerText)*(3);
+              break;
+
+            case "mil":
+              para2.innerText = (para1.innerText)*(1600);
+              break;
+
+            case "revolution":
+              para2.innerText = (para1.innerText)*(0.25);
+              break;
+
+            case "circle":
+              para2.innerText = (para1.innerText)*(0.25);
+              break;
+
+            case "turn":
+              para2.innerText = (para1.innerText)*(0.25);
+              break;
+
+            case "quadrant":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "right angle":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "sextant":
+              para2.innerText = (para1.innerText)*(1.5);
+              break;
+
+            case "octant":
+              para2.innerText = (para1.innerText)*(2);
+              break;
+          }
+          break;
+
+        case "right angle":
+          switch(output.value)
+          {
+            case "degree":
+              para2.innerText = (para1.innerText)*(90);
+              break;
+
+            case "radian":
+              para2.innerText = (para1.innerText)*(1.571);
+              break;
+
+            case "gradian":
+              para2.innerText = (para1.innerText)*(100);
+              break;
+
+            case "minute":
+              para2.innerText = (para1.innerText)*(5400);
+              break;
+
+            case "second":
+              para2.innerText = (para1.innerText)*(324000);
+              break;
+
+            case "gon":
+              para2.innerText = (para1.innerText)*(100);
+              break;
+
+            case "sign":
+              para2.innerText = (para1.innerText)*(3);
+              break;
+
+            case "mil":
+              para2.innerText = (para1.innerText)*(1600);
+              break;
+
+            case "revolution":
+              para2.innerText = (para1.innerText)*(0.25);
+              break;
+
+            case "circle":
+              para2.innerText = (para1.innerText)*(0.25);
+              break;
+
+            case "turn":
+              para2.innerText = (para1.innerText)*(0.25);
+              break;
+
+            case "quadrant":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "right angle":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "sextant":
+              para2.innerText = (para1.innerText)*(1.5);
+              break;
+
+            case "octant":
+              para2.innerText = (para1.innerText)*(2);
+              break;
+          }
+          break;
+
+        case "sextant":
+          switch(output.value)
+          {
+            case "degree":
+              para2.innerText = (para1.innerText)*(60);
+              break;
+
+            case "radian":
+              para2.innerText = (para1.innerText)*(1.0471975512);
+              break;
+
+            case "gradian":
+              para2.innerText = (para1.innerText)*(66.666666667);
+              break;
+
+            case "minute":
+              para2.innerText = (para1.innerText)*(3600);
+              break;
+
+            case "second":
+              para2.innerText = (para1.innerText)*(216000);
+              break;
+
+            case "gon":
+              para2.innerText = (para1.innerText)*(66.666666667);
+              break;
+
+            case "sign":
+              para2.innerText = (para1.innerText)*(2);
+              break;
+
+            case "mil":
+              para2.innerText = (para1.innerText)*(1066.6666667);
+              break;
+
+            case "revolution":
+              para2.innerText = (para1.innerText)*(0.1666666667);
+              break;
+
+            case "circle":
+              para2.innerText = (para1.innerText)*(0.1666666667);
+              break;
+
+            case "turn":
+              para2.innerText = (para1.innerText)*(0.1666666667);
+              break;
+
+            case "quadrant":
+              para2.innerText = (para1.innerText)*(0.6666666667);
+              break;
+
+            case "right angle":
+              para2.innerText = (para1.innerText)*(0.6666666667);
+              break;
+
+            case "sextant":
+              para2.innerText = para1.innerText;
+              break;
+
+            case "octant":
+              para2.innerText = (para1.innerText)*(1.3333);
+              break;
+          }
+          break;
+
+        case "octant":
+          switch(output.value)
+          {
+            case "degree":
+              para2.innerText = (para1.innerText)*(45);
+              break;
+
+            case "radian":
+              para2.innerText = (para1.innerText)*(0.7854);
+              break;
+
+            case "gradian":
+              para2.innerText = (para1.innerText)*(50);
+              break;
+
+            case "minute":
+              para2.innerText = (para1.innerText)*(2700);
+              break;
+
+            case "second":
+              para2.innerText = (para1.innerText)*(10800);
+              break;
+
+            case "gon":
+              para2.innerText = (para1.innerText)*(50);
+              break;
+
+            case "sign":
+              para2.innerText = (para1.innerText)*(1.5);
+              break;
+
+            case "mil":
+              para2.innerText = (para1.innerText)*(800);
+              break;
+
+            case "revolution":
+              para2.innerText = (para1.innerText)/(8);
+              break;
+
+            case "circle":
+              para2.innerText = (para1.innerText)*(0.125);
+              break;
+
+            case "turn":
+              para2.innerText = (para1.innerText)*(0.125);
+              break;
+
+            case "quadrant":
+              para2.innerText = (para1.innerText)/(2);
+              break;
+
+            case "right angle":
+              para2.innerText = (para1.innerText)*(0.50);
+              break;
+
+            case "sextant":
+              para2.innerText = (para1.innerText)/(1.333);
+              break;
+
+            case "octant":
               para2.innerText = para1.innerText;
               break;
           }
